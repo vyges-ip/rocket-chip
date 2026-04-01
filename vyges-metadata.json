@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vyges.com/schema/v1/vyges-metadata.schema.json",
+  "x-version": "1.0.0",
+  "name": "rocket-chip",
+  "version": "0.1.0",
+  "description": "Rocket Chip is a parameterized RISC-V SoC generator featuring RV64GC in-order cores, L1/L2 caches, and TileLink interconnect, implemented in Chisel.",
+  "license": "Apache-2.0",
+  "maturity": "rtl_verified",
+  "target": [
+    "asic",
+    "fpga"
+  ],
+  "design_type": [
+    "digital"
+  ],
+  "created": "2026-04-01T06:13:59Z",
+  "updated": "2026-04-01T06:13:59Z",
+  "source": {
+    "type": "git",
+    "url": "https://github.com/chipsalliance/rocket-chip",
+    "commit": "885dd5966a49ce19512e3cc3275515926e729ba2",
+    "ip_path": ".",
+    "private": false,
+    "containsEncryptedPayload": false,
+    "indexing": true
+  },
+  "maintainers": [
+    {
+      "name": "Vyges",
+      "email": "team@vyges.com",
+      "url": "https://vyges.com",
+      "github": "vyges"
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "bus",
+      "direction": "master",
+      "protocol": "TileLink",
+      "port": "tl_master",
+      "width": 64,
+      "description": "TileLink master interface for memory and peripheral communication."
+    },
+    {
+      "type": "bus",
+      "direction": "slave",
+      "protocol": "TileLink",
+      "port": "tl_slave",
+      "width": 64,
+      "description": "TileLink slave interface for memory and peripheral communication."
+    },
+    {
+      "type": "clock",
+      "direction": "input",
+      "protocol": "Clock",
+      "port": "clock",
+      "width": 1,
+      "description": "System clock input."
+    },
+    {
+      "type": "reset",
+      "direction": "input",
+      "protocol": "Reset",
+      "port": "reset",
+      "width": 1,
+      "description": "System reset input."
+    }
+  ],
+  "parameters": [
+    {
+      "name": "XLEN",
+      "type": "int",
+      "default": 64,
+      "description": "Width of the RISC-V processor's general-purpose registers."
+    },
+    {
+      "name": "L1_CACHE_SIZE",
+      "type": "int",
+      "default": 32,
+      "description": "Size of the L1 cache in kilobytes."
+    },
+    {
+      "name": "L2_CACHE_SIZE",
+      "type": "int",
+      "default": 256,
+      "description": "Size of the L2 cache in kilobytes."
+    },
+    {
+      "name": "NUM_CORES",
+      "type": "int",
+      "default": 1,
+      "description": "Number of RISC-V cores in the SoC."
+    }
+  ],
+  "performance": {
+    "max_frequency_mhz": 1000,
+    "dmips_per_mhz": 1.5,
+    "core_count": 1
+  },
+  "architecture": {
+    "type": "processor",
+    "features": [
+      "RV64GC ISA support",
+      "In-order execution",
+      "L1 and L2 cache hierarchy",
+      "TileLink interconnect"
+    ]
+  },
+  "asic": {
+    "flavor": "digital",
+    "technology": [
+      "sky130A"
+    ]
+  },
+  "fpga": {
+    "toolchain": [
+      "Vivado"
+    ],
+    "devices": [
+      "Artix-7"
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "Chisel",
+      "type": "library",
+      "description": "Hardware construction language used to generate the Rocket Chip."
+    },
+    {
+      "name": "TileLink",
+      "type": "bus",
+      "description": "Coherent interconnect protocol used for communication between cores and peripherals."
+    }
+  ],
+  "test": {
+    "testbenches": [
+      "SimDTM",
+      "SimJTAG",
+      "TestDriver"
+    ],
+    "status": "upstream_passing",
+    "coverage": "functional"
+  },
+  "documentation": {
+    "upstream": "https://github.com/chipsalliance/rocket-chip"
+  },
+  "artifacts": {
+    "total_rtl_lines": 934
+  },
+  "categories": [
+    {
+      "main_category": "Processing Cores",
+      "sub_category": "RISC-V"
+    }
+  ],
+  "keywords": [
+    "RISC-V",
+    "SoC",
+    "TileLink",
+    "Rocket Chip",
+    "Processor"
+  ],
+  "trust": {
+    "verification_level": "simulation_passing",
+    "tapeout_count": 0,
+    "fpga_validated": false,
+    "formal_verified": false,
+    "maintained": true,
+    "last_activity": "2026-04-01"
+  },
+  "meta": {
+    "template": {
+      "generator": "github-models-ai",
+      "template_version": "1.0.0",
+      "generated_at": "2026-04-01T06:13:59Z"
+    },
+    "schema": {
+      "version": "1.0.0"
+    }
+  }
+}
