@@ -2,7 +2,7 @@ schema_version: "vyges-upstream-v1"
 upstream:
   type: "standalone"
   repo: https://github.com/chipsalliance/rocket-chip
-  commit: 885dd5966a49ce19512e3cc3275515926e729ba2
+  commit: c1dda5827d214cf04a4d0917c1b2915e36603d52
   extracted_at: "2026-04-01T06:13:38Z"
 import:
   rtl:
@@ -13,5 +13,4 @@ import:
 license:
   spdx: Apache-2.0
   file: LICENSE
-
 metadata_locked: true
