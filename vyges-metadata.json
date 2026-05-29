@@ -153,9 +153,9 @@
       "description": "tlul_pkg + tlul_adapter_host \u2014 TL-UL infra used by the rocket_tile_tlul host wrapper."
     },
     {
-      "name": "tlul-axi-bridge",
+      "name": "vyges/tlul-axi-bridge",
       "type": "rtl",
-      "description": "tlul_axi_lite_bridge \u2014 AXI4-Lite slave to TL-UL host (mmio path)."
+      "description": "tlul_axi_lite_bridge \u2014 AXI4-Lite slave to TL-UL host (mmio path). (PRIVATE Vyges IP \u2014 sources: vyges)"
     },
     {
       "name": "verilog-axi",
