@@ -146,6 +146,21 @@
       "name": "TileLink",
       "type": "bus",
       "description": "Coherent interconnect protocol used for communication between cores and peripherals."
+    },
+    {
+      "name": "opentitan-tlul",
+      "type": "rtl",
+      "description": "tlul_pkg + tlul_adapter_host \u2014 TL-UL infra used by the rocket_tile_tlul host wrapper."
+    },
+    {
+      "name": "tlul-axi-bridge",
+      "type": "rtl",
+      "description": "tlul_axi_lite_bridge \u2014 AXI4-Lite slave to TL-UL host (mmio path)."
+    },
+    {
+      "name": "verilog-axi",
+      "type": "rtl",
+      "description": "axi_axil_adapter \u2014 AXI4 to AXI4-Lite (64->32) for Rocket mmio_axi4 in rocket_tile_tlul."
     }
   ],
   "test": {
