@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module IntSyncSyncCrossingSink_n1x1(	// src/main/scala/interrupts/Crossing.scala:96:9
+module rocket_IntSyncSyncCrossingSink_n1x1(	// src/main/scala/interrupts/Crossing.scala:96:9
   input  auto_in_sync_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output auto_out_0	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
 );

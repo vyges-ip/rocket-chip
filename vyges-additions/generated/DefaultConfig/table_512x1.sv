@@ -85,7 +85,7 @@
 `endif // not def STOP_COND_
 
 // VCS coverage exclude_file
-module table_512x1(	// src/main/scala/rocket/BTB.scala:114:26
+module rocket_table_512x1(	// src/main/scala/rocket/rocket_BTB.scala:114:26
   input  [8:0] R0_addr,
   input        R0_en,
                R0_clk,
@@ -96,23 +96,23 @@ module table_512x1(	// src/main/scala/rocket/BTB.scala:114:26
                W0_data
 );
 
-  reg Memory[0:511];	// src/main/scala/rocket/BTB.scala:114:26
-  always @(posedge W0_clk) begin	// src/main/scala/rocket/BTB.scala:114:26
-    if (W0_en & 1'h1)	// src/main/scala/rocket/BTB.scala:114:26
-      Memory[W0_addr] <= W0_data;	// src/main/scala/rocket/BTB.scala:114:26
+  reg Memory[0:511];	// src/main/scala/rocket/rocket_BTB.scala:114:26
+  always @(posedge W0_clk) begin	// src/main/scala/rocket/rocket_BTB.scala:114:26
+    if (W0_en & 1'h1)	// src/main/scala/rocket/rocket_BTB.scala:114:26
+      Memory[W0_addr] <= W0_data;	// src/main/scala/rocket/rocket_BTB.scala:114:26
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/rocket/BTB.scala:114:26
-    reg [31:0] _RANDOM_MEM;	// src/main/scala/rocket/BTB.scala:114:26
-    initial begin	// src/main/scala/rocket/BTB.scala:114:26
-      `INIT_RANDOM_PROLOG_	// src/main/scala/rocket/BTB.scala:114:26
-      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/rocket/BTB.scala:114:26
+  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/rocket/rocket_BTB.scala:114:26
+    reg [31:0] _RANDOM_MEM;	// src/main/scala/rocket/rocket_BTB.scala:114:26
+    initial begin	// src/main/scala/rocket/rocket_BTB.scala:114:26
+      `INIT_RANDOM_PROLOG_	// src/main/scala/rocket/rocket_BTB.scala:114:26
+      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/rocket/rocket_BTB.scala:114:26
         for (logic [9:0] i = 10'h0; i < 10'h200; i += 10'h1) begin
-          _RANDOM_MEM = `RANDOM;	// src/main/scala/rocket/BTB.scala:114:26
-          Memory[i[8:0]] = _RANDOM_MEM[0];	// src/main/scala/rocket/BTB.scala:114:26
-        end	// src/main/scala/rocket/BTB.scala:114:26
+          _RANDOM_MEM = `RANDOM;	// src/main/scala/rocket/rocket_BTB.scala:114:26
+          Memory[i[8:0]] = _RANDOM_MEM[0];	// src/main/scala/rocket/rocket_BTB.scala:114:26
+        end	// src/main/scala/rocket/rocket_BTB.scala:114:26
       `endif // RANDOMIZE_MEM_INIT
     end // initial
   `endif // ENABLE_INITIAL_MEM_
-  assign R0_data = R0_en ? Memory[R0_addr] : 1'bx;	// src/main/scala/rocket/BTB.scala:114:26
+  assign R0_data = R0_en ? Memory[R0_addr] : 1'bx;	// src/main/scala/rocket/rocket_BTB.scala:114:26
 endmodule
 

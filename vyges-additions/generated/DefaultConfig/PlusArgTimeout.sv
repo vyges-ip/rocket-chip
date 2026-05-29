@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PlusArgTimeout(	// src/main/scala/util/PlusArg.scala:58:7
+module rocket_PlusArgTimeout(	// src/main/scala/util/PlusArg.scala:58:7
   input        clock,	// src/main/scala/util/PlusArg.scala:58:7
                reset,	// src/main/scala/util/PlusArg.scala:58:7
   input [31:0] io_count	// src/main/scala/util/PlusArg.scala:59:14
@@ -102,11 +102,11 @@ module PlusArgTimeout(	// src/main/scala/util/PlusArg.scala:58:7
       end
     end // always @(posedge)
   `endif // not def SYNTHESIS
-  plusarg_reader #(
+  rocket_plusarg_reader #(
     .DEFAULT(0),
     .FORMAT("max_core_cycles=%d"),
     .WIDTH(32)
-  ) plusarg_reader (	// src/main/scala/util/PlusArg.scala:62:19
+  ) rocket_plusarg_reader (	// src/main/scala/util/PlusArg.scala:62:19
     .out (_plusarg_reader_out)
   );
 endmodule

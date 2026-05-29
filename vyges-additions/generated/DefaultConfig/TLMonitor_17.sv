@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLMonitor_17(	// src/main/scala/tilelink/Monitor.scala:35:7
+module rocket_TLMonitor_17(	// src/main/scala/tilelink/Monitor.scala:35:7
   input        clock,	// src/main/scala/tilelink/Monitor.scala:35:7
                reset,	// src/main/scala/tilelink/Monitor.scala:35:7
                io_in_a_ready,	// src/main/scala/tilelink/Monitor.scala:19:14
@@ -893,14 +893,14 @@ module TLMonitor_17(	// src/main/scala/tilelink/Monitor.scala:35:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Monitor.scala:35:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  plusarg_reader #(
+  rocket_plusarg_reader #(
     .DEFAULT(0),
     .FORMAT("tilelink_timeout=%d"),
     .WIDTH(32)
-  ) plusarg_reader (	// src/main/scala/util/PlusArg.scala:80:11
+  ) rocket_plusarg_reader (	// src/main/scala/util/PlusArg.scala:80:11
     .out (_plusarg_reader_out)
   );
-  plusarg_reader #(
+  rocket_plusarg_reader #(
     .DEFAULT(0),
     .FORMAT("tilelink_timeout=%d"),
     .WIDTH(32)

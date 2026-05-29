@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLAtomicAutomata_cbus(	// src/main/scala/tilelink/AtomicAutomata.scala:36:9
+module rocket_TLAtomicAutomata_cbus(	// src/main/scala/tilelink/AtomicAutomata.scala:36:9
   input         clock,	// src/main/scala/tilelink/AtomicAutomata.scala:36:9
                 reset,	// src/main/scala/tilelink/AtomicAutomata.scala:36:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -809,7 +809,7 @@ module TLAtomicAutomata_cbus(	// src/main/scala/tilelink/AtomicAutomata.scala:36
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/AtomicAutomata.scala:36:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_11 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_11 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

@@ -84,50 +84,50 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module DivSqrtRecFN_small_1(	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  input         clock,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-                reset,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  output        io_inReady,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  input         io_inValid,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-                io_sqrtOp,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  input  [64:0] io_a,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-                io_b,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  output        io_outValid_div,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-                io_outValid_sqrt,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  output [64:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
-  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:469:16
+module rocket_DivSqrtRecFN_small_1(	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  input         clock,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+                reset,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  output        io_inReady,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  input         io_inValid,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+                io_sqrtOp,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  input  [64:0] io_a,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+                io_b,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  output        io_outValid_div,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+                io_outValid_sqrt,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  output [64:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
+  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:469:16
 );
 
-  wire [4:0]  io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire [64:0] io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire        io_outValid_sqrt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire        io_outValid_div_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire        io_inReady_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire [2:0]  _divSqrtRecFNToRaw_io_roundingModeOut;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_invalidExc;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_infiniteExc;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_rawOut_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_rawOut_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_rawOut_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        _divSqrtRecFNToRaw_io_rawOut_sign;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire [12:0] _divSqrtRecFNToRaw_io_rawOut_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire [55:0] _divSqrtRecFNToRaw_io_rawOut_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-  wire        io_inValid_0 = io_inValid;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire        io_sqrtOp_0 = io_sqrtOp;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire [64:0] io_a_0 = io_a;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire [64:0] io_b_0 = io_b;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  wire        io_detectTininess = 1'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5, :469:16, :505:15
-  DivSqrtRecFNToRaw_small_1 divSqrtRecFNToRaw (	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
+  wire [4:0]  io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire [64:0] io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire        io_outValid_sqrt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire        io_outValid_div_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire        io_inReady_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire [2:0]  _divSqrtRecFNToRaw_io_roundingModeOut;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_invalidExc;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_infiniteExc;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_rawOut_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_rawOut_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_rawOut_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        _divSqrtRecFNToRaw_io_rawOut_sign;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire [12:0] _divSqrtRecFNToRaw_io_rawOut_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire [55:0] _divSqrtRecFNToRaw_io_rawOut_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+  wire        io_inValid_0 = io_inValid;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire        io_sqrtOp_0 = io_sqrtOp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire [64:0] io_a_0 = io_a;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire [64:0] io_b_0 = io_b;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  wire        io_detectTininess = 1'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5, :469:16, :505:15
+  rocket_DivSqrtRecFNToRaw_small_1 divSqrtRecFNToRaw (	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
     .clock               (clock),
     .reset               (reset),
     .io_inReady          (io_inReady_0),
-    .io_inValid          (io_inValid_0),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-    .io_sqrtOp           (io_sqrtOp_0),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-    .io_a                (io_a_0),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-    .io_b                (io_b_0),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-    .io_roundingMode     (io_roundingMode_0),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
+    .io_inValid          (io_inValid_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+    .io_sqrtOp           (io_sqrtOp_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+    .io_a                (io_a_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+    .io_b                (io_b_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+    .io_roundingMode     (io_roundingMode_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
     .io_rawOutValid_div  (io_outValid_div_0),
     .io_rawOutValid_sqrt (io_outValid_sqrt_0),
     .io_roundingModeOut  (_divSqrtRecFNToRaw_io_roundingModeOut),
@@ -140,24 +140,24 @@ module DivSqrtRecFN_small_1(	// dependencies/hardfloat/hardfloat/src/main/scala/
     .io_rawOut_sExp      (_divSqrtRecFNToRaw_io_rawOut_sExp),
     .io_rawOut_sig       (_divSqrtRecFNToRaw_io_rawOut_sig)
   );
-  RoundRawFNToRecFN_1 roundRawFNToRecFN (	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:505:15
-    .io_invalidExc     (_divSqrtRecFNToRaw_io_invalidExc),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_infiniteExc    (_divSqrtRecFNToRaw_io_infiniteExc),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_isNaN       (_divSqrtRecFNToRaw_io_rawOut_isNaN),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_isInf       (_divSqrtRecFNToRaw_io_rawOut_isInf),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_isZero      (_divSqrtRecFNToRaw_io_rawOut_isZero),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_sign        (_divSqrtRecFNToRaw_io_rawOut_sign),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_sExp        (_divSqrtRecFNToRaw_io_rawOut_sExp),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_in_sig         (_divSqrtRecFNToRaw_io_rawOut_sig),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_roundingMode   (_divSqrtRecFNToRaw_io_roundingModeOut),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:490:15
-    .io_detectTininess (1'h1),	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5, :469:16, :505:15
+  rocket_RoundRawFNToRecFN_1 roundRawFNToRecFN (	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:505:15
+    .io_invalidExc     (_divSqrtRecFNToRaw_io_invalidExc),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_infiniteExc    (_divSqrtRecFNToRaw_io_infiniteExc),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_isNaN       (_divSqrtRecFNToRaw_io_rawOut_isNaN),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_isInf       (_divSqrtRecFNToRaw_io_rawOut_isInf),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_isZero      (_divSqrtRecFNToRaw_io_rawOut_isZero),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_sign        (_divSqrtRecFNToRaw_io_rawOut_sign),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_sExp        (_divSqrtRecFNToRaw_io_rawOut_sExp),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_in_sig         (_divSqrtRecFNToRaw_io_rawOut_sig),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_roundingMode   (_divSqrtRecFNToRaw_io_roundingModeOut),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:490:15
+    .io_detectTininess (1'h1),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5, :469:16, :505:15
     .io_out            (io_out_0),
     .io_exceptionFlags (io_exceptionFlags_0)
   );
-  assign io_inReady = io_inReady_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  assign io_outValid_div = io_outValid_div_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  assign io_outValid_sqrt = io_outValid_sqrt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
-  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/DivSqrtRecFN_small.scala:466:5
+  assign io_inReady = io_inReady_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  assign io_outValid_div = io_outValid_div_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  assign io_outValid_sqrt = io_outValid_sqrt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
+  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_DivSqrtRecFN_small.scala:466:5
 endmodule
 

@@ -84,67 +84,67 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module FPToFP(	// src/main/scala/tile/FPU.scala:573:7
-  input         clock,	// src/main/scala/tile/FPU.scala:573:7
-                reset,	// src/main/scala/tile/FPU.scala:573:7
-                io_in_valid,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_ldst,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_wen,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_ren1,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_ren2,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_ren3,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_swap12,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_swap23,	// src/main/scala/tile/FPU.scala:574:14
-  input  [1:0]  io_in_bits_typeTagIn,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_typeTagOut,	// src/main/scala/tile/FPU.scala:574:14
-  input         io_in_bits_fromint,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_toint,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_fastpipe,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_fma,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_div,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_sqrt,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_wflags,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_vec,	// src/main/scala/tile/FPU.scala:574:14
-  input  [2:0]  io_in_bits_rm,	// src/main/scala/tile/FPU.scala:574:14
-  input  [1:0]  io_in_bits_fmaCmd,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_typ,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_fmt,	// src/main/scala/tile/FPU.scala:574:14
-  input  [64:0] io_in_bits_in1,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_in2,	// src/main/scala/tile/FPU.scala:574:14
-                io_in_bits_in3,	// src/main/scala/tile/FPU.scala:574:14
-  output [64:0] io_out_bits_data,	// src/main/scala/tile/FPU.scala:574:14
-  output [4:0]  io_out_bits_exc,	// src/main/scala/tile/FPU.scala:574:14
-  input         io_lt	// src/main/scala/tile/FPU.scala:574:14
+module rocket_FPToFP(	// src/main/scala/tile/rocket_FPU.scala:573:7
+  input         clock,	// src/main/scala/tile/rocket_FPU.scala:573:7
+                reset,	// src/main/scala/tile/rocket_FPU.scala:573:7
+                io_in_valid,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_ldst,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_wen,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_ren1,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_ren2,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_ren3,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_swap12,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_swap23,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input  [1:0]  io_in_bits_typeTagIn,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_typeTagOut,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input         io_in_bits_fromint,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_toint,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_fastpipe,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_fma,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_div,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_sqrt,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_wflags,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_vec,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input  [2:0]  io_in_bits_rm,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input  [1:0]  io_in_bits_fmaCmd,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_typ,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_fmt,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input  [64:0] io_in_bits_in1,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_in2,	// src/main/scala/tile/rocket_FPU.scala:574:14
+                io_in_bits_in3,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  output [64:0] io_out_bits_data,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  output [4:0]  io_out_bits_exc,	// src/main/scala/tile/rocket_FPU.scala:574:14
+  input         io_lt	// src/main/scala/tile/rocket_FPU.scala:574:14
 );
 
-  wire [32:0] _narrower_io_out;	// src/main/scala/tile/FPU.scala:619:30
-  wire [4:0]  _narrower_io_exceptionFlags;	// src/main/scala/tile/FPU.scala:619:30
-  wire        io_in_valid_0 = io_in_valid;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_ldst_0 = io_in_bits_ldst;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_wen_0 = io_in_bits_wen;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_ren1_0 = io_in_bits_ren1;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_ren2_0 = io_in_bits_ren2;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_ren3_0 = io_in_bits_ren3;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_swap12_0 = io_in_bits_swap12;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_swap23_0 = io_in_bits_swap23;	// src/main/scala/tile/FPU.scala:573:7
-  wire [1:0]  io_in_bits_typeTagIn_0 = io_in_bits_typeTagIn;	// src/main/scala/tile/FPU.scala:573:7
-  wire [1:0]  io_in_bits_typeTagOut_0 = io_in_bits_typeTagOut;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_fromint_0 = io_in_bits_fromint;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_toint_0 = io_in_bits_toint;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_fastpipe_0 = io_in_bits_fastpipe;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_fma_0 = io_in_bits_fma;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_div_0 = io_in_bits_div;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_sqrt_0 = io_in_bits_sqrt;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_wflags_0 = io_in_bits_wflags;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_in_bits_vec_0 = io_in_bits_vec;	// src/main/scala/tile/FPU.scala:573:7
-  wire [2:0]  io_in_bits_rm_0 = io_in_bits_rm;	// src/main/scala/tile/FPU.scala:573:7
-  wire [1:0]  io_in_bits_fmaCmd_0 = io_in_bits_fmaCmd;	// src/main/scala/tile/FPU.scala:573:7
-  wire [1:0]  io_in_bits_typ_0 = io_in_bits_typ;	// src/main/scala/tile/FPU.scala:573:7
-  wire [1:0]  io_in_bits_fmt_0 = io_in_bits_fmt;	// src/main/scala/tile/FPU.scala:573:7
-  wire [64:0] io_in_bits_in1_0 = io_in_bits_in1;	// src/main/scala/tile/FPU.scala:573:7
-  wire [64:0] io_in_bits_in2_0 = io_in_bits_in2;	// src/main/scala/tile/FPU.scala:573:7
-  wire [64:0] io_in_bits_in3_0 = io_in_bits_in3;	// src/main/scala/tile/FPU.scala:573:7
-  wire        io_lt_0 = io_lt;	// src/main/scala/tile/FPU.scala:573:7
+  wire [32:0] _narrower_io_out;	// src/main/scala/tile/rocket_FPU.scala:619:30
+  wire [4:0]  _narrower_io_exceptionFlags;	// src/main/scala/tile/rocket_FPU.scala:619:30
+  wire        io_in_valid_0 = io_in_valid;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_ldst_0 = io_in_bits_ldst;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_wen_0 = io_in_bits_wen;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_ren1_0 = io_in_bits_ren1;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_ren2_0 = io_in_bits_ren2;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_ren3_0 = io_in_bits_ren3;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_swap12_0 = io_in_bits_swap12;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_swap23_0 = io_in_bits_swap23;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [1:0]  io_in_bits_typeTagIn_0 = io_in_bits_typeTagIn;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [1:0]  io_in_bits_typeTagOut_0 = io_in_bits_typeTagOut;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_fromint_0 = io_in_bits_fromint;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_toint_0 = io_in_bits_toint;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_fastpipe_0 = io_in_bits_fastpipe;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_fma_0 = io_in_bits_fma;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_div_0 = io_in_bits_div;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_sqrt_0 = io_in_bits_sqrt;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_wflags_0 = io_in_bits_wflags;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_in_bits_vec_0 = io_in_bits_vec;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [2:0]  io_in_bits_rm_0 = io_in_bits_rm;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [1:0]  io_in_bits_fmaCmd_0 = io_in_bits_fmaCmd;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [1:0]  io_in_bits_typ_0 = io_in_bits_typ;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [1:0]  io_in_bits_fmt_0 = io_in_bits_fmt;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [64:0] io_in_bits_in1_0 = io_in_bits_in1;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [64:0] io_in_bits_in2_0 = io_in_bits_in2;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [64:0] io_in_bits_in3_0 = io_in_bits_in3;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  wire        io_lt_0 = io_lt;	// src/main/scala/tile/rocket_FPU.scala:573:7
   wire        io_out_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21
   wire [64:0] io_out_pipe_out_bits_data;	// src/main/scala/chisel3/util/Valid.scala:135:21
   wire [4:0]  io_out_pipe_out_bits_exc;	// src/main/scala/chisel3/util/Valid.scala:135:21
@@ -199,150 +199,150 @@ module FPToFP(	// src/main/scala/tile/FPU.scala:573:7
   reg  [64:0] in_pipe_b_in3;	// src/main/scala/chisel3/util/Valid.scala:142:26
   wire [64:0] in_bits_in3 = in_pipe_b_in3;	// src/main/scala/chisel3/util/Valid.scala:135:21, :142:26
   wire [64:0] signNum =
-    in_bits_rm[1] ? in_bits_in1 ^ in_bits_in2 : {65{in_bits_rm[0]}} ^ in_bits_in2;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:582:{20,31,48,66,77}
-  wire [64:0] fsgnj = {signNum[64], in_bits_in1[63:0]};	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:582:20, :583:{18,26,45}
-  wire        isnan1 = &(in_bits_in1[63:61]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:{25,56}
-  wire        isnan2 = &(in_bits_in2[63:61]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:{25,56}
+    in_bits_rm[1] ? in_bits_in1 ^ in_bits_in2 : {65{in_bits_rm[0]}} ^ in_bits_in2;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:582:{20,31,48,66,77}
+  wire [64:0] fsgnj = {signNum[64], in_bits_in1[63:0]};	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:582:20, :583:{18,26,45}
+  wire        isnan1 = &(in_bits_in1[63:61]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:{25,56}
+  wire        isnan2 = &(in_bits_in2[63:61]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:{25,56}
   wire        isInvalid =
     (&(in_bits_in1[63:61])) & ~(in_bits_in1[51]) | (&(in_bits_in2[63:61]))
-    & ~(in_bits_in2[51]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:{25,56}, :250:{34,37,39}, :592:49
-  wire        isNaNOut = isnan1 & isnan2;	// src/main/scala/tile/FPU.scala:249:56, :593:27
-  wire        isLHS = isnan2 | in_bits_rm[0] != io_lt_0 & ~isnan1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:56, :573:7, :582:77, :594:{24,41,51,54}
-  wire        _GEN = in_bits_typeTagOut == 2'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:603:18
-  wire [64:0] fsgnjMux_data;	// src/main/scala/tile/FPU.scala:585:22
-  wire        mux_data_sign = fsgnjMux_data[64];	// src/main/scala/tile/FPU.scala:274:17, :585:22
-  wire [51:0] mux_data_fractIn = fsgnjMux_data[51:0];	// src/main/scala/tile/FPU.scala:275:20, :585:22
-  wire [11:0] mux_data_expIn = fsgnjMux_data[63:52];	// src/main/scala/tile/FPU.scala:276:18, :585:22
-  wire [22:0] mux_data_fractOut = mux_data_fractIn[51:29];	// src/main/scala/tile/FPU.scala:275:20, :277:38
-  wire [2:0]  mux_data_expOut_expCode = mux_data_expIn[11:9];	// src/main/scala/tile/FPU.scala:276:18, :279:26
-  wire [11:0] mux_data_expOut_commonCase = mux_data_expIn - 12'h700;	// src/main/scala/tile/FPU.scala:276:18, :280:50
+    & ~(in_bits_in2[51]);	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:{25,56}, :250:{34,37,39}, :592:49
+  wire        isNaNOut = isnan1 & isnan2;	// src/main/scala/tile/rocket_FPU.scala:249:56, :593:27
+  wire        isLHS = isnan2 | in_bits_rm[0] != io_lt_0 & ~isnan1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:56, :573:7, :582:77, :594:{24,41,51,54}
+  wire        _GEN = in_bits_typeTagOut == 2'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:603:18
+  wire [64:0] fsgnjMux_data;	// src/main/scala/tile/rocket_FPU.scala:585:22
+  wire        mux_data_sign = fsgnjMux_data[64];	// src/main/scala/tile/rocket_FPU.scala:274:17, :585:22
+  wire [51:0] mux_data_fractIn = fsgnjMux_data[51:0];	// src/main/scala/tile/rocket_FPU.scala:275:20, :585:22
+  wire [11:0] mux_data_expIn = fsgnjMux_data[63:52];	// src/main/scala/tile/rocket_FPU.scala:276:18, :585:22
+  wire [22:0] mux_data_fractOut = mux_data_fractIn[51:29];	// src/main/scala/tile/rocket_FPU.scala:275:20, :277:38
+  wire [2:0]  mux_data_expOut_expCode = mux_data_expIn[11:9];	// src/main/scala/tile/rocket_FPU.scala:276:18, :279:26
+  wire [11:0] mux_data_expOut_commonCase = mux_data_expIn - 12'h700;	// src/main/scala/tile/rocket_FPU.scala:276:18, :280:50
   wire [8:0]  mux_data_expOut =
     mux_data_expOut_expCode == 3'h0 | mux_data_expOut_expCode > 3'h5
       ? {mux_data_expOut_expCode, mux_data_expOut_commonCase[5:0]}
-      : mux_data_expOut_commonCase[8:0];	// src/main/scala/tile/FPU.scala:279:26, :280:50, :281:{10,19,27,38,49,69,97}
-  wire [9:0]  mux_data_hi = {mux_data_sign, mux_data_expOut};	// src/main/scala/tile/FPU.scala:274:17, :281:10, :283:8
-  wire        _GEN_0 = in_bits_wflags & ~in_bits_ren2;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:608:{24,27}
-  wire [64:0] widened = (&(in_bits_in1[63:61])) ? 65'hE008000000000000 : in_bits_in1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:{25,56}, :596:25, :611:24
+      : mux_data_expOut_commonCase[8:0];	// src/main/scala/tile/rocket_FPU.scala:279:26, :280:50, :281:{10,19,27,38,49,69,97}
+  wire [9:0]  mux_data_hi = {mux_data_sign, mux_data_expOut};	// src/main/scala/tile/rocket_FPU.scala:274:17, :281:10, :283:8
+  wire        _GEN_0 = in_bits_wflags & ~in_bits_ren2;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:608:{24,27}
+  wire [64:0] widened = (&(in_bits_in1[63:61])) ? 65'hE008000000000000 : in_bits_in1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:{25,56}, :596:25, :611:24
   assign fsgnjMux_data =
     _GEN_0
       ? widened
       : in_bits_wflags
           ? (isNaNOut ? 65'hE008000000000000 : isLHS ? in_bits_in1 : in_bits_in2)
-          : fsgnj;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:583:18, :585:22, :587:17, :589:25, :593:27, :594:24, :596:{19,25,53}, :608:{24,42}, :611:24, :612:21
+          : fsgnj;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:583:18, :585:22, :587:17, :589:25, :593:27, :594:24, :596:{19,25,53}, :608:{24,42}, :611:24, :612:21
   wire [4:0]  fsgnjMux_exc =
     _GEN_0
       ? {(&(in_bits_in1[63:61])) & ~(in_bits_in1[51]), 4'h0}
-      : in_bits_wflags ? {isInvalid, 4'h0} : 5'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:249:{25,56}, :250:{34,37,39}, :573:7, :585:22, :586:16, :589:25, :592:49, :595:{18,31}, :608:{24,42}, :613:{20,51}
+      : in_bits_wflags ? {isInvalid, 4'h0} : 5'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:249:{25,56}, :250:{34,37,39}, :573:7, :585:22, :586:16, :589:25, :592:49, :595:{18,31}, :608:{24,42}, :613:{20,51}
   wire [64:0] mux_data =
     _GEN
       ? (_GEN_0
            ? {fsgnjMux_data[64:33], _narrower_io_out}
            : {fsgnjMux_data[64:33], mux_data_hi, mux_data_fractOut})
-      : fsgnjMux_data;	// src/main/scala/tile/FPU.scala:277:38, :283:8, :585:22, :601:24, :603:{18,36}, :604:{16,22,37}, :608:{24,42}, :618:126, :619:30, :624:{18,24,39}
-  wire [4:0]  mux_exc = _GEN_0 & _GEN ? _narrower_io_exceptionFlags : fsgnjMux_exc;	// src/main/scala/tile/FPU.scala:585:22, :601:24, :603:18, :608:{24,42}, :618:126, :619:30, :625:17
+      : fsgnjMux_data;	// src/main/scala/tile/rocket_FPU.scala:277:38, :283:8, :585:22, :601:24, :603:{18,36}, :604:{16,22,37}, :608:{24,42}, :618:126, :619:30, :624:{18,24,39}
+  wire [4:0]  mux_exc = _GEN_0 & _GEN ? _narrower_io_exceptionFlags : fsgnjMux_exc;	// src/main/scala/tile/rocket_FPU.scala:585:22, :601:24, :603:18, :608:{24,42}, :618:126, :619:30, :625:17
   reg         io_out_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
   assign io_out_pipe_out_valid = io_out_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
   reg  [64:0] io_out_pipe_b_data;	// src/main/scala/chisel3/util/Valid.scala:142:26
   assign io_out_pipe_out_bits_data = io_out_pipe_b_data;	// src/main/scala/chisel3/util/Valid.scala:135:21, :142:26
   reg  [4:0]  io_out_pipe_b_exc;	// src/main/scala/chisel3/util/Valid.scala:142:26
   assign io_out_pipe_out_bits_exc = io_out_pipe_b_exc;	// src/main/scala/chisel3/util/Valid.scala:135:21, :142:26
-  wire        io_out_valid = io_out_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:573:7
-  wire [64:0] io_out_bits_data_0 = io_out_pipe_out_bits_data;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:573:7
-  wire [4:0]  io_out_bits_exc_0 = io_out_pipe_out_bits_exc;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:573:7
-  always @(posedge clock) begin	// src/main/scala/tile/FPU.scala:573:7
-    if (reset) begin	// src/main/scala/tile/FPU.scala:573:7
+  wire        io_out_valid = io_out_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [64:0] io_out_bits_data_0 = io_out_pipe_out_bits_data;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:573:7
+  wire [4:0]  io_out_bits_exc_0 = io_out_pipe_out_bits_exc;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:573:7
+  always @(posedge clock) begin	// src/main/scala/tile/rocket_FPU.scala:573:7
+    if (reset) begin	// src/main/scala/tile/rocket_FPU.scala:573:7
       in_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
       io_out_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
     end
-    else begin	// src/main/scala/tile/FPU.scala:573:7
-      in_pipe_v <= io_in_valid_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:573:7
+    else begin	// src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_v <= io_in_valid_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:573:7
       io_out_pipe_v <= in_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
     end
-    if (io_in_valid_0) begin	// src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_ldst <= io_in_bits_ldst_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_wen <= io_in_bits_wen_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_ren1 <= io_in_bits_ren1_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_ren2 <= io_in_bits_ren2_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_ren3 <= io_in_bits_ren3_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_swap12 <= io_in_bits_swap12_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_swap23 <= io_in_bits_swap23_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_typeTagIn <= io_in_bits_typeTagIn_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_typeTagOut <= io_in_bits_typeTagOut_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_fromint <= io_in_bits_fromint_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_toint <= io_in_bits_toint_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_fastpipe <= io_in_bits_fastpipe_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_fma <= io_in_bits_fma_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_div <= io_in_bits_div_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_sqrt <= io_in_bits_sqrt_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_wflags <= io_in_bits_wflags_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_vec <= io_in_bits_vec_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_rm <= io_in_bits_rm_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_fmaCmd <= io_in_bits_fmaCmd_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_typ <= io_in_bits_typ_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_fmt <= io_in_bits_fmt_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_in1 <= io_in_bits_in1_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_in2 <= io_in_bits_in2_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-      in_pipe_b_in3 <= io_in_bits_in3_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
+    if (io_in_valid_0) begin	// src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_ldst <= io_in_bits_ldst_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_wen <= io_in_bits_wen_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_ren1 <= io_in_bits_ren1_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_ren2 <= io_in_bits_ren2_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_ren3 <= io_in_bits_ren3_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_swap12 <= io_in_bits_swap12_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_swap23 <= io_in_bits_swap23_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_typeTagIn <= io_in_bits_typeTagIn_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_typeTagOut <= io_in_bits_typeTagOut_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_fromint <= io_in_bits_fromint_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_toint <= io_in_bits_toint_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_fastpipe <= io_in_bits_fastpipe_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_fma <= io_in_bits_fma_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_div <= io_in_bits_div_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_sqrt <= io_in_bits_sqrt_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_wflags <= io_in_bits_wflags_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_vec <= io_in_bits_vec_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_rm <= io_in_bits_rm_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_fmaCmd <= io_in_bits_fmaCmd_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_typ <= io_in_bits_typ_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_fmt <= io_in_bits_fmt_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_in1 <= io_in_bits_in1_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_in2 <= io_in_bits_in2_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+      in_pipe_b_in3 <= io_in_bits_in3_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
     end
     if (in_valid) begin	// src/main/scala/chisel3/util/Valid.scala:135:21
-      io_out_pipe_b_data <= mux_data;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:601:24
-      io_out_pipe_b_exc <= mux_exc;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:601:24
+      io_out_pipe_b_data <= mux_data;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:601:24
+      io_out_pipe_b_exc <= mux_exc;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:601:24
     end
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/FPU.scala:573:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/FPU.scala:573:7
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/FPU.scala:573:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/rocket_FPU.scala:573:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_FPU.scala:573:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_FPU.scala:573:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/tile/FPU.scala:573:7
-      automatic logic [31:0] _RANDOM[0:9];	// src/main/scala/tile/FPU.scala:573:7
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/FPU.scala:573:7
-        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/FPU.scala:573:7
+    initial begin	// src/main/scala/tile/rocket_FPU.scala:573:7
+      automatic logic [31:0] _RANDOM[0:9];	// src/main/scala/tile/rocket_FPU.scala:573:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_FPU.scala:573:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_FPU.scala:573:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/FPU.scala:573:7
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/rocket_FPU.scala:573:7
         for (logic [3:0] i = 4'h0; i < 4'hA; i += 4'h1) begin
-          _RANDOM[i] = `RANDOM;	// src/main/scala/tile/FPU.scala:573:7
-        end	// src/main/scala/tile/FPU.scala:573:7
-        in_pipe_v = _RANDOM[4'h0][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_ldst = _RANDOM[4'h0][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_wen = _RANDOM[4'h0][2];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_ren1 = _RANDOM[4'h0][3];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_ren2 = _RANDOM[4'h0][4];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_ren3 = _RANDOM[4'h0][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_swap12 = _RANDOM[4'h0][6];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_swap23 = _RANDOM[4'h0][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_typeTagIn = _RANDOM[4'h0][9:8];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_typeTagOut = _RANDOM[4'h0][11:10];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_fromint = _RANDOM[4'h0][12];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_toint = _RANDOM[4'h0][13];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_fastpipe = _RANDOM[4'h0][14];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_fma = _RANDOM[4'h0][15];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_div = _RANDOM[4'h0][16];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_sqrt = _RANDOM[4'h0][17];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_wflags = _RANDOM[4'h0][18];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_vec = _RANDOM[4'h0][19];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_rm = _RANDOM[4'h0][22:20];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_fmaCmd = _RANDOM[4'h0][24:23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_typ = _RANDOM[4'h0][26:25];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_fmt = _RANDOM[4'h0][28:27];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_in1 = {_RANDOM[4'h0][31:29], _RANDOM[4'h1], _RANDOM[4'h2][29:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_in2 = {_RANDOM[4'h2][31:30], _RANDOM[4'h3], _RANDOM[4'h4][30:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-        in_pipe_b_in3 = {_RANDOM[4'h4][31], _RANDOM[4'h5], _RANDOM[4'h6]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
-        io_out_pipe_v = _RANDOM[4'h7][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:573:7
-        io_out_pipe_b_data = {_RANDOM[4'h7][31:1], _RANDOM[4'h8], _RANDOM[4'h9][1:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:573:7
-        io_out_pipe_b_exc = _RANDOM[4'h9][6:2];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:573:7
+          _RANDOM[i] = `RANDOM;	// src/main/scala/tile/rocket_FPU.scala:573:7
+        end	// src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_v = _RANDOM[4'h0][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_ldst = _RANDOM[4'h0][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_wen = _RANDOM[4'h0][2];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_ren1 = _RANDOM[4'h0][3];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_ren2 = _RANDOM[4'h0][4];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_ren3 = _RANDOM[4'h0][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_swap12 = _RANDOM[4'h0][6];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_swap23 = _RANDOM[4'h0][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_typeTagIn = _RANDOM[4'h0][9:8];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_typeTagOut = _RANDOM[4'h0][11:10];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_fromint = _RANDOM[4'h0][12];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_toint = _RANDOM[4'h0][13];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_fastpipe = _RANDOM[4'h0][14];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_fma = _RANDOM[4'h0][15];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_div = _RANDOM[4'h0][16];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_sqrt = _RANDOM[4'h0][17];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_wflags = _RANDOM[4'h0][18];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_vec = _RANDOM[4'h0][19];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_rm = _RANDOM[4'h0][22:20];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_fmaCmd = _RANDOM[4'h0][24:23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_typ = _RANDOM[4'h0][26:25];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_fmt = _RANDOM[4'h0][28:27];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_in1 = {_RANDOM[4'h0][31:29], _RANDOM[4'h1], _RANDOM[4'h2][29:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_in2 = {_RANDOM[4'h2][31:30], _RANDOM[4'h3], _RANDOM[4'h4][30:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        in_pipe_b_in3 = {_RANDOM[4'h4][31], _RANDOM[4'h5], _RANDOM[4'h6]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        io_out_pipe_v = _RANDOM[4'h7][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:573:7
+        io_out_pipe_b_data = {_RANDOM[4'h7][31:1], _RANDOM[4'h8], _RANDOM[4'h9][1:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:573:7
+        io_out_pipe_b_exc = _RANDOM[4'h9][6:2];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:573:7
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/FPU.scala:573:7
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/FPU.scala:573:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_FPU.scala:573:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_FPU.scala:573:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  RecFNToRecFN narrower (	// src/main/scala/tile/FPU.scala:619:30
+  rocket_RecFNToRecFN narrower (	// src/main/scala/tile/rocket_FPU.scala:619:30
     .io_in             (in_bits_in1),	// src/main/scala/chisel3/util/Valid.scala:135:21
     .io_roundingMode   (in_bits_rm),	// src/main/scala/chisel3/util/Valid.scala:135:21
     .io_out            (_narrower_io_out),
     .io_exceptionFlags (_narrower_io_exceptionFlags)
   );
-  assign io_out_bits_data = io_out_bits_data_0;	// src/main/scala/tile/FPU.scala:573:7
-  assign io_out_bits_exc = io_out_bits_exc_0;	// src/main/scala/tile/FPU.scala:573:7
+  assign io_out_bits_data = io_out_bits_data_0;	// src/main/scala/tile/rocket_FPU.scala:573:7
+  assign io_out_bits_exc = io_out_bits_exc_0;	// src/main/scala/tile/rocket_FPU.scala:573:7
 endmodule
 

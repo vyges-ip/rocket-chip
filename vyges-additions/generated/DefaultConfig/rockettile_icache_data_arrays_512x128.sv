@@ -85,7 +85,7 @@
 `endif // not def STOP_COND_
 
 // VCS coverage exclude_file
-module rockettile_icache_data_arrays_512x128(	// src/main/scala/util/DescribedSRAM.scala:17:26
+module rocket_rockettile_icache_data_arrays_512x128(	// src/main/scala/util/DescribedSRAM.scala:17:26
   input  [8:0]   RW0_addr,
   input          RW0_en,
                  RW0_clk,

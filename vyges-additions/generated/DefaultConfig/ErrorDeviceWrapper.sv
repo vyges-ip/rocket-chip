@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module ErrorDeviceWrapper(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
+module rocket_ErrorDeviceWrapper(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   input         clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
                 reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   output        auto_buffer_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -145,7 +145,7 @@ module ErrorDeviceWrapper(	// dependencies/diplomacy/diplomacy/src/diplomacy/laz
   wire [63:0] auto_buffer_in_a_bits_data_0 = auto_buffer_in_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   wire        auto_buffer_in_a_bits_corrupt_0 = auto_buffer_in_a_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   wire        auto_buffer_in_d_ready_0 = auto_buffer_in_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
-  TLError error (	// src/main/scala/devices/tilelink/CanHaveBuiltInDevices.scala:40:29
+  rocket_TLError error (	// src/main/scala/devices/tilelink/CanHaveBuiltInDevices.scala:40:29
     .clock                  (clock),
     .reset                  (reset),
     .auto_in_a_ready        (_error_auto_in_a_ready),
@@ -165,7 +165,7 @@ module ErrorDeviceWrapper(	// dependencies/diplomacy/diplomacy/src/diplomacy/laz
     .auto_in_d_bits_source  (_error_auto_in_d_bits_source),
     .auto_in_d_bits_corrupt (_error_auto_in_d_bits_corrupt)
   );
-  TLBuffer_a14d64s5k1z4u buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
+  rocket_TLBuffer_a14d64s5k1z4u buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
     .clock                   (clock),
     .reset                   (reset),
     .auto_in_a_ready         (auto_buffer_in_a_ready_0),

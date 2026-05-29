@@ -84,9 +84,9 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  input         clock,	// src/main/scala/tilelink/ProbePicker.scala:42:9
-                reset,	// src/main/scala/tilelink/ProbePicker.scala:42:9
+module rocket_ProbePicker(	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  input         clock,	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+                reset,	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_in_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [2:0]  auto_in_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -137,71 +137,71 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
   input         auto_out_d_bits_corrupt	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
 );
 
-  wire        auto_in_a_valid_0 = auto_in_a_valid;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_in_a_bits_opcode_0 = auto_in_a_bits_opcode;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_in_a_bits_param_0 = auto_in_a_bits_param;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_in_a_bits_size_0 = auto_in_a_bits_size;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  auto_in_a_bits_source_0 = auto_in_a_bits_source;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [31:0] auto_in_a_bits_address_0 = auto_in_a_bits_address;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        auto_in_a_valid_0 = auto_in_a_valid;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_in_a_bits_opcode_0 = auto_in_a_bits_opcode;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_in_a_bits_param_0 = auto_in_a_bits_param;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_in_a_bits_size_0 = auto_in_a_bits_size;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  auto_in_a_bits_source_0 = auto_in_a_bits_source;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [31:0] auto_in_a_bits_address_0 = auto_in_a_bits_address;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_bufferable_0 =
-    auto_in_a_bits_user_amba_prot_bufferable;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_bufferable;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_modifiable_0 =
-    auto_in_a_bits_user_amba_prot_modifiable;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_modifiable;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_readalloc_0 =
-    auto_in_a_bits_user_amba_prot_readalloc;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_readalloc;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_writealloc_0 =
-    auto_in_a_bits_user_amba_prot_writealloc;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_writealloc;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_privileged_0 =
-    auto_in_a_bits_user_amba_prot_privileged;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_privileged;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_in_a_bits_user_amba_prot_secure_0 =
-    auto_in_a_bits_user_amba_prot_secure;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_a_bits_user_amba_prot_fetch_0 = auto_in_a_bits_user_amba_prot_fetch;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [7:0]  auto_in_a_bits_mask_0 = auto_in_a_bits_mask;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] auto_in_a_bits_data_0 = auto_in_a_bits_data;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_d_ready_0 = auto_in_d_ready;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_a_ready_0 = auto_out_a_ready;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_d_valid_0 = auto_out_d_valid;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_out_d_bits_opcode_0 = auto_out_d_bits_opcode;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_out_d_bits_size_0 = auto_out_d_bits_size;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  auto_out_d_bits_source_0 = auto_out_d_bits_source;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_d_bits_denied_0 = auto_out_d_bits_denied;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] auto_out_d_bits_data_0 = auto_out_d_bits_data;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_d_bits_corrupt_0 = auto_out_d_bits_corrupt;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [1:0]  auto_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [1:0]  auto_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [1:0]  nodeIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [1:0]  nodeOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_secure;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_a_bits_user_amba_prot_fetch_0 = auto_in_a_bits_user_amba_prot_fetch;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [7:0]  auto_in_a_bits_mask_0 = auto_in_a_bits_mask;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] auto_in_a_bits_data_0 = auto_in_a_bits_data;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_d_ready_0 = auto_in_d_ready;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_a_ready_0 = auto_out_a_ready;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_d_valid_0 = auto_out_d_valid;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_out_d_bits_opcode_0 = auto_out_d_bits_opcode;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_out_d_bits_size_0 = auto_out_d_bits_size;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  auto_out_d_bits_source_0 = auto_out_d_bits_source;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_d_bits_denied_0 = auto_out_d_bits_denied;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] auto_out_d_bits_data_0 = auto_out_d_bits_data;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_d_bits_corrupt_0 = auto_out_d_bits_corrupt;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [1:0]  auto_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [1:0]  auto_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [1:0]  nodeIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [1:0]  nodeOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  wire        nodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeIn_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeOut_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeIn_a_valid = auto_in_a_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  nodeIn_a_bits_opcode = auto_in_a_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  nodeIn_a_bits_param = auto_in_a_bits_param_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  nodeIn_a_bits_size = auto_in_a_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  nodeIn_a_bits_source = auto_in_a_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [31:0] nodeIn_a_bits_address = auto_in_a_bits_address_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        nodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeIn_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeOut_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeIn_a_valid = auto_in_a_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  nodeIn_a_bits_opcode = auto_in_a_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  nodeIn_a_bits_param = auto_in_a_bits_param_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  nodeIn_a_bits_size = auto_in_a_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  nodeIn_a_bits_source = auto_in_a_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [31:0] nodeIn_a_bits_address = auto_in_a_bits_address_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_bufferable =
-    auto_in_a_bits_user_amba_prot_bufferable_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_bufferable_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_modifiable =
-    auto_in_a_bits_user_amba_prot_modifiable_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_modifiable_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_readalloc =
-    auto_in_a_bits_user_amba_prot_readalloc_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_readalloc_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_writealloc =
-    auto_in_a_bits_user_amba_prot_writealloc_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_writealloc_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_privileged =
-    auto_in_a_bits_user_amba_prot_privileged_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_privileged_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_a_bits_user_amba_prot_secure =
-    auto_in_a_bits_user_amba_prot_secure_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeIn_a_bits_user_amba_prot_fetch = auto_in_a_bits_user_amba_prot_fetch_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [7:0]  nodeIn_a_bits_mask = auto_in_a_bits_mask_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] nodeIn_a_bits_data = auto_in_a_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeIn_d_ready = auto_in_d_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_in_a_bits_user_amba_prot_secure_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeIn_a_bits_user_amba_prot_fetch = auto_in_a_bits_user_amba_prot_fetch_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [7:0]  nodeIn_a_bits_mask = auto_in_a_bits_mask_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] nodeIn_a_bits_data = auto_in_a_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeIn_d_ready = auto_in_d_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [2:0]  nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [2:0]  nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -209,7 +209,7 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
   wire        nodeIn_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [63:0] nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        nodeIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  wire        nodeOut_a_ready = auto_out_a_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        nodeOut_a_ready = auto_out_a_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        nodeOut_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [2:0]  nodeOut_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [2:0]  nodeOut_a_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
@@ -226,14 +226,14 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
   wire [7:0]  nodeOut_a_bits_mask;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [63:0] nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        nodeOut_d_valid = auto_out_d_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  nodeOut_d_bits_opcode = auto_out_d_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  nodeOut_d_bits_size = auto_out_d_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  nodeOut_d_bits_source = auto_out_d_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeOut_d_bits_denied = auto_out_d_bits_denied_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] nodeOut_d_bits_data = auto_out_d_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        nodeOut_d_bits_corrupt = auto_out_d_bits_corrupt_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_a_ready_0 = nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        nodeOut_d_valid = auto_out_d_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  nodeOut_d_bits_opcode = auto_out_d_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  nodeOut_d_bits_size = auto_out_d_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  nodeOut_d_bits_source = auto_out_d_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeOut_d_bits_denied = auto_out_d_bits_denied_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] nodeOut_d_bits_data = auto_out_d_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        nodeOut_d_bits_corrupt = auto_out_d_bits_corrupt_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_a_ready_0 = nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign nodeOut_a_valid = nodeIn_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOut_a_bits_opcode = nodeIn_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOut_a_bits_param = nodeIn_a_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
@@ -254,37 +254,37 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
   assign nodeOut_a_bits_mask = nodeIn_a_bits_mask;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOut_a_bits_data = nodeIn_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOut_d_ready = nodeIn_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  wire        auto_in_d_valid_0 = nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_in_d_bits_opcode_0 = nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_in_d_bits_size_0 = nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  auto_in_d_bits_source_0 = nodeIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_d_bits_denied_0 = nodeIn_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] auto_in_d_bits_data_0 = nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_in_d_bits_corrupt_0 = nodeIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        auto_in_d_valid_0 = nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_in_d_bits_opcode_0 = nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_in_d_bits_size_0 = nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  auto_in_d_bits_source_0 = nodeIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_d_bits_denied_0 = nodeIn_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] auto_in_d_bits_data_0 = nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_in_d_bits_corrupt_0 = nodeIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign nodeIn_a_ready = nodeOut_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  wire        auto_out_a_valid_0 = nodeOut_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_out_a_bits_opcode_0 = nodeOut_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_out_a_bits_param_0 = nodeOut_a_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [2:0]  auto_out_a_bits_size_0 = nodeOut_a_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [6:0]  auto_out_a_bits_source_0 = nodeOut_a_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [31:0] auto_out_a_bits_address_0 = nodeOut_a_bits_address;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+  wire        auto_out_a_valid_0 = nodeOut_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_out_a_bits_opcode_0 = nodeOut_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_out_a_bits_param_0 = nodeOut_a_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [2:0]  auto_out_a_bits_size_0 = nodeOut_a_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [6:0]  auto_out_a_bits_source_0 = nodeOut_a_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [31:0] auto_out_a_bits_address_0 = nodeOut_a_bits_address;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_bufferable_0 =
-    nodeOut_a_bits_user_amba_prot_bufferable;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_bufferable;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_modifiable_0 =
-    nodeOut_a_bits_user_amba_prot_modifiable;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_modifiable;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_readalloc_0 =
-    nodeOut_a_bits_user_amba_prot_readalloc;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_readalloc;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_writealloc_0 =
-    nodeOut_a_bits_user_amba_prot_writealloc;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_writealloc;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_privileged_0 =
-    nodeOut_a_bits_user_amba_prot_privileged;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_privileged;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_secure_0 =
-    nodeOut_a_bits_user_amba_prot_secure;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_secure;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   wire        auto_out_a_bits_user_amba_prot_fetch_0 =
-    nodeOut_a_bits_user_amba_prot_fetch;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [7:0]  auto_out_a_bits_mask_0 = nodeOut_a_bits_mask;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire [63:0] auto_out_a_bits_data_0 = nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
-  wire        auto_out_d_ready_0 = nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/ProbePicker.scala:42:9
+    nodeOut_a_bits_user_amba_prot_fetch;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [7:0]  auto_out_a_bits_mask_0 = nodeOut_a_bits_mask;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire [63:0] auto_out_a_bits_data_0 = nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  wire        auto_out_d_ready_0 = nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign nodeIn_d_valid = nodeOut_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeIn_d_bits_opcode = nodeOut_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeIn_d_bits_size = nodeOut_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
@@ -292,7 +292,7 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
   assign nodeIn_d_bits_denied = nodeOut_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeIn_d_bits_data = nodeOut_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeIn_d_bits_corrupt = nodeOut_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  TLMonitor_18 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_18 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                                  (clock),
     .reset                                  (reset),
     .io_in_a_ready                          (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -320,34 +320,34 @@ module ProbePicker(	// src/main/scala/tilelink/ProbePicker.scala:42:9
     .io_in_d_bits_data                      (nodeIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt                   (nodeIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  assign auto_in_a_ready = auto_in_a_ready_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_valid = auto_in_d_valid_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_opcode = auto_in_d_bits_opcode_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_size = auto_in_d_bits_size_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_source = auto_in_d_bits_source_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_denied = auto_in_d_bits_denied_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_data = auto_in_d_bits_data_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_in_d_bits_corrupt = auto_in_d_bits_corrupt_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_valid = auto_out_a_valid_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_opcode = auto_out_a_bits_opcode_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_param = auto_out_a_bits_param_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_size = auto_out_a_bits_size_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_source = auto_out_a_bits_source_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_address = auto_out_a_bits_address_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+  assign auto_in_a_ready = auto_in_a_ready_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_valid = auto_in_d_valid_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_opcode = auto_in_d_bits_opcode_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_size = auto_in_d_bits_size_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_source = auto_in_d_bits_source_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_denied = auto_in_d_bits_denied_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_data = auto_in_d_bits_data_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_in_d_bits_corrupt = auto_in_d_bits_corrupt_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_valid = auto_out_a_valid_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_opcode = auto_out_a_bits_opcode_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_param = auto_out_a_bits_param_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_size = auto_out_a_bits_size_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_source = auto_out_a_bits_source_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_address = auto_out_a_bits_address_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign auto_out_a_bits_user_amba_prot_bufferable =
-    auto_out_a_bits_user_amba_prot_bufferable_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_out_a_bits_user_amba_prot_bufferable_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign auto_out_a_bits_user_amba_prot_modifiable =
-    auto_out_a_bits_user_amba_prot_modifiable_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_out_a_bits_user_amba_prot_modifiable_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign auto_out_a_bits_user_amba_prot_readalloc =
-    auto_out_a_bits_user_amba_prot_readalloc_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_out_a_bits_user_amba_prot_readalloc_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign auto_out_a_bits_user_amba_prot_writealloc =
-    auto_out_a_bits_user_amba_prot_writealloc_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_out_a_bits_user_amba_prot_writealloc_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
   assign auto_out_a_bits_user_amba_prot_privileged =
-    auto_out_a_bits_user_amba_prot_privileged_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_user_amba_prot_secure = auto_out_a_bits_user_amba_prot_secure_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_user_amba_prot_fetch = auto_out_a_bits_user_amba_prot_fetch_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_mask = auto_out_a_bits_mask_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_a_bits_data = auto_out_a_bits_data_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
-  assign auto_out_d_ready = auto_out_d_ready_0;	// src/main/scala/tilelink/ProbePicker.scala:42:9
+    auto_out_a_bits_user_amba_prot_privileged_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_user_amba_prot_secure = auto_out_a_bits_user_amba_prot_secure_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_user_amba_prot_fetch = auto_out_a_bits_user_amba_prot_fetch_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_mask = auto_out_a_bits_mask_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_a_bits_data = auto_out_a_bits_data_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
+  assign auto_out_d_ready = auto_out_d_ready_0;	// src/main/scala/tilelink/rocket_ProbePicker.scala:42:9
 endmodule
 

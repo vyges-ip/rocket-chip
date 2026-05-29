@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLError(	// src/main/scala/devices/tilelink/Error.scala:21:9
+module rocket_TLError(	// src/main/scala/devices/tilelink/Error.scala:21:9
   input         clock,	// src/main/scala/devices/tilelink/Error.scala:21:9
                 reset,	// src/main/scala/devices/tilelink/Error.scala:21:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -232,7 +232,7 @@ module TLError(	// src/main/scala/devices/tilelink/Error.scala:21:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/Error.scala:21:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_12 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_12 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -252,7 +252,7 @@ module TLError(	// src/main/scala/devices/tilelink/Error.scala:21:9
     .io_in_d_bits_source  (nodeIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt (nodeIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  Queue1_TLBundleA_a14d64s5k1z4u a_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_TLBundleA_a14d64s5k1z4u a_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (nodeIn_a_ready),

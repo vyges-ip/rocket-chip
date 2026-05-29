@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module LevelGateway(	// src/main/scala/devices/tilelink/Plic.scala:31:7
+module rocket_LevelGateway(	// src/main/scala/devices/tilelink/Plic.scala:31:7
   input  clock,	// src/main/scala/devices/tilelink/Plic.scala:31:7
          reset,	// src/main/scala/devices/tilelink/Plic.scala:31:7
          io_interrupt,	// src/main/scala/devices/tilelink/Plic.scala:32:14

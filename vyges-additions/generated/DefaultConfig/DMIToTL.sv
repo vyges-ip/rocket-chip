@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module DMIToTL(	// src/main/scala/devices/debug/DMI.scala:90:9
+module rocket_DMIToTL(	// src/main/scala/devices/debug/DMI.scala:90:9
   input         auto_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output        auto_out_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [2:0]  auto_out_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25

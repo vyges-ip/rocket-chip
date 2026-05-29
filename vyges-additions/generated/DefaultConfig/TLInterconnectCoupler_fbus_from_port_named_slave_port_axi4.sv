@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
+module rocket_TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   input         clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
                 reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   output        auto_axi4index_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -597,7 +597,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
   assign tlOut_a_bits_data = tlIn_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign tlOut_a_bits_corrupt = tlIn_a_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign tlOut_d_ready = tlIn_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  TLBuffer_a32d64s4k2z4u_1 buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
+  rocket_TLBuffer_a32d64s4k2z4u_1 buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
     .clock                                     (clock),
     .reset                                     (reset),
     .auto_in_a_ready                           (_buffer_auto_in_a_ready),
@@ -660,7 +660,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
     .auto_out_d_bits_data                      (tlIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .auto_out_d_bits_corrupt                   (tlIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  TLFIFOFixer_2 fixer (	// src/main/scala/tilelink/FIFOFixer.scala:152:27
+  rocket_TLFIFOFixer_2 fixer (	// src/main/scala/tilelink/FIFOFixer.scala:152:27
     .clock                                          (clock),
     .reset                                          (reset),
     .auto_anon_in_a_ready                           (widget_auto_anon_out_a_ready),
@@ -728,7 +728,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
     .auto_anon_out_d_bits_data                      (_buffer_auto_in_d_bits_data),	// src/main/scala/tilelink/Buffer.scala:75:28
     .auto_anon_out_d_bits_corrupt                   (_buffer_auto_in_d_bits_corrupt)	// src/main/scala/tilelink/Buffer.scala:75:28
   );
-  AXI4ToTL axi42tl (	// src/main/scala/amba/axi4/ToTL.scala:238:29
+  rocket_AXI4ToTL axi42tl (	// src/main/scala/amba/axi4/ToTL.scala:238:29
     .clock                                     (clock),
     .reset                                     (reset),
     .auto_in_aw_ready                          (_axi42tl_auto_in_aw_ready),
@@ -801,7 +801,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
     .auto_out_d_bits_data                      (widget_auto_anon_in_d_bits_data),	// src/main/scala/tilelink/WidthWidget.scala:27:9
     .auto_out_d_bits_corrupt                   (widget_auto_anon_in_d_bits_corrupt)	// src/main/scala/tilelink/WidthWidget.scala:27:9
   );
-  AXI4UserYanker_1 axi4yank (	// src/main/scala/amba/axi4/UserYanker.scala:125:30
+  rocket_AXI4UserYanker_1 axi4yank (	// src/main/scala/amba/axi4/UserYanker.scala:125:30
     .clock                          (clock),
     .reset                          (reset),
     .auto_in_aw_ready               (_axi4yank_auto_in_aw_ready),
@@ -887,7 +887,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
     .auto_out_r_bits_resp           (_axi42tl_auto_in_r_bits_resp),	// src/main/scala/amba/axi4/ToTL.scala:238:29
     .auto_out_r_bits_last           (_axi42tl_auto_in_r_bits_last)	// src/main/scala/amba/axi4/ToTL.scala:238:29
   );
-  AXI4Fragmenter axi4frag (	// src/main/scala/amba/axi4/Fragmenter.scala:224:30
+  rocket_AXI4Fragmenter axi4frag (	// src/main/scala/amba/axi4/Fragmenter.scala:224:30
     .clock                           (clock),
     .reset                           (reset),
     .auto_in_aw_ready                (_axi4frag_auto_in_aw_ready),
@@ -977,7 +977,7 @@ module TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4(	// dependenci
     .auto_out_r_bits_echo_real_last  (_axi4yank_auto_in_r_bits_echo_real_last),	// src/main/scala/amba/axi4/UserYanker.scala:125:30
     .auto_out_r_bits_last            (_axi4yank_auto_in_r_bits_last)	// src/main/scala/amba/axi4/UserYanker.scala:125:30
   );
-  AXI4IdIndexer_1 axi4index (	// src/main/scala/amba/axi4/IdIndexer.scala:108:31
+  rocket_AXI4IdIndexer_1 axi4index (	// src/main/scala/amba/axi4/IdIndexer.scala:108:31
     .auto_in_aw_ready               (auto_axi4index_in_aw_ready_0),
     .auto_in_aw_valid               (auto_axi4index_in_aw_valid_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
     .auto_in_aw_bits_id             (auto_axi4index_in_aw_bits_id_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7

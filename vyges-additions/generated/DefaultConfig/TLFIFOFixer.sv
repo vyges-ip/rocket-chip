@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLFIFOFixer(	// src/main/scala/tilelink/FIFOFixer.scala:50:9
+module rocket_TLFIFOFixer(	// src/main/scala/tilelink/FIFOFixer.scala:50:9
   input         clock,	// src/main/scala/tilelink/FIFOFixer.scala:50:9
                 reset,	// src/main/scala/tilelink/FIFOFixer.scala:50:9
   output        auto_anon_in_1_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -840,7 +840,7 @@ module TLFIFOFixer(	// src/main/scala/tilelink/FIFOFixer.scala:50:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/FIFOFixer.scala:50:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_2 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_2 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                                  (clock),
     .reset                                  (reset),
     .io_in_a_ready                          (anonIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -871,7 +871,7 @@ module TLFIFOFixer(	// src/main/scala/tilelink/FIFOFixer.scala:50:9
     .io_in_d_bits_data                      (anonIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt                   (anonIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  TLMonitor_3 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_3 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (anonIn_1_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

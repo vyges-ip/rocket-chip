@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLDebugModule(	// src/main/scala/devices/debug/Debug.scala:1958:9
+module rocket_TLDebugModule(	// src/main/scala/devices/debug/Debug.scala:1958:9
   output        auto_dmInner_dmInner_tl_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_dmInner_dmInner_tl_in_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [2:0]  auto_dmInner_dmInner_tl_in_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -207,7 +207,7 @@ module TLDebugModule(	// src/main/scala/devices/debug/Debug.scala:1958:9
   wire        io_ctrl_debugUnavail_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/debug/Debug.scala:1948:53, :1949:53, :1958:9, :1967:16
   wire        childClock = io_tl_clock_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/devices/debug/Debug.scala:1958:9
   wire        childReset = io_tl_reset_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/devices/debug/Debug.scala:1958:9
-  TLDebugModuleOuterAsync dmOuter (	// src/main/scala/devices/debug/Debug.scala:1948:53
+  rocket_TLDebugModuleOuterAsync dmOuter (	// src/main/scala/devices/debug/Debug.scala:1948:53
     .auto_asource_out_a_mem_0_opcode        (_dmOuter_auto_asource_out_a_mem_0_opcode),
     .auto_asource_out_a_mem_0_address       (_dmOuter_auto_asource_out_a_mem_0_address),
     .auto_asource_out_a_mem_0_data          (_dmOuter_auto_asource_out_a_mem_0_data),
@@ -260,7 +260,7 @@ module TLDebugModule(	// src/main/scala/devices/debug/Debug.scala:1958:9
   );
   wire        io_ctrl_dmactive_0;	// src/main/scala/devices/debug/Debug.scala:1958:9
   assign io_ctrl_dmactive_0 = _dmOuter_io_ctrl_dmactive;	// src/main/scala/devices/debug/Debug.scala:1948:53, :1958:9
-  TLDebugModuleInnerAsync dmInner (	// src/main/scala/devices/debug/Debug.scala:1949:53
+  rocket_TLDebugModuleInnerAsync dmInner (	// src/main/scala/devices/debug/Debug.scala:1949:53
     .auto_dmiXing_in_a_mem_0_opcode        (_dmOuter_auto_asource_out_a_mem_0_opcode),	// src/main/scala/devices/debug/Debug.scala:1948:53
     .auto_dmiXing_in_a_mem_0_address       (_dmOuter_auto_asource_out_a_mem_0_address),	// src/main/scala/devices/debug/Debug.scala:1948:53
     .auto_dmiXing_in_a_mem_0_data          (_dmOuter_auto_asource_out_a_mem_0_data),	// src/main/scala/devices/debug/Debug.scala:1948:53

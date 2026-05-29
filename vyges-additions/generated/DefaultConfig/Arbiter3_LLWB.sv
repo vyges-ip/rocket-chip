@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Arbiter3_LLWB(	// src/main/scala/chisel3/util/Arbiter.scala:133:7
+module rocket_Arbiter3_LLWB(	// src/main/scala/chisel3/util/Arbiter.scala:133:7
   output        io_in_0_ready,	// src/main/scala/chisel3/util/Arbiter.scala:140:14
   input         io_in_0_valid,	// src/main/scala/chisel3/util/Arbiter.scala:140:14
   input  [63:0] io_in_0_bits_data,	// src/main/scala/chisel3/util/Arbiter.scala:140:14

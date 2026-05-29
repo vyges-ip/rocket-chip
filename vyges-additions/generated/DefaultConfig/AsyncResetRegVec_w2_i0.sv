@@ -84,43 +84,43 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AsyncResetRegVec_w2_i0(	// src/main/scala/util/AsyncResetReg.scala:56:7
-  input        clock,	// src/main/scala/util/AsyncResetReg.scala:56:7
-               reset,	// src/main/scala/util/AsyncResetReg.scala:56:7
-  input  [1:0] io_d,	// src/main/scala/util/AsyncResetReg.scala:59:14
-  output [1:0] io_q	// src/main/scala/util/AsyncResetReg.scala:59:14
+module rocket_AsyncResetRegVec_w2_i0(	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+  input        clock,	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+               reset,	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+  input  [1:0] io_d,	// src/main/scala/util/rocket_AsyncResetReg.scala:59:14
+  output [1:0] io_q	// src/main/scala/util/rocket_AsyncResetReg.scala:59:14
 );
 
-  wire [1:0] io_d_0 = io_d;	// src/main/scala/util/AsyncResetReg.scala:56:7
-  wire       io_en = 1'h1;	// src/main/scala/util/AsyncResetReg.scala:56:7
-  reg  [1:0] reg_0;	// src/main/scala/util/AsyncResetReg.scala:61:50
-  wire [1:0] io_q_0 = reg_0;	// src/main/scala/util/AsyncResetReg.scala:56:7, :61:50
-  always @(posedge clock or posedge reset) begin	// src/main/scala/util/AsyncResetReg.scala:56:7
-    if (reset)	// src/main/scala/util/AsyncResetReg.scala:56:7
-      reg_0 <= 2'h0;	// src/main/scala/util/AsyncResetReg.scala:61:50
-    else	// src/main/scala/util/AsyncResetReg.scala:56:7
-      reg_0 <= io_d_0;	// src/main/scala/util/AsyncResetReg.scala:56:7, :61:50
+  wire [1:0] io_d_0 = io_d;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+  wire       io_en = 1'h1;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+  reg  [1:0] reg_0;	// src/main/scala/util/rocket_AsyncResetReg.scala:61:50
+  wire [1:0] io_q_0 = reg_0;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7, :61:50
+  always @(posedge clock or posedge reset) begin	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+    if (reset)	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      reg_0 <= 2'h0;	// src/main/scala/util/rocket_AsyncResetReg.scala:61:50
+    else	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      reg_0 <= io_d_0;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7, :61:50
   end // always @(posedge, posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/util/AsyncResetReg.scala:56:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/util/AsyncResetReg.scala:56:7
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/util/AsyncResetReg.scala:56:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/util/AsyncResetReg.scala:56:7
-      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/util/AsyncResetReg.scala:56:7
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/util/AsyncResetReg.scala:56:7
-        `INIT_RANDOM_PROLOG_	// src/main/scala/util/AsyncResetReg.scala:56:7
+    initial begin	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/util/AsyncResetReg.scala:56:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/util/AsyncResetReg.scala:56:7
-        reg_0 = _RANDOM[/*Zero width*/ 1'b0][1:0];	// src/main/scala/util/AsyncResetReg.scala:56:7, :61:50
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+        reg_0 = _RANDOM[/*Zero width*/ 1'b0][1:0];	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7, :61:50
       `endif // RANDOMIZE_REG_INIT
-      if (reset)	// src/main/scala/util/AsyncResetReg.scala:56:7
-        reg_0 = 2'h0;	// src/main/scala/util/AsyncResetReg.scala:61:50
+      if (reset)	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+        reg_0 = 2'h0;	// src/main/scala/util/rocket_AsyncResetReg.scala:61:50
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/util/AsyncResetReg.scala:56:7
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/util/AsyncResetReg.scala:56:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_q = io_q_0;	// src/main/scala/util/AsyncResetReg.scala:56:7
+  assign io_q = io_q_0;	// src/main/scala/util/rocket_AsyncResetReg.scala:56:7
 endmodule
 

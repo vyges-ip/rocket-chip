@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Queue1_RegMapperInput_i23_m8(	// src/main/scala/regmapper/RegMapper.scala:71:32
+module rocket_Queue1_RegMapperInput_i23_m8(	// src/main/scala/regmapper/RegMapper.scala:71:32
   input         clock,	// src/main/scala/regmapper/RegMapper.scala:71:32
                 reset,	// src/main/scala/regmapper/RegMapper.scala:71:32
   output        io_enq_ready,	// src/main/scala/chisel3/util/Decoupled.scala:255:14

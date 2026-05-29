@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module bootromClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_bootromClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   output        auto_bootrom_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_bootrom_in_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [2:0]  auto_bootrom_in_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -130,7 +130,7 @@ module bootromClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        clockNodeIn_reset = auto_clock_in_reset_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/prci/ClockDomain.scala:14:9
   wire        childClock = clockNodeIn_clock;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        childReset = clockNodeIn_reset;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  TLROM bootrom (	// src/main/scala/devices/tilelink/BootROM.scala:102:17
+  rocket_TLROM bootrom (	// src/main/scala/devices/tilelink/BootROM.scala:102:17
     .clock                  (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                  (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready        (auto_bootrom_in_a_ready_0),

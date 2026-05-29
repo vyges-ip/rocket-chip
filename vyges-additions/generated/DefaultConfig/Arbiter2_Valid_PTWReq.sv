@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Arbiter2_Valid_PTWReq(	// src/main/scala/chisel3/util/Arbiter.scala:133:7
+module rocket_Arbiter2_Valid_PTWReq(	// src/main/scala/chisel3/util/Arbiter.scala:133:7
   output        io_in_0_ready,	// src/main/scala/chisel3/util/Arbiter.scala:140:14
   input         io_in_0_valid,	// src/main/scala/chisel3/util/Arbiter.scala:140:14
   input  [26:0] io_in_0_bits_bits_addr,	// src/main/scala/chisel3/util/Arbiter.scala:140:14

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module IntSyncCrossingSource_n1x1(	// src/main/scala/interrupts/Crossing.scala:41:9
+module rocket_IntSyncCrossingSource_n1x1(	// src/main/scala/interrupts/Crossing.scala:41:9
   input  clock,	// src/main/scala/interrupts/Crossing.scala:41:9
          reset,	// src/main/scala/interrupts/Crossing.scala:41:9
          auto_in_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -95,7 +95,7 @@ module IntSyncCrossingSource_n1x1(	// src/main/scala/interrupts/Crossing.scala:4
   wire nodeIn_0 = auto_in_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/interrupts/Crossing.scala:41:9
   wire nodeOut_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire auto_out_sync_0_0 = nodeOut_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:41:9
-  AsyncResetRegVec_w1_i0 reg_0 (	// src/main/scala/util/AsyncResetReg.scala:86:21
+  rocket_AsyncResetRegVec_w1_i0 reg_0 (	// src/main/scala/util/rocket_AsyncResetReg.scala:86:21
     .clock (clock),
     .reset (reset),
     .io_d  (nodeIn_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
+module rocket_TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
   input        clock,	// src/main/scala/tilelink/Monitor.scala:35:7
                reset,	// src/main/scala/tilelink/Monitor.scala:35:7
                io_in_a_ready,	// src/main/scala/tilelink/Monitor.scala:19:14
@@ -627,109 +627,109 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
       automatic logic [3:0]      _GEN_96;	// src/main/scala/tilelink/Monitor.scala:841:35
       if (_GEN_40 & ~_GEN_39) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :84:72
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries AcquireBlock type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries AcquireBlock type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & ~_GEN_48) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :85:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries AcquireBlock from a client which does not support Probe (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries AcquireBlock from a client which does not support Probe (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & ~mask_sub_sub_sub_0_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/util/Misc.scala:206:21
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & _GEN_49) begin	// src/main/scala/tilelink/Bundles.scala:111:27, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock carries invalid grow param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock carries invalid grow param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & _GEN_50) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :90:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_40 & io_in_a_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquireBlock is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquireBlock is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~_GEN_39) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :84:72
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries AcquirePerm type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries AcquirePerm type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~_GEN_48) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :85:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries AcquirePerm from a client which does not support Probe (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries AcquirePerm from a client which does not support Probe (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~mask_sub_sub_sub_0_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/util/Misc.scala:206:21
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & _GEN_49) begin	// src/main/scala/tilelink/Bundles.scala:111:27, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm carries invalid grow param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm carries invalid grow param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & ~(|io_in_a_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :101:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm requests NtoB (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm requests NtoB (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & _GEN_50) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :90:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_51 & io_in_a_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel AcquirePerm is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel AcquirePerm is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & ~_GEN_36) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1174:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries Get type which master claims it can't emit (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries Get type which master claims it can't emit (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
@@ -737,343 +737,343 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(_GEN_53 | _GEN_37
               & (_GEN_41 | _GEN_43 | _GEN_44 | _GEN_45 | _GEN_46 | _GEN_38))) begin	// src/main/scala/diplomacy/Parameters.scala:94:38, :139:{41,46,59}, src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:684:54, :685:42, :686:26
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries Get type which slave claims it can't support (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries Get type which slave claims it can't support (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Get carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Get carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Get address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Get address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & (|io_in_a_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :101:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Get carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Get carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & _GEN_54) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :112:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Get contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Get contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_52 & io_in_a_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Get is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Get is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_56 & ~_GEN_55) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :117:71
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries PutFull type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries PutFull type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_56 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutFull carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutFull carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_56 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutFull address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutFull address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_56 & (|io_in_a_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :101:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutFull carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutFull carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_56 & _GEN_54) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :112:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutFull contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutFull contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_57 & ~_GEN_55) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :117:71
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries PutPartial type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries PutPartial type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_57 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutPartial carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutPartial carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_57 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutPartial address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutPartial address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_57 & (|io_in_a_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :101:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutPartial carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutPartial carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_57 & (|(io_in_a_bits_mask_0 & ~mask))) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :129:{31,33,40}, src/main/scala/util/Misc.scala:222:10
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel PutPartial contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel PutPartial contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_59 & ~_GEN_58) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :133:74
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries Arithmetic type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries Arithmetic type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_59 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Arithmetic carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Arithmetic carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_59 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Arithmetic address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Arithmetic address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_59 & io_in_a_bits_param_0 > 3'h4) begin	// src/main/scala/tilelink/Bundles.scala:141:33, src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :642:42, :643:42
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Arithmetic carries invalid opcode param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Arithmetic carries invalid opcode param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_59 & _GEN_54) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :112:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Arithmetic contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Arithmetic contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_60 & ~_GEN_58) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :133:74
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries Logical type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries Logical type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_60 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Logical carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Logical carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_60 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Logical address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Logical address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_60 & io_in_a_bits_param_0[2]) begin	// src/main/scala/tilelink/Bundles.scala:148:30, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Logical carries invalid opcode param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Logical carries invalid opcode param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_60 & _GEN_54) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :112:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Logical contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Logical contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & ~(_GEN_36 & _GEN_53)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :149:68, src/main/scala/tilelink/Parameters.scala:684:54, :1174:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel carries Hint type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel carries Hint type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & ~source_ok) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Hint carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Hint carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & ~is_aligned) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Hint address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Hint address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & (|(io_in_a_bits_param_0[2:1]))) begin	// src/main/scala/tilelink/Bundles.scala:161:28, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Hint carries invalid opcode param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Hint carries invalid opcode param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & _GEN_54) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :112:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Hint contains invalid mask (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Hint contains invalid mask (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_61 & io_in_a_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel Hint is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel Hint is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (io_in_d_valid_0 & ~reset & (&io_in_d_bits_opcode_0)) begin	// src/main/scala/tilelink/Bundles.scala:45:24, src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel has invalid opcode (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel has invalid opcode (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_62 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel ReleaseAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel ReleaseAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_62 & _GEN_63) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :314:27
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel ReleaseAck smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel ReleaseAck smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_62 & (|io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :315:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel ReleaseeAck carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel ReleaseeAck carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_62 & io_in_d_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel ReleaseAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel ReleaseAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_62 & io_in_d_bits_denied_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel ReleaseAck is denied (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel ReleaseAck is denied (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_64 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel Grant carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel Grant carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_64 & _GEN_63) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :314:27
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel Grant smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel Grant smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_64 & (&io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Bundles.scala:105:26, src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel Grant carries invalid cap param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel Grant carries invalid cap param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_64 & _GEN_65) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :325:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel Grant carries toN param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel Grant carries toN param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_64 & io_in_d_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel Grant is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel Grant is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_66 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel GrantData carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel GrantData carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_66 & _GEN_63) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :314:27
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel GrantData smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel GrantData smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_66 & (&io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Bundles.scala:105:26, src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel GrantData carries invalid cap param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel GrantData carries invalid cap param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_66 & _GEN_65) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :325:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel GrantData carries toN param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel GrantData carries toN param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_66 & ~_GEN_67) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :336:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel GrantData is denied but not corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel GrantData is denied but not corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_68 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_68 & (|io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :315:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAck carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAck carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_68 & io_in_d_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_69 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAckData carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAckData carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_69 & (|io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :315:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAckData carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAckData carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_69 & ~_GEN_67) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :336:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel AccessAckData is denied but not corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel AccessAckData is denied but not corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_70 & ~source_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel HintAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel HintAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_70 & (|io_in_d_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :315:28
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel HintAck carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel HintAck carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_70 & io_in_d_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel HintAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel HintAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1081,375 +1081,375 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(~(|(io_in_b_bits_address_0[31:12])) | ~(|_GEN_1) | ~(|_GEN_2) | ~(|_GEN_3)
               | ~(|_GEN_4) | ~(|_GEN_5) | ~_GEN_6)) begin	// src/main/scala/diplomacy/Parameters.scala:139:{41,46,59}, src/main/scala/tilelink/Monitor.scala:35:7, :51:11, src/main/scala/tilelink/Parameters.scala:685:42
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'B' channel carries Probe type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'B' channel carries Probe type which is unexpected using diplomatic parameters (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_71 & ~address_ok) begin	// src/main/scala/tilelink/Monitor.scala:51:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'B' channel Probe carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'B' channel Probe carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_71 & ~is_aligned_1) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'B' channel Probe address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'B' channel Probe address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_71 & (&io_in_b_bits_param_0)) begin	// src/main/scala/tilelink/Bundles.scala:105:26, src/main/scala/tilelink/Monitor.scala:35:7, :51:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'B' channel Probe carries invalid cap param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'B' channel Probe carries invalid cap param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_72 & ~address_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_72 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_72 & _GEN_73) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :247:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_72 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_72 & (&(io_in_c_bits_param_0[2:1]))) begin	// src/main/scala/tilelink/Bundles.scala:123:29, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck carries invalid report param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck carries invalid report param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_72 & io_in_c_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_74 & ~address_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAckData carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAckData carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_74 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAckData carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAckData carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_74 & _GEN_73) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :247:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAckData smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAckData smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_74 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAckData address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAckData address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_74 & (&(io_in_c_bits_param_0[2:1]))) begin	// src/main/scala/tilelink/Bundles.scala:123:29, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ProbeAckData carries invalid report param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ProbeAckData carries invalid report param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & ~_GEN_76) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :262:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel carries Release type unsupported by manager (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel carries Release type unsupported by manager (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & ~_GEN_78) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :263:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel carries Release from a client which does not support Probe (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel carries Release from a client which does not support Probe (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel Release carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel Release carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & _GEN_73) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :247:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel Release smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel Release smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel Release address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel Release address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & (&(io_in_c_bits_param_0[2:1]))) begin	// src/main/scala/tilelink/Bundles.scala:123:29, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel Release carries invalid report param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel Release carries invalid report param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_77 & io_in_c_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel Release is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel Release is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & ~_GEN_76) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :262:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel carries ReleaseData type unsupported by manager (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel carries ReleaseData type unsupported by manager (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & ~_GEN_78) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :263:78
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel carries Release from a client which does not support Probe (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel carries Release from a client which does not support Probe (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ReleaseData carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ReleaseData carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & _GEN_73) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :247:30
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ReleaseData smaller than a beat (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ReleaseData smaller than a beat (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ReleaseData address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ReleaseData address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_79 & (&(io_in_c_bits_param_0[2:1]))) begin	// src/main/scala/tilelink/Bundles.scala:123:29, src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel ReleaseData carries invalid report param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel ReleaseData carries invalid report param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_80 & ~address_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAck carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAck carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_80 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_80 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAck address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAck address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_80 & (|io_in_c_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :284:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAck carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAck carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_80 & io_in_c_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_81 & ~address_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAckData carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAckData carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_81 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAckData carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAckData carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_81 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAckData address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAckData address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_81 & (|io_in_c_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :284:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel AccessAckData carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel AccessAckData carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_82 & ~address_ok_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:636:64
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel HintAck carries unmanaged address (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel HintAck carries unmanaged address (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_82 & ~source_ok_2) begin	// src/main/scala/tilelink/Monitor.scala:44:11, src/main/scala/tilelink/Parameters.scala:1139:46
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel HintAck carries invalid source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel HintAck carries invalid source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_82 & ~is_aligned_2) begin	// src/main/scala/tilelink/Edges.scala:21:24, src/main/scala/tilelink/Monitor.scala:44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel HintAck address not aligned to size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel HintAck address not aligned to size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_82 & (|io_in_c_bits_param_0)) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :284:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel HintAck carries invalid param (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel HintAck carries invalid param (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_82 & io_in_c_bits_corrupt_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel HintAck is corrupt (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel HintAck is corrupt (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_83 & io_in_a_bits_opcode_0 != opcode) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :386:22, :392:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_83 & io_in_a_bits_param_0 != param) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :387:22, :393:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel param changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel param changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_83 & io_in_a_bits_size_0 != size) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :388:22, :394:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel size changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel size changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_83 & io_in_a_bits_source_0 != source) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :389:22, :395:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel source changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel source changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_83 & io_in_a_bits_address_0 != address) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :390:22, :396:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel address changed with multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel address changed with multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_84 & io_in_d_bits_opcode_0 != opcode_1) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :537:22, :544:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_84 & io_in_d_bits_param_0 != param_1) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :538:22, :545:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel param changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel param changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_84 & io_in_d_bits_size_0 != size_1) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :539:22, :546:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel size changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel size changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_84 & io_in_d_bits_source_0 != source_1) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :540:22, :547:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel source changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel source changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_84 & io_in_d_bits_sink_0 != sink) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :541:22, :548:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel sink changed with multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel sink changed with multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_84 & io_in_d_bits_denied_0 != denied) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :542:22, :549:29
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel denied changed with multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel denied changed with multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_85 & io_in_b_bits_param_0 != param_2) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :410:22, :416:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'B' channel param changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'B' channel param changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_85 & io_in_b_bits_address_0 != address_1) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :413:22, :419:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'B' channel addresss changed with multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'B' channel addresss changed with multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_86 & io_in_c_bits_opcode_0 != opcode_3) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :514:22, :520:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel opcode changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_86 & io_in_c_bits_param_0 != param_3) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :515:22, :521:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel param changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel param changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_86 & io_in_c_bits_size_0 != size_3) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :516:22, :522:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel size changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel size changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_86 & io_in_c_bits_source_0 != source_3) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :517:22, :523:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel source changed within multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel source changed within multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       if (_GEN_86 & io_in_c_bits_address_0 != address_2) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :518:22, :524:32
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel address changed with multibeat operation (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel address changed with multibeat operation (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       _GEN_91 = inflight >> io_in_a_bits_source_0;	// src/main/scala/tilelink/Monitor.scala:35:7, :613:27, :660:26
       if (_GEN_17 & ~reset & _GEN_91[0]) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :654:25, :660:26
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'A' channel re-used a source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'A' channel re-used a source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       _GEN_92 = inflight >> _GEN_87;	// src/main/scala/tilelink/Monitor.scala:613:27, :684:25
       if (_GEN_19 & ~reset & ~(_GEN_92[0] | same_cycle_resp)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :673:71, :683:88, :684:{25,49}
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1457,13 +1457,13 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(io_in_d_bits_opcode_0 == _GEN_34[io_in_a_bits_opcode_0]
               | io_in_d_bits_opcode_0 == _GEN_33[io_in_a_bits_opcode_0])) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :687:{38,77}, :688:39
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper opcode response (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper opcode response (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_88 & io_in_a_bits_size_0 != io_in_d_bits_size_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :689:36
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1471,13 +1471,13 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(io_in_d_bits_opcode_0 == _GEN_34[a_opcode_lookup]
               | io_in_d_bits_opcode_0 == _GEN_33[a_opcode_lookup])) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :51:11, :634:35, :687:38, :688:39, :691:{38,72}, :692:38
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper opcode response (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper opcode response (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_89 & _GEN_90 != a_size_lookup) begin	// src/main/scala/tilelink/Monitor.scala:51:11, :638:33, :693:36
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1491,7 +1491,7 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
       end
       if (~reset & ~(a_set_wo_ready != d_clr_wo_ready | a_set_wo_ready == 3'h0)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :626:34, :642:42, :643:42, :664:34, :701:{29,48,67}
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'A' and 'D' concurrent, despite minlatency > 0 (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'A' and 'D' concurrent, despite minlatency > 0 (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1499,34 +1499,34 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(inflight == 3'h0 | _plusarg_reader_out == 32'h0
               | watchdog < _plusarg_reader_out)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :613:27, :642:42, :643:42, :708:27, :711:{26,39,47,59}, src/main/scala/util/PlusArg.scala:80:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: TileLink timeout expired (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: TileLink timeout expired (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       _GEN_93 = inflight_1 >> io_in_c_bits_source_0;	// src/main/scala/tilelink/Monitor.scala:35:7, :725:35, :768:26
       if (_GEN_26 & ~reset & _GEN_93[0]) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :762:36, :768:26
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'C' channel re-used a source ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'C' channel re-used a source ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       _GEN_94 = inflight_1 >> _GEN_87;	// src/main/scala/tilelink/Monitor.scala:684:25, :725:35, :795:25
       if (_GEN_28 & ~reset & ~(_GEN_94[0] | same_cycle_resp_1)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :783:71, :794:88, :795:{25,49}
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_28 & same_cycle_resp_1 & ~reset
           & io_in_d_bits_size_0 != io_in_c_bits_size_0) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :51:11, :783:71, :794:88, :797:36
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       if (_GEN_28 & ~same_cycle_resp_1 & ~reset & _GEN_90 != c_size_lookup) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :693:36, :747:35, :783:71, :794:88, :796:30, :799:36
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel contains improper response size (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1540,7 +1540,7 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
       end
       if ((|c_set_wo_ready) & ~reset & c_set_wo_ready == d_clr_wo_ready_1) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :738:34, :774:34, :808:28, :809:31
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'C' and 'D' concurrent, despite minlatency > 0 (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'C' and 'D' concurrent, despite minlatency > 0 (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
@@ -1548,21 +1548,21 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
           & ~(inflight_1 == 3'h0 | _plusarg_reader_1_out == 32'h0
               | watchdog_1 < _plusarg_reader_1_out)) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :642:42, :643:42, :708:27, :725:35, :817:27, :820:{26,39,47,59}, src/main/scala/util/PlusArg.scala:80:11
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: TileLink timeout expired (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: TileLink timeout expired (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
       _GEN_95 = inflight_2 >> _GEN_31;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/Monitor.scala:827:27, :835:23
       if (_GEN_30 & ~reset & _GEN_95[0]) begin	// src/main/scala/tilelink/Monitor.scala:44:11, :51:11, :833:36, :835:23
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
-          $error("Assertion failed: 'D' channel re-used a sink ID (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
+          $error("Assertion failed: 'D' channel re-used a sink ID (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:51 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:51:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:51:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:51:11
       end
       _GEN_96 = (d_set | inflight_2) >> _GEN_32;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/Monitor.scala:827:27, :832:25, :841:{24,35}
       if (io_in_e_valid_0 & ~reset & ~(_GEN_96[0])) begin	// src/main/scala/tilelink/Monitor.scala:35:7, :44:11, :841:35
         if (`ASSERT_VERBOSE_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
-          $error("Assertion failed: 'E' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
+          $error("Assertion failed: 'E' channel acknowledged for nothing inflight (connected at src/main/scala/subsystem/rocket_SystemBus.scala:48:55)\n    at Monitor.scala:44 assert(cond, message)\n");	// src/main/scala/tilelink/Monitor.scala:44:11
         if (`STOP_COND_)	// src/main/scala/tilelink/Monitor.scala:44:11
           $fatal;	// src/main/scala/tilelink/Monitor.scala:44:11
       end
@@ -1732,14 +1732,14 @@ module TLMonitor_1(	// src/main/scala/tilelink/Monitor.scala:35:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Monitor.scala:35:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  plusarg_reader #(
+  rocket_plusarg_reader #(
     .DEFAULT(0),
     .FORMAT("tilelink_timeout=%d"),
     .WIDTH(32)
-  ) plusarg_reader (	// src/main/scala/util/PlusArg.scala:80:11
+  ) rocket_plusarg_reader (	// src/main/scala/util/PlusArg.scala:80:11
     .out (_plusarg_reader_out)
   );
-  plusarg_reader #(
+  rocket_plusarg_reader #(
     .DEFAULT(0),
     .FORMAT("tilelink_timeout=%d"),
     .WIDTH(32)

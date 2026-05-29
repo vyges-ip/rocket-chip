@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
+module rocket_TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
   input         clock,	// src/main/scala/devices/tilelink/Plic.scala:132:9
                 reset,	// src/main/scala/devices/tilelink/Plic.scala:132:9
                 auto_int_in_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -888,7 +888,7 @@ module TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/Plic.scala:132:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_26 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_26 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -908,7 +908,7 @@ module TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
     .io_in_d_bits_source  (nodeIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_data    (nodeIn_d_bits_data)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  LevelGateway gateways_gateway (	// src/main/scala/devices/tilelink/Plic.scala:158:27
+  rocket_LevelGateway gateways_gateway (	// src/main/scala/devices/tilelink/Plic.scala:158:27
     .clock            (clock),
     .reset            (reset),
     .io_interrupt     (intnodeIn_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -916,7 +916,7 @@ module TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
     .io_plic_ready    (~pending_0),	// src/main/scala/devices/tilelink/Plic.scala:170:26, :254:18
     .io_plic_complete (completedDevs[1])	// src/main/scala/devices/tilelink/Plic.scala:268:28, :269:33
   );
-  LevelGateway gateways_gateway_1 (	// src/main/scala/devices/tilelink/Plic.scala:158:27
+  rocket_LevelGateway gateways_gateway_1 (	// src/main/scala/devices/tilelink/Plic.scala:158:27
     .clock            (clock),
     .reset            (reset),
     .io_interrupt     (intnodeIn_1),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -924,21 +924,21 @@ module TLPLIC(	// src/main/scala/devices/tilelink/Plic.scala:132:9
     .io_plic_ready    (~pending_1),	// src/main/scala/devices/tilelink/Plic.scala:170:26, :254:18
     .io_plic_complete (completedDevs[2])	// src/main/scala/devices/tilelink/Plic.scala:268:28, :269:33
   );
-  PLICFanIn fanin (	// src/main/scala/devices/tilelink/Plic.scala:187:27
+  rocket_PLICFanIn fanin (	// src/main/scala/devices/tilelink/Plic.scala:187:27
     .io_prio_0 (priority_0),	// src/main/scala/devices/tilelink/Plic.scala:165:31
     .io_prio_1 (priority_1),	// src/main/scala/devices/tilelink/Plic.scala:165:31
     .io_ip     (enableVec_0 & pendingUInt),	// src/main/scala/devices/tilelink/Plic.scala:180:28, :184:26, :189:40
     .io_dev    (_fanin_io_dev),
     .io_max    (_fanin_io_max)
   );
-  PLICFanIn fanin_1 (	// src/main/scala/devices/tilelink/Plic.scala:187:27
+  rocket_PLICFanIn fanin_1 (	// src/main/scala/devices/tilelink/Plic.scala:187:27
     .io_prio_0 (priority_0),	// src/main/scala/devices/tilelink/Plic.scala:165:31
     .io_prio_1 (priority_1),	// src/main/scala/devices/tilelink/Plic.scala:165:31
     .io_ip     (enableVec_1 & pendingUInt),	// src/main/scala/devices/tilelink/Plic.scala:180:28, :184:26, :189:40
     .io_dev    (_fanin_1_io_dev),
     .io_max    (_fanin_1_io_max)
   );
-  Queue1_RegMapperInput_i23_m8 out_back_front_q (	// src/main/scala/tilelink/RegisterRouter.scala:87:24
+  rocket_Queue1_RegMapperInput_i23_m8 out_back_front_q (	// src/main/scala/tilelink/RegisterRouter.scala:87:24
     .clock                               (clock),
     .reset                               (reset),
     .io_enq_ready                        (out_front_ready),

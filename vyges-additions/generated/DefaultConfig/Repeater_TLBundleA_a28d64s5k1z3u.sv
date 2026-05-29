@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Repeater_TLBundleA_a28d64s5k1z3u(	// src/main/scala/util/Repeater.scala:10:7
+module rocket_Repeater_TLBundleA_a28d64s5k1z3u(	// src/main/scala/util/Repeater.scala:10:7
   input         clock,	// src/main/scala/util/Repeater.scala:10:7
                 reset,	// src/main/scala/util/Repeater.scala:10:7
                 io_repeat,	// src/main/scala/util/Repeater.scala:13:14

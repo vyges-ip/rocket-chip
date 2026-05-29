@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-// external module plusarg_reader
+// external module rocket_plusarg_reader
 
-// external module plusarg_reader
+// external module rocket_plusarg_reader
 

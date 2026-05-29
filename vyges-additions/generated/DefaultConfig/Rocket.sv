@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
+module rocket_Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
   input         clock,	// src/main/scala/rocket/RocketCore.scala:158:7
                 reset,	// src/main/scala/rocket/RocketCore.scala:158:7
                 io_hartid,	// src/main/scala/rocket/RocketCore.scala:138:14
@@ -10792,7 +10792,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
   wire [63:0]      io_fpu_fromint_data_0 = ex_rs_0;	// src/main/scala/rocket/RocketCore.scala:158:7, :476:14
   wire [63:0]      ex_rs_1 =
     ex_reg_rs_bypass_1 ? _GEN_20[ex_reg_rs_lsb_1] : {ex_reg_rs_msb_1, ex_reg_rs_lsb_1};	// src/main/scala/rocket/RocketCore.scala:472:29, :473:26, :474:26, :476:{14,69}, src/main/scala/util/package.scala:40:{76,86}
-  wire [63:0]      mem_reg_rs2_dat_padded = ex_rs_1;	// src/main/scala/rocket/AMOALU.scala:13:27, src/main/scala/rocket/RocketCore.scala:476:14
+  wire [63:0]      mem_reg_rs2_dat_padded = ex_rs_1;	// src/main/scala/rocket/rocket_AMOALU.scala:13:27, src/main/scala/rocket/RocketCore.scala:476:14
   wire             _ex_imm_b0_T_4 = ex_ctrl_sel_imm == 3'h5;	// src/main/scala/rocket/RocketCore.scala:248:20, :1372:24
   wire             ex_imm_sign = ~_ex_imm_b0_T_4 & ex_reg_inst[31];	// src/main/scala/rocket/RocketCore.scala:264:24, :1372:{19,24,44}
   wire             ex_imm_hi_hi_hi = ex_imm_sign;	// src/main/scala/rocket/RocketCore.scala:1372:19, :1386:8
@@ -10944,7 +10944,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     mem_ctrl_branch & mem_br_taken != mem_reg_btb_resp_taken;	// src/main/scala/rocket/RocketCore.scala:249:21, :272:36, :289:25, :634:{53,69}
   assign take_pc_mem = mem_reg_valid & ~mem_reg_xcpt & (mem_wrong_npc | mem_reg_sfence);	// src/main/scala/rocket/RocketCore.scala:270:36, :273:36, :281:27, :290:25, :628:8, :631:27, :636:{49,71}
   wire [1:0]       size = ex_ctrl_rocc ? 2'h3 : ex_reg_mem_size;	// src/main/scala/chisel3/util/Mux.scala:50:70, src/main/scala/rocket/RocketCore.scala:248:20, :262:28, :671:21
-  wire [1:0]       mem_reg_rs2_size = size;	// src/main/scala/rocket/AMOALU.scala:11:18, src/main/scala/rocket/RocketCore.scala:671:21
+  wire [1:0]       mem_reg_rs2_size = size;	// src/main/scala/rocket/rocket_AMOALU.scala:11:18, src/main/scala/rocket/RocketCore.scala:671:21
   wire             mem_breakpoint =
     mem_reg_load & _bpu_io_xcpt_ld | mem_reg_store & _bpu_io_xcpt_st;	// src/main/scala/rocket/RocketCore.scala:278:36, :279:36, :421:19, :684:{38,57,75}
   wire             mem_debug_breakpoint =
@@ -11478,8 +11478,8 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
         {{mem_reg_rs2_dat_padded},
          {{2{mem_reg_rs2_dat_padded[31:0]}}},
          {{2{{2{mem_reg_rs2_dat_padded[15:0]}}}}},
-         {{2{{2{{2{mem_reg_rs2_dat_padded[7:0]}}}}}}}};	// src/main/scala/rocket/AMOALU.scala:13:27, :29:{13,19,32,69}
-      mem_reg_rs2 <= _GEN_46[mem_reg_rs2_size];	// src/main/scala/rocket/AMOALU.scala:11:18, :29:{13,19}, src/main/scala/rocket/RocketCore.scala:288:24
+         {{2{{2{{2{mem_reg_rs2_dat_padded[7:0]}}}}}}}};	// src/main/scala/rocket/rocket_AMOALU.scala:13:27, :29:{13,19,32,69}
+      mem_reg_rs2 <= _GEN_46[mem_reg_rs2_size];	// src/main/scala/rocket/rocket_AMOALU.scala:11:18, :29:{13,19}, src/main/scala/rocket/RocketCore.scala:288:24
     end
     if (_GEN_39) begin	// src/main/scala/rocket/RocketCore.scala:249:21, :291:35, :645:46, :647:28
     end
@@ -11740,7 +11740,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/RocketCore.scala:158:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  IBuf ibuf (	// src/main/scala/rocket/RocketCore.scala:317:20
+  rocket_IBuf ibuf (	// src/main/scala/rocket/RocketCore.scala:317:20
     .clock                        (clock),
     .reset                        (reset),
     .io_imem_ready                (io_imem_resp_ready_0),
@@ -11791,7 +11791,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
   assign io_fpu_inst_0 = _ibuf_io_inst_0_bits_inst_bits;	// src/main/scala/rocket/RocketCore.scala:158:7, :317:20
   assign id_ctrl_decoder_decoded_plaInput = _ibuf_io_inst_0_bits_inst_bits;	// src/main/scala/chisel3/util/pla.scala:77:22, src/main/scala/rocket/RocketCore.scala:317:20
   assign id_raddr1 = _ibuf_io_inst_0_bits_inst_rs1;	// src/main/scala/rocket/RocketCore.scala:317:20, :332:72
-  rf_31x64 rf_ext (	// src/main/scala/rocket/RocketCore.scala:1350:15
+  rocket_rf_31x64 rf_ext (	// src/main/scala/rocket/RocketCore.scala:1350:15
     .R0_addr (~id_raddr2),	// src/main/scala/rocket/RocketCore.scala:332:72, :1351:39
     .R0_en   (1'h1),	// src/main/scala/rocket/RocketCore.scala:158:7
     .R0_clk  (clock),
@@ -11805,7 +11805,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     .W0_clk  (clock),
     .W0_data (rf_wdata)	// src/main/scala/rocket/RocketCore.scala:827:21
   );
-  CSRFile csr (	// src/main/scala/rocket/RocketCore.scala:347:19
+  rocket_CSRFile csr (	// src/main/scala/rocket/RocketCore.scala:347:19
     .clock                              (clock),
     .reset                              (reset),
     .io_ungated_clock                   (clock),
@@ -12125,7 +12125,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
   assign coreMonitorBundle_inst = _csr_io_trace_0_insn;	// src/main/scala/rocket/RocketCore.scala:347:19, :1217:31
   wire [2:0]       xrfWriteBundle_priv_mode;	// src/main/scala/rocket/RocketCore.scala:1280:28
   assign xrfWriteBundle_priv_mode = _csr_io_trace_0_priv;	// src/main/scala/rocket/RocketCore.scala:347:19, :1280:28
-  BreakpointUnit bpu (	// src/main/scala/rocket/RocketCore.scala:421:19
+  rocket_BreakpointUnit bpu (	// src/main/scala/rocket/RocketCore.scala:421:19
     .io_status_debug        (_csr_io_status_debug),	// src/main/scala/rocket/RocketCore.scala:347:19
     .io_status_cease        (_csr_io_status_cease),	// src/main/scala/rocket/RocketCore.scala:347:19
     .io_status_wfi          (_csr_io_status_wfi),	// src/main/scala/rocket/RocketCore.scala:347:19
@@ -12174,7 +12174,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     .io_bpwatch_0_wvalid_0  (_bpu_io_bpwatch_0_wvalid_0),
     .io_bpwatch_0_ivalid_0  (_bpu_io_bpwatch_0_ivalid_0)
   );
-  RocketALU alu (	// src/main/scala/rocket/RocketCore.scala:511:19
+  rocket_RocketALU alu (	// src/main/scala/rocket/RocketCore.scala:511:19
     .io_dw        (ex_ctrl_alu_dw),	// src/main/scala/rocket/RocketCore.scala:248:20
     .io_fn        (ex_ctrl_alu_fn),	// src/main/scala/rocket/RocketCore.scala:248:20
     .io_in2       (ex_op2),	// src/main/scala/rocket/RocketCore.scala:485:48
@@ -12183,7 +12183,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     .io_adder_out (_alu_io_adder_out),
     .io_cmp_out   (_alu_io_cmp_out)
   );
-  MulDiv div (	// src/main/scala/rocket/RocketCore.scala:518:19
+  rocket_MulDiv div (	// src/main/scala/rocket/RocketCore.scala:518:19
     .clock             (clock),
     .reset             (reset),
     .io_req_ready      (_div_io_req_ready),
@@ -12199,7 +12199,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     .io_resp_bits_data (_div_io_resp_bits_data),
     .io_resp_bits_tag  (_div_io_resp_bits_tag)
   );
-  Arbiter3_LLWB ll_arb (	// src/main/scala/rocket/RocketCore.scala:784:22
+  rocket_Arbiter3_LLWB ll_arb (	// src/main/scala/rocket/RocketCore.scala:784:22
     .io_in_0_ready     (_ll_arb_io_in_0_ready),
     .io_in_0_valid     (_div_io_resp_valid),	// src/main/scala/rocket/RocketCore.scala:518:19
     .io_in_0_bits_data (_div_io_resp_bits_data),	// src/main/scala/rocket/RocketCore.scala:518:19
@@ -12209,7 +12209,7 @@ module Rocket(	// src/main/scala/rocket/RocketCore.scala:158:7
     .io_out_bits_data  (ll_wdata),
     .io_out_bits_tag   (_ll_arb_io_out_bits_tag)
   );
-  PlusArgTimeout PlusArgTimeout (	// src/main/scala/util/PlusArg.scala:89:11
+  rocket_PlusArgTimeout rocket_PlusArgTimeout (	// src/main/scala/util/PlusArg.scala:89:11
     .clock    (clock),
     .reset    (reset),
     .io_count (_csr_io_time[31:0])	// src/main/scala/rocket/RocketCore.scala:347:19, src/main/scala/util/PlusArg.scala:89:82

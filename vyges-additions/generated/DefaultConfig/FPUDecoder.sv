@@ -84,29 +84,29 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module FPUDecoder(	// src/main/scala/tile/FPU.scala:55:7
-  input  [31:0] io_inst,	// src/main/scala/tile/FPU.scala:56:14
-  output        io_sigs_ldst,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_wen,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_ren1,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_ren2,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_ren3,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_swap12,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_swap23,	// src/main/scala/tile/FPU.scala:56:14
-  output [1:0]  io_sigs_typeTagIn,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_typeTagOut,	// src/main/scala/tile/FPU.scala:56:14
-  output        io_sigs_fromint,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_toint,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_fastpipe,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_fma,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_div,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_sqrt,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_wflags,	// src/main/scala/tile/FPU.scala:56:14
-                io_sigs_vec	// src/main/scala/tile/FPU.scala:56:14
+module rocket_FPUDecoder(	// src/main/scala/tile/rocket_FPU.scala:55:7
+  input  [31:0] io_inst,	// src/main/scala/tile/rocket_FPU.scala:56:14
+  output        io_sigs_ldst,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_wen,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_ren1,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_ren2,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_ren3,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_swap12,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_swap23,	// src/main/scala/tile/rocket_FPU.scala:56:14
+  output [1:0]  io_sigs_typeTagIn,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_typeTagOut,	// src/main/scala/tile/rocket_FPU.scala:56:14
+  output        io_sigs_fromint,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_toint,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_fastpipe,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_fma,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_div,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_sqrt,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_wflags,	// src/main/scala/tile/rocket_FPU.scala:56:14
+                io_sigs_vec	// src/main/scala/tile/rocket_FPU.scala:56:14
 );
 
-  wire [31:0] io_inst_0 = io_inst;	// src/main/scala/tile/FPU.scala:55:7
-  wire [31:0] decoder_decoded_plaInput = io_inst_0;	// src/main/scala/chisel3/util/pla.scala:77:22, src/main/scala/tile/FPU.scala:55:7
+  wire [31:0] io_inst_0 = io_inst;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  wire [31:0] decoder_decoded_plaInput = io_inst_0;	// src/main/scala/chisel3/util/pla.scala:77:22, src/main/scala/tile/rocket_FPU.scala:55:7
   wire        decoder_0;	// src/main/scala/rocket/Decode.scala:50:77
   wire        decoder_1;	// src/main/scala/rocket/Decode.scala:50:77
   wire        decoder_2;	// src/main/scala/rocket/Decode.scala:50:77
@@ -2912,55 +2912,55 @@ module FPUDecoder(	// src/main/scala/tile/FPU.scala:55:7
     {decoder_decoded_invMatrixOutputs_hi, decoder_decoded_invMatrixOutputs_lo};	// src/main/scala/chisel3/util/pla.scala:120:37
   wire [18:0] decoder_decoded = decoder_decoded_invMatrixOutputs;	// src/main/scala/chisel3/util/pla.scala:81:23, :120:37
   assign decoder_0 = decoder_decoded[18];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_ldst_0 = decoder_0;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_ldst_0 = decoder_0;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_1 = decoder_decoded[17];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_wen_0 = decoder_1;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_wen_0 = decoder_1;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_2 = decoder_decoded[16];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_ren1_0 = decoder_2;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_ren1_0 = decoder_2;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_3 = decoder_decoded[15];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_ren2_0 = decoder_3;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_ren2_0 = decoder_3;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_4 = decoder_decoded[14];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_ren3_0 = decoder_4;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_ren3_0 = decoder_4;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_5 = decoder_decoded[13];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_swap12_0 = decoder_5;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_swap12_0 = decoder_5;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_6 = decoder_decoded[12];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_swap23_0 = decoder_6;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_swap23_0 = decoder_6;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_7 = decoder_decoded[11:10];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire [1:0]  io_sigs_typeTagIn_0 = decoder_7;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire [1:0]  io_sigs_typeTagIn_0 = decoder_7;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_8 = decoder_decoded[9:8];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire [1:0]  io_sigs_typeTagOut_0 = decoder_8;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire [1:0]  io_sigs_typeTagOut_0 = decoder_8;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_9 = decoder_decoded[7];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_fromint_0 = decoder_9;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_fromint_0 = decoder_9;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_10 = decoder_decoded[6];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_toint_0 = decoder_10;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_toint_0 = decoder_10;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_11 = decoder_decoded[5];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_fastpipe_0 = decoder_11;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_fastpipe_0 = decoder_11;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_12 = decoder_decoded[4];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_fma_0 = decoder_12;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_fma_0 = decoder_12;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_13 = decoder_decoded[3];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_div_0 = decoder_13;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_div_0 = decoder_13;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_14 = decoder_decoded[2];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_sqrt_0 = decoder_14;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_sqrt_0 = decoder_14;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_15 = decoder_decoded[1];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_wflags_0 = decoder_15;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_wflags_0 = decoder_15;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
   assign decoder_16 = decoder_decoded[0];	// src/main/scala/chisel3/util/pla.scala:81:23, src/main/scala/rocket/Decode.scala:50:77
-  wire        io_sigs_vec_0 = decoder_16;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_ldst = io_sigs_ldst_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_wen = io_sigs_wen_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_ren1 = io_sigs_ren1_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_ren2 = io_sigs_ren2_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_ren3 = io_sigs_ren3_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_swap12 = io_sigs_swap12_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_swap23 = io_sigs_swap23_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_typeTagIn = io_sigs_typeTagIn_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_typeTagOut = io_sigs_typeTagOut_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_fromint = io_sigs_fromint_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_toint = io_sigs_toint_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_fastpipe = io_sigs_fastpipe_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_fma = io_sigs_fma_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_div = io_sigs_div_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_sqrt = io_sigs_sqrt_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_wflags = io_sigs_wflags_0;	// src/main/scala/tile/FPU.scala:55:7
-  assign io_sigs_vec = io_sigs_vec_0;	// src/main/scala/tile/FPU.scala:55:7
+  wire        io_sigs_vec_0 = decoder_16;	// src/main/scala/rocket/Decode.scala:50:77, src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_ldst = io_sigs_ldst_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_wen = io_sigs_wen_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_ren1 = io_sigs_ren1_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_ren2 = io_sigs_ren2_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_ren3 = io_sigs_ren3_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_swap12 = io_sigs_swap12_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_swap23 = io_sigs_swap23_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_typeTagIn = io_sigs_typeTagIn_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_typeTagOut = io_sigs_typeTagOut_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_fromint = io_sigs_fromint_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_toint = io_sigs_toint_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_fastpipe = io_sigs_fastpipe_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_fma = io_sigs_fma_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_div = io_sigs_div_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_sqrt = io_sigs_sqrt_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_wflags = io_sigs_wflags_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
+  assign io_sigs_vec = io_sigs_vec_0;	// src/main/scala/tile/rocket_FPU.scala:55:7
 endmodule
 

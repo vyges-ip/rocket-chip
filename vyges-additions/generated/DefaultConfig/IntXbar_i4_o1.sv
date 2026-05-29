@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module IntXbar_i4_o1(	// src/main/scala/interrupts/Xbar.scala:22:9
+module rocket_IntXbar_i4_o1(	// src/main/scala/interrupts/Xbar.scala:22:9
   input  auto_anon_in_3_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
          auto_anon_in_2_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
          auto_anon_in_1_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25

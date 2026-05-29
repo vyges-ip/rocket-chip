@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PeripheryBus_pbus(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_PeripheryBus_pbus(	// src/main/scala/prci/ClockDomain.scala:14:9
   input auto_pbus_clock_groups_in_member_pbus_0_clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
         auto_pbus_clock_groups_in_member_pbus_0_reset	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
 );

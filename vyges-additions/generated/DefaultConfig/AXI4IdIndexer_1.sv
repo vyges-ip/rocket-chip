@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4IdIndexer_1(	// src/main/scala/amba/axi4/IdIndexer.scala:63:9
+module rocket_AXI4IdIndexer_1(	// src/main/scala/amba/axi4/IdIndexer.scala:63:9
   output        auto_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_in_aw_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [7:0]  auto_in_aw_bits_id,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module OptimizationBarrier_PTE(	// src/main/scala/util/package.scala:268:30
+module rocket_OptimizationBarrier_PTE(	// src/main/scala/util/package.scala:268:30
   input  [9:0]  io_x_reserved_for_future,	// src/main/scala/util/package.scala:269:18
   input  [43:0] io_x_ppn,	// src/main/scala/util/package.scala:269:18
   input  [1:0]  io_x_reserved_for_software,	// src/main/scala/util/package.scala:269:18

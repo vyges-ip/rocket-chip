@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLBuffer_a28d64s5k1z4u(	// src/main/scala/tilelink/Buffer.scala:40:9
+module rocket_TLBuffer_a28d64s5k1z4u(	// src/main/scala/tilelink/Buffer.scala:40:9
   input         clock,	// src/main/scala/tilelink/Buffer.scala:40:9
                 reset,	// src/main/scala/tilelink/Buffer.scala:40:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -209,7 +209,7 @@ module TLBuffer_a28d64s5k1z4u(	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [63:0] auto_out_a_bits_data_0 = nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        auto_out_a_bits_corrupt_0 = nodeOut_a_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        auto_out_d_ready_0 = nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
-  TLMonitor_10 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_10 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -233,7 +233,7 @@ module TLBuffer_a28d64s5k1z4u(	// src/main/scala/tilelink/Buffer.scala:40:9
     .io_in_d_bits_data    (nodeIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt (nodeIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  Queue2_TLBundleA_a28d64s5k1z4u nodeOut_a_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_TLBundleA_a28d64s5k1z4u nodeOut_a_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (nodeIn_a_ready),
@@ -257,7 +257,7 @@ module TLBuffer_a28d64s5k1z4u(	// src/main/scala/tilelink/Buffer.scala:40:9
     .io_deq_bits_data    (nodeOut_a_bits_data),
     .io_deq_bits_corrupt (nodeOut_a_bits_corrupt)
   );
-  Queue2_TLBundleD_a28d64s5k1z4u nodeIn_d_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_TLBundleD_a28d64s5k1z4u nodeIn_d_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock               (clock),
     .reset               (reset),
     .io_enq_ready        (nodeOut_d_ready),

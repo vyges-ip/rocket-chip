@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module RVCExpander(	// src/main/scala/rocket/RVC.scala:190:7
+module rocket_RVCExpander(	// src/main/scala/rocket/RVC.scala:190:7
   input  [31:0] io_in,	// src/main/scala/rocket/RVC.scala:191:14
   output [31:0] io_out_bits,	// src/main/scala/rocket/RVC.scala:191:14
   output [4:0]  io_out_rd,	// src/main/scala/rocket/RVC.scala:191:14

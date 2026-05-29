@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module RocketALU(	// src/main/scala/rocket/ALU.scala:83:7
+module rocket_RocketALU(	// src/main/scala/rocket/ALU.scala:83:7
   input         io_dw,	// src/main/scala/rocket/ALU.scala:72:14
   input  [4:0]  io_fn,	// src/main/scala/rocket/ALU.scala:72:14
   input  [63:0] io_in2,	// src/main/scala/rocket/ALU.scala:72:14

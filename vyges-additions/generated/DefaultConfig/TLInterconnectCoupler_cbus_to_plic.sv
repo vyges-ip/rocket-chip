@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLInterconnectCoupler_cbus_to_plic(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
+module rocket_TLInterconnectCoupler_cbus_to_plic(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   input         clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
                 reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
                 auto_fragmenter_anon_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -211,7 +211,7 @@ module TLInterconnectCoupler_cbus_to_plic(	// dependencies/diplomacy/diplomacy/s
   wire [2:0]  auto_tl_in_d_bits_size_0 = tlIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [4:0]  auto_tl_in_d_bits_source_0 = tlIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [63:0] auto_tl_in_d_bits_data_0 = tlIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  TLFragmenter_PLIC fragmenter (	// src/main/scala/tilelink/Fragmenter.scala:345:34
+  rocket_TLFragmenter_PLIC fragmenter (	// src/main/scala/tilelink/Fragmenter.scala:345:34
     .clock                        (clock),
     .reset                        (reset),
     .auto_anon_in_a_ready         (tlOut_a_ready),

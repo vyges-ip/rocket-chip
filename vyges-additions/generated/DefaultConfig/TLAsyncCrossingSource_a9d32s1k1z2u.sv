@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLAsyncCrossingSource_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossing.scala:23:9
+module rocket_TLAsyncCrossingSource_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossing.scala:23:9
   input         clock,	// src/main/scala/tilelink/AsyncCrossing.scala:23:9
                 reset,	// src/main/scala/tilelink/AsyncCrossing.scala:23:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -287,7 +287,7 @@ module TLAsyncCrossingSource_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCross
   wire        auto_out_d_ridx_0 = nodeOut_d_ridx;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:23:9
   wire        auto_out_d_safe_ridx_valid_0 = nodeOut_d_safe_ridx_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:23:9
   wire        auto_out_d_safe_sink_reset_n_0 = nodeOut_d_safe_sink_reset_n;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:23:9
-  TLMonitor_31 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_31 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -306,7 +306,7 @@ module TLAsyncCrossingSource_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCross
     .io_in_d_bits_data    (nodeIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt (nodeIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  AsyncQueueSource_TLBundleA_a9d32s1k1z2u nodeOut_a_source (	// src/main/scala/util/AsyncQueue.scala:220:24
+  rocket_AsyncQueueSource_TLBundleA_a9d32s1k1z2u nodeOut_a_source (	// src/main/scala/util/AsyncQueue.scala:220:24
     .clock                        (clock),
     .reset                        (reset),
     .io_enq_ready                 (nodeIn_a_ready),
@@ -324,7 +324,7 @@ module TLAsyncCrossingSource_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCross
     .io_async_safe_source_reset_n (nodeOut_a_safe_source_reset_n),
     .io_async_safe_sink_reset_n   (nodeOut_a_safe_sink_reset_n)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   );
-  AsyncQueueSink_TLBundleD_a9d32s1k1z2u nodeIn_d_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
+  rocket_AsyncQueueSink_TLBundleD_a9d32s1k1z2u nodeIn_d_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
     .clock                        (clock),
     .reset                        (reset),
     .io_deq_ready                 (nodeIn_d_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

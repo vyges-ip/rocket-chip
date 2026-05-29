@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLFragmenter_PLIC(	// src/main/scala/tilelink/Fragmenter.scala:92:9
+module rocket_TLFragmenter_PLIC(	// src/main/scala/tilelink/Fragmenter.scala:92:9
   input         clock,	// src/main/scala/tilelink/Fragmenter.scala:92:9
                 reset,	// src/main/scala/tilelink/Fragmenter.scala:92:9
   output        auto_anon_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -327,7 +327,7 @@ module TLFragmenter_PLIC(	// src/main/scala/tilelink/Fragmenter.scala:92:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Fragmenter.scala:92:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_15 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_15 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (anonIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -347,7 +347,7 @@ module TLFragmenter_PLIC(	// src/main/scala/tilelink/Fragmenter.scala:92:9
     .io_in_d_bits_source  (anonIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_data    (anonIn_d_bits_data)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  Repeater_TLBundleA_a28d64s5k1z3u repeater (	// src/main/scala/tilelink/Fragmenter.scala:274:30
+  rocket_Repeater_TLBundleA_a28d64s5k1z3u repeater (	// src/main/scala/tilelink/Fragmenter.scala:274:30
     .clock               (clock),
     .reset               (reset),
     .io_repeat           (~aHasData & (|aFragnum)),	// src/main/scala/tilelink/Edges.scala:92:28, src/main/scala/tilelink/Fragmenter.scala:307:24, :314:{31,41,53}

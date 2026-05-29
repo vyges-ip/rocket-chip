@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLToAXI4(	// src/main/scala/tilelink/ToAXI4.scala:103:9
+module rocket_TLToAXI4(	// src/main/scala/tilelink/ToAXI4.scala:103:9
   input         clock,	// src/main/scala/tilelink/ToAXI4.scala:103:9
                 reset,	// src/main/scala/tilelink/ToAXI4.scala:103:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -760,7 +760,7 @@ module TLToAXI4(	// src/main/scala/tilelink/ToAXI4.scala:103:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/ToAXI4.scala:103:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_4 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_4 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                                  (clock),
     .reset                                  (reset),
     .io_in_a_ready                          (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -789,7 +789,7 @@ module TLToAXI4(	// src/main/scala/tilelink/ToAXI4.scala:103:9
     .io_in_d_bits_data                      (nodeIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt                   (nodeIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  Queue1_AXI4BundleW nodeOut_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleW nodeOut_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (out_w_ready),
@@ -803,7 +803,7 @@ module TLToAXI4(	// src/main/scala/tilelink/ToAXI4.scala:103:9
     .io_deq_bits_strb (nodeOut_w_irr_bits_strb),
     .io_deq_bits_last (nodeOut_w_irr_bits_last)
   );
-  Queue1_AXI4BundleARW queue_arw_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleARW queue_arw_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (out_arw_ready),

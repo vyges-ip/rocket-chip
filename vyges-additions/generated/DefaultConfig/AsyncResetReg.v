@@ -37,7 +37,7 @@
 `define RANDOMIZE
 `endif
 
-module AsyncResetReg (d, q, en, clk, rst);
+module rocket_AsyncResetReg (d, q, en, clk, rst);
 parameter RESET_VALUE = 0;
 
 input  wire d;
@@ -76,5 +76,5 @@ input  wire rst;
       end
    end
  
-endmodule // AsyncResetReg
+endmodule // rocket_AsyncResetReg
 

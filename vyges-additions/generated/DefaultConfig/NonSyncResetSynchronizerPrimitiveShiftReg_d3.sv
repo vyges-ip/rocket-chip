@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module NonSyncResetSynchronizerPrimitiveShiftReg_d3(	// src/main/scala/util/SynchronizerReg.scala:37:15
+module rocket_NonSyncResetSynchronizerPrimitiveShiftReg_d3(	// src/main/scala/util/SynchronizerReg.scala:37:15
   input  clock,	// src/main/scala/util/SynchronizerReg.scala:37:15
          io_d,	// src/main/scala/util/ShiftReg.scala:36:14
   output io_q	// src/main/scala/util/ShiftReg.scala:36:14

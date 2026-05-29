@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PMPChecker_s3(	// src/main/scala/rocket/PMP.scala:143:7
+module rocket_PMPChecker_s3(	// src/main/scala/rocket/PMP.scala:143:7
   input  [1:0]  io_prv,	// src/main/scala/rocket/PMP.scala:146:14
   input         io_pmp_0_cfg_l,	// src/main/scala/rocket/PMP.scala:146:14
   input  [1:0]  io_pmp_0_cfg_a,	// src/main/scala/rocket/PMP.scala:146:14

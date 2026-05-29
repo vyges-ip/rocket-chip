@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:9
+module rocket_TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:9
   output [2:0]  auto_asource_out_a_mem_0_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [8:0]  auto_asource_out_a_mem_0_address,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [31:0] auto_asource_out_a_mem_0_data,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -291,7 +291,7 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
   assign intnodeOut_sync_0 = intnodeIn_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   wire        io_ctrl_dmactive_0;	// src/main/scala/devices/debug/Debug.scala:709:9
   wire        dmactiveAck;	// src/main/scala/util/ShiftReg.scala:48:24
-  TLXbar_dmixbar_i1_o2_a9d32s1k1z2u dmiXbar (	// src/main/scala/devices/debug/Debug.scala:675:28
+  rocket_TLXbar_dmixbar_i1_o2_a9d32s1k1z2u dmiXbar (	// src/main/scala/devices/debug/Debug.scala:675:28
     .clock                          (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                          (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_anon_in_a_ready           (_dmiXbar_auto_anon_in_a_ready),
@@ -333,7 +333,7 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
     .auto_anon_out_0_d_bits_data    (_dmiBypass_auto_node_in_in_d_bits_data),	// src/main/scala/devices/debug/Debug.scala:704:29
     .auto_anon_out_0_d_bits_corrupt (_dmiBypass_auto_node_in_in_d_bits_corrupt)	// src/main/scala/devices/debug/Debug.scala:704:29
   );
-  DMIToTL dmi2tl (	// src/main/scala/devices/debug/Debug.scala:678:28
+  rocket_DMIToTL dmi2tl (	// src/main/scala/devices/debug/Debug.scala:678:28
     .auto_out_a_ready        (_dmiXbar_auto_anon_in_a_ready),	// src/main/scala/devices/debug/Debug.scala:675:28
     .auto_out_a_valid        (_dmi2tl_auto_out_a_valid),
     .auto_out_a_bits_opcode  (_dmi2tl_auto_out_a_bits_opcode),
@@ -358,7 +358,7 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
     .io_dmi_resp_bits_data   (io_dmi_resp_bits_data_0),
     .io_dmi_resp_bits_resp   (io_dmi_resp_bits_resp_0)
   );
-  TLDebugModuleOuter dmOuter (	// src/main/scala/devices/debug/Debug.scala:700:27
+  rocket_TLDebugModuleOuter dmOuter (	// src/main/scala/devices/debug/Debug.scala:700:27
     .clock                          (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                          (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_dmi_in_a_ready            (_dmOuter_auto_dmi_in_a_ready),
@@ -382,11 +382,11 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
     .io_innerCtrl_bits_hrmask_0     (_dmOuter_io_innerCtrl_bits_hrmask_0),
     .io_hgDebugInt_0                (io_hgDebugInt_0_0)	// src/main/scala/devices/debug/Debug.scala:709:9
   );
-  IntSyncCrossingSource_n1x1_Registered intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1_Registered intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
     .auto_in_0       (_dmOuter_auto_int_out_0),	// src/main/scala/devices/debug/Debug.scala:700:27
     .auto_out_sync_0 (intnodeIn_sync_0)
   );
-  TLBusBypass dmiBypass (	// src/main/scala/devices/debug/Debug.scala:704:29
+  rocket_TLBusBypass dmiBypass (	// src/main/scala/devices/debug/Debug.scala:704:29
     .clock                            (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                            (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_node_out_out_a_ready        (_asource_auto_in_a_ready),	// src/main/scala/tilelink/AsyncCrossing.scala:94:29
@@ -421,7 +421,7 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
     .auto_node_in_in_d_bits_corrupt   (_dmiBypass_auto_node_in_in_d_bits_corrupt),
     .io_bypass                        (~io_ctrl_dmactive_0 | ~dmactiveAck)	// src/main/scala/devices/debug/Debug.scala:709:9, :742:{37,55,57}, src/main/scala/util/ShiftReg.scala:48:24
   );
-  TLAsyncCrossingSource_a9d32s1k1z2u asource (	// src/main/scala/tilelink/AsyncCrossing.scala:94:29
+  rocket_TLAsyncCrossingSource_a9d32s1k1z2u asource (	// src/main/scala/tilelink/AsyncCrossing.scala:94:29
     .clock                          (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                          (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready                (_asource_auto_in_a_ready),
@@ -459,13 +459,13 @@ module TLDebugModuleOuterAsync(	// src/main/scala/devices/debug/Debug.scala:709:
     .auto_out_d_safe_source_reset_n (auto_asource_out_d_safe_source_reset_n_0),	// src/main/scala/devices/debug/Debug.scala:709:9
     .auto_out_d_safe_sink_reset_n   (auto_asource_out_d_safe_sink_reset_n_0)
   );
-  AsyncResetSynchronizerShiftReg_w1_d3_i0 dmactiveAck_dmactiveAckSync (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0 dmactiveAck_dmactiveAckSync (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .io_d  (io_ctrl_dmactiveAck_0),	// src/main/scala/devices/debug/Debug.scala:709:9
     .io_q  (dmactiveAck)
   );
-  AsyncQueueSource_DebugInternalBundle io_innerCtrl_source (	// src/main/scala/util/AsyncQueue.scala:220:24
+  rocket_AsyncQueueSource_DebugInternalBundle io_innerCtrl_source (	// src/main/scala/util/AsyncQueue.scala:220:24
     .clock                        (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                        (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .io_enq_ready                 (_io_innerCtrl_source_io_enq_ready),

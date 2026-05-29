@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
   input         auto_coupler_to_bootrom_fragmenter_anon_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output        auto_coupler_to_bootrom_fragmenter_anon_out_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [2:0]  auto_coupler_to_bootrom_fragmenter_anon_out_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -976,7 +976,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_bus_xing_in_d_bits_denied_0 = bus_xingIn_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/prci/ClockDomain.scala:14:9
   wire [63:0] auto_bus_xing_in_d_bits_data_0 = bus_xingIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_bus_xing_in_d_bits_corrupt_0 = bus_xingIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/prci/ClockDomain.scala:14:9
-  FixedClockBroadcast_5 fixedClockNode (	// src/main/scala/prci/ClockGroup.scala:115:114
+  rocket_FixedClockBroadcast_5 fixedClockNode (	// src/main/scala/prci/ClockGroup.scala:115:114
     .auto_anon_in_clock    (clockGroup_auto_out_clock),	// src/main/scala/prci/ClockGroup.scala:24:9
     .auto_anon_in_reset    (clockGroup_auto_out_reset),	// src/main/scala/prci/ClockGroup.scala:24:9
     .auto_anon_out_4_clock (auto_fixedClockNode_anon_out_3_clock_0),
@@ -990,7 +990,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_anon_out_0_clock (clockSinkNodeIn_clock),
     .auto_anon_out_0_reset (clockSinkNodeIn_reset)
   );
-  TLFIFOFixer_3 fixer (	// src/main/scala/subsystem/PeripheryBus.scala:54:33
+  rocket_TLFIFOFixer_3 fixer (	// src/main/scala/subsystem/PeripheryBus.scala:54:33
     .clock                        (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                        (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_anon_in_a_ready         (_fixer_auto_anon_in_a_ready),
@@ -1034,7 +1034,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_anon_out_d_bits_data    (_out_xbar_auto_anon_in_d_bits_data),	// src/main/scala/subsystem/PeripheryBus.scala:57:30
     .auto_anon_out_d_bits_corrupt (_out_xbar_auto_anon_in_d_bits_corrupt)	// src/main/scala/subsystem/PeripheryBus.scala:57:30
   );
-  TLXbar_cbus_out_i1_o5_a28d64s5k1z4u out_xbar (	// src/main/scala/subsystem/PeripheryBus.scala:57:30
+  rocket_TLXbar_cbus_out_i1_o5_a28d64s5k1z4u out_xbar (	// src/main/scala/subsystem/PeripheryBus.scala:57:30
     .clock                          (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                          (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_anon_in_a_ready           (_out_xbar_auto_anon_in_a_ready),
@@ -1141,7 +1141,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_anon_out_0_d_bits_data    (_wrapped_error_device_auto_buffer_in_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .auto_anon_out_0_d_bits_corrupt (_wrapped_error_device_auto_buffer_in_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
   );
-  TLBuffer_a28d64s5k1z4u buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
+  rocket_TLBuffer_a28d64s5k1z4u buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
     .clock                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready         (_buffer_auto_in_a_ready),
@@ -1185,7 +1185,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_d_bits_data    (_fixer_auto_anon_in_d_bits_data),	// src/main/scala/subsystem/PeripheryBus.scala:54:33
     .auto_out_d_bits_corrupt (_fixer_auto_anon_in_d_bits_corrupt)	// src/main/scala/subsystem/PeripheryBus.scala:54:33
   );
-  TLAtomicAutomata_cbus atomics (	// src/main/scala/tilelink/AtomicAutomata.scala:289:29
+  rocket_TLAtomicAutomata_cbus atomics (	// src/main/scala/tilelink/AtomicAutomata.scala:289:29
     .clock                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready         (in_xbar_auto_anon_out_a_ready),
@@ -1229,7 +1229,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_d_bits_data    (_buffer_auto_in_d_bits_data),	// src/main/scala/tilelink/Buffer.scala:75:28
     .auto_out_d_bits_corrupt (_buffer_auto_in_d_bits_corrupt)	// src/main/scala/tilelink/Buffer.scala:75:28
   );
-  ErrorDeviceWrapper wrapped_error_device (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_ErrorDeviceWrapper wrapped_error_device (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                         (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                         (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_buffer_in_a_ready        (_wrapped_error_device_auto_buffer_in_a_ready),
@@ -1253,7 +1253,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_buffer_in_d_bits_data    (_wrapped_error_device_auto_buffer_in_d_bits_data),
     .auto_buffer_in_d_bits_corrupt (_wrapped_error_device_auto_buffer_in_d_bits_corrupt)
   );
-  TLInterconnectCoupler_cbus_to_clint coupler_to_clint (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_TLInterconnectCoupler_cbus_to_clint coupler_to_clint (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_fragmenter_anon_out_a_ready
@@ -1305,7 +1305,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_tl_in_d_bits_source                (_coupler_to_clint_auto_tl_in_d_bits_source),
     .auto_tl_in_d_bits_data                  (_coupler_to_clint_auto_tl_in_d_bits_data)
   );
-  TLInterconnectCoupler_cbus_to_plic coupler_to_plic (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_TLInterconnectCoupler_cbus_to_plic coupler_to_plic (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_fragmenter_anon_out_a_ready
@@ -1357,7 +1357,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_tl_in_d_bits_source                (_coupler_to_plic_auto_tl_in_d_bits_source),
     .auto_tl_in_d_bits_data                  (_coupler_to_plic_auto_tl_in_d_bits_data)
   );
-  TLInterconnectCoupler_cbus_to_debug coupler_to_debug (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_TLInterconnectCoupler_cbus_to_debug coupler_to_debug (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_fragmenter_anon_out_a_ready
@@ -1409,7 +1409,7 @@ module PeripheryBus_cbus(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_tl_in_d_bits_source                (_coupler_to_debug_auto_tl_in_d_bits_source),
     .auto_tl_in_d_bits_data                  (_coupler_to_debug_auto_tl_in_d_bits_data)
   );
-  TLInterconnectCoupler_cbus_to_bootrom coupler_to_bootrom (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_TLInterconnectCoupler_cbus_to_bootrom coupler_to_bootrom (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_fragmenter_anon_out_a_ready

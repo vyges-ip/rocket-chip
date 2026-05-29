@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AsyncValidSync(	// src/main/scala/util/AsyncQueue.scala:58:7
+module rocket_AsyncValidSync(	// src/main/scala/util/AsyncQueue.scala:58:7
   input  io_in,	// src/main/scala/util/AsyncQueue.scala:59:14
   output io_out,	// src/main/scala/util/AsyncQueue.scala:59:14
   input  clock,	// src/main/scala/util/AsyncQueue.scala:63:17
@@ -93,7 +93,7 @@ module AsyncValidSync(	// src/main/scala/util/AsyncQueue.scala:58:7
 
   wire io_out_0;	// src/main/scala/util/AsyncQueue.scala:58:7
   wire io_in_0 = io_in;	// src/main/scala/util/AsyncQueue.scala:58:7
-  AsyncResetSynchronizerShiftReg_w1_d3_i0_1 io_out_source_valid_0 (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0_1 io_out_source_valid_0 (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (clock),
     .reset (reset),
     .io_d  (io_in_0),	// src/main/scala/util/AsyncQueue.scala:58:7

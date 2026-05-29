@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
+module rocket_AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
   input         clock,	// src/main/scala/amba/axi4/UserYanker.scala:36:9
                 reset,	// src/main/scala/amba/axi4/UserYanker.scala:36:9
   output        auto_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -818,7 +818,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
   wire             bsel_15 = &bsel_shiftAmount;	// src/main/scala/amba/axi4/UserYanker.scala:105:55, src/main/scala/chisel3/util/OneHot.scala:64:49
   wire             _GEN_11 = nodeOut_b_valid & nodeIn_b_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/amba/axi4/UserYanker.scala:107:37
   wire             _GEN_12 = nodeIn_aw_valid & nodeOut_aw_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/amba/axi4/UserYanker.scala:110:37
-  Queue8_BundleMap_4 Queue8_BundleMap (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 rocket_Queue8_BundleMap (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_io_enq_ready),
@@ -832,7 +832,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_1 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_1 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_1_io_enq_ready),
@@ -846,7 +846,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_1_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_1_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_2 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_2 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_2_io_enq_ready),
@@ -860,7 +860,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_2_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_2_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_3 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_3 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_3_io_enq_ready),
@@ -874,7 +874,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_3_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_3_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_4 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 rocket_Queue8_BundleMap_4 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_4_io_enq_ready),
@@ -888,7 +888,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_4_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_4_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_5 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_5 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_5_io_enq_ready),
@@ -902,7 +902,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_5_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_5_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_6 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_6 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_6_io_enq_ready),
@@ -916,7 +916,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_6_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_6_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_7 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_7 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_7_io_enq_ready),
@@ -930,7 +930,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_7_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_7_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_8 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_8 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_8_io_enq_ready),
@@ -944,7 +944,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_8_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_8_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_9 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_9 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_9_io_enq_ready),
@@ -958,7 +958,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_9_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_9_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_10 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_10 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_10_io_enq_ready),
@@ -972,7 +972,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_10_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_10_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_11 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_11 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_11_io_enq_ready),
@@ -986,7 +986,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_11_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_11_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_12 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_12 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_12_io_enq_ready),
@@ -1000,7 +1000,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_12_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_12_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_13 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_13 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_13_io_enq_ready),
@@ -1014,7 +1014,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_13_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_13_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_14 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_14 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_14_io_enq_ready),
@@ -1028,7 +1028,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_14_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_14_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_15 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_15 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_15_io_enq_ready),
@@ -1042,7 +1042,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_15_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_15_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_16 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_16 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_16_io_enq_ready),
@@ -1056,7 +1056,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_16_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_16_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_17 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_17 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_17_io_enq_ready),
@@ -1070,7 +1070,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_17_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_17_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_18 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_18 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_18_io_enq_ready),
@@ -1084,7 +1084,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_18_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_18_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_19 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_19 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_19_io_enq_ready),
@@ -1098,7 +1098,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_19_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_19_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_20 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_20 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_20_io_enq_ready),
@@ -1112,7 +1112,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_20_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_20_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_21 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_21 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_21_io_enq_ready),
@@ -1126,7 +1126,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_21_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_21_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_22 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_22 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_22_io_enq_ready),
@@ -1140,7 +1140,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_22_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_22_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_23 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_23 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_23_io_enq_ready),
@@ -1154,7 +1154,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_23_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_23_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_24 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_24 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_24_io_enq_ready),
@@ -1168,7 +1168,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_24_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_24_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_25 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_25 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_25_io_enq_ready),
@@ -1182,7 +1182,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_25_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_25_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_26 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_26 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_26_io_enq_ready),
@@ -1196,7 +1196,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_26_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_26_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_27 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_27 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_27_io_enq_ready),
@@ -1210,7 +1210,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_27_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_27_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_28 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_28 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_28_io_enq_ready),
@@ -1224,7 +1224,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_28_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_28_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_29 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_29 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_29_io_enq_ready),
@@ -1238,7 +1238,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_29_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_29_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_30 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_30 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_30_io_enq_ready),
@@ -1252,7 +1252,7 @@ module AXI4UserYanker_2(	// src/main/scala/amba/axi4/UserYanker.scala:36:9
     .io_deq_bits_tl_state_source (_Queue8_BundleMap_30_io_deq_bits_tl_state_source),
     .io_deq_bits_extra_id        (_Queue8_BundleMap_30_io_deq_bits_extra_id)
   );
-  Queue8_BundleMap_4 Queue8_BundleMap_31 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
+  rocket_Queue8_BundleMap_4 Queue8_BundleMap_31 (	// src/main/scala/amba/axi4/UserYanker.scala:51:17
     .clock                       (clock),
     .reset                       (reset),
     .io_enq_ready                (_Queue8_BundleMap_31_io_enq_ready),

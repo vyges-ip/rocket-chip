@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module FixedClockBroadcast_5(	// src/main/scala/prci/ClockGroup.scala:104:9
+module rocket_FixedClockBroadcast_5(	// src/main/scala/prci/ClockGroup.scala:104:9
   input  auto_anon_in_clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
          auto_anon_in_reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output auto_anon_out_4_clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
   input         auto_coupler_to_bus_named_mbus_bus_xing_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output        auto_coupler_to_bus_named_mbus_bus_xing_out_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [2:0]  auto_coupler_to_bus_named_mbus_bus_xing_out_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -229,14 +229,14 @@ module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        clockGroup_auto_out_clock;	// src/main/scala/prci/ClockGroup.scala:24:9
   wire        coh_clock_groups_auto_out_0_member_cbus_0_reset;	// src/main/scala/prci/ClockGroup.scala:53:9
   wire        coh_clock_groups_auto_out_0_member_cbus_0_clock;	// src/main/scala/prci/ClockGroup.scala:53:9
-  wire        _binder_auto_in_a_ready;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire        _binder_auto_in_d_valid;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire [2:0]  _binder_auto_in_d_bits_opcode;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire [2:0]  _binder_auto_in_d_bits_size;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire [6:0]  _binder_auto_in_d_bits_source;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire        _binder_auto_in_d_bits_denied;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire [63:0] _binder_auto_in_d_bits_data;	// src/main/scala/tilelink/BankBinder.scala:71:28
-  wire        _binder_auto_in_d_bits_corrupt;	// src/main/scala/tilelink/BankBinder.scala:71:28
+  wire        _binder_auto_in_a_ready;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire        _binder_auto_in_d_valid;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire [2:0]  _binder_auto_in_d_bits_opcode;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire [2:0]  _binder_auto_in_d_bits_size;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire [6:0]  _binder_auto_in_d_bits_source;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire        _binder_auto_in_d_bits_denied;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire [63:0] _binder_auto_in_d_bits_data;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+  wire        _binder_auto_in_d_bits_corrupt;	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
   wire        _broadcast_1_auto_out_a_valid;	// src/main/scala/subsystem/BankedCoherenceParams.scala:90:24
   wire [2:0]  _broadcast_1_auto_out_a_bits_opcode;	// src/main/scala/subsystem/BankedCoherenceParams.scala:90:24
   wire [2:0]  _broadcast_1_auto_out_a_bits_param;	// src/main/scala/subsystem/BankedCoherenceParams.scala:90:24
@@ -475,15 +475,15 @@ module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire [2:0]  coherent_jbar_out_0_b_bits_size = 3'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:67:41, :90:24, src/main/scala/tilelink/Jbar.scala:44:9, src/main/scala/tilelink/Xbar.scala:159:18, :216:19, :352:24
   wire [2:0]  coherent_jbar_portsBIO_filtered_0_bits_opcode = 3'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:67:41, :90:24, src/main/scala/tilelink/Jbar.scala:44:9, src/main/scala/tilelink/Xbar.scala:159:18, :216:19, :352:24
   wire [2:0]  coherent_jbar_portsBIO_filtered_0_bits_size = 3'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:67:41, :90:24, src/main/scala/tilelink/Jbar.scala:44:9, src/main/scala/tilelink/Xbar.scala:159:18, :216:19, :352:24
-  wire [1:0]  auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_auto_widget_anon_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_auto_bus_xing_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_widget_auto_anon_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_widget_auto_anon_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_widget_anonOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_widget_anonIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_bus_xingOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
-  wire [1:0]  coupler_to_bus_named_mbus_bus_xingIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_auto_widget_anon_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_auto_bus_xing_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_widget_auto_anon_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_widget_auto_anon_out_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_widget_anonOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_widget_anonIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_bus_xingOut_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
+  wire [1:0]  coupler_to_bus_named_mbus_bus_xingIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, :136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/prci/ClockDomain.scala:14:9, src/main/scala/subsystem/BankedCoherenceParams.scala:90:24, src/main/scala/tilelink/rocket_BankBinder.scala:71:28, src/main/scala/tilelink/WidthWidget.scala:27:9, :230:28
   wire        coupler_to_bus_named_mbus_auto_bus_xing_out_a_ready =
     auto_coupler_to_bus_named_mbus_bus_xing_out_a_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, src/main/scala/prci/ClockDomain.scala:14:9
   wire        coupler_to_bus_named_mbus_auto_bus_xing_out_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
@@ -1583,7 +1583,7 @@ module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
     coupler_to_bus_named_mbus_bus_xingIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/WidthWidget.scala:27:9
   wire        childClock = clockSinkNodeIn_clock;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        childReset = clockSinkNodeIn_reset;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  TLBroadcast broadcast_1 (	// src/main/scala/subsystem/BankedCoherenceParams.scala:90:24
+  rocket_TLBroadcast broadcast_1 (	// src/main/scala/subsystem/BankedCoherenceParams.scala:90:24
     .clock                                     (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                     (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready                           (coherent_jbar_auto_anon_out_a_ready),
@@ -1648,7 +1648,7 @@ module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
       (coherent_jbar_auto_anon_out_d_bits_corrupt),
     .auto_in_e_valid                           (coherent_jbar_auto_anon_out_e_valid),	// src/main/scala/tilelink/Jbar.scala:44:9
     .auto_in_e_bits_sink                       (coherent_jbar_auto_anon_out_e_bits_sink),	// src/main/scala/tilelink/Jbar.scala:44:9
-    .auto_out_a_ready                          (_binder_auto_in_a_ready),	// src/main/scala/tilelink/BankBinder.scala:71:28
+    .auto_out_a_ready                          (_binder_auto_in_a_ready),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
     .auto_out_a_valid                          (_broadcast_1_auto_out_a_valid),
     .auto_out_a_bits_opcode                    (_broadcast_1_auto_out_a_bits_opcode),
     .auto_out_a_bits_param                     (_broadcast_1_auto_out_a_bits_param),
@@ -1672,15 +1672,15 @@ module CoherenceManagerWrapper(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_a_bits_mask                      (_broadcast_1_auto_out_a_bits_mask),
     .auto_out_a_bits_data                      (_broadcast_1_auto_out_a_bits_data),
     .auto_out_d_ready                          (_broadcast_1_auto_out_d_ready),
-    .auto_out_d_valid                          (_binder_auto_in_d_valid),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_opcode                    (_binder_auto_in_d_bits_opcode),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_size                      (_binder_auto_in_d_bits_size),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_source                    (_binder_auto_in_d_bits_source),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_denied                    (_binder_auto_in_d_bits_denied),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_data                      (_binder_auto_in_d_bits_data),	// src/main/scala/tilelink/BankBinder.scala:71:28
-    .auto_out_d_bits_corrupt                   (_binder_auto_in_d_bits_corrupt)	// src/main/scala/tilelink/BankBinder.scala:71:28
+    .auto_out_d_valid                          (_binder_auto_in_d_valid),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_opcode                    (_binder_auto_in_d_bits_opcode),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_size                      (_binder_auto_in_d_bits_size),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_source                    (_binder_auto_in_d_bits_source),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_denied                    (_binder_auto_in_d_bits_denied),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_data                      (_binder_auto_in_d_bits_data),	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
+    .auto_out_d_bits_corrupt                   (_binder_auto_in_d_bits_corrupt)	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
   );
-  BankBinder binder (	// src/main/scala/tilelink/BankBinder.scala:71:28
+  rocket_BankBinder binder (	// src/main/scala/tilelink/rocket_BankBinder.scala:71:28
     .clock                                     (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                     (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready                           (_binder_auto_in_a_ready),

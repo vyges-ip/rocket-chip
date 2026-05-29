@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PLICClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_PLICClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   input         auto_plic_int_in_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_plic_int_in_1,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output        auto_plic_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -147,7 +147,7 @@ module PLICClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        intInClockXingIn_1_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        auto_int_in_clock_xing_out_1_sync_0_0 = intInClockXingOut_1_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/prci/ClockDomain.scala:14:9
   assign intInClockXingOut_1_sync_0 = intInClockXingIn_1_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  TLPLIC plic (	// src/main/scala/devices/tilelink/Plic.scala:365:46
+  rocket_TLPLIC plic (	// src/main/scala/devices/tilelink/Plic.scala:365:46
     .clock                  (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                  (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_int_in_0          (auto_plic_int_in_0_0),	// src/main/scala/prci/ClockDomain.scala:14:9
@@ -171,13 +171,13 @@ module PLICClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_in_d_bits_source  (auto_plic_in_d_bits_source_0),
     .auto_in_d_bits_data    (auto_plic_in_d_bits_data_0)
   );
-  IntSyncCrossingSource_n1x1 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (_plic_auto_int_out_0_0),	// src/main/scala/devices/tilelink/Plic.scala:365:46
     .auto_out_sync_0 (intInClockXingIn_sync_0)
   );
-  IntSyncCrossingSource_n1x1 intsource_1 (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1 intsource_1 (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (_plic_auto_int_out_1_0),	// src/main/scala/devices/tilelink/Plic.scala:365:46

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLDebugModuleOuter(	// src/main/scala/devices/debug/Debug.scala:340:9
+module rocket_TLDebugModuleOuter(	// src/main/scala/devices/debug/Debug.scala:340:9
   input         clock,	// src/main/scala/devices/debug/Debug.scala:340:9
                 reset,	// src/main/scala/devices/debug/Debug.scala:340:9
   output        auto_dmi_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -782,7 +782,7 @@ module TLDebugModuleOuter(	// src/main/scala/devices/debug/Debug.scala:340:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/debug/Debug.scala:340:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_28 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_28 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (dmiNodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

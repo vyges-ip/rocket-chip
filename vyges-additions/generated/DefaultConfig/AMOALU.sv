@@ -84,31 +84,31 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AMOALU(	// src/main/scala/rocket/AMOALU.scala:54:7
-  input  [7:0]  io_mask,	// src/main/scala/rocket/AMOALU.scala:58:14
-  input  [4:0]  io_cmd,	// src/main/scala/rocket/AMOALU.scala:58:14
-  input  [63:0] io_lhs,	// src/main/scala/rocket/AMOALU.scala:58:14
-                io_rhs,	// src/main/scala/rocket/AMOALU.scala:58:14
-  output [63:0] io_out	// src/main/scala/rocket/AMOALU.scala:58:14
+module rocket_AMOALU(	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
+  input  [7:0]  io_mask,	// src/main/scala/rocket/rocket_AMOALU.scala:58:14
+  input  [4:0]  io_cmd,	// src/main/scala/rocket/rocket_AMOALU.scala:58:14
+  input  [63:0] io_lhs,	// src/main/scala/rocket/rocket_AMOALU.scala:58:14
+                io_rhs,	// src/main/scala/rocket/rocket_AMOALU.scala:58:14
+  output [63:0] io_out	// src/main/scala/rocket/rocket_AMOALU.scala:58:14
 );
 
-  wire [7:0]  io_mask_0 = io_mask;	// src/main/scala/rocket/AMOALU.scala:54:7
-  wire [4:0]  io_cmd_0 = io_cmd;	// src/main/scala/rocket/AMOALU.scala:54:7
-  wire [63:0] io_lhs_0 = io_lhs;	// src/main/scala/rocket/AMOALU.scala:54:7
-  wire [63:0] io_rhs_0 = io_rhs;	// src/main/scala/rocket/AMOALU.scala:54:7
-  wire [3:0]  less_signed_mask = 4'h2;	// src/main/scala/rocket/AMOALU.scala:88:29
-  wire [3:0]  less_signed_mask_1 = 4'h2;	// src/main/scala/rocket/AMOALU.scala:88:29
-  wire [63:0] out;	// src/main/scala/rocket/AMOALU.scala:102:8
-  wire        max = io_cmd_0 == 5'hD | io_cmd_0 == 5'hF;	// src/main/scala/rocket/AMOALU.scala:54:7, :67:{20,33,43}
-  wire        min = io_cmd_0 == 5'hC | io_cmd_0 == 5'hE;	// src/main/scala/rocket/AMOALU.scala:54:7, :68:{20,33,43}
-  wire        add = io_cmd_0 == 5'h8;	// src/main/scala/rocket/AMOALU.scala:54:7, :69:20
-  wire        _logic_xor_T_1 = io_cmd_0 == 5'hA;	// src/main/scala/rocket/AMOALU.scala:54:7, :70:26
-  wire        logic_and = _logic_xor_T_1 | io_cmd_0 == 5'hB;	// src/main/scala/rocket/AMOALU.scala:54:7, :70:{26,38,48}
-  wire        logic_xor = io_cmd_0 == 5'h9 | _logic_xor_T_1;	// src/main/scala/rocket/AMOALU.scala:54:7, :70:26, :71:{26,39}
-  wire [63:0] adder_out_mask = {32'hFFFFFFFF, io_mask_0[3], 31'h7FFFFFFF};	// src/main/scala/rocket/AMOALU.scala:54:7, :75:{16,69,96}
-  wire [63:0] adder_out = (io_lhs_0 & adder_out_mask) + (io_rhs_0 & adder_out_mask);	// src/main/scala/rocket/AMOALU.scala:54:7, :75:16, :76:{13,21,31}
-  wire        less_signed = ~(io_cmd_0[1]);	// src/main/scala/rocket/AMOALU.scala:54:7, :89:{17,25}
-  wire        less_signed_1 = ~(io_cmd_0[1]);	// src/main/scala/rocket/AMOALU.scala:54:7, :89:{17,25}
+  wire [7:0]  io_mask_0 = io_mask;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
+  wire [4:0]  io_cmd_0 = io_cmd;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
+  wire [63:0] io_lhs_0 = io_lhs;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
+  wire [63:0] io_rhs_0 = io_rhs;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
+  wire [3:0]  less_signed_mask = 4'h2;	// src/main/scala/rocket/rocket_AMOALU.scala:88:29
+  wire [3:0]  less_signed_mask_1 = 4'h2;	// src/main/scala/rocket/rocket_AMOALU.scala:88:29
+  wire [63:0] out;	// src/main/scala/rocket/rocket_AMOALU.scala:102:8
+  wire        max = io_cmd_0 == 5'hD | io_cmd_0 == 5'hF;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :67:{20,33,43}
+  wire        min = io_cmd_0 == 5'hC | io_cmd_0 == 5'hE;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :68:{20,33,43}
+  wire        add = io_cmd_0 == 5'h8;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :69:20
+  wire        _logic_xor_T_1 = io_cmd_0 == 5'hA;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :70:26
+  wire        logic_and = _logic_xor_T_1 | io_cmd_0 == 5'hB;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :70:{26,38,48}
+  wire        logic_xor = io_cmd_0 == 5'h9 | _logic_xor_T_1;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :70:26, :71:{26,39}
+  wire [63:0] adder_out_mask = {32'hFFFFFFFF, io_mask_0[3], 31'h7FFFFFFF};	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :75:{16,69,96}
+  wire [63:0] adder_out = (io_lhs_0 & adder_out_mask) + (io_rhs_0 & adder_out_mask);	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :75:16, :76:{13,21,31}
+  wire        less_signed = ~(io_cmd_0[1]);	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :89:{17,25}
+  wire        less_signed_1 = ~(io_cmd_0[1]);	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :89:{17,25}
   wire        less =
     io_mask_0[4]
       ? (io_lhs_0[63] == io_rhs_0[63]
@@ -117,20 +117,20 @@ module AMOALU(	// src/main/scala/rocket/AMOALU.scala:54:7
            : less_signed ? io_lhs_0[63] : io_rhs_0[63])
       : io_lhs_0[31] == io_rhs_0[31]
           ? io_lhs_0[31:0] < io_rhs_0[31:0]
-          : less_signed_1 ? io_lhs_0[31] : io_rhs_0[31];	// src/main/scala/chisel3/util/Mux.scala:50:70, src/main/scala/rocket/AMOALU.scala:54:7, :82:{26,35,38}, :83:{13,24,27,38,53,69}, :89:25, :91:{10,12,18,23,58}, :94:49
-  wire [63:0] minmax = (less ? min : max) ? io_lhs_0 : io_rhs_0;	// src/main/scala/chisel3/util/Mux.scala:50:70, src/main/scala/rocket/AMOALU.scala:54:7, :67:33, :68:33, :97:{19,23}
+          : less_signed_1 ? io_lhs_0[31] : io_rhs_0[31];	// src/main/scala/chisel3/util/Mux.scala:50:70, src/main/scala/rocket/rocket_AMOALU.scala:54:7, :82:{26,35,38}, :83:{13,24,27,38,53,69}, :89:25, :91:{10,12,18,23,58}, :94:49
+  wire [63:0] minmax = (less ? min : max) ? io_lhs_0 : io_rhs_0;	// src/main/scala/chisel3/util/Mux.scala:50:70, src/main/scala/rocket/rocket_AMOALU.scala:54:7, :67:33, :68:33, :97:{19,23}
   wire [63:0] logic_0 =
-    (logic_and ? io_lhs_0 & io_rhs_0 : 64'h0) | (logic_xor ? io_lhs_0 ^ io_rhs_0 : 64'h0);	// src/main/scala/rocket/AMOALU.scala:54:7, :70:38, :71:39, :99:{8,27,42}, :100:{8,27}
-  assign out = add ? adder_out : logic_and | logic_xor ? logic_0 : minmax;	// src/main/scala/rocket/AMOALU.scala:69:20, :70:38, :71:39, :76:21, :97:19, :99:42, :102:8, :103:{8,19}
-  wire [63:0] io_out_unmasked = out;	// src/main/scala/rocket/AMOALU.scala:54:7, :102:8
-  wire [15:0] wmask_lo_lo = {{8{io_mask_0[1]}}, {8{io_mask_0[0]}}};	// src/main/scala/rocket/AMOALU.scala:54:7, :106:30
-  wire [15:0] wmask_lo_hi = {{8{io_mask_0[3]}}, {8{io_mask_0[2]}}};	// src/main/scala/rocket/AMOALU.scala:54:7, :75:69, :94:49, :106:30
-  wire [31:0] wmask_lo = {wmask_lo_hi, wmask_lo_lo};	// src/main/scala/rocket/AMOALU.scala:106:30
-  wire [15:0] wmask_hi_lo = {{8{io_mask_0[5]}}, {8{io_mask_0[4]}}};	// src/main/scala/rocket/AMOALU.scala:54:7, :94:49, :106:30
-  wire [15:0] wmask_hi_hi = {{8{io_mask_0[7]}}, {8{io_mask_0[6]}}};	// src/main/scala/rocket/AMOALU.scala:54:7, :106:30
-  wire [31:0] wmask_hi = {wmask_hi_hi, wmask_hi_lo};	// src/main/scala/rocket/AMOALU.scala:106:30
-  wire [63:0] wmask = {wmask_hi, wmask_lo};	// src/main/scala/rocket/AMOALU.scala:106:30
-  wire [63:0] io_out_0 = wmask & out | ~wmask & io_lhs_0;	// src/main/scala/rocket/AMOALU.scala:54:7, :102:8, :106:30, :107:{19,25,27,34}
-  assign io_out = io_out_0;	// src/main/scala/rocket/AMOALU.scala:54:7
+    (logic_and ? io_lhs_0 & io_rhs_0 : 64'h0) | (logic_xor ? io_lhs_0 ^ io_rhs_0 : 64'h0);	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :70:38, :71:39, :99:{8,27,42}, :100:{8,27}
+  assign out = add ? adder_out : logic_and | logic_xor ? logic_0 : minmax;	// src/main/scala/rocket/rocket_AMOALU.scala:69:20, :70:38, :71:39, :76:21, :97:19, :99:42, :102:8, :103:{8,19}
+  wire [63:0] io_out_unmasked = out;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :102:8
+  wire [15:0] wmask_lo_lo = {{8{io_mask_0[1]}}, {8{io_mask_0[0]}}};	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :106:30
+  wire [15:0] wmask_lo_hi = {{8{io_mask_0[3]}}, {8{io_mask_0[2]}}};	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :75:69, :94:49, :106:30
+  wire [31:0] wmask_lo = {wmask_lo_hi, wmask_lo_lo};	// src/main/scala/rocket/rocket_AMOALU.scala:106:30
+  wire [15:0] wmask_hi_lo = {{8{io_mask_0[5]}}, {8{io_mask_0[4]}}};	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :94:49, :106:30
+  wire [15:0] wmask_hi_hi = {{8{io_mask_0[7]}}, {8{io_mask_0[6]}}};	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :106:30
+  wire [31:0] wmask_hi = {wmask_hi_hi, wmask_hi_lo};	// src/main/scala/rocket/rocket_AMOALU.scala:106:30
+  wire [63:0] wmask = {wmask_hi, wmask_lo};	// src/main/scala/rocket/rocket_AMOALU.scala:106:30
+  wire [63:0] io_out_0 = wmask & out | ~wmask & io_lhs_0;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7, :102:8, :106:30, :107:{19,25,27,34}
+  assign io_out = io_out_0;	// src/main/scala/rocket/rocket_AMOALU.scala:54:7
 endmodule
 

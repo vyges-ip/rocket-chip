@@ -84,28 +84,28 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module RecFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  input  [64:0] io_in,	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:48:16
-  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:48:16
-  output [32:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:48:16
-  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:48:16
+module rocket_RecFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  input  [64:0] io_in,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:48:16
+  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:48:16
+  output [32:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:48:16
+  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:48:16
 );
 
-  wire [4:0]  io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  wire [32:0] io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  wire [64:0] io_in_0 = io_in;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  wire        io_detectTininess = 1'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5, :48:16, :72:19
-  wire [11:0] rawIn_exp = io_in_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
+  wire [4:0]  io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  wire [32:0] io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  wire [64:0] io_in_0 = io_in;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  wire        io_detectTininess = 1'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5, :48:16, :72:19
+  wire [11:0] rawIn_exp = io_in_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
   wire        rawIn_isZero = rawIn_exp[11:9] == 3'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:{28,53}
   wire        rawIn_isZero_0 = rawIn_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23
   wire        rawIn_isSpecial = &(rawIn_exp[11:10]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:{28,53}
   wire        rawIn_isNaN = rawIn_isSpecial & rawIn_exp[9];	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:{33,41}
   wire        rawIn_isInf = rawIn_isSpecial & ~(rawIn_exp[9]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:41, :57:{33,36}
-  wire        rawIn_sign = io_in_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
+  wire        rawIn_sign = io_in_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
   wire [12:0] rawIn_sExp = {1'h0, rawIn_exp};	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:53, :55:23, :60:27
-  wire [53:0] rawIn_sig = {1'h0, ~rawIn_isZero, io_in_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
-  RoundAnyRawFNToRecFN_3 roundAnyRawFNToRecFN (	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:72:19
+  wire [53:0] rawIn_sig = {1'h0, ~rawIn_isZero, io_in_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
+  rocket_RoundAnyRawFNToRecFN_3 roundAnyRawFNToRecFN (	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:72:19
     .io_invalidExc     (rawIn_isNaN & ~(rawIn_sig[51])),	// dependencies/hardfloat/hardfloat/src/main/scala/common.scala:82:{46,49,56}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
     .io_in_isNaN       (rawIn_isNaN),	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
     .io_in_isInf       (rawIn_isInf),	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
@@ -113,11 +113,11 @@ module RecFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToR
     .io_in_sign        (rawIn_sign),	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
     .io_in_sExp        (rawIn_sExp),	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
     .io_in_sig         (rawIn_sig),	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-    .io_roundingMode   (io_roundingMode_0),	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
+    .io_roundingMode   (io_roundingMode_0),	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
     .io_out            (io_out_0),
     .io_exceptionFlags (io_exceptionFlags_0)
   );
-  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
-  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RecFNToRecFN.scala:44:5
+  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
+  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RecFNToRecFN.scala:44:5
 endmodule
 

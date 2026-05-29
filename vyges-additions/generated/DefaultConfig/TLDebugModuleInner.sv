@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLDebugModuleInner(	// src/main/scala/devices/debug/Debug.scala:790:9
+module rocket_TLDebugModuleInner(	// src/main/scala/devices/debug/Debug.scala:790:9
   input         clock,	// src/main/scala/devices/debug/Debug.scala:790:9
                 reset,	// src/main/scala/devices/debug/Debug.scala:790:9
   output        auto_tl_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -29697,7 +29697,7 @@ module TLDebugModuleInner(	// src/main/scala/devices/debug/Debug.scala:790:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/debug/Debug.scala:790:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_32 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_32 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (dmiNodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -29717,7 +29717,7 @@ module TLDebugModuleInner(	// src/main/scala/devices/debug/Debug.scala:790:9
     .io_in_d_bits_source  (dmiNodeIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_data    (dmiNodeIn_d_bits_data)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  TLMonitor_33 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_33 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (tlNodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -29737,7 +29737,7 @@ module TLDebugModuleInner(	// src/main/scala/devices/debug/Debug.scala:790:9
     .io_in_d_bits_source  (tlNodeIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_data    (tlNodeIn_d_bits_data)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  AsyncResetSynchronizerShiftReg_w1_d3_i0 hartIsInResetSync_0_debug_hartReset_0 (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0 hartIsInResetSync_0_debug_hartReset_0 (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (clock),
     .reset (reset),
     .io_d  (io_hartIsInReset_0_0),	// src/main/scala/devices/debug/Debug.scala:790:9

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module BroadcastFilter(	// src/main/scala/tilelink/Broadcast.scala:366:7
+module rocket_BroadcastFilter(	// src/main/scala/tilelink/Broadcast.scala:366:7
   output        io_request_ready,	// src/main/scala/tilelink/Broadcast.scala:363:14
   input         io_request_valid,	// src/main/scala/tilelink/Broadcast.scala:363:14
   input  [1:0]  io_request_bits_mshr,	// src/main/scala/tilelink/Broadcast.scala:363:14

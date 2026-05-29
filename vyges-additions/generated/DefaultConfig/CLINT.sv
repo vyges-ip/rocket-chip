@@ -84,9 +84,9 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  input         clock,	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-                reset,	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+module rocket_CLINT(	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  input         clock,	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+                reset,	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   output        auto_int_out_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_int_out_1,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -105,38 +105,38 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   output [1:0]  auto_in_d_bits_size,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [8:0]  auto_in_d_bits_source,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [63:0] auto_in_d_bits_data,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
-  input         io_rtcTick	// src/main/scala/devices/tilelink/CLINT.scala:67:16
+  input         io_rtcTick	// src/main/scala/devices/tilelink/rocket_CLINT.scala:67:16
 );
 
   wire [1:0]       out_bits_extra_tlrr_extra_size;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire [8:0]       out_bits_extra_tlrr_extra_source;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire [12:0]      in_bits_index;	// src/main/scala/tilelink/RegisterRouter.scala:73:18
   wire             in_bits_read;	// src/main/scala/tilelink/RegisterRouter.scala:73:18
-  wire             auto_in_a_valid_0 = auto_in_a_valid;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       auto_in_a_bits_opcode_0 = auto_in_a_bits_opcode;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       auto_in_a_bits_param_0 = auto_in_a_bits_param;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [1:0]       auto_in_a_bits_size_0 = auto_in_a_bits_size;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [8:0]       auto_in_a_bits_source_0 = auto_in_a_bits_source;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [25:0]      auto_in_a_bits_address_0 = auto_in_a_bits_address;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [7:0]       auto_in_a_bits_mask_0 = auto_in_a_bits_mask;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [63:0]      auto_in_a_bits_data_0 = auto_in_a_bits_data;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             auto_in_a_bits_corrupt_0 = auto_in_a_bits_corrupt;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             auto_in_d_ready_0 = auto_in_d_ready;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             io_rtcTick_0 = io_rtcTick;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       nodeIn_d_bits_d_opcode = 3'h0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17
-  wire [1:0]       auto_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire [1:0]       nodeIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire [1:0]       nodeIn_d_bits_d_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             auto_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             auto_in_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             auto_in_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_d_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_d_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire             nodeIn_d_bits_d_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
-  wire [63:0]      nodeIn_d_bits_d_data = 64'h0;	// src/main/scala/devices/tilelink/CLINT.scala:71:23, src/main/scala/tilelink/Edges.scala:792:17
+  wire             auto_in_a_valid_0 = auto_in_a_valid;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       auto_in_a_bits_opcode_0 = auto_in_a_bits_opcode;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       auto_in_a_bits_param_0 = auto_in_a_bits_param;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [1:0]       auto_in_a_bits_size_0 = auto_in_a_bits_size;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [8:0]       auto_in_a_bits_source_0 = auto_in_a_bits_source;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [25:0]      auto_in_a_bits_address_0 = auto_in_a_bits_address;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [7:0]       auto_in_a_bits_mask_0 = auto_in_a_bits_mask;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [63:0]      auto_in_a_bits_data_0 = auto_in_a_bits_data;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             auto_in_a_bits_corrupt_0 = auto_in_a_bits_corrupt;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             auto_in_d_ready_0 = auto_in_d_ready;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             io_rtcTick_0 = io_rtcTick;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       nodeIn_d_bits_d_opcode = 3'h0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17
+  wire [1:0]       auto_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire [1:0]       nodeIn_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire [1:0]       nodeIn_d_bits_d_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             auto_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             auto_in_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             auto_in_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_d_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_d_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire             nodeIn_d_bits_d_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  wire [63:0]      nodeIn_d_bits_d_data = 64'h0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, src/main/scala/tilelink/Edges.scala:792:17
   wire [12:0]      out_maskMatch = 13'h7FF;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             intnodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire             out_rifireMux_out = 1'h1;	// src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:10
@@ -163,23 +163,23 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   wire             out_oready = 1'h1;	// src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:10
   wire             intnodeOut_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire             nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  wire             nodeIn_a_valid = auto_in_a_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       nodeIn_a_bits_opcode = auto_in_a_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       nodeIn_a_bits_param = auto_in_a_bits_param_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [1:0]       nodeIn_a_bits_size = auto_in_a_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [8:0]       nodeIn_a_bits_source = auto_in_a_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [25:0]      nodeIn_a_bits_address = auto_in_a_bits_address_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [7:0]       nodeIn_a_bits_mask = auto_in_a_bits_mask_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [63:0]      nodeIn_a_bits_data = auto_in_a_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             nodeIn_a_bits_corrupt = auto_in_a_bits_corrupt_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             nodeIn_d_ready = auto_in_d_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
+  wire             nodeIn_a_valid = auto_in_a_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       nodeIn_a_bits_opcode = auto_in_a_bits_opcode_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       nodeIn_a_bits_param = auto_in_a_bits_param_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [1:0]       nodeIn_a_bits_size = auto_in_a_bits_size_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [8:0]       nodeIn_a_bits_source = auto_in_a_bits_source_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [25:0]      nodeIn_a_bits_address = auto_in_a_bits_address_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [7:0]       nodeIn_a_bits_mask = auto_in_a_bits_mask_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [63:0]      nodeIn_a_bits_data = auto_in_a_bits_data_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             nodeIn_a_bits_corrupt = auto_in_a_bits_corrupt_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             nodeIn_d_ready = auto_in_d_ready_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   wire             nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [2:0]       nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [1:0]       nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [8:0]       nodeIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [63:0]      nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire             in_ready;	// src/main/scala/tilelink/RegisterRouter.scala:73:18
-  wire             auto_in_a_ready_0 = nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
+  wire             auto_in_a_ready_0 = nodeIn_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   wire             in_valid = nodeIn_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:73:18
   wire [1:0]       in_bits_extra_tlrr_extra_size = nodeIn_a_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:73:18
   wire [8:0]       in_bits_extra_tlrr_extra_source = nodeIn_a_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:73:18
@@ -187,23 +187,23 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   wire [63:0]      in_bits_data = nodeIn_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:73:18
   wire             out_ready = nodeIn_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_valid;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-  wire             auto_in_d_valid_0 = nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire [2:0]       auto_in_d_bits_opcode_0 = nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
+  wire             auto_in_d_valid_0 = nodeIn_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire [2:0]       auto_in_d_bits_opcode_0 = nodeIn_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   wire [1:0]       nodeIn_d_bits_d_size;	// src/main/scala/tilelink/Edges.scala:792:17
-  wire [1:0]       auto_in_d_bits_size_0 = nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
+  wire [1:0]       auto_in_d_bits_size_0 = nodeIn_d_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   wire [8:0]       nodeIn_d_bits_d_source;	// src/main/scala/tilelink/Edges.scala:792:17
-  wire [8:0]       auto_in_d_bits_source_0 = nodeIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
+  wire [8:0]       auto_in_d_bits_source_0 = nodeIn_d_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
   wire [63:0]      out_bits_data;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-  wire [63:0]      auto_in_d_bits_data_0 = nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             auto_int_out_0_0 = intnodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  wire             auto_int_out_1_0 = intnodeOut_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/CLINT.scala:64:9
-  reg  [63:0]      time_0;	// src/main/scala/devices/tilelink/CLINT.scala:71:23
-  wire [63:0]      pad_1 = time_0;	// src/main/scala/devices/tilelink/CLINT.scala:71:23, src/main/scala/regmapper/RegField.scala:152:19
-  reg  [63:0]      timecmp_0;	// src/main/scala/devices/tilelink/CLINT.scala:75:41
-  wire [63:0]      pad = timecmp_0;	// src/main/scala/devices/tilelink/CLINT.scala:75:41, src/main/scala/regmapper/RegField.scala:152:19
-  reg              ipi_0;	// src/main/scala/devices/tilelink/CLINT.scala:76:41
-  assign intnodeOut_0 = ipi_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/CLINT.scala:76:41
-  assign intnodeOut_1 = time_0 >= timecmp_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/CLINT.scala:71:23, :75:41, :81:43
+  wire [63:0]      auto_in_d_bits_data_0 = nodeIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             auto_int_out_0_0 = intnodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  wire             auto_int_out_1_0 = intnodeOut_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  reg  [63:0]      time_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23
+  wire [63:0]      pad_1 = time_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, src/main/scala/regmapper/RegField.scala:152:19
+  reg  [63:0]      timecmp_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:75:41
+  wire [63:0]      pad = timecmp_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:75:41, src/main/scala/regmapper/RegField.scala:152:19
+  reg              ipi_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:76:41
+  assign intnodeOut_0 = ipi_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:76:41
+  assign intnodeOut_1 = time_0 >= timecmp_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, :75:41, :81:43
   wire [7:0]       oldBytes_0 = pad[7:0];	// src/main/scala/regmapper/RegField.scala:152:19, :153:{47,57}
   wire [7:0]       oldBytes_1 = pad[15:8];	// src/main/scala/regmapper/RegField.scala:152:19, :153:{47,57}
   wire [7:0]       oldBytes_2 = pad[23:16];	// src/main/scala/regmapper/RegField.scala:152:19, :153:{47,57}
@@ -274,7 +274,7 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   wire [8:0]       out_front_bits_extra_tlrr_extra_source =
     in_bits_extra_tlrr_extra_source;	// src/main/scala/tilelink/RegisterRouter.scala:73:18, :87:24
   wire [1:0]       out_front_bits_extra_tlrr_extra_size = in_bits_extra_tlrr_extra_size;	// src/main/scala/tilelink/RegisterRouter.scala:73:18, :87:24
-  assign in_bits_read = nodeIn_a_bits_opcode == 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/RegisterRouter.scala:73:18, :74:36
+  assign in_bits_read = nodeIn_a_bits_opcode == 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/RegisterRouter.scala:73:18, :74:36
   assign in_bits_index = nodeIn_a_bits_address[15:3];	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:192:34, src/main/scala/tilelink/RegisterRouter.scala:73:18, :75:19
   assign out_front_ready = out_ready;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   assign nodeIn_d_valid = out_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/RegisterRouter.scala:87:24
@@ -341,7 +341,7 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   wire             out_f_wivalid_1 = out_wivalid_1 & out_wimask_1;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_woready_1;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_f_woready_1 = out_woready_1 & out_womask_1;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-  wire [1:0]       out_prepend = {1'h0, ipi_0};	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, :76:41, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
+  wire [1:0]       out_prepend = {1'h0, ipi_0};	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, :76:41, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_rimask_2 = |(out_frontMask[7:0]);	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_wimask_2 = &(out_frontMask[7:0]);	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_romask_2 = |(out_backMask[7:0]);	// src/main/scala/tilelink/RegisterRouter.scala:87:24
@@ -582,11 +582,11 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   wire [63:0]      out_prepend_14 = {oldBytes_7, out_prepend_13};	// src/main/scala/regmapper/RegField.scala:153:47, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire [1:0]       out_iindex = out_front_bits_index[12:11];	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire [1:0]       out_oindex = out_front_bits_index[12:11];	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-  wire             out_frontSel_0 = out_iindex == 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
+  wire             out_frontSel_0 = out_iindex == 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_frontSel_1 = out_iindex == 2'h1;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_frontSel_2 = out_iindex == 2'h2;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_frontSel_3 = &out_iindex;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-  wire             out_backSel_0 = out_oindex == 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
+  wire             out_backSel_0 = out_oindex == 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_backSel_1 = out_oindex == 2'h1;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_backSel_2 = out_oindex == 2'h2;	// src/main/scala/chisel3/util/OneHot.scala:58:35, src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire             out_backSel_3 = &out_oindex;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
@@ -682,52 +682,52 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
   assign out_woready_9 = _out_wofireMux_T_12;	// src/main/scala/tilelink/RegisterRouter.scala:87:24
   wire [3:0]       _GEN_0 = {{1'h1}, {_out_T_3}, {_out_T_5}, {_out_T_5}};	// src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:10
   wire [3:0][63:0] _GEN_1 =
-    {{64'h0}, {out_prepend_7}, {out_prepend_14}, {{62'h0, out_prepend}}};	// src/main/scala/devices/tilelink/CLINT.scala:71:23, src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:{10,48}
-  assign out_bits_data = _GEN_0[out_oindex] ? _GEN_1[out_oindex] : 64'h0;	// src/main/scala/devices/tilelink/CLINT.scala:71:23, src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:10
+    {{64'h0}, {out_prepend_7}, {out_prepend_14}, {{62'h0, out_prepend}}};	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:{10,48}
+  assign out_bits_data = _GEN_0[out_oindex] ? _GEN_1[out_oindex] : 64'h0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, src/main/scala/tilelink/RegisterRouter.scala:87:24, src/main/scala/util/MuxLiteral.scala:49:10
   assign nodeIn_d_bits_size = nodeIn_d_bits_d_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:792:17
   assign nodeIn_d_bits_source = nodeIn_d_bits_d_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:792:17
-  assign nodeIn_d_bits_opcode = {2'h0, out_bits_read};	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24, :105:19
-  always @(posedge clock) begin	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-    if (reset) begin	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-      time_0 <= 64'h0;	// src/main/scala/devices/tilelink/CLINT.scala:71:23
-      ipi_0 <= 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/CLINT.scala:64:9, :76:41, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
+  assign nodeIn_d_bits_opcode = {2'h0, out_bits_read};	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25, src/main/scala/tilelink/RegisterRouter.scala:87:24, :105:19
+  always @(posedge clock) begin	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+    if (reset) begin	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+      time_0 <= 64'h0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23
+      ipi_0 <= 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, :76:41, src/main/scala/tilelink/Edges.scala:792:17, src/main/scala/tilelink/Nodes.scala:27:25
     end
-    else begin	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+    else begin	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
       if (valids_1_0 | valids_1_1 | valids_1_2 | valids_1_3 | valids_1_4 | valids_1_5
           | valids_1_6 | valids_1_7)	// src/main/scala/regmapper/RegField.scala:155:29, :156:27
-        time_0 <= {time_hi, time_lo};	// src/main/scala/devices/tilelink/CLINT.scala:71:23, src/main/scala/regmapper/RegField.scala:156:52
-      else if (io_rtcTick_0)	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-        time_0 <= time_0 + 64'h1;	// src/main/scala/devices/tilelink/CLINT.scala:71:23, :72:38
+        time_0 <= {time_hi, time_lo};	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, src/main/scala/regmapper/RegField.scala:156:52
+      else if (io_rtcTick_0)	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+        time_0 <= time_0 + 64'h1;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:71:23, :72:38
       if (out_f_woready)	// src/main/scala/tilelink/RegisterRouter.scala:87:24
-        ipi_0 <= out_front_bits_data[0];	// src/main/scala/devices/tilelink/CLINT.scala:76:41, src/main/scala/tilelink/RegisterRouter.scala:87:24
+        ipi_0 <= out_front_bits_data[0];	// src/main/scala/devices/tilelink/rocket_CLINT.scala:76:41, src/main/scala/tilelink/RegisterRouter.scala:87:24
     end
     if (valids_0 | valids_1 | valids_2 | valids_3 | valids_4 | valids_5 | valids_6
         | valids_7)	// src/main/scala/regmapper/RegField.scala:155:29, :156:27
-      timecmp_0 <= {timecmp_0_hi, timecmp_0_lo};	// src/main/scala/devices/tilelink/CLINT.scala:75:41, src/main/scala/regmapper/RegField.scala:156:52
+      timecmp_0 <= {timecmp_0_hi, timecmp_0_lo};	// src/main/scala/devices/tilelink/rocket_CLINT.scala:75:41, src/main/scala/regmapper/RegField.scala:156:52
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-      automatic logic [31:0] _RANDOM[0:4];	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-        `INIT_RANDOM_PROLOG_	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+    initial begin	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+      automatic logic [31:0] _RANDOM[0:4];	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+        `INIT_RANDOM_PROLOG_	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
         for (logic [2:0] i = 3'h0; i < 3'h5; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-        end	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-        time_0 = {_RANDOM[3'h0], _RANDOM[3'h1]};	// src/main/scala/devices/tilelink/CLINT.scala:64:9, :71:23
-        timecmp_0 = {_RANDOM[3'h2], _RANDOM[3'h3]};	// src/main/scala/devices/tilelink/CLINT.scala:64:9, :75:41
-        ipi_0 = _RANDOM[3'h4][0];	// src/main/scala/devices/tilelink/CLINT.scala:64:9, :76:41
+          _RANDOM[i] = `RANDOM;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+        end	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+        time_0 = {_RANDOM[3'h0], _RANDOM[3'h1]};	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, :71:23
+        timecmp_0 = {_RANDOM[3'h2], _RANDOM[3'h3]};	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, :75:41
+        ipi_0 = _RANDOM[3'h4][0];	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9, :76:41
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_25 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_25 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -747,13 +747,13 @@ module CLINT(	// src/main/scala/devices/tilelink/CLINT.scala:64:9
     .io_in_d_bits_source  (nodeIn_d_bits_source),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_data    (nodeIn_d_bits_data)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  assign auto_int_out_0 = auto_int_out_0_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_int_out_1 = auto_int_out_1_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_a_ready = auto_in_a_ready_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_d_valid = auto_in_d_valid_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_d_bits_opcode = auto_in_d_bits_opcode_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_d_bits_size = auto_in_d_bits_size_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_d_bits_source = auto_in_d_bits_source_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
-  assign auto_in_d_bits_data = auto_in_d_bits_data_0;	// src/main/scala/devices/tilelink/CLINT.scala:64:9
+  assign auto_int_out_0 = auto_int_out_0_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_int_out_1 = auto_int_out_1_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_a_ready = auto_in_a_ready_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_d_valid = auto_in_d_valid_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_d_bits_opcode = auto_in_d_bits_opcode_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_d_bits_size = auto_in_d_bits_size_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_d_bits_source = auto_in_d_bits_source_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
+  assign auto_in_d_bits_data = auto_in_d_bits_data_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:64:9
 endmodule
 

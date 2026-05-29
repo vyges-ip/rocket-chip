@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module MulDiv(	// src/main/scala/rocket/Multiplier.scala:40:7
+module rocket_MulDiv(	// src/main/scala/rocket/Multiplier.scala:40:7
   input         clock,	// src/main/scala/rocket/Multiplier.scala:40:7
                 reset,	// src/main/scala/rocket/Multiplier.scala:40:7
   output        io_req_ready,	// src/main/scala/rocket/Multiplier.scala:45:14

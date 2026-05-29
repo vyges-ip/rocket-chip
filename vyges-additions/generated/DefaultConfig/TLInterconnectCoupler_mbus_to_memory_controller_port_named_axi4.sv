@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLInterconnectCoupler_mbus_to_memory_controller_port_named_axi4(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
+module rocket_TLInterconnectCoupler_mbus_to_memory_controller_port_named_axi4(	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   input         clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
                 reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   output        auto_widget_anon_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -683,7 +683,7 @@ module TLInterconnectCoupler_mbus_to_memory_controller_port_named_axi4(	// depen
   wire        auto_tl_in_d_bits_denied_0 = tlIn_d_bits_denied;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire [63:0] auto_tl_in_d_bits_data_0 = tlIn_d_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        auto_tl_in_d_bits_corrupt_0 = tlIn_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
-  AXI4UserYanker_2 axi4yank (	// src/main/scala/amba/axi4/UserYanker.scala:125:30
+  rocket_AXI4UserYanker_2 axi4yank (	// src/main/scala/amba/axi4/UserYanker.scala:125:30
     .clock                                (clock),
     .reset                                (reset),
     .auto_in_aw_ready                     (_axi4yank_auto_in_aw_ready),
@@ -777,7 +777,7 @@ module TLInterconnectCoupler_mbus_to_memory_controller_port_named_axi4(	// depen
     .auto_out_r_bits_resp                 (auto_axi4yank_out_r_bits_resp_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
     .auto_out_r_bits_last                 (auto_axi4yank_out_r_bits_last_0)	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:136:7
   );
-  AXI4IdIndexer_2 axi4index (	// src/main/scala/amba/axi4/IdIndexer.scala:108:31
+  rocket_AXI4IdIndexer_2 axi4index (	// src/main/scala/amba/axi4/IdIndexer.scala:108:31
     .auto_in_aw_ready                      (_axi4index_auto_in_aw_ready),
     .auto_in_aw_valid                      (_tl2axi4_auto_out_aw_valid),	// src/main/scala/tilelink/ToAXI4.scala:301:29
     .auto_in_aw_bits_id                    (_tl2axi4_auto_out_aw_bits_id),	// src/main/scala/tilelink/ToAXI4.scala:301:29
@@ -883,7 +883,7 @@ module TLInterconnectCoupler_mbus_to_memory_controller_port_named_axi4(	// depen
     .auto_out_r_bits_echo_extra_id         (_axi4yank_auto_in_r_bits_echo_extra_id),	// src/main/scala/amba/axi4/UserYanker.scala:125:30
     .auto_out_r_bits_last                  (_axi4yank_auto_in_r_bits_last)	// src/main/scala/amba/axi4/UserYanker.scala:125:30
   );
-  TLToAXI4_1 tl2axi4 (	// src/main/scala/tilelink/ToAXI4.scala:301:29
+  rocket_TLToAXI4_1 tl2axi4 (	// src/main/scala/tilelink/ToAXI4.scala:301:29
     .clock                                    (clock),
     .reset                                    (reset),
     .auto_in_a_ready                          (widget_auto_anon_out_a_ready),

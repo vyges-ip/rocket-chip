@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PLICFanIn(	// src/main/scala/devices/tilelink/Plic.scala:336:7
+module rocket_PLICFanIn(	// src/main/scala/devices/tilelink/Plic.scala:336:7
   input  [1:0] io_prio_0,	// src/main/scala/devices/tilelink/Plic.scala:337:14
                io_prio_1,	// src/main/scala/devices/tilelink/Plic.scala:337:14
                io_ip,	// src/main/scala/devices/tilelink/Plic.scala:337:14

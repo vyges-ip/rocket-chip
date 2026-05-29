@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
+module rocket_AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
   input         clock,	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
                 reset,	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
   output        auto_anon_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -1169,7 +1169,7 @@ module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue8_AXI4BundleR qs_queue_0 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
+  rocket_Queue8_AXI4BundleR qs_queue_0 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (enq_readys_0),
@@ -1188,7 +1188,7 @@ module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
     .io_deq_bits_echo_tl_state_source (deq_bits_0_echo_tl_state_source),
     .io_deq_bits_last                 (deq_bits_0_last)
   );
-  Queue8_AXI4BundleR qs_queue_1 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
+  rocket_Queue8_AXI4BundleR qs_queue_1 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (enq_readys_1),
@@ -1207,7 +1207,7 @@ module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
     .io_deq_bits_echo_tl_state_source (deq_bits_1_echo_tl_state_source),
     .io_deq_bits_last                 (deq_bits_1_last)
   );
-  Queue8_AXI4BundleR qs_queue_2 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
+  rocket_Queue8_AXI4BundleR qs_queue_2 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (enq_readys_2),
@@ -1226,7 +1226,7 @@ module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
     .io_deq_bits_echo_tl_state_source (deq_bits_2_echo_tl_state_source),
     .io_deq_bits_last                 (deq_bits_2_last)
   );
-  Queue8_AXI4BundleR qs_queue_3 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
+  rocket_Queue8_AXI4BundleR qs_queue_3 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (enq_readys_3),
@@ -1245,7 +1245,7 @@ module AXI4Deinterleaver(	// src/main/scala/amba/axi4/Deinterleaver.scala:48:9
     .io_deq_bits_echo_tl_state_source (deq_bits_3_echo_tl_state_source),
     .io_deq_bits_last                 (deq_bits_3_last)
   );
-  Queue8_AXI4BundleR qs_queue_4 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
+  rocket_Queue8_AXI4BundleR qs_queue_4 (	// src/main/scala/amba/axi4/Deinterleaver.scala:71:27
     .clock                            (clock),
     .reset                            (reset),
     .io_enq_ready                     (enq_readys_4),

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLROM(	// src/main/scala/devices/tilelink/BootROM.scala:46:9
+module rocket_TLROM(	// src/main/scala/devices/tilelink/BootROM.scala:46:9
   input         clock,	// src/main/scala/devices/tilelink/BootROM.scala:46:9
                 reset,	// src/main/scala/devices/tilelink/BootROM.scala:46:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -1185,7 +1185,7 @@ module TLROM(	// src/main/scala/devices/tilelink/BootROM.scala:46:9
   assign nodeIn_d_bits_size = nodeIn_d_bits_d_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:810:17
   assign nodeIn_d_bits_source = nodeIn_d_bits_d_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:810:17
   assign nodeIn_d_bits_data = nodeIn_d_bits_d_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Edges.scala:810:17
-  TLMonitor_34 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_34 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

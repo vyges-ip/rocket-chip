@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AsyncResetSynchronizerShiftReg_w1_d3_i0(	// src/main/scala/util/SynchronizerReg.scala:80:7
+module rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0(	// src/main/scala/util/SynchronizerReg.scala:80:7
   input  clock,	// src/main/scala/util/SynchronizerReg.scala:80:7
          reset,	// src/main/scala/util/SynchronizerReg.scala:80:7
          io_d,	// src/main/scala/util/ShiftReg.scala:36:14
@@ -94,7 +94,7 @@ module AsyncResetSynchronizerShiftReg_w1_d3_i0(	// src/main/scala/util/Synchroni
   wire io_d_0 = io_d;	// src/main/scala/util/SynchronizerReg.scala:80:7
   wire output_0;	// src/main/scala/util/ShiftReg.scala:48:24
   wire io_q_0 = output_0;	// src/main/scala/util/ShiftReg.scala:48:24, src/main/scala/util/SynchronizerReg.scala:80:7
-  AsyncResetSynchronizerPrimitiveShiftReg_d3_i0 output_chain (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerPrimitiveShiftReg_d3_i0 output_chain (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (clock),
     .reset (reset),
     .io_d  (io_d_0),	// src/main/scala/util/SynchronizerReg.scala:80:7

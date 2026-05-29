@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module IntSyncAsyncCrossingSink_n1x1(	// src/main/scala/interrupts/Crossing.scala:74:9
+module rocket_IntSyncAsyncCrossingSink_n1x1(	// src/main/scala/interrupts/Crossing.scala:74:9
   input  clock,	// src/main/scala/interrupts/Crossing.scala:74:9
          auto_in_sync_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output auto_out_0	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -94,7 +94,7 @@ module IntSyncAsyncCrossingSink_n1x1(	// src/main/scala/interrupts/Crossing.scal
   wire nodeIn_sync_0 = auto_in_sync_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/interrupts/Crossing.scala:74:9
   wire nodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire auto_out_0_0 = nodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:74:9
-  SynchronizerShiftReg_w1_d3 chain (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_SynchronizerShiftReg_w1_d3 chain (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (clock),
     .io_d  (nodeIn_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_q  (nodeOut_0)

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module CSRFile(	// src/main/scala/rocket/CSR.scala:378:7
+module rocket_CSRFile(	// src/main/scala/rocket/CSR.scala:378:7
   input         clock,	// src/main/scala/rocket/CSR.scala:378:7
                 reset,	// src/main/scala/rocket/CSR.scala:378:7
                 io_ungated_clock,	// src/main/scala/rocket/CSR.scala:385:14

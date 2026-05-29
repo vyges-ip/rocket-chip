@@ -208,5 +208,9 @@
     "schema": {
       "version": "1.0.0"
     }
+  },
+  "integration": {
+    "module_prefixed": true,
+    "defines_prefixed": true
   }
 }

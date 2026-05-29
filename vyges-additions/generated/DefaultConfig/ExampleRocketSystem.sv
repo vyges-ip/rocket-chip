@@ -436,14 +436,14 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
   wire        _coh_wrapper_auto_coherent_jbar_anon_in_d_bits_corrupt;	// src/main/scala/subsystem/BankedCoherenceParams.scala:56:31
   wire        _coh_wrapper_auto_coh_clock_groups_out_member_mbus_0_clock;	// src/main/scala/subsystem/BankedCoherenceParams.scala:56:31
   wire        _coh_wrapper_auto_coh_clock_groups_out_member_mbus_0_reset;	// src/main/scala/subsystem/BankedCoherenceParams.scala:56:31
-  wire        _mbus_auto_bus_xing_in_a_ready;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire        _mbus_auto_bus_xing_in_d_valid;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire [2:0]  _mbus_auto_bus_xing_in_d_bits_opcode;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire [2:0]  _mbus_auto_bus_xing_in_d_bits_size;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire [6:0]  _mbus_auto_bus_xing_in_d_bits_source;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire        _mbus_auto_bus_xing_in_d_bits_denied;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire [63:0] _mbus_auto_bus_xing_in_d_bits_data;	// src/main/scala/subsystem/MemoryBus.scala:30:26
-  wire        _mbus_auto_bus_xing_in_d_bits_corrupt;	// src/main/scala/subsystem/MemoryBus.scala:30:26
+  wire        _mbus_auto_bus_xing_in_a_ready;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire        _mbus_auto_bus_xing_in_d_valid;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire [2:0]  _mbus_auto_bus_xing_in_d_bits_opcode;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire [2:0]  _mbus_auto_bus_xing_in_d_bits_size;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire [6:0]  _mbus_auto_bus_xing_in_d_bits_source;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire        _mbus_auto_bus_xing_in_d_bits_denied;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire [63:0] _mbus_auto_bus_xing_in_d_bits_data;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
+  wire        _mbus_auto_bus_xing_in_d_bits_corrupt;	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
   wire        _cbus_auto_coupler_to_bootrom_fragmenter_anon_out_a_valid;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   wire [2:0]  _cbus_auto_coupler_to_bootrom_fragmenter_anon_out_a_bits_opcode;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   wire [2:0]  _cbus_auto_coupler_to_bootrom_fragmenter_anon_out_a_bits_param;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
@@ -502,75 +502,75 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
   wire        _cbus_auto_bus_xing_in_d_bits_denied;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   wire [63:0] _cbus_auto_bus_xing_in_d_bits_data;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   wire        _cbus_auto_bus_xing_in_d_bits_corrupt;	// src/main/scala/subsystem/PeripheryBus.scala:37:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_a_ready;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_param;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [31:0] _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_address;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_c_ready;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_opcode;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_param;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [3:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_size;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_source;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_sink;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_denied;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [63:0] _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_data;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_corrupt;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_opcode;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_param;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_size;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [4:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_source;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [31:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_address;	// src/main/scala/subsystem/SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_a_ready;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_param;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [31:0] _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_address;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_c_ready;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_opcode;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_param;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [3:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_size;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_source;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [1:0]  _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_sink;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_denied;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [63:0] _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_data;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_corrupt;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_opcode;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_param;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_size;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [4:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_source;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [31:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_address;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_bufferable;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_bufferable;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_modifiable;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_modifiable;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_readalloc;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_readalloc;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_writealloc;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_writealloc;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_privileged;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_privileged;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_secure;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_secure;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire
-    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_fetch;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [7:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_mask;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [63:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_data;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_corrupt;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_b_ready;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_opcode;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_param;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_size;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [4:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_source;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [31:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_address;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [63:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_data;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_corrupt;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_d_ready;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [1:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_bits_sink;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_valid;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_opcode;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [2:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_param;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [3:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_size;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [4:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_source;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [27:0] _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_address;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [7:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_mask;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire [63:0] _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_data;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_corrupt;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_d_ready;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_fixedClockNode_anon_out_1_clock;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_fixedClockNode_anon_out_1_reset;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_1_clock;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_1_reset;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_0_clock;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_0_reset;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_1_clock;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_1_reset;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_0_clock;	// src/main/scala/subsystem/SystemBus.scala:31:26
-  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_0_reset;	// src/main/scala/subsystem/SystemBus.scala:31:26
+    _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_fetch;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [7:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_mask;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [63:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_data;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_corrupt;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_b_ready;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_opcode;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_param;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_size;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [4:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_source;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [31:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_address;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [63:0] _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_data;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_corrupt;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_d_ready;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [1:0]  _sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_bits_sink;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_valid;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_opcode;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [2:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_param;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [3:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_size;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [4:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_source;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [27:0] _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_address;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [7:0]  _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_mask;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire [63:0] _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_data;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_corrupt;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_d_ready;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_fixedClockNode_anon_out_1_clock;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_fixedClockNode_anon_out_1_reset;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_1_clock;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_1_reset;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_0_clock;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_2_member_coh_0_reset;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_1_clock;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_1_reset;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_0_clock;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
+  wire        _sbus_auto_sbus_clock_groups_out_0_member_cbus_0_reset;	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   wire        io_aggregator_5_clock_0 = io_aggregator_5_clock;	// src/main/scala/system/ExampleRocketSystem.scala:25:7
   wire        io_aggregator_5_reset_0 = io_aggregator_5_reset;	// src/main/scala/system/ExampleRocketSystem.scala:25:7
   wire        io_aggregator_4_clock_0 = io_aggregator_4_clock;	// src/main/scala/system/ExampleRocketSystem.scala:25:7
@@ -1783,14 +1783,14 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
       `FIRRTL_AFTER_INITIAL	// src/main/scala/system/ExampleRocketSystem.scala:25:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  IntSyncAsyncCrossingSink_n1x2 ibus_intsink (	// src/main/scala/interrupts/Crossing.scala:86:29
+  rocket_IntSyncAsyncCrossingSink_n1x2 ibus_intsink (	// src/main/scala/interrupts/Crossing.scala:86:29
     .clock          (ibus_childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .auto_in_sync_0 (ibus_int_in_xingOut_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_in_sync_1 (ibus_int_in_xingOut_sync_1),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (ibus_int_bus_auto_anon_in_0),
     .auto_out_1     (ibus_int_bus_auto_anon_in_1)
   );
-  IntSyncCrossingSource_n1x2 ibus_intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x2 ibus_intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (ibus_childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (ibus_childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (ibus_with_no_nameOut_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
@@ -1798,7 +1798,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_out_sync_0 (ibus_int_in_xingIn_1_sync_0),
     .auto_out_sync_1 (ibus_int_in_xingIn_1_sync_1)
   );
-  SystemBus sbus (	// src/main/scala/subsystem/SystemBus.scala:31:26
+  rocket_SystemBus sbus (	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coupler_to_port_named_mmio_port_axi4_axi4buf_out_aw_ready
       (mmioAXI4NodeIn_aw_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .auto_coupler_to_port_named_mmio_port_axi4_axi4buf_out_aw_valid
@@ -2174,13 +2174,13 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_sbus_clock_groups_out_0_member_cbus_0_reset
       (_sbus_auto_sbus_clock_groups_out_0_member_cbus_0_reset)
   );
-  PeripheryBus_pbus pbus (	// src/main/scala/subsystem/PeripheryBus.scala:37:26
+  rocket_PeripheryBus_pbus pbus (	// src/main/scala/subsystem/PeripheryBus.scala:37:26
     .auto_pbus_clock_groups_in_member_pbus_0_clock
       (_cbus_auto_cbus_clock_groups_out_member_pbus_0_clock),	// src/main/scala/subsystem/PeripheryBus.scala:37:26
     .auto_pbus_clock_groups_in_member_pbus_0_reset
       (_cbus_auto_cbus_clock_groups_out_member_pbus_0_reset)	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   );
-  TLBuffer_a32d64s4k2z4u fbus_buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
+  rocket_TLBuffer_a32d64s4k2z4u fbus_buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
     .clock                                     (fbus_childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                     (fbus_childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready                           (fbus_fbus_xbar_auto_anon_out_a_ready),
@@ -2262,7 +2262,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_out_d_bits_data                      (fbus_bus_xingIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .auto_out_d_bits_corrupt                   (fbus_bus_xingIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4 fbus_coupler_from_port_named_slave_port_axi4 (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
+  rocket_TLInterconnectCoupler_fbus_from_port_named_slave_port_axi4 fbus_coupler_from_port_named_slave_port_axi4 (	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyScope.scala:99:27
     .clock                                        (fbus_childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                        (fbus_childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_axi4index_in_aw_ready
@@ -2390,7 +2390,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_tl_out_d_bits_corrupt
       (fbus_fbus_xbar_auto_anon_in_d_bits_corrupt)	// src/main/scala/tilelink/Xbar.scala:74:9
   );
-  PeripheryBus_cbus cbus (	// src/main/scala/subsystem/PeripheryBus.scala:37:26
+  rocket_PeripheryBus_cbus cbus (	// src/main/scala/subsystem/PeripheryBus.scala:37:26
     .auto_coupler_to_bootrom_fragmenter_anon_out_a_ready
       (_bootrom_domain_auto_bootrom_in_a_ready),	// src/main/scala/tilelink/BusWrapper.scala:89:28
     .auto_coupler_to_bootrom_fragmenter_anon_out_a_valid
@@ -2532,13 +2532,13 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_fixedClockNode_anon_out_0_reset
       (_cbus_auto_fixedClockNode_anon_out_0_reset),
     .auto_cbus_clock_groups_in_member_cbus_1_clock
-      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_1_clock),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_1_clock),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_cbus_clock_groups_in_member_cbus_1_reset
-      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_1_reset),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_1_reset),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_cbus_clock_groups_in_member_cbus_0_clock
-      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_0_clock),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_0_clock),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_cbus_clock_groups_in_member_cbus_0_reset
-      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_0_reset),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_0_member_cbus_0_reset),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_cbus_clock_groups_out_member_pbus_0_clock
       (_cbus_auto_cbus_clock_groups_out_member_pbus_0_clock),
     .auto_cbus_clock_groups_out_member_pbus_0_reset
@@ -2546,25 +2546,25 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_bus_xing_in_a_ready
       (_cbus_auto_bus_xing_in_a_ready),
     .auto_bus_xing_in_a_valid
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_opcode
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_opcode),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_opcode),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_param
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_param),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_param),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_size
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_size),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_size),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_source
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_source),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_source),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_address
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_address),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_address),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_mask
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_mask),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_mask),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_data
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_data),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_data),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_a_bits_corrupt
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_corrupt),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_a_bits_corrupt),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_d_ready
-      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_d_ready),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_cbus_bus_xing_out_d_ready),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_bus_xing_in_d_valid
       (_cbus_auto_bus_xing_in_d_valid),
     .auto_bus_xing_in_d_bits_opcode
@@ -2584,7 +2584,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_bus_xing_in_d_bits_corrupt
       (_cbus_auto_bus_xing_in_d_bits_corrupt)
   );
-  MemoryBus mbus (	// src/main/scala/subsystem/MemoryBus.scala:30:26
+  rocket_MemoryBus mbus (	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_memory_controller_port_named_axi4_axi4yank_out_aw_ready
       (memAXI4NodeIn_aw_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .auto_coupler_to_memory_controller_port_named_axi4_axi4yank_out_aw_valid
@@ -2712,9 +2712,9 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_bus_xing_in_d_bits_corrupt
       (_mbus_auto_bus_xing_in_d_bits_corrupt)
   );
-  CoherenceManagerWrapper coh_wrapper (	// src/main/scala/subsystem/BankedCoherenceParams.scala:56:31
+  rocket_CoherenceManagerWrapper coh_wrapper (	// src/main/scala/subsystem/BankedCoherenceParams.scala:56:31
     .auto_coupler_to_bus_named_mbus_bus_xing_out_a_ready
-      (_mbus_auto_bus_xing_in_a_ready),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_a_ready),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_a_valid
       (_coh_wrapper_auto_coupler_to_bus_named_mbus_bus_xing_out_a_valid),
     .auto_coupler_to_bus_named_mbus_bus_xing_out_a_bits_opcode
@@ -2748,55 +2748,55 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_ready
       (_coh_wrapper_auto_coupler_to_bus_named_mbus_bus_xing_out_d_ready),
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_valid
-      (_mbus_auto_bus_xing_in_d_valid),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_valid),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_opcode
-      (_mbus_auto_bus_xing_in_d_bits_opcode),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_opcode),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_size
-      (_mbus_auto_bus_xing_in_d_bits_size),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_size),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_source
-      (_mbus_auto_bus_xing_in_d_bits_source),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_source),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_denied
-      (_mbus_auto_bus_xing_in_d_bits_denied),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_denied),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_data
-      (_mbus_auto_bus_xing_in_d_bits_data),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_data),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coupler_to_bus_named_mbus_bus_xing_out_d_bits_corrupt
-      (_mbus_auto_bus_xing_in_d_bits_corrupt),	// src/main/scala/subsystem/MemoryBus.scala:30:26
+      (_mbus_auto_bus_xing_in_d_bits_corrupt),	// src/main/scala/subsystem/rocket_MemoryBus.scala:30:26
     .auto_coherent_jbar_anon_in_a_ready
       (_coh_wrapper_auto_coherent_jbar_anon_in_a_ready),
     .auto_coherent_jbar_anon_in_a_valid
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_opcode
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_opcode),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_opcode),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_param
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_param),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_param),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_size
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_size),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_size),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_source
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_source),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_source),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_address
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_address),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_address),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_bufferable
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_bufferable),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_bufferable),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_modifiable
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_modifiable),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_modifiable),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_readalloc
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_readalloc),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_readalloc),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_writealloc
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_writealloc),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_writealloc),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_privileged
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_privileged),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_privileged),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_secure
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_secure),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_secure),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_user_amba_prot_fetch
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_fetch),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_user_amba_prot_fetch),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_mask
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_mask),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_mask),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_data
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_data),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_data),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_a_bits_corrupt
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_corrupt),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_a_bits_corrupt),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_b_ready
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_b_ready),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_b_ready),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_b_valid
       (_coh_wrapper_auto_coherent_jbar_anon_in_b_valid),
     .auto_coherent_jbar_anon_in_b_bits_param
@@ -2806,23 +2806,23 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_coherent_jbar_anon_in_c_ready
       (_coh_wrapper_auto_coherent_jbar_anon_in_c_ready),
     .auto_coherent_jbar_anon_in_c_valid
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_opcode
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_opcode),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_opcode),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_param
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_param),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_param),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_size
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_size),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_size),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_source
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_source),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_source),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_address
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_address),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_address),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_data
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_data),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_data),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_c_bits_corrupt
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_corrupt),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_c_bits_corrupt),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_d_ready
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_d_ready),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_d_ready),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_d_valid
       (_coh_wrapper_auto_coherent_jbar_anon_in_d_valid),
     .auto_coherent_jbar_anon_in_d_bits_opcode
@@ -2842,23 +2842,23 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_coherent_jbar_anon_in_d_bits_corrupt
       (_coh_wrapper_auto_coherent_jbar_anon_in_d_bits_corrupt),
     .auto_coherent_jbar_anon_in_e_valid
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coherent_jbar_anon_in_e_bits_sink
-      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_bits_sink),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_to_bus_named_coh_widget_anon_out_e_bits_sink),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coh_clock_groups_in_member_coh_1_clock
-      (_sbus_auto_sbus_clock_groups_out_2_member_coh_1_clock),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_2_member_coh_1_clock),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coh_clock_groups_in_member_coh_1_reset
-      (_sbus_auto_sbus_clock_groups_out_2_member_coh_1_reset),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_2_member_coh_1_reset),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coh_clock_groups_in_member_coh_0_clock
-      (_sbus_auto_sbus_clock_groups_out_2_member_coh_0_clock),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_2_member_coh_0_clock),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coh_clock_groups_in_member_coh_0_reset
-      (_sbus_auto_sbus_clock_groups_out_2_member_coh_0_reset),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_sbus_clock_groups_out_2_member_coh_0_reset),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_coh_clock_groups_out_member_mbus_0_clock
       (_coh_wrapper_auto_coh_clock_groups_out_member_mbus_0_clock),
     .auto_coh_clock_groups_out_member_mbus_0_reset
       (_coh_wrapper_auto_coh_clock_groups_out_member_mbus_0_reset)
   );
-  TilePRCIDomain tile_prci_domain (	// src/main/scala/subsystem/HasTiles.scala:163:38
+  rocket_TilePRCIDomain tile_prci_domain (	// src/main/scala/subsystem/HasTiles.scala:163:38
     .auto_intsink_out_2_0
       (xbar_2_auto_anon_in_0),
     .auto_intsink_out_1_0
@@ -2896,7 +2896,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_int_in_clock_xing_in_0_sync_1
       (_clint_domain_auto_int_in_clock_xing_out_sync_1),	// src/main/scala/tilelink/BusWrapper.scala:89:28
     .auto_tl_master_clock_xing_out_a_ready
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_a_ready),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_a_ready),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_a_valid
       (_tile_prci_domain_auto_tl_master_clock_xing_out_a_valid),
     .auto_tl_master_clock_xing_out_a_bits_opcode
@@ -2918,13 +2918,13 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_tl_master_clock_xing_out_b_ready
       (_tile_prci_domain_auto_tl_master_clock_xing_out_b_ready),
     .auto_tl_master_clock_xing_out_b_valid
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_b_bits_param
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_param),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_param),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_b_bits_address
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_address),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_b_bits_address),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_c_ready
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_c_ready),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_c_ready),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_c_valid
       (_tile_prci_domain_auto_tl_master_clock_xing_out_c_valid),
     .auto_tl_master_clock_xing_out_c_bits_opcode
@@ -2944,36 +2944,36 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_tl_master_clock_xing_out_d_ready
       (_tile_prci_domain_auto_tl_master_clock_xing_out_d_ready),
     .auto_tl_master_clock_xing_out_d_valid
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_valid),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_valid),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_opcode
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_opcode),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_opcode),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_param
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_param),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_param),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_size
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_size),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_size),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_source
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_source),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_source),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_sink
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_sink),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_sink),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_denied
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_denied),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_denied),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_data
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_data),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_data),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_d_bits_corrupt
-      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_corrupt),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_coupler_from_rockettile_tl_master_clock_xing_in_d_bits_corrupt),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tl_master_clock_xing_out_e_valid
       (_tile_prci_domain_auto_tl_master_clock_xing_out_e_valid),
     .auto_tl_master_clock_xing_out_e_bits_sink
       (_tile_prci_domain_auto_tl_master_clock_xing_out_e_bits_sink),
     .auto_tap_clock_in_clock
-      (_sbus_auto_fixedClockNode_anon_out_1_clock),	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_fixedClockNode_anon_out_1_clock),	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
     .auto_tap_clock_in_reset
-      (_sbus_auto_fixedClockNode_anon_out_1_reset)	// src/main/scala/subsystem/SystemBus.scala:31:26
+      (_sbus_auto_fixedClockNode_anon_out_1_reset)	// src/main/scala/subsystem/rocket_SystemBus.scala:31:26
   );
-  BundleBridgeNexus_UInt1_1 tileHartIdNexusNode (	// src/main/scala/subsystem/HasTiles.scala:75:39
+  rocket_BundleBridgeNexus_UInt1_1 tileHartIdNexusNode (	// src/main/scala/subsystem/HasTiles.scala:75:39
     .auto_out (_tileHartIdNexusNode_auto_out)
   );
-  CLINTClockSinkDomain clint_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
+  rocket_CLINTClockSinkDomain clint_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
     .auto_clint_in_a_ready             (_clint_domain_auto_clint_in_a_ready),
     .auto_clint_in_a_valid
       (_cbus_auto_coupler_to_clint_fragmenter_anon_out_a_valid),	// src/main/scala/subsystem/PeripheryBus.scala:37:26
@@ -3008,7 +3008,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .clock                             (_clint_domain_clock),
     .reset                             (_clint_domain_reset)
   );
-  PLICClockSinkDomain plic_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
+  rocket_PLICClockSinkDomain plic_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
     .auto_plic_int_in_0                  (ibus_auto_int_bus_anon_out_0),	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_plic_int_in_1                  (ibus_auto_int_bus_anon_out_1),	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_plic_in_a_ready                (_plic_domain_auto_plic_in_a_ready),
@@ -3044,7 +3044,7 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .auto_clock_in_clock                 (_cbus_auto_fixedClockNode_anon_out_1_clock),	// src/main/scala/subsystem/PeripheryBus.scala:37:26
     .auto_clock_in_reset                 (_cbus_auto_fixedClockNode_anon_out_1_reset)	// src/main/scala/subsystem/PeripheryBus.scala:37:26
   );
-  TLDebugModule tlDM (	// src/main/scala/devices/debug/Periphery.scala:88:26
+  rocket_TLDebugModule tlDM (	// src/main/scala/devices/debug/Periphery.scala:88:26
     .auto_dmInner_dmInner_tl_in_a_ready        (_tlDM_auto_dmInner_dmInner_tl_in_a_ready),
     .auto_dmInner_dmInner_tl_in_a_valid
       (_cbus_auto_coupler_to_debug_fragmenter_anon_out_a_valid),	// src/main/scala/subsystem/PeripheryBus.scala:37:26
@@ -3096,8 +3096,8 @@ module ExampleRocketSystem(	// src/main/scala/system/ExampleRocketSystem.scala:2
     .io_dmi_dmiReset                           (debug_clockeddmi_dmiReset_0),	// src/main/scala/system/ExampleRocketSystem.scala:25:7
     .io_hartIsInReset_0                        (resetctrl_hartIsInReset_0_0)	// src/main/scala/system/ExampleRocketSystem.scala:25:7
   );
-  DebugCustomXbar debugCustomXbarOpt ();	// src/main/scala/devices/debug/Periphery.scala:80:75
-  bootromClockSinkDomain bootrom_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
+  rocket_DebugCustomXbar debugCustomXbarOpt ();	// src/main/scala/devices/debug/Periphery.scala:80:75
+  rocket_bootromClockSinkDomain bootrom_domain (	// src/main/scala/tilelink/BusWrapper.scala:89:28
     .auto_bootrom_in_a_ready        (_bootrom_domain_auto_bootrom_in_a_ready),
     .auto_bootrom_in_a_valid
       (_cbus_auto_coupler_to_bootrom_fragmenter_anon_out_a_valid),	// src/main/scala/subsystem/PeripheryBus.scala:37:26

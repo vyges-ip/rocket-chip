@@ -85,7 +85,7 @@
 `endif // not def STOP_COND_
 
 // VCS coverage exclude_file
-module ram_4x8(	// src/main/scala/chisel3/util/Decoupled.scala:256:91
+module rocket_ram_4x8(	// src/main/scala/chisel3/util/Decoupled.scala:256:91
   input  [1:0] R0_addr,
   input        R0_en,
                R0_clk,

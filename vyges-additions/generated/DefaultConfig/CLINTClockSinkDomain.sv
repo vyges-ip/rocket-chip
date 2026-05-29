@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   output        auto_clint_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_clint_in_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [2:0]  auto_clint_in_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -105,7 +105,7 @@ module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
                 auto_int_in_clock_xing_out_sync_1,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input         auto_clock_in_clock,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_clock_in_reset,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
-                tick,	// src/main/scala/devices/tilelink/CLINT.scala:113:20
+                tick,	// src/main/scala/devices/tilelink/rocket_CLINT.scala:113:20
   output        clock,	// src/main/scala/prci/ClockDomain.scala:21:19
                 reset	// src/main/scala/prci/ClockDomain.scala:22:19
 );
@@ -116,8 +116,8 @@ module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire [2:0]  auto_clint_in_d_bits_opcode_0;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_clint_in_d_valid_0;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_clint_in_a_ready_0;	// src/main/scala/prci/ClockDomain.scala:14:9
-  wire        _clint_auto_int_out_0;	// src/main/scala/devices/tilelink/CLINT.scala:110:48
-  wire        _clint_auto_int_out_1;	// src/main/scala/devices/tilelink/CLINT.scala:110:48
+  wire        _clint_auto_int_out_0;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48
+  wire        _clint_auto_int_out_1;	// src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48
   wire        auto_clint_in_a_valid_0 = auto_clint_in_a_valid;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire [2:0]  auto_clint_in_a_bits_opcode_0 = auto_clint_in_a_bits_opcode;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire [2:0]  auto_clint_in_a_bits_param_0 = auto_clint_in_a_bits_param;	// src/main/scala/prci/ClockDomain.scala:14:9
@@ -130,10 +130,10 @@ module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_clint_in_d_ready_0 = auto_clint_in_d_ready;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_clock_in_clock_0 = auto_clock_in_clock;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_clock_in_reset_0 = auto_clock_in_reset;	// src/main/scala/prci/ClockDomain.scala:14:9
-  wire        auto_clint_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
-  wire        auto_clint_in_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
-  wire        auto_clint_in_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
-  wire [1:0]  auto_clint_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
+  wire        auto_clint_in_d_bits_sink = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
+  wire        auto_clint_in_d_bits_denied = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
+  wire        auto_clint_in_d_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
+  wire [1:0]  auto_clint_in_d_bits_param = 2'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48, src/main/scala/prci/ClockDomain.scala:14:9
   wire        intInClockXingOut_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        intInClockXingOut_sync_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        clockNodeIn_clock = auto_clock_in_clock_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/prci/ClockDomain.scala:14:9
@@ -146,7 +146,7 @@ module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        auto_int_in_clock_xing_out_sync_1_0 = intInClockXingOut_sync_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/prci/ClockDomain.scala:14:9
   assign intInClockXingOut_sync_0 = intInClockXingIn_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign intInClockXingOut_sync_1 = intInClockXingIn_sync_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  CLINT clint (	// src/main/scala/devices/tilelink/CLINT.scala:110:48
+  rocket_CLINT clint (	// src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48
     .clock                  (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                  (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_int_out_0         (_clint_auto_int_out_0),
@@ -169,11 +169,11 @@ module CLINTClockSinkDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_in_d_bits_data    (auto_clint_in_d_bits_data_0),
     .io_rtcTick             (tick)
   );
-  IntSyncCrossingSource_n1x2 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x2 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
-    .auto_in_0       (_clint_auto_int_out_0),	// src/main/scala/devices/tilelink/CLINT.scala:110:48
-    .auto_in_1       (_clint_auto_int_out_1),	// src/main/scala/devices/tilelink/CLINT.scala:110:48
+    .auto_in_0       (_clint_auto_int_out_0),	// src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48
+    .auto_in_1       (_clint_auto_int_out_1),	// src/main/scala/devices/tilelink/rocket_CLINT.scala:110:48
     .auto_out_sync_0 (intInClockXingIn_sync_0),
     .auto_out_sync_1 (intInClockXingIn_sync_1)
   );

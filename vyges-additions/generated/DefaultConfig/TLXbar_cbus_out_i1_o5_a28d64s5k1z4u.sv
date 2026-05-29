@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLXbar_cbus_out_i1_o5_a28d64s5k1z4u(	// src/main/scala/tilelink/Xbar.scala:74:9
+module rocket_TLXbar_cbus_out_i1_o5_a28d64s5k1z4u(	// src/main/scala/tilelink/Xbar.scala:74:9
   input         clock,	// src/main/scala/tilelink/Xbar.scala:74:9
                 reset,	// src/main/scala/tilelink/Xbar.scala:74:9
   output        auto_anon_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -1144,7 +1144,7 @@ module TLXbar_cbus_out_i1_o5_a28d64s5k1z4u(	// src/main/scala/tilelink/Xbar.scal
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Xbar.scala:74:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_9 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_9 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (anonIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

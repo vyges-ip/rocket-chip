@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLBusBypassBar(	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
+module rocket_TLBusBypassBar(	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
   input          clock,	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
                  reset,	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
   output         auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -414,7 +414,7 @@ module TLBusBypassBar(	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/devices/tilelink/BusBypass.scala:69:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_29 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_29 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

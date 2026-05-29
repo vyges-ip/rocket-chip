@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module MulAddRecFNToRaw_preMul_1(	// dependencies/hardfloat/hardfloat/src/main/scala/MulAddRecFN.scala:71:7
+module rocket_MulAddRecFNToRaw_preMul_1(	// dependencies/hardfloat/hardfloat/src/main/scala/MulAddRecFN.scala:71:7
   input  [1:0]   io_op,	// dependencies/hardfloat/hardfloat/src/main/scala/MulAddRecFN.scala:73:16
   input  [64:0]  io_a,	// dependencies/hardfloat/hardfloat/src/main/scala/MulAddRecFN.scala:73:16
                  io_b,	// dependencies/hardfloat/hardfloat/src/main/scala/MulAddRecFN.scala:73:16

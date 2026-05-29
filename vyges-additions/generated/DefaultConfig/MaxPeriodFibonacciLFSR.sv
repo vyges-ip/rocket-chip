@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module MaxPeriodFibonacciLFSR(	// src/main/scala/chisel3/util/random/FibonacciLFSR.scala:65:7
+module rocket_MaxPeriodFibonacciLFSR(	// src/main/scala/chisel3/util/random/FibonacciLFSR.scala:65:7
   input  clock,	// src/main/scala/chisel3/util/random/FibonacciLFSR.scala:65:7
          reset,	// src/main/scala/chisel3/util/random/FibonacciLFSR.scala:65:7
          io_increment,	// src/main/scala/chisel3/util/random/PRNG.scala:42:22

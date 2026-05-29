@@ -85,7 +85,7 @@
 `endif // not def STOP_COND_
 
 // VCS coverage exclude_file
-module rf_31x64(	// src/main/scala/rocket/RocketCore.scala:1350:15
+module rocket_rf_31x64(	// src/main/scala/rocket/RocketCore.scala:1350:15
   input  [4:0]  R0_addr,
   input         R0_en,
                 R0_clk,

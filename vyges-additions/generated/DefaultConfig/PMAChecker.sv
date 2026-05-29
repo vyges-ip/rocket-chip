@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module PMAChecker(	// src/main/scala/rocket/PMA.scala:18:7
+module rocket_PMAChecker(	// src/main/scala/rocket/PMA.scala:18:7
   input  [39:0] io_paddr,	// src/main/scala/rocket/PMA.scala:19:14
   output        io_resp_cacheable,	// src/main/scala/rocket/PMA.scala:19:14
                 io_resp_r,	// src/main/scala/rocket/PMA.scala:19:14

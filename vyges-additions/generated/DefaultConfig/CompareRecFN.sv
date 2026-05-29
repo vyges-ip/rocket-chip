@@ -84,58 +84,58 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module CompareRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  input  [64:0] io_a,	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
-                io_b,	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
-  input         io_signaling,	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
-  output        io_lt,	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
-                io_eq,	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
-  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:44:16
+module rocket_CompareRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  input  [64:0] io_a,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
+                io_b,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
+  input         io_signaling,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
+  output        io_lt,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
+                io_eq,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
+  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:44:16
 );
 
-  wire [64:0] io_a_0 = io_a;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  wire [64:0] io_b_0 = io_b;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  wire        io_signaling_0 = io_signaling;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  wire [11:0] rawA_exp = io_a_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
+  wire [64:0] io_a_0 = io_a;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  wire [64:0] io_b_0 = io_b;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  wire        io_signaling_0 = io_signaling;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  wire [11:0] rawA_exp = io_a_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
   wire        rawA_isZero = rawA_exp[11:9] == 3'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:{28,53}
   wire        rawA_isZero_0 = rawA_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23
   wire        rawA_isSpecial = &(rawA_exp[11:10]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:{28,53}
   wire        rawA_isNaN = rawA_isSpecial & rawA_exp[9];	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:{33,41}
   wire        rawA_isInf = rawA_isSpecial & ~(rawA_exp[9]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:41, :57:{33,36}
-  wire        rawA_sign = io_a_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
+  wire        rawA_sign = io_a_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
   wire [12:0] rawA_sExp = {1'h0, rawA_exp};	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:53, :55:23, :60:27
-  wire [53:0] rawA_sig = {1'h0, ~rawA_isZero, io_a_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
-  wire [11:0] rawB_exp = io_b_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
+  wire [53:0] rawA_sig = {1'h0, ~rawA_isZero, io_a_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
+  wire [11:0] rawB_exp = io_b_0[63:52];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21
   wire        rawB_isZero = rawB_exp[11:9] == 3'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:{28,53}
   wire        rawB_isZero_0 = rawB_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23
   wire        rawB_isSpecial = &(rawB_exp[11:10]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:{28,53}
   wire        rawB_isNaN = rawB_isSpecial & rawB_exp[9];	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:{33,41}
   wire        rawB_isInf = rawB_isSpecial & ~(rawB_exp[9]);	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :53:53, :55:23, :56:41, :57:{33,36}
-  wire        rawB_sign = io_b_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
+  wire        rawB_sign = io_b_0[64];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23, :59:25
   wire [12:0] rawB_sExp = {1'h0, rawB_exp};	// dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:51:21, :52:53, :55:23, :60:27
-  wire [53:0] rawB_sig = {1'h0, ~rawB_isZero, io_b_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
-  wire        ordered = ~rawA_isNaN & ~rawB_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:57:{19,32,35}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-  wire        bothInfs = rawA_isInf & rawB_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:58:33, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-  wire        bothZeros = rawA_isZero_0 & rawB_isZero_0;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:59:33, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-  wire        eqExps = rawA_sExp == rawB_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:60:29, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire [53:0] rawB_sig = {1'h0, ~rawB_isZero, io_b_0[51:0]};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:52:53, :55:23, :61:{35,44,49}
+  wire        ordered = ~rawA_isNaN & ~rawB_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:57:{19,32,35}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire        bothInfs = rawA_isInf & rawB_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:58:33, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire        bothZeros = rawA_isZero_0 & rawB_isZero_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:59:33, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire        eqExps = rawA_sExp == rawB_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:60:29, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
   wire        common_ltMags =
-    $signed(rawA_sExp) < $signed(rawB_sExp) | eqExps & rawA_sig < rawB_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:60:29, :62:{20,33,44,57}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-  wire        common_eqMags = eqExps & rawA_sig == rawB_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:60:29, :63:{32,45}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+    $signed(rawA_sExp) < $signed(rawB_sExp) | eqExps & rawA_sig < rawB_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:60:29, :62:{20,33,44,57}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire        common_eqMags = eqExps & rawA_sig == rawB_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:60:29, :63:{32,45}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
   wire        ordered_lt =
     ~bothZeros
     & (rawA_sign & ~rawB_sign | ~bothInfs
-       & (rawA_sign & ~common_ltMags & ~common_eqMags | ~rawB_sign & common_ltMags));	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:58:33, :59:33, :62:33, :63:32, :66:{9,21}, :67:{25,28,41}, :68:{19,30}, :69:{38,54,57,74}, :70:41, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+       & (rawA_sign & ~common_ltMags & ~common_eqMags | ~rawB_sign & common_ltMags));	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:58:33, :59:33, :62:33, :63:32, :66:{9,21}, :67:{25,28,41}, :68:{19,30}, :69:{38,54,57,74}, :70:41, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
   wire        ordered_eq =
-    bothZeros | rawA_sign == rawB_sign & (bothInfs | common_eqMags);	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:58:33, :59:33, :63:32, :72:{19,34,49,62}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+    bothZeros | rawA_sign == rawB_sign & (bothInfs | common_eqMags);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:58:33, :59:33, :63:32, :72:{19,34,49,62}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
   wire        invalid =
     rawA_isNaN & ~(rawA_sig[51]) | rawB_isNaN & ~(rawB_sig[51]) | io_signaling_0
-    & ~ordered;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, :57:32, :75:58, :76:{27,30}, dependencies/hardfloat/hardfloat/src/main/scala/common.scala:82:{46,49,56}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
-  wire        io_lt_0 = ordered & ordered_lt;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, :57:32, :66:21, :78:22
-  wire        io_eq_0 = ordered & ordered_eq;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, :57:32, :72:19, :79:22
-  wire        io_gt = ordered & ~ordered_lt & ~ordered_eq;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, :57:32, :66:21, :72:19, :80:{25,38,41}
-  wire [4:0]  io_exceptionFlags_0 = {invalid, 4'h0};	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7, :75:58, :81:34
-  assign io_lt = io_lt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  assign io_eq = io_eq_0;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
-  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/CompareRecFN.scala:42:7
+    & ~ordered;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, :57:32, :75:58, :76:{27,30}, dependencies/hardfloat/hardfloat/src/main/scala/common.scala:82:{46,49,56}, dependencies/hardfloat/hardfloat/src/main/scala/rawFloatFromRecFN.scala:55:23
+  wire        io_lt_0 = ordered & ordered_lt;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, :57:32, :66:21, :78:22
+  wire        io_eq_0 = ordered & ordered_eq;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, :57:32, :72:19, :79:22
+  wire        io_gt = ordered & ~ordered_lt & ~ordered_eq;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, :57:32, :66:21, :72:19, :80:{25,38,41}
+  wire [4:0]  io_exceptionFlags_0 = {invalid, 4'h0};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7, :75:58, :81:34
+  assign io_lt = io_lt_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  assign io_eq = io_eq_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
+  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_CompareRecFN.scala:42:7
 endmodule
 

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4ToTL(	// src/main/scala/amba/axi4/ToTL.scala:79:9
+module rocket_AXI4ToTL(	// src/main/scala/amba/axi4/ToTL.scala:79:9
   input         clock,	// src/main/scala/amba/axi4/ToTL.scala:79:9
                 reset,	// src/main/scala/amba/axi4/ToTL.scala:79:9
   output        auto_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -753,7 +753,7 @@ module AXI4ToTL(	// src/main/scala/amba/axi4/ToTL.scala:79:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/amba/axi4/ToTL.scala:79:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue1_AXI4BundleR nodeIn_r_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleR nodeIn_r_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (ok_r_ready),
@@ -769,7 +769,7 @@ module AXI4ToTL(	// src/main/scala/amba/axi4/ToTL.scala:79:9
     .io_deq_bits_resp (nodeIn_r_irr_bits_resp),
     .io_deq_bits_last (nodeIn_r_irr_bits_last)
   );
-  Queue1_AXI4BundleB q_b_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleB q_b_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (ok_b_ready),

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Queue2_TLBundleC_a32d64s2k2z4c(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
+module rocket_Queue2_TLBundleC_a32d64s2k2z4c(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   input         clock,	// src/main/scala/chisel3/util/Decoupled.scala:243:7
                 reset,	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   output        io_enq_ready,	// src/main/scala/chisel3/util/Decoupled.scala:255:14
@@ -174,7 +174,7 @@ module Queue2_TLBundleC_a32d64s2k2z4c(	// src/main/scala/chisel3/util/Decoupled.
       `FIRRTL_AFTER_INITIAL	// src/main/scala/chisel3/util/Decoupled.scala:243:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  ram_2x109 ram_ext (	// src/main/scala/chisel3/util/Decoupled.scala:256:91
+  rocket_ram_2x109 ram_ext (	// src/main/scala/chisel3/util/Decoupled.scala:256:91
     .R0_addr (deq_ptr_value),	// src/main/scala/chisel3/util/Counter.scala:61:40
     .R0_en   (1'h1),	// src/main/scala/chisel3/util/Decoupled.scala:243:7
     .R0_clk  (clock),

@@ -84,9 +84,9 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
-  input         clock,	// src/main/scala/tile/RocketTile.scala:166:7
-                reset,	// src/main/scala/tile/RocketTile.scala:166:7
+module rocket_RocketTile(	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  input         clock,	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+                reset,	// src/main/scala/tile/rocket_RocketTile.scala:166:7
                 auto_buffer_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output        auto_buffer_out_a_valid,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   output [2:0]  auto_buffer_out_a_bits_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -245,527 +245,527 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        broadcast_2_auto_in_0_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9
   wire        broadcast_auto_out;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9
   wire        broadcast_auto_in;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9
-  wire        _core_io_imem_might_request;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_req_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [39:0] _core_io_imem_req_bits_pc;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_req_bits_speculative;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_bits_rs1;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_bits_rs2;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_sfence_bits_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_bits_asid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_bits_hv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_sfence_bits_hg;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_resp_ready;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_btb_update_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_imem_btb_update_bits_prediction_cfiType;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_btb_update_bits_prediction_taken;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_imem_btb_update_bits_prediction_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_btb_update_bits_prediction_bridx;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_btb_update_bits_prediction_target;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [4:0]  _core_io_imem_btb_update_bits_prediction_entry;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [7:0]  _core_io_imem_btb_update_bits_prediction_bht_history;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_btb_update_bits_prediction_bht_value;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_btb_update_bits_pc;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_btb_update_bits_target;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_btb_update_bits_isValid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_btb_update_bits_br_pc;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_imem_btb_update_bits_cfiType;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_bht_update_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [7:0]  _core_io_imem_bht_update_bits_prediction_history;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_bht_update_bits_prediction_value;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_imem_bht_update_bits_pc;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_bht_update_bits_branch;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_bht_update_bits_taken;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_bht_update_bits_mispredict;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_flush_icache;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_imem_progress;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_req_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [39:0] _core_io_dmem_req_bits_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [6:0]  _core_io_dmem_req_bits_tag;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [4:0]  _core_io_dmem_req_bits_cmd;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_dmem_req_bits_size;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_req_bits_signed;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_dmem_req_bits_dprv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_req_bits_dv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_req_bits_no_resp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_s1_kill;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_dmem_s1_data_data;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_dmem_keep_clock_enabled;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [3:0]  _core_io_ptw_ptbr_mode;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [43:0] _core_io_ptw_ptbr_ppn;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_bits_rs1;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_bits_rs2;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [38:0] _core_io_ptw_sfence_bits_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_bits_asid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_bits_hv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_sfence_bits_hg;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_debug;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_cease;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_wfi;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_status_isa;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_status_dprv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_dv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_status_prv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_v;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_sd;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_mpv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_gva;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_tsr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_tw;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_tvm;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_mxr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_sum;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_mprv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_status_fs;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_status_mpp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_spp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_mpie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_spie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_mie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_status_sie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_hstatus_spvp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_hstatus_spv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_hstatus_gva;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_debug;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_cease;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_wfi;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_gstatus_isa;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_dprv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_dv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_prv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_v;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_sd;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [22:0] _core_io_ptw_gstatus_zero2;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mpv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_gva;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mbe;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_sbe;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_sxl;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [7:0]  _core_io_ptw_gstatus_zero1;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_tsr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_tw;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_tvm;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mxr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_sum;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mprv;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_fs;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_mpp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_gstatus_vs;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_spp;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mpie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_ube;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_spie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_upie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_mie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_hie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_sie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_gstatus_uie;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_0_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_0_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_0_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_0_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_0_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_0_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_0_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_1_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_1_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_1_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_1_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_1_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_1_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_1_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_2_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_2_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_2_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_2_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_2_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_2_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_2_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_3_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_3_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_3_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_3_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_3_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_3_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_3_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_4_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_4_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_4_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_4_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_4_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_4_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_4_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_5_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_5_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_5_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_5_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_5_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_5_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_5_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_6_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_6_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_6_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_6_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_6_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_6_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_6_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_7_cfg_l;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [1:0]  _core_io_ptw_pmp_7_cfg_a;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_7_cfg_x;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_7_cfg_w;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_pmp_7_cfg_r;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [29:0] _core_io_ptw_pmp_7_addr;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_ptw_pmp_7_mask;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_0_ren;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_0_wen;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_ptw_customCSRs_csrs_0_wdata;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_ptw_customCSRs_csrs_0_value;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_1_ren;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_1_wen;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_ptw_customCSRs_csrs_1_wdata;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_2_ren;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_2_wen;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_ptw_customCSRs_csrs_2_wdata;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_3_ren;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_ptw_customCSRs_csrs_3_wen;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_ptw_customCSRs_csrs_3_wdata;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_hartid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_fpu_time;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [31:0] _core_io_fpu_inst;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_fpu_fromint_data;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [2:0]  _core_io_fpu_fcsr_rm;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_ll_resp_val;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [2:0]  _core_io_fpu_ll_resp_type;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [4:0]  _core_io_fpu_ll_resp_tag;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire [63:0] _core_io_fpu_ll_resp_data;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_valid;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_killx;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_killm;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_fpu_keep_clock_enabled;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _core_io_wfi;	// src/main/scala/tile/RocketTile.scala:170:20
-  wire        _ptw_io_requestor_0_req_ready;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_valid;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_ae_ptw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_ae_final;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pf;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_gf;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_hr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_hw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_hx;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [9:0]  _ptw_io_requestor_0_resp_bits_pte_reserved_for_future;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [43:0] _ptw_io_requestor_0_resp_bits_pte_ppn;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_resp_bits_pte_reserved_for_software;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_d;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_g;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_u;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_pte_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_resp_bits_level;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_homogeneous;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_gpa_valid;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [38:0] _ptw_io_requestor_0_resp_bits_gpa_bits;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_resp_bits_gpa_is_pte;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [3:0]  _ptw_io_requestor_0_ptbr_mode;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [43:0] _ptw_io_requestor_0_ptbr_ppn;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_debug;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_cease;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_wfi;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_status_isa;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_status_dprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_dv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_status_prv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_sd;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_mpv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_tsr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_tw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_tvm;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_mxr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_sum;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_mprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_status_fs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_status_mpp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_spp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_mpie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_spie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_mie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_status_sie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_hstatus_spvp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_hstatus_spv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_hstatus_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_debug;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_cease;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_wfi;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_gstatus_isa;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_dprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_dv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_prv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_sd;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [22:0] _ptw_io_requestor_0_gstatus_zero2;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mpv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mbe;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_sbe;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_sxl;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [7:0]  _ptw_io_requestor_0_gstatus_zero1;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_tsr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_tw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_tvm;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mxr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_sum;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_fs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_mpp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_gstatus_vs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_spp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mpie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_ube;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_spie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_upie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_mie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_hie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_sie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_gstatus_uie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_0_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_0_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_0_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_0_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_0_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_0_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_0_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_1_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_1_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_1_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_1_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_1_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_1_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_1_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_2_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_2_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_2_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_2_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_2_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_2_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_2_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_3_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_3_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_3_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_3_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_3_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_3_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_3_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_4_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_4_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_4_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_4_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_4_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_4_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_4_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_5_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_5_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_5_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_5_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_5_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_5_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_5_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_6_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_6_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_6_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_6_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_6_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_6_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_6_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_7_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_0_pmp_7_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_7_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_7_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_pmp_7_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_0_pmp_7_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_0_pmp_7_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_0_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_0_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_0_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_0_value;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_1_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_1_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_1_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_2_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_2_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_2_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_3_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_0_customCSRs_csrs_3_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_3_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_req_ready;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_valid;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_ae_ptw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_ae_final;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pf;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_gf;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_hr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_hw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_hx;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [9:0]  _ptw_io_requestor_1_resp_bits_pte_reserved_for_future;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [43:0] _ptw_io_requestor_1_resp_bits_pte_ppn;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_resp_bits_pte_reserved_for_software;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_d;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_g;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_u;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_pte_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_resp_bits_level;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_homogeneous;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_gpa_valid;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [38:0] _ptw_io_requestor_1_resp_bits_gpa_bits;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_resp_bits_gpa_is_pte;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [3:0]  _ptw_io_requestor_1_ptbr_mode;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [43:0] _ptw_io_requestor_1_ptbr_ppn;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_debug;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_cease;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_wfi;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_status_isa;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_status_dprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_dv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_status_prv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_sd;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_mpv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_tsr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_tw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_tvm;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_mxr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_sum;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_mprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_status_fs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_status_mpp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_spp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_mpie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_spie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_mie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_status_sie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_hstatus_spvp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_hstatus_spv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_hstatus_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_debug;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_cease;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_wfi;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_gstatus_isa;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_dprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_dv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_prv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_v;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_sd;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [22:0] _ptw_io_requestor_1_gstatus_zero2;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mpv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_gva;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mbe;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_sbe;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_sxl;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [7:0]  _ptw_io_requestor_1_gstatus_zero1;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_tsr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_tw;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_tvm;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mxr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_sum;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mprv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_fs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_mpp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_gstatus_vs;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_spp;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mpie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_ube;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_spie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_upie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_mie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_hie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_sie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_gstatus_uie;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_0_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_0_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_0_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_0_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_0_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_0_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_0_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_1_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_1_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_1_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_1_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_1_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_1_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_1_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_2_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_2_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_2_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_2_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_2_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_2_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_2_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_3_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_3_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_3_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_3_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_3_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_3_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_3_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_4_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_4_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_4_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_4_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_4_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_4_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_4_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_5_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_5_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_5_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_5_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_5_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_5_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_5_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_6_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_6_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_6_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_6_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_6_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_6_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_6_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_7_cfg_l;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [1:0]  _ptw_io_requestor_1_pmp_7_cfg_a;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_7_cfg_x;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_7_cfg_w;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_pmp_7_cfg_r;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [29:0] _ptw_io_requestor_1_pmp_7_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [31:0] _ptw_io_requestor_1_pmp_7_mask;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_0_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_0_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_0_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_0_value;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_1_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_1_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_1_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_2_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_2_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_2_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_3_ren;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_requestor_1_customCSRs_csrs_3_wen;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_3_wdata;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_mem_req_valid;	// src/main/scala/rocket/PTW.scala:822:19
-  wire [39:0] _ptw_io_mem_req_bits_addr;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_mem_req_bits_dv;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_mem_s1_kill;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_dpath_perf_pte_miss;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_dpath_perf_pte_hit;	// src/main/scala/rocket/PTW.scala:822:19
-  wire        _ptw_io_dpath_clock_enabled;	// src/main/scala/rocket/PTW.scala:822:19
+  wire        _core_io_imem_might_request;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_req_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [39:0] _core_io_imem_req_bits_pc;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_req_bits_speculative;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_bits_rs1;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_bits_rs2;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_sfence_bits_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_bits_asid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_bits_hv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_sfence_bits_hg;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_resp_ready;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_btb_update_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_imem_btb_update_bits_prediction_cfiType;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_btb_update_bits_prediction_taken;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_imem_btb_update_bits_prediction_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_btb_update_bits_prediction_bridx;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_btb_update_bits_prediction_target;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [4:0]  _core_io_imem_btb_update_bits_prediction_entry;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [7:0]  _core_io_imem_btb_update_bits_prediction_bht_history;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_btb_update_bits_prediction_bht_value;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_btb_update_bits_pc;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_btb_update_bits_target;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_btb_update_bits_isValid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_btb_update_bits_br_pc;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_imem_btb_update_bits_cfiType;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_bht_update_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [7:0]  _core_io_imem_bht_update_bits_prediction_history;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_bht_update_bits_prediction_value;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_imem_bht_update_bits_pc;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_bht_update_bits_branch;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_bht_update_bits_taken;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_bht_update_bits_mispredict;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_flush_icache;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_imem_progress;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_req_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [39:0] _core_io_dmem_req_bits_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [6:0]  _core_io_dmem_req_bits_tag;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [4:0]  _core_io_dmem_req_bits_cmd;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_dmem_req_bits_size;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_req_bits_signed;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_dmem_req_bits_dprv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_req_bits_dv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_req_bits_no_resp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_s1_kill;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_dmem_s1_data_data;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_dmem_keep_clock_enabled;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [3:0]  _core_io_ptw_ptbr_mode;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [43:0] _core_io_ptw_ptbr_ppn;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_bits_rs1;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_bits_rs2;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [38:0] _core_io_ptw_sfence_bits_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_bits_asid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_bits_hv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_sfence_bits_hg;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_debug;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_cease;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_wfi;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_status_isa;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_status_dprv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_dv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_status_prv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_v;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_sd;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_mpv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_gva;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_tsr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_tw;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_tvm;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_mxr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_sum;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_mprv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_status_fs;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_status_mpp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_spp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_mpie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_spie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_mie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_status_sie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_hstatus_spvp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_hstatus_spv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_hstatus_gva;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_debug;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_cease;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_wfi;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_gstatus_isa;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_dprv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_dv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_prv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_v;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_sd;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [22:0] _core_io_ptw_gstatus_zero2;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mpv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_gva;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mbe;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_sbe;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_sxl;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [7:0]  _core_io_ptw_gstatus_zero1;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_tsr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_tw;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_tvm;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mxr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_sum;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mprv;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_fs;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_mpp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_gstatus_vs;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_spp;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mpie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_ube;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_spie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_upie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_mie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_hie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_sie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_gstatus_uie;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_0_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_0_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_0_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_0_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_0_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_0_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_0_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_1_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_1_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_1_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_1_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_1_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_1_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_1_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_2_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_2_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_2_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_2_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_2_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_2_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_2_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_3_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_3_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_3_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_3_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_3_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_3_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_3_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_4_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_4_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_4_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_4_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_4_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_4_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_4_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_5_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_5_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_5_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_5_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_5_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_5_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_5_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_6_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_6_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_6_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_6_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_6_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_6_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_6_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_7_cfg_l;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [1:0]  _core_io_ptw_pmp_7_cfg_a;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_7_cfg_x;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_7_cfg_w;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_pmp_7_cfg_r;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [29:0] _core_io_ptw_pmp_7_addr;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_ptw_pmp_7_mask;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_0_ren;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_0_wen;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_ptw_customCSRs_csrs_0_wdata;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_ptw_customCSRs_csrs_0_value;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_1_ren;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_1_wen;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_ptw_customCSRs_csrs_1_wdata;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_2_ren;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_2_wen;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_ptw_customCSRs_csrs_2_wdata;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_3_ren;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_ptw_customCSRs_csrs_3_wen;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_ptw_customCSRs_csrs_3_wdata;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_hartid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_fpu_time;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [31:0] _core_io_fpu_inst;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_fpu_fromint_data;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [2:0]  _core_io_fpu_fcsr_rm;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_ll_resp_val;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [2:0]  _core_io_fpu_ll_resp_type;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [4:0]  _core_io_fpu_ll_resp_tag;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire [63:0] _core_io_fpu_ll_resp_data;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_valid;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_killx;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_killm;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_fpu_keep_clock_enabled;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _core_io_wfi;	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+  wire        _ptw_io_requestor_0_req_ready;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_valid;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_ae_ptw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_ae_final;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pf;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_gf;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_hr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_hw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_hx;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [9:0]  _ptw_io_requestor_0_resp_bits_pte_reserved_for_future;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [43:0] _ptw_io_requestor_0_resp_bits_pte_ppn;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_resp_bits_pte_reserved_for_software;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_d;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_g;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_u;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_pte_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_resp_bits_level;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_homogeneous;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_gpa_valid;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [38:0] _ptw_io_requestor_0_resp_bits_gpa_bits;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_resp_bits_gpa_is_pte;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [3:0]  _ptw_io_requestor_0_ptbr_mode;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [43:0] _ptw_io_requestor_0_ptbr_ppn;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_debug;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_cease;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_wfi;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_status_isa;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_status_dprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_dv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_status_prv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_sd;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_mpv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_tsr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_tw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_tvm;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_mxr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_sum;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_mprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_status_fs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_status_mpp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_spp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_mpie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_spie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_mie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_status_sie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_hstatus_spvp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_hstatus_spv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_hstatus_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_debug;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_cease;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_wfi;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_gstatus_isa;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_dprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_dv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_prv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_sd;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [22:0] _ptw_io_requestor_0_gstatus_zero2;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mpv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mbe;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_sbe;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_sxl;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [7:0]  _ptw_io_requestor_0_gstatus_zero1;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_tsr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_tw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_tvm;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mxr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_sum;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_fs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_mpp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_gstatus_vs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_spp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mpie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_ube;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_spie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_upie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_mie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_hie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_sie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_gstatus_uie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_0_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_0_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_0_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_0_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_0_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_0_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_0_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_1_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_1_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_1_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_1_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_1_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_1_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_1_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_2_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_2_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_2_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_2_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_2_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_2_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_2_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_3_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_3_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_3_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_3_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_3_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_3_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_3_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_4_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_4_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_4_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_4_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_4_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_4_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_4_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_5_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_5_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_5_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_5_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_5_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_5_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_5_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_6_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_6_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_6_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_6_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_6_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_6_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_6_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_7_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_0_pmp_7_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_7_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_7_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_pmp_7_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_0_pmp_7_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_0_pmp_7_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_0_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_0_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_0_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_0_value;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_1_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_1_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_1_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_2_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_2_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_2_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_3_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_0_customCSRs_csrs_3_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_0_customCSRs_csrs_3_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_req_ready;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_valid;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_ae_ptw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_ae_final;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pf;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_gf;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_hr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_hw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_hx;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [9:0]  _ptw_io_requestor_1_resp_bits_pte_reserved_for_future;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [43:0] _ptw_io_requestor_1_resp_bits_pte_ppn;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_resp_bits_pte_reserved_for_software;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_d;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_g;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_u;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_pte_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_resp_bits_level;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_homogeneous;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_gpa_valid;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [38:0] _ptw_io_requestor_1_resp_bits_gpa_bits;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_resp_bits_gpa_is_pte;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [3:0]  _ptw_io_requestor_1_ptbr_mode;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [43:0] _ptw_io_requestor_1_ptbr_ppn;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_debug;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_cease;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_wfi;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_status_isa;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_status_dprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_dv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_status_prv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_sd;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_mpv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_tsr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_tw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_tvm;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_mxr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_sum;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_mprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_status_fs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_status_mpp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_spp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_mpie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_spie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_mie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_status_sie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_hstatus_spvp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_hstatus_spv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_hstatus_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_debug;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_cease;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_wfi;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_gstatus_isa;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_dprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_dv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_prv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_v;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_sd;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [22:0] _ptw_io_requestor_1_gstatus_zero2;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mpv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_gva;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mbe;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_sbe;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_sxl;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [7:0]  _ptw_io_requestor_1_gstatus_zero1;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_tsr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_tw;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_tvm;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mxr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_sum;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mprv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_fs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_mpp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_gstatus_vs;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_spp;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mpie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_ube;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_spie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_upie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_mie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_hie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_sie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_gstatus_uie;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_0_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_0_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_0_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_0_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_0_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_0_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_0_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_1_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_1_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_1_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_1_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_1_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_1_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_1_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_2_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_2_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_2_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_2_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_2_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_2_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_2_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_3_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_3_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_3_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_3_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_3_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_3_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_3_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_4_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_4_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_4_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_4_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_4_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_4_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_4_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_5_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_5_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_5_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_5_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_5_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_5_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_5_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_6_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_6_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_6_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_6_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_6_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_6_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_6_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_7_cfg_l;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [1:0]  _ptw_io_requestor_1_pmp_7_cfg_a;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_7_cfg_x;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_7_cfg_w;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_pmp_7_cfg_r;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [29:0] _ptw_io_requestor_1_pmp_7_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [31:0] _ptw_io_requestor_1_pmp_7_mask;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_0_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_0_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_0_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_0_value;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_1_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_1_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_1_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_2_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_2_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_2_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_3_ren;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_requestor_1_customCSRs_csrs_3_wen;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [63:0] _ptw_io_requestor_1_customCSRs_csrs_3_wdata;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_mem_req_valid;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire [39:0] _ptw_io_mem_req_bits_addr;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_mem_req_bits_dv;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_mem_s1_kill;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_dpath_perf_pte_miss;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_dpath_perf_pte_hit;	// src/main/scala/rocket/rocket_PTW.scala:822:19
+  wire        _ptw_io_dpath_clock_enabled;	// src/main/scala/rocket/rocket_PTW.scala:822:19
   wire        _dcacheArb_io_requestor_0_req_ready;	// src/main/scala/rocket/HellaCache.scala:292:25
   wire        _dcacheArb_io_requestor_0_s2_nack;	// src/main/scala/rocket/HellaCache.scala:292:25
   wire        _dcacheArb_io_requestor_0_s2_nack_cause_raw;	// src/main/scala/rocket/HellaCache.scala:292:25
@@ -859,59 +859,59 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        _dcacheArb_io_mem_s1_kill;	// src/main/scala/rocket/HellaCache.scala:292:25
   wire [63:0] _dcacheArb_io_mem_s1_data_data;	// src/main/scala/rocket/HellaCache.scala:292:25
   wire        _dcacheArb_io_mem_keep_clock_enabled;	// src/main/scala/rocket/HellaCache.scala:292:25
-  wire        _fpuOpt_io_fcsr_flags_valid;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [4:0]  _fpuOpt_io_fcsr_flags_bits;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [63:0] _fpuOpt_io_store_data;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [63:0] _fpuOpt_io_toint_data;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_fcsr_rdy;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_nack_mem;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_illegal_rm;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_ldst;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_wen;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_ren1;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_ren2;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_ren3;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_swap12;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_swap23;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [1:0]  _fpuOpt_io_dec_typeTagIn;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [1:0]  _fpuOpt_io_dec_typeTagOut;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_fromint;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_toint;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_fastpipe;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_fma;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_div;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_sqrt;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_wflags;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_dec_vec;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_sboard_set;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _fpuOpt_io_sboard_clr;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire [4:0]  _fpuOpt_io_sboard_clra;	// src/main/scala/tile/RocketTile.scala:289:62
-  wire        _frontend_io_cpu_resp_valid;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [1:0]  _frontend_io_cpu_resp_bits_btb_cfiType;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_btb_taken;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [1:0]  _frontend_io_cpu_resp_bits_btb_mask;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_btb_bridx;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [38:0] _frontend_io_cpu_resp_bits_btb_target;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [4:0]  _frontend_io_cpu_resp_bits_btb_entry;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [7:0]  _frontend_io_cpu_resp_bits_btb_bht_history;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_btb_bht_value;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [39:0] _frontend_io_cpu_resp_bits_pc;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [31:0] _frontend_io_cpu_resp_bits_data;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [1:0]  _frontend_io_cpu_resp_bits_mask;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_xcpt_pf_inst;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_xcpt_gf_inst;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_xcpt_ae_inst;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_resp_bits_replay;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_gpa_valid;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [39:0] _frontend_io_cpu_gpa_bits;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_gpa_is_pte;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [39:0] _frontend_io_cpu_npc;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_perf_acquire;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_cpu_perf_tlbMiss;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_ptw_req_valid;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_ptw_req_bits_valid;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire [26:0] _frontend_io_ptw_req_bits_bits_addr;	// src/main/scala/rocket/Frontend.scala:393:28
-  wire        _frontend_io_ptw_req_bits_bits_need_gpa;	// src/main/scala/rocket/Frontend.scala:393:28
+  wire        _fpuOpt_io_fcsr_flags_valid;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [4:0]  _fpuOpt_io_fcsr_flags_bits;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [63:0] _fpuOpt_io_store_data;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [63:0] _fpuOpt_io_toint_data;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_fcsr_rdy;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_nack_mem;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_illegal_rm;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_ldst;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_wen;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_ren1;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_ren2;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_ren3;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_swap12;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_swap23;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [1:0]  _fpuOpt_io_dec_typeTagIn;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [1:0]  _fpuOpt_io_dec_typeTagOut;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_fromint;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_toint;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_fastpipe;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_fma;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_div;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_sqrt;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_wflags;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_dec_vec;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_sboard_set;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _fpuOpt_io_sboard_clr;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire [4:0]  _fpuOpt_io_sboard_clra;	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+  wire        _frontend_io_cpu_resp_valid;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [1:0]  _frontend_io_cpu_resp_bits_btb_cfiType;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_btb_taken;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [1:0]  _frontend_io_cpu_resp_bits_btb_mask;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_btb_bridx;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [38:0] _frontend_io_cpu_resp_bits_btb_target;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [4:0]  _frontend_io_cpu_resp_bits_btb_entry;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [7:0]  _frontend_io_cpu_resp_bits_btb_bht_history;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_btb_bht_value;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [39:0] _frontend_io_cpu_resp_bits_pc;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [31:0] _frontend_io_cpu_resp_bits_data;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [1:0]  _frontend_io_cpu_resp_bits_mask;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_xcpt_pf_inst;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_xcpt_gf_inst;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_xcpt_ae_inst;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_resp_bits_replay;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_gpa_valid;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [39:0] _frontend_io_cpu_gpa_bits;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_gpa_is_pte;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [39:0] _frontend_io_cpu_npc;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_perf_acquire;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_cpu_perf_tlbMiss;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_ptw_req_valid;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_ptw_req_bits_valid;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire [26:0] _frontend_io_ptw_req_bits_bits_addr;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+  wire        _frontend_io_ptw_req_bits_bits_need_gpa;	// src/main/scala/rocket/rocket_Frontend.scala:393:28
   wire        _dcache_io_cpu_req_ready;	// src/main/scala/rocket/HellaCache.scala:278:43
   wire        _dcache_io_cpu_s2_nack;	// src/main/scala/rocket/HellaCache.scala:278:43
   wire        _dcache_io_cpu_s2_nack_cause_raw;	// src/main/scala/rocket/HellaCache.scala:278:43
@@ -955,153 +955,153 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        _dcache_io_ptw_req_valid;	// src/main/scala/rocket/HellaCache.scala:278:43
   wire [26:0] _dcache_io_ptw_req_bits_bits_addr;	// src/main/scala/rocket/HellaCache.scala:278:43
   wire        _dcache_io_ptw_req_bits_bits_need_gpa;	// src/main/scala/rocket/HellaCache.scala:278:43
-  wire        auto_buffer_out_a_ready_0 = auto_buffer_out_a_ready;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_b_valid_0 = auto_buffer_out_b_valid;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [2:0]  auto_buffer_out_b_bits_opcode_0 = auto_buffer_out_b_bits_opcode;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [1:0]  auto_buffer_out_b_bits_param_0 = auto_buffer_out_b_bits_param;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  auto_buffer_out_b_bits_size_0 = auto_buffer_out_b_bits_size;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [1:0]  auto_buffer_out_b_bits_source_0 = auto_buffer_out_b_bits_source;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] auto_buffer_out_b_bits_address_0 = auto_buffer_out_b_bits_address;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [7:0]  auto_buffer_out_b_bits_mask_0 = auto_buffer_out_b_bits_mask;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [63:0] auto_buffer_out_b_bits_data_0 = auto_buffer_out_b_bits_data;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_b_bits_corrupt_0 = auto_buffer_out_b_bits_corrupt;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_c_ready_0 = auto_buffer_out_c_ready;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_d_valid_0 = auto_buffer_out_d_valid;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [2:0]  auto_buffer_out_d_bits_opcode_0 = auto_buffer_out_d_bits_opcode;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [1:0]  auto_buffer_out_d_bits_param_0 = auto_buffer_out_d_bits_param;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  auto_buffer_out_d_bits_size_0 = auto_buffer_out_d_bits_size;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [1:0]  auto_buffer_out_d_bits_source_0 = auto_buffer_out_d_bits_source;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [1:0]  auto_buffer_out_d_bits_sink_0 = auto_buffer_out_d_bits_sink;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_d_bits_denied_0 = auto_buffer_out_d_bits_denied;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire [63:0] auto_buffer_out_d_bits_data_0 = auto_buffer_out_d_bits_data;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_d_bits_corrupt_0 = auto_buffer_out_d_bits_corrupt;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_e_ready_0 = auto_buffer_out_e_ready;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_int_local_in_3_0_0 = auto_int_local_in_3_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_int_local_in_2_0_0 = auto_int_local_in_2_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_int_local_in_1_0_0 = auto_int_local_in_1_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_int_local_in_1_1_0 = auto_int_local_in_1_1;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_int_local_in_0_0_0 = auto_int_local_in_0_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_hartid_in_0 = auto_hartid_in;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_auto_anon_in_d_ready = 1'h1;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_out_d_ready = 1'h1;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_anonOut_d_ready = 1'h1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonIn_d_ready = 1'h1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_buffer_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_cease_out_0 = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_halt_out_0 = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_trace_core_source_out_group_0_iretire = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        auto_trace_core_source_out_group_0_ilastsize = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_1_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_1_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_x1_bundleOut_x_sourceOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_x1_bundleOut_x_sourceOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_nodeOut_enable = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_nodeOut_stall = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_defaultWireOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        nexus_1_defaultWireOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_auto_in_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_auto_in_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_auto_in_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_nodeIn_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_nodeIn_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        broadcast_2_nodeIn_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_auto_anon_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_auto_anon_in_c_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_auto_anon_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_auto_anon_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_anonOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_anonOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_anonIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_anonIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_auto_anon_in_a_bits_source = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_in_d_bits_source = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_out_a_bits_source = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_auto_anon_out_d_bits_source = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire        widget_1_anonOut_a_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonOut_d_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonIn_a_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        widget_1_anonIn_d_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        buffer_auto_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_in_c_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_nodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        buffer_nodeOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        buffer_nodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        buffer_nodeIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        tlOtherMastersNodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        tlOtherMastersNodeOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        tlOtherMastersNodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        tlOtherMastersNodeIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        traceCoreSourceNodeOut_group_0_iretire = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        traceCoreSourceNodeOut_group_0_ilastsize = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        bundleIn_x_sourceOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        bundleIn_x_sourceOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/RocketTile.scala:166:7
-  wire        traceAuxSinkNodeIn_enable = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        traceAuxSinkNodeIn_stall = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        bpwatchSourceNodeOut_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        bpwatchSourceNodeOut_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        bpwatchSourceNodeOut_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        haltNodeOut_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        ceaseNodeOut_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [2:0]  widget_1_auto_anon_in_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_auto_anon_out_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_anonOut_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_anonIn_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [3:0]  widget_1_auto_anon_in_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [3:0]  widget_1_auto_anon_out_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [3:0]  widget_1_anonOut_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [3:0]  widget_1_anonIn_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [7:0]  widget_1_auto_anon_in_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [7:0]  widget_1_auto_anon_out_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [7:0]  widget_1_anonOut_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [7:0]  widget_1_anonIn_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_auto_anon_in_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_auto_anon_out_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_anonOut_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [2:0]  widget_1_anonIn_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [63:0] widget_1_auto_anon_in_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [63:0] widget_1_auto_anon_out_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [63:0] widget_1_anonOut_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [63:0] widget_1_anonIn_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
-  wire [31:0] auto_reset_vector_in = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_auto_in = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_auto_out_1 = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_auto_out_0 = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_nodeIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_nodeOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] broadcast_1_x1_nodeOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] resetVectorSinkNodeIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] reset_vectorOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] reset_vectorIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/Frontend.scala:393:28, src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  auto_trace_core_source_out_group_0_itype = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  auto_trace_core_source_out_priv = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  traceCoreSourceNodeOut_group_0_itype = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [3:0]  traceCoreSourceNodeOut_priv = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] auto_trace_core_source_out_group_0_iaddr = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] auto_trace_core_source_out_ctx = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] auto_trace_core_source_out_tval = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] auto_trace_core_source_out_cause = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] auto_trace_core_source_out_time = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] traceCoreSourceNodeOut_group_0_iaddr = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] traceCoreSourceNodeOut_ctx = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] traceCoreSourceNodeOut_tval = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] traceCoreSourceNodeOut_cause = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire [31:0] traceCoreSourceNodeOut_time = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7, :170:20
-  wire        buffer_auto_out_a_ready = auto_buffer_out_a_ready_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_a_ready_0 = auto_buffer_out_a_ready;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_b_valid_0 = auto_buffer_out_b_valid;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [2:0]  auto_buffer_out_b_bits_opcode_0 = auto_buffer_out_b_bits_opcode;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [1:0]  auto_buffer_out_b_bits_param_0 = auto_buffer_out_b_bits_param;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  auto_buffer_out_b_bits_size_0 = auto_buffer_out_b_bits_size;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [1:0]  auto_buffer_out_b_bits_source_0 = auto_buffer_out_b_bits_source;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] auto_buffer_out_b_bits_address_0 = auto_buffer_out_b_bits_address;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [7:0]  auto_buffer_out_b_bits_mask_0 = auto_buffer_out_b_bits_mask;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [63:0] auto_buffer_out_b_bits_data_0 = auto_buffer_out_b_bits_data;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_b_bits_corrupt_0 = auto_buffer_out_b_bits_corrupt;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_c_ready_0 = auto_buffer_out_c_ready;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_d_valid_0 = auto_buffer_out_d_valid;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [2:0]  auto_buffer_out_d_bits_opcode_0 = auto_buffer_out_d_bits_opcode;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [1:0]  auto_buffer_out_d_bits_param_0 = auto_buffer_out_d_bits_param;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  auto_buffer_out_d_bits_size_0 = auto_buffer_out_d_bits_size;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [1:0]  auto_buffer_out_d_bits_source_0 = auto_buffer_out_d_bits_source;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [1:0]  auto_buffer_out_d_bits_sink_0 = auto_buffer_out_d_bits_sink;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_d_bits_denied_0 = auto_buffer_out_d_bits_denied;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [63:0] auto_buffer_out_d_bits_data_0 = auto_buffer_out_d_bits_data;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_d_bits_corrupt_0 = auto_buffer_out_d_bits_corrupt;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_e_ready_0 = auto_buffer_out_e_ready;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_int_local_in_3_0_0 = auto_int_local_in_3_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_int_local_in_2_0_0 = auto_int_local_in_2_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_int_local_in_1_0_0 = auto_int_local_in_1_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_int_local_in_1_1_0 = auto_int_local_in_1_1;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_int_local_in_0_0_0 = auto_int_local_in_0_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_hartid_in_0 = auto_hartid_in;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_auto_anon_in_d_ready = 1'h1;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_out_d_ready = 1'h1;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_anonOut_d_ready = 1'h1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonIn_d_ready = 1'h1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_buffer_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_cease_out_0 = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_halt_out_0 = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_trace_core_source_out_group_0_iretire = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        auto_trace_core_source_out_group_0_ilastsize = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_1_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_1_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_x1_bundleOut_x_sourceOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_x1_bundleOut_x_sourceOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_nodeOut_enable = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_nodeOut_stall = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_defaultWireOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        nexus_1_defaultWireOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_auto_in_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_auto_in_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_auto_in_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_childClock = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_childReset = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_nodeIn_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_nodeIn_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        broadcast_2_nodeIn_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_auto_anon_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_auto_anon_in_c_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_auto_anon_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_auto_anon_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_anonOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_anonOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_anonIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_anonIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_auto_anon_in_a_bits_source = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_in_d_bits_source = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_out_a_bits_source = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_auto_anon_out_d_bits_source = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire        widget_1_anonOut_a_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonOut_d_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonIn_a_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        widget_1_anonIn_d_bits_source = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        buffer_auto_in_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_in_c_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_a_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_c_bits_corrupt = 1'h0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_nodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        buffer_nodeOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        buffer_nodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        buffer_nodeIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        tlOtherMastersNodeOut_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        tlOtherMastersNodeOut_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        tlOtherMastersNodeIn_a_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        tlOtherMastersNodeIn_c_bits_corrupt = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        traceCoreSourceNodeOut_group_0_iretire = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        traceCoreSourceNodeOut_group_0_ilastsize = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        bundleIn_x_sourceOpt_enable = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        bundleIn_x_sourceOpt_stall = 1'h0;	// src/main/scala/tile/BaseTile.scala:311:19, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        traceAuxSinkNodeIn_enable = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        traceAuxSinkNodeIn_stall = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        bpwatchSourceNodeOut_0_rvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        bpwatchSourceNodeOut_0_wvalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        bpwatchSourceNodeOut_0_ivalid_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        haltNodeOut_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        ceaseNodeOut_0 = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [2:0]  widget_1_auto_anon_in_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_auto_anon_out_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_anonOut_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_anonIn_a_bits_opcode = 3'h4;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [3:0]  widget_1_auto_anon_in_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [3:0]  widget_1_auto_anon_out_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [3:0]  widget_1_anonOut_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [3:0]  widget_1_anonIn_a_bits_size = 4'h6;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [7:0]  widget_1_auto_anon_in_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [7:0]  widget_1_auto_anon_out_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [7:0]  widget_1_anonOut_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [7:0]  widget_1_anonIn_a_bits_mask = 8'hFF;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_auto_anon_in_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_auto_anon_out_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_anonOut_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [2:0]  widget_1_anonIn_a_bits_param = 3'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, :289:62, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [63:0] widget_1_auto_anon_in_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/rocket_PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [63:0] widget_1_auto_anon_out_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/rocket_PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [63:0] widget_1_anonOut_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/rocket_PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [63:0] widget_1_anonIn_a_bits_data = 64'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/rocket_PTW.scala:822:19, src/main/scala/subsystem/HierarchicalElement.scala:55:42, src/main/scala/tile/rocket_RocketTile.scala:170:20, src/main/scala/tilelink/WidthWidget.scala:27:9
+  wire [31:0] auto_reset_vector_in = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_auto_in = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_auto_out_1 = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_auto_out_0 = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_nodeIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_nodeOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] broadcast_1_x1_nodeOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] resetVectorSinkNodeIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] reset_vectorOut = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] reset_vectorIn = 32'h10040;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/package.scala:25:31, dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17, src/main/scala/rocket/rocket_Frontend.scala:393:28, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  auto_trace_core_source_out_group_0_itype = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  auto_trace_core_source_out_priv = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  traceCoreSourceNodeOut_group_0_itype = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [3:0]  traceCoreSourceNodeOut_priv = 4'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] auto_trace_core_source_out_group_0_iaddr = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] auto_trace_core_source_out_ctx = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] auto_trace_core_source_out_tval = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] auto_trace_core_source_out_cause = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] auto_trace_core_source_out_time = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] traceCoreSourceNodeOut_group_0_iaddr = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] traceCoreSourceNodeOut_ctx = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] traceCoreSourceNodeOut_tval = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] traceCoreSourceNodeOut_cause = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire [31:0] traceCoreSourceNodeOut_time = 32'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7, :170:20
+  wire        buffer_auto_out_a_ready = auto_buffer_out_a_ready_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_auto_out_a_valid;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_auto_out_a_bits_opcode;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_auto_out_a_bits_param;	// src/main/scala/tilelink/Buffer.scala:40:9
@@ -1111,16 +1111,16 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire [7:0]  buffer_auto_out_a_bits_mask;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [63:0] buffer_auto_out_a_bits_data;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_auto_out_b_ready;	// src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_b_valid = auto_buffer_out_b_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [2:0]  buffer_auto_out_b_bits_opcode = auto_buffer_out_b_bits_opcode_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [1:0]  buffer_auto_out_b_bits_param = auto_buffer_out_b_bits_param_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [3:0]  buffer_auto_out_b_bits_size = auto_buffer_out_b_bits_size_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [1:0]  buffer_auto_out_b_bits_source = auto_buffer_out_b_bits_source_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [31:0] buffer_auto_out_b_bits_address = auto_buffer_out_b_bits_address_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [7:0]  buffer_auto_out_b_bits_mask = auto_buffer_out_b_bits_mask_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [63:0] buffer_auto_out_b_bits_data = auto_buffer_out_b_bits_data_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_b_bits_corrupt = auto_buffer_out_b_bits_corrupt_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_c_ready = auto_buffer_out_c_ready_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_b_valid = auto_buffer_out_b_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  buffer_auto_out_b_bits_opcode = auto_buffer_out_b_bits_opcode_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  buffer_auto_out_b_bits_param = auto_buffer_out_b_bits_param_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [3:0]  buffer_auto_out_b_bits_size = auto_buffer_out_b_bits_size_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  buffer_auto_out_b_bits_source = auto_buffer_out_b_bits_source_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [31:0] buffer_auto_out_b_bits_address = auto_buffer_out_b_bits_address_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [7:0]  buffer_auto_out_b_bits_mask = auto_buffer_out_b_bits_mask_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [63:0] buffer_auto_out_b_bits_data = auto_buffer_out_b_bits_data_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_b_bits_corrupt = auto_buffer_out_b_bits_corrupt_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_c_ready = auto_buffer_out_c_ready_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_auto_out_c_valid;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_auto_out_c_bits_opcode;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_auto_out_c_bits_param;	// src/main/scala/tilelink/Buffer.scala:40:9
@@ -1129,24 +1129,24 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire [31:0] buffer_auto_out_c_bits_address;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [63:0] buffer_auto_out_c_bits_data;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_auto_out_d_ready;	// src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_d_valid = auto_buffer_out_d_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [2:0]  buffer_auto_out_d_bits_opcode = auto_buffer_out_d_bits_opcode_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [1:0]  buffer_auto_out_d_bits_param = auto_buffer_out_d_bits_param_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [3:0]  buffer_auto_out_d_bits_size = auto_buffer_out_d_bits_size_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [1:0]  buffer_auto_out_d_bits_source = auto_buffer_out_d_bits_source_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [1:0]  buffer_auto_out_d_bits_sink = auto_buffer_out_d_bits_sink_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_d_bits_denied = auto_buffer_out_d_bits_denied_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire [63:0] buffer_auto_out_d_bits_data = auto_buffer_out_d_bits_data_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_d_bits_corrupt = auto_buffer_out_d_bits_corrupt_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
-  wire        buffer_auto_out_e_ready = auto_buffer_out_e_ready_0;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_d_valid = auto_buffer_out_d_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  buffer_auto_out_d_bits_opcode = auto_buffer_out_d_bits_opcode_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  buffer_auto_out_d_bits_param = auto_buffer_out_d_bits_param_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [3:0]  buffer_auto_out_d_bits_size = auto_buffer_out_d_bits_size_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  buffer_auto_out_d_bits_source = auto_buffer_out_d_bits_source_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  buffer_auto_out_d_bits_sink = auto_buffer_out_d_bits_sink_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_d_bits_denied = auto_buffer_out_d_bits_denied_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [63:0] buffer_auto_out_d_bits_data = auto_buffer_out_d_bits_data_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_d_bits_corrupt = auto_buffer_out_d_bits_corrupt_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        buffer_auto_out_e_ready = auto_buffer_out_e_ready_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_auto_out_e_valid;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_auto_out_e_bits_sink;	// src/main/scala/tilelink/Buffer.scala:40:9
   wire        wfiNodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        x1_int_localIn_2_0 = auto_int_local_in_3_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        x1_int_localIn_1_0 = auto_int_local_in_2_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        x1_int_localIn_0 = auto_int_local_in_1_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        x1_int_localIn_1 = auto_int_local_in_1_1_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire        int_localIn_0 = auto_int_local_in_0_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
+  wire        x1_int_localIn_2_0 = auto_int_local_in_3_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        x1_int_localIn_1_0 = auto_int_local_in_2_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        x1_int_localIn_0 = auto_int_local_in_1_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        x1_int_localIn_1 = auto_int_local_in_1_1_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire        int_localIn_0 = auto_int_local_in_0_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   wire        traceSourceNodeOut_insns_0_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [39:0] traceSourceNodeOut_insns_0_iaddr;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [31:0] traceSourceNodeOut_insns_0_insn;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
@@ -1157,7 +1157,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire [39:0] traceSourceNodeOut_insns_0_tval;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire [63:0] traceSourceNodeOut_time;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        hartidOut;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        hartidIn = auto_hartid_in_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/RocketTile.scala:166:7
+  wire        hartidIn = auto_hartid_in_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   wire        broadcast_nodeIn = broadcast_auto_in;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   wire        broadcast_nodeOut;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        hartIdSinkNodeIn = broadcast_auto_out;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -1453,23 +1453,23 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire [1:0]  buffer_nodeIn_e_bits_sink = buffer_auto_in_e_bits_sink;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_a_ready = buffer_auto_out_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        auto_buffer_out_a_valid_0 = buffer_auto_out_a_valid;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_a_valid_0 = buffer_auto_out_a_valid;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [2:0]  auto_buffer_out_a_bits_opcode_0 = buffer_auto_out_a_bits_opcode;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  auto_buffer_out_a_bits_opcode_0 = buffer_auto_out_a_bits_opcode;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_a_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [2:0]  auto_buffer_out_a_bits_param_0 = buffer_auto_out_a_bits_param;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  auto_buffer_out_a_bits_param_0 = buffer_auto_out_a_bits_param;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [3:0]  buffer_nodeOut_a_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [3:0]  auto_buffer_out_a_bits_size_0 = buffer_auto_out_a_bits_size;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [3:0]  auto_buffer_out_a_bits_size_0 = buffer_auto_out_a_bits_size;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_nodeOut_a_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [1:0]  auto_buffer_out_a_bits_source_0 = buffer_auto_out_a_bits_source;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  auto_buffer_out_a_bits_source_0 = buffer_auto_out_a_bits_source;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [31:0] buffer_nodeOut_a_bits_address;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [31:0] auto_buffer_out_a_bits_address_0 = buffer_auto_out_a_bits_address;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [31:0] auto_buffer_out_a_bits_address_0 = buffer_auto_out_a_bits_address;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [7:0]  buffer_nodeOut_a_bits_mask;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [7:0]  auto_buffer_out_a_bits_mask_0 = buffer_auto_out_a_bits_mask;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [7:0]  auto_buffer_out_a_bits_mask_0 = buffer_auto_out_a_bits_mask;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [63:0] buffer_nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [63:0] auto_buffer_out_a_bits_data_0 = buffer_auto_out_a_bits_data;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [63:0] auto_buffer_out_a_bits_data_0 = buffer_auto_out_a_bits_data;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_b_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        auto_buffer_out_b_ready_0 = buffer_auto_out_b_ready;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_b_ready_0 = buffer_auto_out_b_ready;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_b_valid = buffer_auto_out_b_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_b_bits_opcode = buffer_auto_out_b_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_nodeOut_b_bits_param = buffer_auto_out_b_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
@@ -1481,21 +1481,21 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        buffer_nodeOut_b_bits_corrupt = buffer_auto_out_b_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_c_ready = buffer_auto_out_c_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_c_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        auto_buffer_out_c_valid_0 = buffer_auto_out_c_valid;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_c_valid_0 = buffer_auto_out_c_valid;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_c_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [2:0]  auto_buffer_out_c_bits_opcode_0 = buffer_auto_out_c_bits_opcode;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  auto_buffer_out_c_bits_opcode_0 = buffer_auto_out_c_bits_opcode;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_c_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [2:0]  auto_buffer_out_c_bits_param_0 = buffer_auto_out_c_bits_param;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [2:0]  auto_buffer_out_c_bits_param_0 = buffer_auto_out_c_bits_param;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [3:0]  buffer_nodeOut_c_bits_size;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [3:0]  auto_buffer_out_c_bits_size_0 = buffer_auto_out_c_bits_size;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [3:0]  auto_buffer_out_c_bits_size_0 = buffer_auto_out_c_bits_size;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_nodeOut_c_bits_source;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [1:0]  auto_buffer_out_c_bits_source_0 = buffer_auto_out_c_bits_source;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  auto_buffer_out_c_bits_source_0 = buffer_auto_out_c_bits_source;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [31:0] buffer_nodeOut_c_bits_address;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [31:0] auto_buffer_out_c_bits_address_0 = buffer_auto_out_c_bits_address;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [31:0] auto_buffer_out_c_bits_address_0 = buffer_auto_out_c_bits_address;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [63:0] buffer_nodeOut_c_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [63:0] auto_buffer_out_c_bits_data_0 = buffer_auto_out_c_bits_data;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [63:0] auto_buffer_out_c_bits_data_0 = buffer_auto_out_c_bits_data;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        auto_buffer_out_d_ready_0 = buffer_auto_out_d_ready;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_d_ready_0 = buffer_auto_out_d_ready;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_d_valid = buffer_auto_out_d_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire [2:0]  buffer_nodeOut_d_bits_opcode = buffer_auto_out_d_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_nodeOut_d_bits_param = buffer_auto_out_d_bits_param;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
@@ -1507,9 +1507,9 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        buffer_nodeOut_d_bits_corrupt = buffer_auto_out_d_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_e_ready = buffer_auto_out_e_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   wire        buffer_nodeOut_e_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire        auto_buffer_out_e_valid_0 = buffer_auto_out_e_valid;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire        auto_buffer_out_e_valid_0 = buffer_auto_out_e_valid;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   wire [1:0]  buffer_nodeOut_e_bits_sink;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
-  wire [1:0]  auto_buffer_out_e_bits_sink_0 = buffer_auto_out_e_bits_sink;	// src/main/scala/tile/RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
+  wire [1:0]  auto_buffer_out_e_bits_sink_0 = buffer_auto_out_e_bits_sink;	// src/main/scala/tile/rocket_RocketTile.scala:166:7, src/main/scala/tilelink/Buffer.scala:40:9
   assign buffer_nodeIn_a_ready = buffer_nodeOut_a_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign buffer_auto_out_a_valid = buffer_nodeOut_a_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
   assign buffer_auto_out_a_bits_opcode = buffer_nodeOut_a_bits_opcode;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/Buffer.scala:40:9
@@ -1670,17 +1670,17 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   assign tlOtherMastersNodeOut_e_bits_sink = tlOtherMastersNodeIn_e_bits_sink;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign broadcast_auto_in = hartidOut;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   assign hartidOut = hartidIn;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  wire        auto_trace_source_out_insns_0_valid_0 = traceSourceNodeOut_insns_0_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [39:0] auto_trace_source_out_insns_0_iaddr_0 = traceSourceNodeOut_insns_0_iaddr;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [31:0] auto_trace_source_out_insns_0_insn_0 = traceSourceNodeOut_insns_0_insn;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [2:0]  auto_trace_source_out_insns_0_priv_0 = traceSourceNodeOut_insns_0_priv;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
+  wire        auto_trace_source_out_insns_0_valid_0 = traceSourceNodeOut_insns_0_valid;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [39:0] auto_trace_source_out_insns_0_iaddr_0 = traceSourceNodeOut_insns_0_iaddr;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [31:0] auto_trace_source_out_insns_0_insn_0 = traceSourceNodeOut_insns_0_insn;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [2:0]  auto_trace_source_out_insns_0_priv_0 = traceSourceNodeOut_insns_0_priv;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   wire        auto_trace_source_out_insns_0_exception_0 =
-    traceSourceNodeOut_insns_0_exception;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
+    traceSourceNodeOut_insns_0_exception;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   wire        auto_trace_source_out_insns_0_interrupt_0 =
-    traceSourceNodeOut_insns_0_interrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [63:0] auto_trace_source_out_insns_0_cause_0 = traceSourceNodeOut_insns_0_cause;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [39:0] auto_trace_source_out_insns_0_tval_0 = traceSourceNodeOut_insns_0_tval;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
-  wire [63:0] auto_trace_source_out_time_0 = traceSourceNodeOut_time;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
+    traceSourceNodeOut_insns_0_interrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [63:0] auto_trace_source_out_insns_0_cause_0 = traceSourceNodeOut_insns_0_cause;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [39:0] auto_trace_source_out_insns_0_tval_0 = traceSourceNodeOut_insns_0_tval;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
+  wire [63:0] auto_trace_source_out_time_0 = traceSourceNodeOut_time;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   assign broadcast_2_auto_in_0_valid_0 = bpwatchSourceNodeOut_0_valid_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   assign broadcast_2_auto_in_0_action = bpwatchSourceNodeOut_0_action;	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9, dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire        int_localOut_0 = int_localIn_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
@@ -1688,34 +1688,34 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
   wire        x1_int_localOut_1 = x1_int_localIn_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   wire        x1_int_localOut_1_0 = x1_int_localIn_1_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   wire        x1_int_localOut_2_0 = x1_int_localIn_2_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  wire        auto_wfi_out_0_0 = wfiNodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/RocketTile.scala:166:7
+  wire        auto_wfi_out_0_0 = wfiNodeOut_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/rocket_RocketTile.scala:166:7
   reg         wfiNodeOut_0_REG;	// src/main/scala/tile/Interrupts.scala:131:36
   assign wfiNodeOut_0 = wfiNodeOut_0_REG;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tile/Interrupts.scala:131:36
-  always @(posedge clock) begin	// src/main/scala/tile/RocketTile.scala:166:7
-    if (reset)	// src/main/scala/tile/RocketTile.scala:166:7
-      wfiNodeOut_0_REG <= 1'h0;	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/RocketTile.scala:166:7
-    else	// src/main/scala/tile/RocketTile.scala:166:7
-      wfiNodeOut_0_REG <= _core_io_wfi;	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/RocketTile.scala:170:20
+  always @(posedge clock) begin	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+    if (reset)	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      wfiNodeOut_0_REG <= 1'h0;	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/rocket_RocketTile.scala:166:7
+    else	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      wfiNodeOut_0_REG <= _core_io_wfi;	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/rocket_RocketTile.scala:170:20
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/RocketTile.scala:166:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/RocketTile.scala:166:7
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/RocketTile.scala:166:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_RocketTile.scala:166:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/tile/RocketTile.scala:166:7
-      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/tile/RocketTile.scala:166:7
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/RocketTile.scala:166:7
-        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/RocketTile.scala:166:7
+    initial begin	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_RocketTile.scala:166:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/RocketTile.scala:166:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/tile/RocketTile.scala:166:7
-        wfiNodeOut_0_REG = _RANDOM[/*Zero width*/ 1'b0][0];	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/RocketTile.scala:166:7
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+        wfiNodeOut_0_REG = _RANDOM[/*Zero width*/ 1'b0][0];	// src/main/scala/tile/Interrupts.scala:131:36, src/main/scala/tile/rocket_RocketTile.scala:166:7
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/RocketTile.scala:166:7
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/RocketTile.scala:166:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_RocketTile.scala:166:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLXbar_MasterXbar_RocketTile_i2_o1_a32d64s2k2z4c tlMasterXbar (	// src/main/scala/subsystem/HierarchicalElement.scala:55:42
+  rocket_TLXbar_MasterXbar_RocketTile_i2_o1_a32d64s2k2z4c tlMasterXbar (	// src/main/scala/subsystem/HierarchicalElement.scala:55:42
     .clock                         (clock),
     .reset                         (reset),
     .auto_anon_in_1_a_ready        (widget_1_auto_anon_out_a_ready),
@@ -1810,7 +1810,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .auto_anon_out_e_valid         (tlOtherMastersNodeIn_e_valid),
     .auto_anon_out_e_bits_sink     (tlOtherMastersNodeIn_e_bits_sink)
   );
-  IntXbar_i4_o1 intXbar (	// src/main/scala/subsystem/HierarchicalElement.scala:57:37
+  rocket_IntXbar_i4_o1 intXbar (	// src/main/scala/subsystem/HierarchicalElement.scala:57:37
     .auto_anon_in_3_0 (x1_int_localOut_2_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_anon_in_2_0 (x1_int_localOut_1_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_anon_in_1_0 (x1_int_localOut_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
@@ -1822,7 +1822,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .auto_anon_out_3  (intSinkNodeIn_3),
     .auto_anon_out_4  (intSinkNodeIn_4)
   );
-  DCache dcache (	// src/main/scala/rocket/HellaCache.scala:278:43
+  rocket_DCache dcache (	// src/main/scala/rocket/HellaCache.scala:278:43
     .clock                                      (clock),
     .reset                                      (reset),
     .auto_out_a_ready                           (widget_auto_anon_in_a_ready),	// src/main/scala/tilelink/WidthWidget.scala:27:9
@@ -1878,7 +1878,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_cpu_req_bits_no_resp                    (_dcacheArb_io_mem_req_bits_no_resp),	// src/main/scala/rocket/HellaCache.scala:292:25
     .io_cpu_s1_kill                             (_dcacheArb_io_mem_s1_kill),	// src/main/scala/rocket/HellaCache.scala:292:25
     .io_cpu_s1_data_data                        (_dcacheArb_io_mem_s1_data_data),	// src/main/scala/rocket/HellaCache.scala:292:25
-    .io_cpu_s1_data_mask                        (8'h0),	// src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/PTW.scala:822:19, src/main/scala/tile/RocketTile.scala:170:20
+    .io_cpu_s1_data_mask                        (8'h0),	// src/main/scala/rocket/HellaCache.scala:278:43, :292:25, src/main/scala/rocket/rocket_PTW.scala:822:19, src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_s2_nack                             (_dcache_io_cpu_s2_nack),
     .io_cpu_s2_nack_cause_raw                   (_dcache_io_cpu_s2_nack_cause_raw),
     .io_cpu_s2_uncached                         (_dcache_io_cpu_s2_uncached),
@@ -1925,185 +1925,185 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_cpu_perf_storeBufferEmptyAfterStore
       (_dcache_io_cpu_perf_storeBufferEmptyAfterStore),
     .io_cpu_keep_clock_enabled                  (_dcacheArb_io_mem_keep_clock_enabled),	// src/main/scala/rocket/HellaCache.scala:292:25
-    .io_ptw_req_ready                           (_ptw_io_requestor_0_req_ready),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_ptw_req_ready                           (_ptw_io_requestor_0_req_ready),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_req_valid                           (_dcache_io_ptw_req_valid),
     .io_ptw_req_bits_bits_addr                  (_dcache_io_ptw_req_bits_bits_addr),
     .io_ptw_req_bits_bits_need_gpa              (_dcache_io_ptw_req_bits_bits_need_gpa),
-    .io_ptw_resp_valid                          (_ptw_io_requestor_0_resp_valid),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_ae_ptw                    (_ptw_io_requestor_0_resp_bits_ae_ptw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_ae_final                  (_ptw_io_requestor_0_resp_bits_ae_final),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pf                        (_ptw_io_requestor_0_resp_bits_pf),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_gf                        (_ptw_io_requestor_0_resp_bits_gf),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hr                        (_ptw_io_requestor_0_resp_bits_hr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hw                        (_ptw_io_requestor_0_resp_bits_hw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hx                        (_ptw_io_requestor_0_resp_bits_hx),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_ptw_resp_valid                          (_ptw_io_requestor_0_resp_valid),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_ae_ptw                    (_ptw_io_requestor_0_resp_bits_ae_ptw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_ae_final                  (_ptw_io_requestor_0_resp_bits_ae_final),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pf                        (_ptw_io_requestor_0_resp_bits_pf),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_gf                        (_ptw_io_requestor_0_resp_bits_gf),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hr                        (_ptw_io_requestor_0_resp_bits_hr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hw                        (_ptw_io_requestor_0_resp_bits_hw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hx                        (_ptw_io_requestor_0_resp_bits_hx),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_pte_reserved_for_future
-      (_ptw_io_requestor_0_resp_bits_pte_reserved_for_future),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_ppn                   (_ptw_io_requestor_0_resp_bits_pte_ppn),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_resp_bits_pte_reserved_for_future),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_ppn                   (_ptw_io_requestor_0_resp_bits_pte_ppn),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_pte_reserved_for_software
-      (_ptw_io_requestor_0_resp_bits_pte_reserved_for_software),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_d                     (_ptw_io_requestor_0_resp_bits_pte_d),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_a                     (_ptw_io_requestor_0_resp_bits_pte_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_g                     (_ptw_io_requestor_0_resp_bits_pte_g),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_u                     (_ptw_io_requestor_0_resp_bits_pte_u),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_x                     (_ptw_io_requestor_0_resp_bits_pte_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_w                     (_ptw_io_requestor_0_resp_bits_pte_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_r                     (_ptw_io_requestor_0_resp_bits_pte_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_v                     (_ptw_io_requestor_0_resp_bits_pte_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_level                     (_ptw_io_requestor_0_resp_bits_level),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_resp_bits_pte_reserved_for_software),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_d                     (_ptw_io_requestor_0_resp_bits_pte_d),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_a                     (_ptw_io_requestor_0_resp_bits_pte_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_g                     (_ptw_io_requestor_0_resp_bits_pte_g),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_u                     (_ptw_io_requestor_0_resp_bits_pte_u),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_x                     (_ptw_io_requestor_0_resp_bits_pte_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_w                     (_ptw_io_requestor_0_resp_bits_pte_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_r                     (_ptw_io_requestor_0_resp_bits_pte_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_v                     (_ptw_io_requestor_0_resp_bits_pte_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_level                     (_ptw_io_requestor_0_resp_bits_level),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_homogeneous
-      (_ptw_io_requestor_0_resp_bits_homogeneous),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_gpa_valid                 (_ptw_io_requestor_0_resp_bits_gpa_valid),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_gpa_bits                  (_ptw_io_requestor_0_resp_bits_gpa_bits),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_resp_bits_homogeneous),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_gpa_valid                 (_ptw_io_requestor_0_resp_bits_gpa_valid),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_gpa_bits                  (_ptw_io_requestor_0_resp_bits_gpa_bits),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_gpa_is_pte
-      (_ptw_io_requestor_0_resp_bits_gpa_is_pte),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_ptbr_mode                           (_ptw_io_requestor_0_ptbr_mode),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_ptbr_ppn                            (_ptw_io_requestor_0_ptbr_ppn),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_debug                        (_ptw_io_requestor_0_status_debug),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_cease                        (_ptw_io_requestor_0_status_cease),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_wfi                          (_ptw_io_requestor_0_status_wfi),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_isa                          (_ptw_io_requestor_0_status_isa),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_dprv                         (_ptw_io_requestor_0_status_dprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_dv                           (_ptw_io_requestor_0_status_dv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_prv                          (_ptw_io_requestor_0_status_prv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_v                            (_ptw_io_requestor_0_status_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sd                           (_ptw_io_requestor_0_status_sd),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpv                          (_ptw_io_requestor_0_status_mpv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_gva                          (_ptw_io_requestor_0_status_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tsr                          (_ptw_io_requestor_0_status_tsr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tw                           (_ptw_io_requestor_0_status_tw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tvm                          (_ptw_io_requestor_0_status_tvm),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mxr                          (_ptw_io_requestor_0_status_mxr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sum                          (_ptw_io_requestor_0_status_sum),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mprv                         (_ptw_io_requestor_0_status_mprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_fs                           (_ptw_io_requestor_0_status_fs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpp                          (_ptw_io_requestor_0_status_mpp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_spp                          (_ptw_io_requestor_0_status_spp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpie                         (_ptw_io_requestor_0_status_mpie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_spie                         (_ptw_io_requestor_0_status_spie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mie                          (_ptw_io_requestor_0_status_mie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sie                          (_ptw_io_requestor_0_status_sie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_spvp                        (_ptw_io_requestor_0_hstatus_spvp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_spv                         (_ptw_io_requestor_0_hstatus_spv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_gva                         (_ptw_io_requestor_0_hstatus_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_debug                       (_ptw_io_requestor_0_gstatus_debug),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_cease                       (_ptw_io_requestor_0_gstatus_cease),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_wfi                         (_ptw_io_requestor_0_gstatus_wfi),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_isa                         (_ptw_io_requestor_0_gstatus_isa),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_dprv                        (_ptw_io_requestor_0_gstatus_dprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_dv                          (_ptw_io_requestor_0_gstatus_dv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_prv                         (_ptw_io_requestor_0_gstatus_prv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_v                           (_ptw_io_requestor_0_gstatus_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sd                          (_ptw_io_requestor_0_gstatus_sd),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_zero2                       (_ptw_io_requestor_0_gstatus_zero2),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpv                         (_ptw_io_requestor_0_gstatus_mpv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_gva                         (_ptw_io_requestor_0_gstatus_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mbe                         (_ptw_io_requestor_0_gstatus_mbe),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sbe                         (_ptw_io_requestor_0_gstatus_sbe),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sxl                         (_ptw_io_requestor_0_gstatus_sxl),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_zero1                       (_ptw_io_requestor_0_gstatus_zero1),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tsr                         (_ptw_io_requestor_0_gstatus_tsr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tw                          (_ptw_io_requestor_0_gstatus_tw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tvm                         (_ptw_io_requestor_0_gstatus_tvm),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mxr                         (_ptw_io_requestor_0_gstatus_mxr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sum                         (_ptw_io_requestor_0_gstatus_sum),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mprv                        (_ptw_io_requestor_0_gstatus_mprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_fs                          (_ptw_io_requestor_0_gstatus_fs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpp                         (_ptw_io_requestor_0_gstatus_mpp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_vs                          (_ptw_io_requestor_0_gstatus_vs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_spp                         (_ptw_io_requestor_0_gstatus_spp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpie                        (_ptw_io_requestor_0_gstatus_mpie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_ube                         (_ptw_io_requestor_0_gstatus_ube),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_spie                        (_ptw_io_requestor_0_gstatus_spie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_upie                        (_ptw_io_requestor_0_gstatus_upie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mie                         (_ptw_io_requestor_0_gstatus_mie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_hie                         (_ptw_io_requestor_0_gstatus_hie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sie                         (_ptw_io_requestor_0_gstatus_sie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_uie                         (_ptw_io_requestor_0_gstatus_uie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_l                         (_ptw_io_requestor_0_pmp_0_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_a                         (_ptw_io_requestor_0_pmp_0_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_x                         (_ptw_io_requestor_0_pmp_0_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_w                         (_ptw_io_requestor_0_pmp_0_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_r                         (_ptw_io_requestor_0_pmp_0_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_addr                          (_ptw_io_requestor_0_pmp_0_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_mask                          (_ptw_io_requestor_0_pmp_0_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_l                         (_ptw_io_requestor_0_pmp_1_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_a                         (_ptw_io_requestor_0_pmp_1_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_x                         (_ptw_io_requestor_0_pmp_1_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_w                         (_ptw_io_requestor_0_pmp_1_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_r                         (_ptw_io_requestor_0_pmp_1_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_addr                          (_ptw_io_requestor_0_pmp_1_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_mask                          (_ptw_io_requestor_0_pmp_1_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_l                         (_ptw_io_requestor_0_pmp_2_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_a                         (_ptw_io_requestor_0_pmp_2_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_x                         (_ptw_io_requestor_0_pmp_2_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_w                         (_ptw_io_requestor_0_pmp_2_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_r                         (_ptw_io_requestor_0_pmp_2_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_addr                          (_ptw_io_requestor_0_pmp_2_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_mask                          (_ptw_io_requestor_0_pmp_2_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_l                         (_ptw_io_requestor_0_pmp_3_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_a                         (_ptw_io_requestor_0_pmp_3_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_x                         (_ptw_io_requestor_0_pmp_3_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_w                         (_ptw_io_requestor_0_pmp_3_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_r                         (_ptw_io_requestor_0_pmp_3_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_addr                          (_ptw_io_requestor_0_pmp_3_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_mask                          (_ptw_io_requestor_0_pmp_3_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_l                         (_ptw_io_requestor_0_pmp_4_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_a                         (_ptw_io_requestor_0_pmp_4_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_x                         (_ptw_io_requestor_0_pmp_4_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_w                         (_ptw_io_requestor_0_pmp_4_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_r                         (_ptw_io_requestor_0_pmp_4_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_addr                          (_ptw_io_requestor_0_pmp_4_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_mask                          (_ptw_io_requestor_0_pmp_4_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_l                         (_ptw_io_requestor_0_pmp_5_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_a                         (_ptw_io_requestor_0_pmp_5_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_x                         (_ptw_io_requestor_0_pmp_5_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_w                         (_ptw_io_requestor_0_pmp_5_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_r                         (_ptw_io_requestor_0_pmp_5_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_addr                          (_ptw_io_requestor_0_pmp_5_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_mask                          (_ptw_io_requestor_0_pmp_5_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_l                         (_ptw_io_requestor_0_pmp_6_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_a                         (_ptw_io_requestor_0_pmp_6_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_x                         (_ptw_io_requestor_0_pmp_6_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_w                         (_ptw_io_requestor_0_pmp_6_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_r                         (_ptw_io_requestor_0_pmp_6_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_addr                          (_ptw_io_requestor_0_pmp_6_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_mask                          (_ptw_io_requestor_0_pmp_6_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_l                         (_ptw_io_requestor_0_pmp_7_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_a                         (_ptw_io_requestor_0_pmp_7_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_x                         (_ptw_io_requestor_0_pmp_7_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_w                         (_ptw_io_requestor_0_pmp_7_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_r                         (_ptw_io_requestor_0_pmp_7_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_addr                          (_ptw_io_requestor_0_pmp_7_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_mask                          (_ptw_io_requestor_0_pmp_7_mask),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_resp_bits_gpa_is_pte),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_ptbr_mode                           (_ptw_io_requestor_0_ptbr_mode),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_ptbr_ppn                            (_ptw_io_requestor_0_ptbr_ppn),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_debug                        (_ptw_io_requestor_0_status_debug),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_cease                        (_ptw_io_requestor_0_status_cease),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_wfi                          (_ptw_io_requestor_0_status_wfi),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_isa                          (_ptw_io_requestor_0_status_isa),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_dprv                         (_ptw_io_requestor_0_status_dprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_dv                           (_ptw_io_requestor_0_status_dv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_prv                          (_ptw_io_requestor_0_status_prv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_v                            (_ptw_io_requestor_0_status_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sd                           (_ptw_io_requestor_0_status_sd),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpv                          (_ptw_io_requestor_0_status_mpv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_gva                          (_ptw_io_requestor_0_status_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tsr                          (_ptw_io_requestor_0_status_tsr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tw                           (_ptw_io_requestor_0_status_tw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tvm                          (_ptw_io_requestor_0_status_tvm),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mxr                          (_ptw_io_requestor_0_status_mxr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sum                          (_ptw_io_requestor_0_status_sum),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mprv                         (_ptw_io_requestor_0_status_mprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_fs                           (_ptw_io_requestor_0_status_fs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpp                          (_ptw_io_requestor_0_status_mpp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_spp                          (_ptw_io_requestor_0_status_spp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpie                         (_ptw_io_requestor_0_status_mpie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_spie                         (_ptw_io_requestor_0_status_spie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mie                          (_ptw_io_requestor_0_status_mie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sie                          (_ptw_io_requestor_0_status_sie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_spvp                        (_ptw_io_requestor_0_hstatus_spvp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_spv                         (_ptw_io_requestor_0_hstatus_spv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_gva                         (_ptw_io_requestor_0_hstatus_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_debug                       (_ptw_io_requestor_0_gstatus_debug),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_cease                       (_ptw_io_requestor_0_gstatus_cease),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_wfi                         (_ptw_io_requestor_0_gstatus_wfi),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_isa                         (_ptw_io_requestor_0_gstatus_isa),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_dprv                        (_ptw_io_requestor_0_gstatus_dprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_dv                          (_ptw_io_requestor_0_gstatus_dv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_prv                         (_ptw_io_requestor_0_gstatus_prv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_v                           (_ptw_io_requestor_0_gstatus_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sd                          (_ptw_io_requestor_0_gstatus_sd),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_zero2                       (_ptw_io_requestor_0_gstatus_zero2),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpv                         (_ptw_io_requestor_0_gstatus_mpv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_gva                         (_ptw_io_requestor_0_gstatus_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mbe                         (_ptw_io_requestor_0_gstatus_mbe),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sbe                         (_ptw_io_requestor_0_gstatus_sbe),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sxl                         (_ptw_io_requestor_0_gstatus_sxl),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_zero1                       (_ptw_io_requestor_0_gstatus_zero1),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tsr                         (_ptw_io_requestor_0_gstatus_tsr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tw                          (_ptw_io_requestor_0_gstatus_tw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tvm                         (_ptw_io_requestor_0_gstatus_tvm),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mxr                         (_ptw_io_requestor_0_gstatus_mxr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sum                         (_ptw_io_requestor_0_gstatus_sum),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mprv                        (_ptw_io_requestor_0_gstatus_mprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_fs                          (_ptw_io_requestor_0_gstatus_fs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpp                         (_ptw_io_requestor_0_gstatus_mpp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_vs                          (_ptw_io_requestor_0_gstatus_vs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_spp                         (_ptw_io_requestor_0_gstatus_spp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpie                        (_ptw_io_requestor_0_gstatus_mpie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_ube                         (_ptw_io_requestor_0_gstatus_ube),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_spie                        (_ptw_io_requestor_0_gstatus_spie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_upie                        (_ptw_io_requestor_0_gstatus_upie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mie                         (_ptw_io_requestor_0_gstatus_mie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_hie                         (_ptw_io_requestor_0_gstatus_hie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sie                         (_ptw_io_requestor_0_gstatus_sie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_uie                         (_ptw_io_requestor_0_gstatus_uie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_l                         (_ptw_io_requestor_0_pmp_0_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_a                         (_ptw_io_requestor_0_pmp_0_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_x                         (_ptw_io_requestor_0_pmp_0_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_w                         (_ptw_io_requestor_0_pmp_0_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_r                         (_ptw_io_requestor_0_pmp_0_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_addr                          (_ptw_io_requestor_0_pmp_0_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_mask                          (_ptw_io_requestor_0_pmp_0_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_l                         (_ptw_io_requestor_0_pmp_1_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_a                         (_ptw_io_requestor_0_pmp_1_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_x                         (_ptw_io_requestor_0_pmp_1_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_w                         (_ptw_io_requestor_0_pmp_1_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_r                         (_ptw_io_requestor_0_pmp_1_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_addr                          (_ptw_io_requestor_0_pmp_1_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_mask                          (_ptw_io_requestor_0_pmp_1_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_l                         (_ptw_io_requestor_0_pmp_2_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_a                         (_ptw_io_requestor_0_pmp_2_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_x                         (_ptw_io_requestor_0_pmp_2_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_w                         (_ptw_io_requestor_0_pmp_2_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_r                         (_ptw_io_requestor_0_pmp_2_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_addr                          (_ptw_io_requestor_0_pmp_2_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_mask                          (_ptw_io_requestor_0_pmp_2_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_l                         (_ptw_io_requestor_0_pmp_3_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_a                         (_ptw_io_requestor_0_pmp_3_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_x                         (_ptw_io_requestor_0_pmp_3_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_w                         (_ptw_io_requestor_0_pmp_3_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_r                         (_ptw_io_requestor_0_pmp_3_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_addr                          (_ptw_io_requestor_0_pmp_3_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_mask                          (_ptw_io_requestor_0_pmp_3_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_l                         (_ptw_io_requestor_0_pmp_4_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_a                         (_ptw_io_requestor_0_pmp_4_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_x                         (_ptw_io_requestor_0_pmp_4_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_w                         (_ptw_io_requestor_0_pmp_4_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_r                         (_ptw_io_requestor_0_pmp_4_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_addr                          (_ptw_io_requestor_0_pmp_4_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_mask                          (_ptw_io_requestor_0_pmp_4_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_l                         (_ptw_io_requestor_0_pmp_5_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_a                         (_ptw_io_requestor_0_pmp_5_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_x                         (_ptw_io_requestor_0_pmp_5_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_w                         (_ptw_io_requestor_0_pmp_5_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_r                         (_ptw_io_requestor_0_pmp_5_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_addr                          (_ptw_io_requestor_0_pmp_5_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_mask                          (_ptw_io_requestor_0_pmp_5_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_l                         (_ptw_io_requestor_0_pmp_6_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_a                         (_ptw_io_requestor_0_pmp_6_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_x                         (_ptw_io_requestor_0_pmp_6_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_w                         (_ptw_io_requestor_0_pmp_6_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_r                         (_ptw_io_requestor_0_pmp_6_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_addr                          (_ptw_io_requestor_0_pmp_6_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_mask                          (_ptw_io_requestor_0_pmp_6_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_l                         (_ptw_io_requestor_0_pmp_7_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_a                         (_ptw_io_requestor_0_pmp_7_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_x                         (_ptw_io_requestor_0_pmp_7_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_w                         (_ptw_io_requestor_0_pmp_7_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_r                         (_ptw_io_requestor_0_pmp_7_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_addr                          (_ptw_io_requestor_0_pmp_7_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_mask                          (_ptw_io_requestor_0_pmp_7_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_ren
-      (_ptw_io_requestor_0_customCSRs_csrs_0_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_0_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_wen
-      (_ptw_io_requestor_0_customCSRs_csrs_0_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_0_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_wdata
-      (_ptw_io_requestor_0_customCSRs_csrs_0_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_0_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_value
-      (_ptw_io_requestor_0_customCSRs_csrs_0_value),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_0_value),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_ren
-      (_ptw_io_requestor_0_customCSRs_csrs_1_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_1_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_wen
-      (_ptw_io_requestor_0_customCSRs_csrs_1_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_1_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_wdata
-      (_ptw_io_requestor_0_customCSRs_csrs_1_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_1_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_ren
-      (_ptw_io_requestor_0_customCSRs_csrs_2_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_2_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_wen
-      (_ptw_io_requestor_0_customCSRs_csrs_2_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_2_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_wdata
-      (_ptw_io_requestor_0_customCSRs_csrs_2_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_2_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_ren
-      (_ptw_io_requestor_0_customCSRs_csrs_3_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_3_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_wen
-      (_ptw_io_requestor_0_customCSRs_csrs_3_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_3_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_wdata
-      (_ptw_io_requestor_0_customCSRs_csrs_3_wdata)	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_0_customCSRs_csrs_3_wdata)	// src/main/scala/rocket/rocket_PTW.scala:822:19
   );
-  Frontend frontend (	// src/main/scala/rocket/Frontend.scala:393:28
+  rocket_Frontend frontend (	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .clock                                         (clock),
     .reset                                         (reset),
     .auto_icache_master_out_a_ready                (widget_1_auto_anon_in_a_ready),	// src/main/scala/tilelink/WidthWidget.scala:27:9
@@ -2117,18 +2117,18 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .auto_icache_master_out_d_bits_denied          (widget_1_auto_anon_in_d_bits_denied),	// src/main/scala/tilelink/WidthWidget.scala:27:9
     .auto_icache_master_out_d_bits_data            (widget_1_auto_anon_in_d_bits_data),	// src/main/scala/tilelink/WidthWidget.scala:27:9
     .auto_icache_master_out_d_bits_corrupt         (widget_1_auto_anon_in_d_bits_corrupt),	// src/main/scala/tilelink/WidthWidget.scala:27:9
-    .io_cpu_might_request                          (_core_io_imem_might_request),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_req_valid                              (_core_io_imem_req_valid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_req_bits_pc                            (_core_io_imem_req_bits_pc),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_req_bits_speculative                   (_core_io_imem_req_bits_speculative),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_valid                           (_core_io_imem_sfence_valid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_rs1                        (_core_io_imem_sfence_bits_rs1),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_rs2                        (_core_io_imem_sfence_bits_rs2),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_addr                       (_core_io_imem_sfence_bits_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_asid                       (_core_io_imem_sfence_bits_asid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_hv                         (_core_io_imem_sfence_bits_hv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_sfence_bits_hg                         (_core_io_imem_sfence_bits_hg),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_resp_ready                             (_core_io_imem_resp_ready),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_cpu_might_request                          (_core_io_imem_might_request),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_req_valid                              (_core_io_imem_req_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_req_bits_pc                            (_core_io_imem_req_bits_pc),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_req_bits_speculative                   (_core_io_imem_req_bits_speculative),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_valid                           (_core_io_imem_sfence_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_rs1                        (_core_io_imem_sfence_bits_rs1),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_rs2                        (_core_io_imem_sfence_bits_rs2),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_addr                       (_core_io_imem_sfence_bits_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_asid                       (_core_io_imem_sfence_bits_asid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_hv                         (_core_io_imem_sfence_bits_hv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_sfence_bits_hg                         (_core_io_imem_sfence_bits_hg),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_resp_ready                             (_core_io_imem_resp_ready),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_resp_valid                             (_frontend_io_cpu_resp_valid),
     .io_cpu_resp_bits_btb_cfiType
       (_frontend_io_cpu_resp_bits_btb_cfiType),
@@ -2155,251 +2155,251 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_cpu_gpa_valid                              (_frontend_io_cpu_gpa_valid),
     .io_cpu_gpa_bits                               (_frontend_io_cpu_gpa_bits),
     .io_cpu_gpa_is_pte                             (_frontend_io_cpu_gpa_is_pte),
-    .io_cpu_btb_update_valid                       (_core_io_imem_btb_update_valid),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_cpu_btb_update_valid                       (_core_io_imem_btb_update_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_cfiType
-      (_core_io_imem_btb_update_bits_prediction_cfiType),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_cfiType),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_taken
-      (_core_io_imem_btb_update_bits_prediction_taken),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_taken),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_mask
-      (_core_io_imem_btb_update_bits_prediction_mask),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_bridx
-      (_core_io_imem_btb_update_bits_prediction_bridx),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_bridx),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_target
-      (_core_io_imem_btb_update_bits_prediction_target),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_target),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_entry
-      (_core_io_imem_btb_update_bits_prediction_entry),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_entry),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_bht_history
-      (_core_io_imem_btb_update_bits_prediction_bht_history),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_bht_history),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_prediction_bht_value
-      (_core_io_imem_btb_update_bits_prediction_bht_value),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_btb_update_bits_pc                     (_core_io_imem_btb_update_bits_pc),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_btb_update_bits_target                 (_core_io_imem_btb_update_bits_target),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_prediction_bht_value),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_btb_update_bits_pc                     (_core_io_imem_btb_update_bits_pc),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_btb_update_bits_target                 (_core_io_imem_btb_update_bits_target),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_isValid
-      (_core_io_imem_btb_update_bits_isValid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_btb_update_bits_br_pc                  (_core_io_imem_btb_update_bits_br_pc),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_isValid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_btb_update_bits_br_pc                  (_core_io_imem_btb_update_bits_br_pc),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_btb_update_bits_cfiType
-      (_core_io_imem_btb_update_bits_cfiType),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_bht_update_valid                       (_core_io_imem_bht_update_valid),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_btb_update_bits_cfiType),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_bht_update_valid                       (_core_io_imem_bht_update_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_bht_update_bits_prediction_history
-      (_core_io_imem_bht_update_bits_prediction_history),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_bht_update_bits_prediction_history),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_bht_update_bits_prediction_value
-      (_core_io_imem_bht_update_bits_prediction_value),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_bht_update_bits_pc                     (_core_io_imem_bht_update_bits_pc),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_bht_update_bits_branch                 (_core_io_imem_bht_update_bits_branch),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_bht_update_bits_taken                  (_core_io_imem_bht_update_bits_taken),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_bht_update_bits_prediction_value),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_bht_update_bits_pc                     (_core_io_imem_bht_update_bits_pc),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_bht_update_bits_branch                 (_core_io_imem_bht_update_bits_branch),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_bht_update_bits_taken                  (_core_io_imem_bht_update_bits_taken),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_bht_update_bits_mispredict
-      (_core_io_imem_bht_update_bits_mispredict),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_cpu_flush_icache                           (_core_io_imem_flush_icache),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_imem_bht_update_bits_mispredict),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_cpu_flush_icache                           (_core_io_imem_flush_icache),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_cpu_npc                                    (_frontend_io_cpu_npc),
     .io_cpu_perf_acquire                           (_frontend_io_cpu_perf_acquire),
     .io_cpu_perf_tlbMiss                           (_frontend_io_cpu_perf_tlbMiss),
-    .io_cpu_progress                               (_core_io_imem_progress),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_ptw_req_ready                              (_ptw_io_requestor_1_req_ready),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_cpu_progress                               (_core_io_imem_progress),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_ptw_req_ready                              (_ptw_io_requestor_1_req_ready),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_req_valid                              (_frontend_io_ptw_req_valid),
     .io_ptw_req_bits_valid                         (_frontend_io_ptw_req_bits_valid),
     .io_ptw_req_bits_bits_addr                     (_frontend_io_ptw_req_bits_bits_addr),
     .io_ptw_req_bits_bits_need_gpa
       (_frontend_io_ptw_req_bits_bits_need_gpa),
-    .io_ptw_resp_valid                             (_ptw_io_requestor_1_resp_valid),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_ae_ptw                       (_ptw_io_requestor_1_resp_bits_ae_ptw),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_ptw_resp_valid                             (_ptw_io_requestor_1_resp_valid),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_ae_ptw                       (_ptw_io_requestor_1_resp_bits_ae_ptw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_ae_final
-      (_ptw_io_requestor_1_resp_bits_ae_final),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pf                           (_ptw_io_requestor_1_resp_bits_pf),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_gf                           (_ptw_io_requestor_1_resp_bits_gf),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hr                           (_ptw_io_requestor_1_resp_bits_hr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hw                           (_ptw_io_requestor_1_resp_bits_hw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_hx                           (_ptw_io_requestor_1_resp_bits_hx),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_ae_final),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pf                           (_ptw_io_requestor_1_resp_bits_pf),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_gf                           (_ptw_io_requestor_1_resp_bits_gf),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hr                           (_ptw_io_requestor_1_resp_bits_hr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hw                           (_ptw_io_requestor_1_resp_bits_hw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_hx                           (_ptw_io_requestor_1_resp_bits_hx),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_pte_reserved_for_future
-      (_ptw_io_requestor_1_resp_bits_pte_reserved_for_future),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_pte_reserved_for_future),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_pte_ppn
-      (_ptw_io_requestor_1_resp_bits_pte_ppn),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_pte_ppn),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_pte_reserved_for_software
-      (_ptw_io_requestor_1_resp_bits_pte_reserved_for_software),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_d                        (_ptw_io_requestor_1_resp_bits_pte_d),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_a                        (_ptw_io_requestor_1_resp_bits_pte_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_g                        (_ptw_io_requestor_1_resp_bits_pte_g),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_u                        (_ptw_io_requestor_1_resp_bits_pte_u),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_x                        (_ptw_io_requestor_1_resp_bits_pte_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_w                        (_ptw_io_requestor_1_resp_bits_pte_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_r                        (_ptw_io_requestor_1_resp_bits_pte_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_pte_v                        (_ptw_io_requestor_1_resp_bits_pte_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_resp_bits_level                        (_ptw_io_requestor_1_resp_bits_level),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_pte_reserved_for_software),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_d                        (_ptw_io_requestor_1_resp_bits_pte_d),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_a                        (_ptw_io_requestor_1_resp_bits_pte_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_g                        (_ptw_io_requestor_1_resp_bits_pte_g),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_u                        (_ptw_io_requestor_1_resp_bits_pte_u),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_x                        (_ptw_io_requestor_1_resp_bits_pte_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_w                        (_ptw_io_requestor_1_resp_bits_pte_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_r                        (_ptw_io_requestor_1_resp_bits_pte_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_pte_v                        (_ptw_io_requestor_1_resp_bits_pte_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_resp_bits_level                        (_ptw_io_requestor_1_resp_bits_level),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_homogeneous
-      (_ptw_io_requestor_1_resp_bits_homogeneous),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_homogeneous),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_gpa_valid
-      (_ptw_io_requestor_1_resp_bits_gpa_valid),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_gpa_valid),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_gpa_bits
-      (_ptw_io_requestor_1_resp_bits_gpa_bits),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_gpa_bits),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_resp_bits_gpa_is_pte
-      (_ptw_io_requestor_1_resp_bits_gpa_is_pte),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_ptbr_mode                              (_ptw_io_requestor_1_ptbr_mode),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_ptbr_ppn                               (_ptw_io_requestor_1_ptbr_ppn),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_debug                           (_ptw_io_requestor_1_status_debug),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_cease                           (_ptw_io_requestor_1_status_cease),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_wfi                             (_ptw_io_requestor_1_status_wfi),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_isa                             (_ptw_io_requestor_1_status_isa),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_dprv                            (_ptw_io_requestor_1_status_dprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_dv                              (_ptw_io_requestor_1_status_dv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_prv                             (_ptw_io_requestor_1_status_prv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_v                               (_ptw_io_requestor_1_status_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sd                              (_ptw_io_requestor_1_status_sd),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpv                             (_ptw_io_requestor_1_status_mpv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_gva                             (_ptw_io_requestor_1_status_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tsr                             (_ptw_io_requestor_1_status_tsr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tw                              (_ptw_io_requestor_1_status_tw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_tvm                             (_ptw_io_requestor_1_status_tvm),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mxr                             (_ptw_io_requestor_1_status_mxr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sum                             (_ptw_io_requestor_1_status_sum),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mprv                            (_ptw_io_requestor_1_status_mprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_fs                              (_ptw_io_requestor_1_status_fs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpp                             (_ptw_io_requestor_1_status_mpp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_spp                             (_ptw_io_requestor_1_status_spp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mpie                            (_ptw_io_requestor_1_status_mpie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_spie                            (_ptw_io_requestor_1_status_spie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_mie                             (_ptw_io_requestor_1_status_mie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_status_sie                             (_ptw_io_requestor_1_status_sie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_spvp                           (_ptw_io_requestor_1_hstatus_spvp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_spv                            (_ptw_io_requestor_1_hstatus_spv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_hstatus_gva                            (_ptw_io_requestor_1_hstatus_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_debug                          (_ptw_io_requestor_1_gstatus_debug),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_cease                          (_ptw_io_requestor_1_gstatus_cease),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_wfi                            (_ptw_io_requestor_1_gstatus_wfi),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_isa                            (_ptw_io_requestor_1_gstatus_isa),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_dprv                           (_ptw_io_requestor_1_gstatus_dprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_dv                             (_ptw_io_requestor_1_gstatus_dv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_prv                            (_ptw_io_requestor_1_gstatus_prv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_v                              (_ptw_io_requestor_1_gstatus_v),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sd                             (_ptw_io_requestor_1_gstatus_sd),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_zero2                          (_ptw_io_requestor_1_gstatus_zero2),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpv                            (_ptw_io_requestor_1_gstatus_mpv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_gva                            (_ptw_io_requestor_1_gstatus_gva),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mbe                            (_ptw_io_requestor_1_gstatus_mbe),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sbe                            (_ptw_io_requestor_1_gstatus_sbe),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sxl                            (_ptw_io_requestor_1_gstatus_sxl),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_zero1                          (_ptw_io_requestor_1_gstatus_zero1),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tsr                            (_ptw_io_requestor_1_gstatus_tsr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tw                             (_ptw_io_requestor_1_gstatus_tw),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_tvm                            (_ptw_io_requestor_1_gstatus_tvm),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mxr                            (_ptw_io_requestor_1_gstatus_mxr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sum                            (_ptw_io_requestor_1_gstatus_sum),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mprv                           (_ptw_io_requestor_1_gstatus_mprv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_fs                             (_ptw_io_requestor_1_gstatus_fs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpp                            (_ptw_io_requestor_1_gstatus_mpp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_vs                             (_ptw_io_requestor_1_gstatus_vs),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_spp                            (_ptw_io_requestor_1_gstatus_spp),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mpie                           (_ptw_io_requestor_1_gstatus_mpie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_ube                            (_ptw_io_requestor_1_gstatus_ube),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_spie                           (_ptw_io_requestor_1_gstatus_spie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_upie                           (_ptw_io_requestor_1_gstatus_upie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_mie                            (_ptw_io_requestor_1_gstatus_mie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_hie                            (_ptw_io_requestor_1_gstatus_hie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_sie                            (_ptw_io_requestor_1_gstatus_sie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_gstatus_uie                            (_ptw_io_requestor_1_gstatus_uie),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_l                            (_ptw_io_requestor_1_pmp_0_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_a                            (_ptw_io_requestor_1_pmp_0_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_x                            (_ptw_io_requestor_1_pmp_0_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_w                            (_ptw_io_requestor_1_pmp_0_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_cfg_r                            (_ptw_io_requestor_1_pmp_0_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_addr                             (_ptw_io_requestor_1_pmp_0_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_0_mask                             (_ptw_io_requestor_1_pmp_0_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_l                            (_ptw_io_requestor_1_pmp_1_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_a                            (_ptw_io_requestor_1_pmp_1_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_x                            (_ptw_io_requestor_1_pmp_1_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_w                            (_ptw_io_requestor_1_pmp_1_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_cfg_r                            (_ptw_io_requestor_1_pmp_1_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_addr                             (_ptw_io_requestor_1_pmp_1_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_1_mask                             (_ptw_io_requestor_1_pmp_1_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_l                            (_ptw_io_requestor_1_pmp_2_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_a                            (_ptw_io_requestor_1_pmp_2_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_x                            (_ptw_io_requestor_1_pmp_2_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_w                            (_ptw_io_requestor_1_pmp_2_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_cfg_r                            (_ptw_io_requestor_1_pmp_2_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_addr                             (_ptw_io_requestor_1_pmp_2_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_2_mask                             (_ptw_io_requestor_1_pmp_2_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_l                            (_ptw_io_requestor_1_pmp_3_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_a                            (_ptw_io_requestor_1_pmp_3_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_x                            (_ptw_io_requestor_1_pmp_3_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_w                            (_ptw_io_requestor_1_pmp_3_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_cfg_r                            (_ptw_io_requestor_1_pmp_3_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_addr                             (_ptw_io_requestor_1_pmp_3_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_3_mask                             (_ptw_io_requestor_1_pmp_3_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_l                            (_ptw_io_requestor_1_pmp_4_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_a                            (_ptw_io_requestor_1_pmp_4_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_x                            (_ptw_io_requestor_1_pmp_4_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_w                            (_ptw_io_requestor_1_pmp_4_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_cfg_r                            (_ptw_io_requestor_1_pmp_4_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_addr                             (_ptw_io_requestor_1_pmp_4_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_4_mask                             (_ptw_io_requestor_1_pmp_4_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_l                            (_ptw_io_requestor_1_pmp_5_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_a                            (_ptw_io_requestor_1_pmp_5_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_x                            (_ptw_io_requestor_1_pmp_5_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_w                            (_ptw_io_requestor_1_pmp_5_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_cfg_r                            (_ptw_io_requestor_1_pmp_5_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_addr                             (_ptw_io_requestor_1_pmp_5_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_5_mask                             (_ptw_io_requestor_1_pmp_5_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_l                            (_ptw_io_requestor_1_pmp_6_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_a                            (_ptw_io_requestor_1_pmp_6_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_x                            (_ptw_io_requestor_1_pmp_6_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_w                            (_ptw_io_requestor_1_pmp_6_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_cfg_r                            (_ptw_io_requestor_1_pmp_6_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_addr                             (_ptw_io_requestor_1_pmp_6_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_6_mask                             (_ptw_io_requestor_1_pmp_6_mask),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_l                            (_ptw_io_requestor_1_pmp_7_cfg_l),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_a                            (_ptw_io_requestor_1_pmp_7_cfg_a),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_x                            (_ptw_io_requestor_1_pmp_7_cfg_x),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_w                            (_ptw_io_requestor_1_pmp_7_cfg_w),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_cfg_r                            (_ptw_io_requestor_1_pmp_7_cfg_r),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_addr                             (_ptw_io_requestor_1_pmp_7_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_pmp_7_mask                             (_ptw_io_requestor_1_pmp_7_mask),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_resp_bits_gpa_is_pte),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_ptbr_mode                              (_ptw_io_requestor_1_ptbr_mode),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_ptbr_ppn                               (_ptw_io_requestor_1_ptbr_ppn),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_debug                           (_ptw_io_requestor_1_status_debug),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_cease                           (_ptw_io_requestor_1_status_cease),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_wfi                             (_ptw_io_requestor_1_status_wfi),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_isa                             (_ptw_io_requestor_1_status_isa),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_dprv                            (_ptw_io_requestor_1_status_dprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_dv                              (_ptw_io_requestor_1_status_dv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_prv                             (_ptw_io_requestor_1_status_prv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_v                               (_ptw_io_requestor_1_status_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sd                              (_ptw_io_requestor_1_status_sd),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpv                             (_ptw_io_requestor_1_status_mpv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_gva                             (_ptw_io_requestor_1_status_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tsr                             (_ptw_io_requestor_1_status_tsr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tw                              (_ptw_io_requestor_1_status_tw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_tvm                             (_ptw_io_requestor_1_status_tvm),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mxr                             (_ptw_io_requestor_1_status_mxr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sum                             (_ptw_io_requestor_1_status_sum),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mprv                            (_ptw_io_requestor_1_status_mprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_fs                              (_ptw_io_requestor_1_status_fs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpp                             (_ptw_io_requestor_1_status_mpp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_spp                             (_ptw_io_requestor_1_status_spp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mpie                            (_ptw_io_requestor_1_status_mpie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_spie                            (_ptw_io_requestor_1_status_spie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_mie                             (_ptw_io_requestor_1_status_mie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_status_sie                             (_ptw_io_requestor_1_status_sie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_spvp                           (_ptw_io_requestor_1_hstatus_spvp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_spv                            (_ptw_io_requestor_1_hstatus_spv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_hstatus_gva                            (_ptw_io_requestor_1_hstatus_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_debug                          (_ptw_io_requestor_1_gstatus_debug),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_cease                          (_ptw_io_requestor_1_gstatus_cease),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_wfi                            (_ptw_io_requestor_1_gstatus_wfi),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_isa                            (_ptw_io_requestor_1_gstatus_isa),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_dprv                           (_ptw_io_requestor_1_gstatus_dprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_dv                             (_ptw_io_requestor_1_gstatus_dv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_prv                            (_ptw_io_requestor_1_gstatus_prv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_v                              (_ptw_io_requestor_1_gstatus_v),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sd                             (_ptw_io_requestor_1_gstatus_sd),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_zero2                          (_ptw_io_requestor_1_gstatus_zero2),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpv                            (_ptw_io_requestor_1_gstatus_mpv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_gva                            (_ptw_io_requestor_1_gstatus_gva),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mbe                            (_ptw_io_requestor_1_gstatus_mbe),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sbe                            (_ptw_io_requestor_1_gstatus_sbe),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sxl                            (_ptw_io_requestor_1_gstatus_sxl),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_zero1                          (_ptw_io_requestor_1_gstatus_zero1),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tsr                            (_ptw_io_requestor_1_gstatus_tsr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tw                             (_ptw_io_requestor_1_gstatus_tw),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_tvm                            (_ptw_io_requestor_1_gstatus_tvm),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mxr                            (_ptw_io_requestor_1_gstatus_mxr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sum                            (_ptw_io_requestor_1_gstatus_sum),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mprv                           (_ptw_io_requestor_1_gstatus_mprv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_fs                             (_ptw_io_requestor_1_gstatus_fs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpp                            (_ptw_io_requestor_1_gstatus_mpp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_vs                             (_ptw_io_requestor_1_gstatus_vs),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_spp                            (_ptw_io_requestor_1_gstatus_spp),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mpie                           (_ptw_io_requestor_1_gstatus_mpie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_ube                            (_ptw_io_requestor_1_gstatus_ube),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_spie                           (_ptw_io_requestor_1_gstatus_spie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_upie                           (_ptw_io_requestor_1_gstatus_upie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_mie                            (_ptw_io_requestor_1_gstatus_mie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_hie                            (_ptw_io_requestor_1_gstatus_hie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_sie                            (_ptw_io_requestor_1_gstatus_sie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_gstatus_uie                            (_ptw_io_requestor_1_gstatus_uie),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_l                            (_ptw_io_requestor_1_pmp_0_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_a                            (_ptw_io_requestor_1_pmp_0_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_x                            (_ptw_io_requestor_1_pmp_0_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_w                            (_ptw_io_requestor_1_pmp_0_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_cfg_r                            (_ptw_io_requestor_1_pmp_0_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_addr                             (_ptw_io_requestor_1_pmp_0_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_0_mask                             (_ptw_io_requestor_1_pmp_0_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_l                            (_ptw_io_requestor_1_pmp_1_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_a                            (_ptw_io_requestor_1_pmp_1_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_x                            (_ptw_io_requestor_1_pmp_1_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_w                            (_ptw_io_requestor_1_pmp_1_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_cfg_r                            (_ptw_io_requestor_1_pmp_1_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_addr                             (_ptw_io_requestor_1_pmp_1_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_1_mask                             (_ptw_io_requestor_1_pmp_1_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_l                            (_ptw_io_requestor_1_pmp_2_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_a                            (_ptw_io_requestor_1_pmp_2_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_x                            (_ptw_io_requestor_1_pmp_2_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_w                            (_ptw_io_requestor_1_pmp_2_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_cfg_r                            (_ptw_io_requestor_1_pmp_2_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_addr                             (_ptw_io_requestor_1_pmp_2_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_2_mask                             (_ptw_io_requestor_1_pmp_2_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_l                            (_ptw_io_requestor_1_pmp_3_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_a                            (_ptw_io_requestor_1_pmp_3_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_x                            (_ptw_io_requestor_1_pmp_3_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_w                            (_ptw_io_requestor_1_pmp_3_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_cfg_r                            (_ptw_io_requestor_1_pmp_3_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_addr                             (_ptw_io_requestor_1_pmp_3_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_3_mask                             (_ptw_io_requestor_1_pmp_3_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_l                            (_ptw_io_requestor_1_pmp_4_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_a                            (_ptw_io_requestor_1_pmp_4_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_x                            (_ptw_io_requestor_1_pmp_4_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_w                            (_ptw_io_requestor_1_pmp_4_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_cfg_r                            (_ptw_io_requestor_1_pmp_4_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_addr                             (_ptw_io_requestor_1_pmp_4_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_4_mask                             (_ptw_io_requestor_1_pmp_4_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_l                            (_ptw_io_requestor_1_pmp_5_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_a                            (_ptw_io_requestor_1_pmp_5_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_x                            (_ptw_io_requestor_1_pmp_5_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_w                            (_ptw_io_requestor_1_pmp_5_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_cfg_r                            (_ptw_io_requestor_1_pmp_5_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_addr                             (_ptw_io_requestor_1_pmp_5_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_5_mask                             (_ptw_io_requestor_1_pmp_5_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_l                            (_ptw_io_requestor_1_pmp_6_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_a                            (_ptw_io_requestor_1_pmp_6_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_x                            (_ptw_io_requestor_1_pmp_6_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_w                            (_ptw_io_requestor_1_pmp_6_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_cfg_r                            (_ptw_io_requestor_1_pmp_6_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_addr                             (_ptw_io_requestor_1_pmp_6_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_6_mask                             (_ptw_io_requestor_1_pmp_6_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_l                            (_ptw_io_requestor_1_pmp_7_cfg_l),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_a                            (_ptw_io_requestor_1_pmp_7_cfg_a),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_x                            (_ptw_io_requestor_1_pmp_7_cfg_x),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_w                            (_ptw_io_requestor_1_pmp_7_cfg_w),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_cfg_r                            (_ptw_io_requestor_1_pmp_7_cfg_r),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_addr                             (_ptw_io_requestor_1_pmp_7_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_pmp_7_mask                             (_ptw_io_requestor_1_pmp_7_mask),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_ren
-      (_ptw_io_requestor_1_customCSRs_csrs_0_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_0_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_wen
-      (_ptw_io_requestor_1_customCSRs_csrs_0_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_0_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_wdata
-      (_ptw_io_requestor_1_customCSRs_csrs_0_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_0_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_value
-      (_ptw_io_requestor_1_customCSRs_csrs_0_value),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_0_value),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_ren
-      (_ptw_io_requestor_1_customCSRs_csrs_1_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_1_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_wen
-      (_ptw_io_requestor_1_customCSRs_csrs_1_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_1_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_1_wdata
-      (_ptw_io_requestor_1_customCSRs_csrs_1_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_1_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_ren
-      (_ptw_io_requestor_1_customCSRs_csrs_2_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_2_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_wen
-      (_ptw_io_requestor_1_customCSRs_csrs_2_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_2_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_2_wdata
-      (_ptw_io_requestor_1_customCSRs_csrs_2_wdata),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_2_wdata),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_ren
-      (_ptw_io_requestor_1_customCSRs_csrs_3_ren),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_3_ren),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_wen
-      (_ptw_io_requestor_1_customCSRs_csrs_3_wen),	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_3_wen),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_3_wdata
-      (_ptw_io_requestor_1_customCSRs_csrs_3_wdata)	// src/main/scala/rocket/PTW.scala:822:19
+      (_ptw_io_requestor_1_customCSRs_csrs_3_wdata)	// src/main/scala/rocket/rocket_PTW.scala:822:19
   );
-  FPU fpuOpt (	// src/main/scala/tile/RocketTile.scala:289:62
+  rocket_FPU fpuOpt (	// src/main/scala/tile/rocket_RocketTile.scala:289:62
     .clock                 (clock),
     .reset                 (reset),
-    .io_hartid             (_core_io_fpu_hartid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_time               (_core_io_fpu_time),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_inst               (_core_io_fpu_inst),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_fromint_data       (_core_io_fpu_fromint_data),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_fcsr_rm            (_core_io_fpu_fcsr_rm),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_hartid             (_core_io_fpu_hartid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_time               (_core_io_fpu_time),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_inst               (_core_io_fpu_inst),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_fromint_data       (_core_io_fpu_fromint_data),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_fcsr_rm            (_core_io_fpu_fcsr_rm),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_fcsr_flags_valid   (_fpuOpt_io_fcsr_flags_valid),
     .io_fcsr_flags_bits    (_fpuOpt_io_fcsr_flags_bits),
     .io_store_data         (_fpuOpt_io_store_data),
     .io_toint_data         (_fpuOpt_io_toint_data),
-    .io_ll_resp_val        (_core_io_fpu_ll_resp_val),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_ll_resp_type       (_core_io_fpu_ll_resp_type),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_ll_resp_tag        (_core_io_fpu_ll_resp_tag),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_ll_resp_data       (_core_io_fpu_ll_resp_data),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_valid              (_core_io_fpu_valid),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_ll_resp_val        (_core_io_fpu_ll_resp_val),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_ll_resp_type       (_core_io_fpu_ll_resp_type),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_ll_resp_tag        (_core_io_fpu_ll_resp_tag),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_ll_resp_data       (_core_io_fpu_ll_resp_data),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_valid              (_core_io_fpu_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_fcsr_rdy           (_fpuOpt_io_fcsr_rdy),
     .io_nack_mem           (_fpuOpt_io_nack_mem),
     .io_illegal_rm         (_fpuOpt_io_illegal_rm),
-    .io_killx              (_core_io_fpu_killx),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_killm              (_core_io_fpu_killm),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_killx              (_core_io_fpu_killx),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_killm              (_core_io_fpu_killm),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dec_ldst           (_fpuOpt_io_dec_ldst),
     .io_dec_wen            (_fpuOpt_io_dec_wen),
     .io_dec_ren1           (_fpuOpt_io_dec_ren1),
@@ -2420,15 +2420,15 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_sboard_set         (_fpuOpt_io_sboard_set),
     .io_sboard_clr         (_fpuOpt_io_sboard_clr),
     .io_sboard_clra        (_fpuOpt_io_sboard_clra),
-    .io_keep_clock_enabled (_core_io_fpu_keep_clock_enabled)	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_keep_clock_enabled (_core_io_fpu_keep_clock_enabled)	// src/main/scala/tile/rocket_RocketTile.scala:170:20
   );
-  HellaCacheArbiter dcacheArb (	// src/main/scala/rocket/HellaCache.scala:292:25
+  rocket_HellaCacheArbiter dcacheArb (	// src/main/scala/rocket/HellaCache.scala:292:25
     .clock                                          (clock),
     .io_requestor_0_req_ready                       (_dcacheArb_io_requestor_0_req_ready),
-    .io_requestor_0_req_valid                       (_ptw_io_mem_req_valid),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_requestor_0_req_bits_addr                   (_ptw_io_mem_req_bits_addr),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_requestor_0_req_bits_dv                     (_ptw_io_mem_req_bits_dv),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_requestor_0_s1_kill                         (_ptw_io_mem_s1_kill),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_requestor_0_req_valid                       (_ptw_io_mem_req_valid),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_requestor_0_req_bits_addr                   (_ptw_io_mem_req_bits_addr),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_requestor_0_req_bits_dv                     (_ptw_io_mem_req_bits_dv),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_requestor_0_s1_kill                         (_ptw_io_mem_s1_kill),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_requestor_0_s2_nack                         (_dcacheArb_io_requestor_0_s2_nack),
     .io_requestor_0_s2_nack_cause_raw
       (_dcacheArb_io_requestor_0_s2_nack_cause_raw),
@@ -2504,17 +2504,17 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_requestor_0_perf_storeBufferEmptyAfterStore
       (_dcacheArb_io_requestor_0_perf_storeBufferEmptyAfterStore),
     .io_requestor_1_req_ready                       (_dcacheArb_io_requestor_1_req_ready),
-    .io_requestor_1_req_valid                       (_core_io_dmem_req_valid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_addr                   (_core_io_dmem_req_bits_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_tag                    (_core_io_dmem_req_bits_tag),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_cmd                    (_core_io_dmem_req_bits_cmd),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_size                   (_core_io_dmem_req_bits_size),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_signed                 (_core_io_dmem_req_bits_signed),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_dprv                   (_core_io_dmem_req_bits_dprv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_dv                     (_core_io_dmem_req_bits_dv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_req_bits_no_resp                (_core_io_dmem_req_bits_no_resp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_s1_kill                         (_core_io_dmem_s1_kill),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_requestor_1_s1_data_data                    (_core_io_dmem_s1_data_data),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_requestor_1_req_valid                       (_core_io_dmem_req_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_addr                   (_core_io_dmem_req_bits_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_tag                    (_core_io_dmem_req_bits_tag),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_cmd                    (_core_io_dmem_req_bits_cmd),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_size                   (_core_io_dmem_req_bits_size),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_signed                 (_core_io_dmem_req_bits_signed),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_dprv                   (_core_io_dmem_req_bits_dprv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_dv                     (_core_io_dmem_req_bits_dv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_req_bits_no_resp                (_core_io_dmem_req_bits_no_resp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_s1_kill                         (_core_io_dmem_s1_kill),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_requestor_1_s1_data_data                    (_core_io_dmem_s1_data_data),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_requestor_1_s2_nack                         (_dcacheArb_io_requestor_1_s2_nack),
     .io_requestor_1_s2_nack_cause_raw
       (_dcacheArb_io_requestor_1_s2_nack_cause_raw),
@@ -2589,7 +2589,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
       (_dcacheArb_io_requestor_1_perf_storeBufferEmptyAfterLoad),
     .io_requestor_1_perf_storeBufferEmptyAfterStore
       (_dcacheArb_io_requestor_1_perf_storeBufferEmptyAfterStore),
-    .io_requestor_1_keep_clock_enabled              (_core_io_dmem_keep_clock_enabled),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_requestor_1_keep_clock_enabled              (_core_io_dmem_keep_clock_enabled),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_mem_req_ready                               (_dcache_io_cpu_req_ready),	// src/main/scala/rocket/HellaCache.scala:278:43
     .io_mem_req_valid                               (_dcacheArb_io_mem_req_valid),
     .io_mem_req_bits_addr                           (_dcacheArb_io_mem_req_bits_addr),
@@ -2650,7 +2650,7 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
       (_dcache_io_cpu_perf_storeBufferEmptyAfterStore),	// src/main/scala/rocket/HellaCache.scala:278:43
     .io_mem_keep_clock_enabled                      (_dcacheArb_io_mem_keep_clock_enabled)
   );
-  PTW ptw (	// src/main/scala/rocket/PTW.scala:822:19
+  rocket_PTW ptw (	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .clock                                              (clock),
     .reset                                              (reset),
     .io_requestor_0_req_ready                           (_ptw_io_requestor_0_req_ready),
@@ -2864,12 +2864,12 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_requestor_0_customCSRs_csrs_3_wdata
       (_ptw_io_requestor_0_customCSRs_csrs_3_wdata),
     .io_requestor_1_req_ready                           (_ptw_io_requestor_1_req_ready),
-    .io_requestor_1_req_valid                           (_frontend_io_ptw_req_valid),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_requestor_1_req_bits_valid                      (_frontend_io_ptw_req_bits_valid),	// src/main/scala/rocket/Frontend.scala:393:28
+    .io_requestor_1_req_valid                           (_frontend_io_ptw_req_valid),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_requestor_1_req_bits_valid                      (_frontend_io_ptw_req_bits_valid),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_requestor_1_req_bits_bits_addr
-      (_frontend_io_ptw_req_bits_bits_addr),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_ptw_req_bits_bits_addr),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_requestor_1_req_bits_bits_need_gpa
-      (_frontend_io_ptw_req_bits_bits_need_gpa),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_ptw_req_bits_bits_need_gpa),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_requestor_1_resp_valid                          (_ptw_io_requestor_1_resp_valid),
     .io_requestor_1_resp_bits_ae_ptw
       (_ptw_io_requestor_1_resp_bits_ae_ptw),
@@ -3158,163 +3158,163 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
       (_dcacheArb_io_requestor_0_perf_storeBufferEmptyAfterLoad),	// src/main/scala/rocket/HellaCache.scala:292:25
     .io_mem_perf_storeBufferEmptyAfterStore
       (_dcacheArb_io_requestor_0_perf_storeBufferEmptyAfterStore),	// src/main/scala/rocket/HellaCache.scala:292:25
-    .io_dpath_ptbr_mode                                 (_core_io_ptw_ptbr_mode),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_ptbr_ppn                                  (_core_io_ptw_ptbr_ppn),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_valid                              (_core_io_ptw_sfence_valid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_rs1                           (_core_io_ptw_sfence_bits_rs1),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_rs2                           (_core_io_ptw_sfence_bits_rs2),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_addr                          (_core_io_ptw_sfence_bits_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_asid                          (_core_io_ptw_sfence_bits_asid),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_hv                            (_core_io_ptw_sfence_bits_hv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_sfence_bits_hg                            (_core_io_ptw_sfence_bits_hg),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_debug                              (_core_io_ptw_status_debug),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_cease                              (_core_io_ptw_status_cease),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_wfi                                (_core_io_ptw_status_wfi),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_isa                                (_core_io_ptw_status_isa),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_dprv                               (_core_io_ptw_status_dprv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_dv                                 (_core_io_ptw_status_dv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_prv                                (_core_io_ptw_status_prv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_v                                  (_core_io_ptw_status_v),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_sd                                 (_core_io_ptw_status_sd),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mpv                                (_core_io_ptw_status_mpv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_gva                                (_core_io_ptw_status_gva),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_tsr                                (_core_io_ptw_status_tsr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_tw                                 (_core_io_ptw_status_tw),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_tvm                                (_core_io_ptw_status_tvm),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mxr                                (_core_io_ptw_status_mxr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_sum                                (_core_io_ptw_status_sum),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mprv                               (_core_io_ptw_status_mprv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_fs                                 (_core_io_ptw_status_fs),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mpp                                (_core_io_ptw_status_mpp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_spp                                (_core_io_ptw_status_spp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mpie                               (_core_io_ptw_status_mpie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_spie                               (_core_io_ptw_status_spie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_mie                                (_core_io_ptw_status_mie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_status_sie                                (_core_io_ptw_status_sie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_hstatus_spvp                              (_core_io_ptw_hstatus_spvp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_hstatus_spv                               (_core_io_ptw_hstatus_spv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_hstatus_gva                               (_core_io_ptw_hstatus_gva),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_debug                             (_core_io_ptw_gstatus_debug),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_cease                             (_core_io_ptw_gstatus_cease),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_wfi                               (_core_io_ptw_gstatus_wfi),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_isa                               (_core_io_ptw_gstatus_isa),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_dprv                              (_core_io_ptw_gstatus_dprv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_dv                                (_core_io_ptw_gstatus_dv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_prv                               (_core_io_ptw_gstatus_prv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_v                                 (_core_io_ptw_gstatus_v),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_sd                                (_core_io_ptw_gstatus_sd),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_zero2                             (_core_io_ptw_gstatus_zero2),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mpv                               (_core_io_ptw_gstatus_mpv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_gva                               (_core_io_ptw_gstatus_gva),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mbe                               (_core_io_ptw_gstatus_mbe),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_sbe                               (_core_io_ptw_gstatus_sbe),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_sxl                               (_core_io_ptw_gstatus_sxl),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_zero1                             (_core_io_ptw_gstatus_zero1),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_tsr                               (_core_io_ptw_gstatus_tsr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_tw                                (_core_io_ptw_gstatus_tw),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_tvm                               (_core_io_ptw_gstatus_tvm),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mxr                               (_core_io_ptw_gstatus_mxr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_sum                               (_core_io_ptw_gstatus_sum),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mprv                              (_core_io_ptw_gstatus_mprv),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_fs                                (_core_io_ptw_gstatus_fs),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mpp                               (_core_io_ptw_gstatus_mpp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_vs                                (_core_io_ptw_gstatus_vs),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_spp                               (_core_io_ptw_gstatus_spp),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mpie                              (_core_io_ptw_gstatus_mpie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_ube                               (_core_io_ptw_gstatus_ube),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_spie                              (_core_io_ptw_gstatus_spie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_upie                              (_core_io_ptw_gstatus_upie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_mie                               (_core_io_ptw_gstatus_mie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_hie                               (_core_io_ptw_gstatus_hie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_sie                               (_core_io_ptw_gstatus_sie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_gstatus_uie                               (_core_io_ptw_gstatus_uie),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_cfg_l                               (_core_io_ptw_pmp_0_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_cfg_a                               (_core_io_ptw_pmp_0_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_cfg_x                               (_core_io_ptw_pmp_0_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_cfg_w                               (_core_io_ptw_pmp_0_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_cfg_r                               (_core_io_ptw_pmp_0_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_addr                                (_core_io_ptw_pmp_0_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_0_mask                                (_core_io_ptw_pmp_0_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_cfg_l                               (_core_io_ptw_pmp_1_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_cfg_a                               (_core_io_ptw_pmp_1_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_cfg_x                               (_core_io_ptw_pmp_1_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_cfg_w                               (_core_io_ptw_pmp_1_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_cfg_r                               (_core_io_ptw_pmp_1_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_addr                                (_core_io_ptw_pmp_1_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_1_mask                                (_core_io_ptw_pmp_1_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_cfg_l                               (_core_io_ptw_pmp_2_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_cfg_a                               (_core_io_ptw_pmp_2_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_cfg_x                               (_core_io_ptw_pmp_2_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_cfg_w                               (_core_io_ptw_pmp_2_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_cfg_r                               (_core_io_ptw_pmp_2_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_addr                                (_core_io_ptw_pmp_2_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_2_mask                                (_core_io_ptw_pmp_2_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_cfg_l                               (_core_io_ptw_pmp_3_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_cfg_a                               (_core_io_ptw_pmp_3_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_cfg_x                               (_core_io_ptw_pmp_3_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_cfg_w                               (_core_io_ptw_pmp_3_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_cfg_r                               (_core_io_ptw_pmp_3_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_addr                                (_core_io_ptw_pmp_3_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_3_mask                                (_core_io_ptw_pmp_3_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_cfg_l                               (_core_io_ptw_pmp_4_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_cfg_a                               (_core_io_ptw_pmp_4_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_cfg_x                               (_core_io_ptw_pmp_4_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_cfg_w                               (_core_io_ptw_pmp_4_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_cfg_r                               (_core_io_ptw_pmp_4_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_addr                                (_core_io_ptw_pmp_4_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_4_mask                                (_core_io_ptw_pmp_4_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_cfg_l                               (_core_io_ptw_pmp_5_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_cfg_a                               (_core_io_ptw_pmp_5_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_cfg_x                               (_core_io_ptw_pmp_5_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_cfg_w                               (_core_io_ptw_pmp_5_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_cfg_r                               (_core_io_ptw_pmp_5_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_addr                                (_core_io_ptw_pmp_5_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_5_mask                                (_core_io_ptw_pmp_5_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_cfg_l                               (_core_io_ptw_pmp_6_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_cfg_a                               (_core_io_ptw_pmp_6_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_cfg_x                               (_core_io_ptw_pmp_6_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_cfg_w                               (_core_io_ptw_pmp_6_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_cfg_r                               (_core_io_ptw_pmp_6_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_addr                                (_core_io_ptw_pmp_6_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_6_mask                                (_core_io_ptw_pmp_6_mask),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_cfg_l                               (_core_io_ptw_pmp_7_cfg_l),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_cfg_a                               (_core_io_ptw_pmp_7_cfg_a),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_cfg_x                               (_core_io_ptw_pmp_7_cfg_x),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_cfg_w                               (_core_io_ptw_pmp_7_cfg_w),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_cfg_r                               (_core_io_ptw_pmp_7_cfg_r),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_addr                                (_core_io_ptw_pmp_7_addr),	// src/main/scala/tile/RocketTile.scala:170:20
-    .io_dpath_pmp_7_mask                                (_core_io_ptw_pmp_7_mask),	// src/main/scala/tile/RocketTile.scala:170:20
+    .io_dpath_ptbr_mode                                 (_core_io_ptw_ptbr_mode),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_ptbr_ppn                                  (_core_io_ptw_ptbr_ppn),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_valid                              (_core_io_ptw_sfence_valid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_rs1                           (_core_io_ptw_sfence_bits_rs1),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_rs2                           (_core_io_ptw_sfence_bits_rs2),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_addr                          (_core_io_ptw_sfence_bits_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_asid                          (_core_io_ptw_sfence_bits_asid),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_hv                            (_core_io_ptw_sfence_bits_hv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_sfence_bits_hg                            (_core_io_ptw_sfence_bits_hg),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_debug                              (_core_io_ptw_status_debug),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_cease                              (_core_io_ptw_status_cease),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_wfi                                (_core_io_ptw_status_wfi),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_isa                                (_core_io_ptw_status_isa),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_dprv                               (_core_io_ptw_status_dprv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_dv                                 (_core_io_ptw_status_dv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_prv                                (_core_io_ptw_status_prv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_v                                  (_core_io_ptw_status_v),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_sd                                 (_core_io_ptw_status_sd),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mpv                                (_core_io_ptw_status_mpv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_gva                                (_core_io_ptw_status_gva),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_tsr                                (_core_io_ptw_status_tsr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_tw                                 (_core_io_ptw_status_tw),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_tvm                                (_core_io_ptw_status_tvm),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mxr                                (_core_io_ptw_status_mxr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_sum                                (_core_io_ptw_status_sum),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mprv                               (_core_io_ptw_status_mprv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_fs                                 (_core_io_ptw_status_fs),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mpp                                (_core_io_ptw_status_mpp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_spp                                (_core_io_ptw_status_spp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mpie                               (_core_io_ptw_status_mpie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_spie                               (_core_io_ptw_status_spie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_mie                                (_core_io_ptw_status_mie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_status_sie                                (_core_io_ptw_status_sie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_hstatus_spvp                              (_core_io_ptw_hstatus_spvp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_hstatus_spv                               (_core_io_ptw_hstatus_spv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_hstatus_gva                               (_core_io_ptw_hstatus_gva),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_debug                             (_core_io_ptw_gstatus_debug),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_cease                             (_core_io_ptw_gstatus_cease),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_wfi                               (_core_io_ptw_gstatus_wfi),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_isa                               (_core_io_ptw_gstatus_isa),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_dprv                              (_core_io_ptw_gstatus_dprv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_dv                                (_core_io_ptw_gstatus_dv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_prv                               (_core_io_ptw_gstatus_prv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_v                                 (_core_io_ptw_gstatus_v),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_sd                                (_core_io_ptw_gstatus_sd),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_zero2                             (_core_io_ptw_gstatus_zero2),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mpv                               (_core_io_ptw_gstatus_mpv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_gva                               (_core_io_ptw_gstatus_gva),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mbe                               (_core_io_ptw_gstatus_mbe),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_sbe                               (_core_io_ptw_gstatus_sbe),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_sxl                               (_core_io_ptw_gstatus_sxl),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_zero1                             (_core_io_ptw_gstatus_zero1),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_tsr                               (_core_io_ptw_gstatus_tsr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_tw                                (_core_io_ptw_gstatus_tw),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_tvm                               (_core_io_ptw_gstatus_tvm),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mxr                               (_core_io_ptw_gstatus_mxr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_sum                               (_core_io_ptw_gstatus_sum),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mprv                              (_core_io_ptw_gstatus_mprv),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_fs                                (_core_io_ptw_gstatus_fs),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mpp                               (_core_io_ptw_gstatus_mpp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_vs                                (_core_io_ptw_gstatus_vs),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_spp                               (_core_io_ptw_gstatus_spp),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mpie                              (_core_io_ptw_gstatus_mpie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_ube                               (_core_io_ptw_gstatus_ube),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_spie                              (_core_io_ptw_gstatus_spie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_upie                              (_core_io_ptw_gstatus_upie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_mie                               (_core_io_ptw_gstatus_mie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_hie                               (_core_io_ptw_gstatus_hie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_sie                               (_core_io_ptw_gstatus_sie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_gstatus_uie                               (_core_io_ptw_gstatus_uie),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_cfg_l                               (_core_io_ptw_pmp_0_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_cfg_a                               (_core_io_ptw_pmp_0_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_cfg_x                               (_core_io_ptw_pmp_0_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_cfg_w                               (_core_io_ptw_pmp_0_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_cfg_r                               (_core_io_ptw_pmp_0_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_addr                                (_core_io_ptw_pmp_0_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_0_mask                                (_core_io_ptw_pmp_0_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_cfg_l                               (_core_io_ptw_pmp_1_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_cfg_a                               (_core_io_ptw_pmp_1_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_cfg_x                               (_core_io_ptw_pmp_1_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_cfg_w                               (_core_io_ptw_pmp_1_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_cfg_r                               (_core_io_ptw_pmp_1_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_addr                                (_core_io_ptw_pmp_1_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_1_mask                                (_core_io_ptw_pmp_1_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_cfg_l                               (_core_io_ptw_pmp_2_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_cfg_a                               (_core_io_ptw_pmp_2_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_cfg_x                               (_core_io_ptw_pmp_2_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_cfg_w                               (_core_io_ptw_pmp_2_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_cfg_r                               (_core_io_ptw_pmp_2_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_addr                                (_core_io_ptw_pmp_2_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_2_mask                                (_core_io_ptw_pmp_2_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_cfg_l                               (_core_io_ptw_pmp_3_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_cfg_a                               (_core_io_ptw_pmp_3_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_cfg_x                               (_core_io_ptw_pmp_3_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_cfg_w                               (_core_io_ptw_pmp_3_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_cfg_r                               (_core_io_ptw_pmp_3_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_addr                                (_core_io_ptw_pmp_3_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_3_mask                                (_core_io_ptw_pmp_3_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_cfg_l                               (_core_io_ptw_pmp_4_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_cfg_a                               (_core_io_ptw_pmp_4_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_cfg_x                               (_core_io_ptw_pmp_4_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_cfg_w                               (_core_io_ptw_pmp_4_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_cfg_r                               (_core_io_ptw_pmp_4_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_addr                                (_core_io_ptw_pmp_4_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_4_mask                                (_core_io_ptw_pmp_4_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_cfg_l                               (_core_io_ptw_pmp_5_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_cfg_a                               (_core_io_ptw_pmp_5_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_cfg_x                               (_core_io_ptw_pmp_5_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_cfg_w                               (_core_io_ptw_pmp_5_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_cfg_r                               (_core_io_ptw_pmp_5_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_addr                                (_core_io_ptw_pmp_5_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_5_mask                                (_core_io_ptw_pmp_5_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_cfg_l                               (_core_io_ptw_pmp_6_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_cfg_a                               (_core_io_ptw_pmp_6_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_cfg_x                               (_core_io_ptw_pmp_6_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_cfg_w                               (_core_io_ptw_pmp_6_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_cfg_r                               (_core_io_ptw_pmp_6_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_addr                                (_core_io_ptw_pmp_6_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_6_mask                                (_core_io_ptw_pmp_6_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_cfg_l                               (_core_io_ptw_pmp_7_cfg_l),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_cfg_a                               (_core_io_ptw_pmp_7_cfg_a),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_cfg_x                               (_core_io_ptw_pmp_7_cfg_x),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_cfg_w                               (_core_io_ptw_pmp_7_cfg_w),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_cfg_r                               (_core_io_ptw_pmp_7_cfg_r),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_addr                                (_core_io_ptw_pmp_7_addr),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
+    .io_dpath_pmp_7_mask                                (_core_io_ptw_pmp_7_mask),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_perf_pte_miss                             (_ptw_io_dpath_perf_pte_miss),
     .io_dpath_perf_pte_hit                              (_ptw_io_dpath_perf_pte_hit),
     .io_dpath_customCSRs_csrs_0_ren
-      (_core_io_ptw_customCSRs_csrs_0_ren),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_0_ren),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_0_wen
-      (_core_io_ptw_customCSRs_csrs_0_wen),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_0_wen),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_0_wdata
-      (_core_io_ptw_customCSRs_csrs_0_wdata),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_0_wdata),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_0_value
-      (_core_io_ptw_customCSRs_csrs_0_value),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_0_value),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_1_ren
-      (_core_io_ptw_customCSRs_csrs_1_ren),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_1_ren),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_1_wen
-      (_core_io_ptw_customCSRs_csrs_1_wen),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_1_wen),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_1_wdata
-      (_core_io_ptw_customCSRs_csrs_1_wdata),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_1_wdata),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_2_ren
-      (_core_io_ptw_customCSRs_csrs_2_ren),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_2_ren),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_2_wen
-      (_core_io_ptw_customCSRs_csrs_2_wen),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_2_wen),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_2_wdata
-      (_core_io_ptw_customCSRs_csrs_2_wdata),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_2_wdata),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_3_ren
-      (_core_io_ptw_customCSRs_csrs_3_ren),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_3_ren),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_3_wen
-      (_core_io_ptw_customCSRs_csrs_3_wen),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_3_wen),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_customCSRs_csrs_3_wdata
-      (_core_io_ptw_customCSRs_csrs_3_wdata),	// src/main/scala/tile/RocketTile.scala:170:20
+      (_core_io_ptw_customCSRs_csrs_3_wdata),	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .io_dpath_clock_enabled                             (_ptw_io_dpath_clock_enabled)
   );
-  Rocket core (	// src/main/scala/tile/RocketTile.scala:170:20
+  rocket_Rocket core (	// src/main/scala/tile/rocket_RocketTile.scala:170:20
     .clock                                          (clock),
     .reset                                          (reset),
     .io_hartid                                      (hartIdSinkNodeIn),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -3335,35 +3335,35 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_imem_sfence_bits_hv                         (_core_io_imem_sfence_bits_hv),
     .io_imem_sfence_bits_hg                         (_core_io_imem_sfence_bits_hg),
     .io_imem_resp_ready                             (_core_io_imem_resp_ready),
-    .io_imem_resp_valid                             (_frontend_io_cpu_resp_valid),	// src/main/scala/rocket/Frontend.scala:393:28
+    .io_imem_resp_valid                             (_frontend_io_cpu_resp_valid),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_cfiType
-      (_frontend_io_cpu_resp_bits_btb_cfiType),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_cfiType),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_taken
-      (_frontend_io_cpu_resp_bits_btb_taken),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_resp_bits_btb_mask                     (_frontend_io_cpu_resp_bits_btb_mask),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_taken),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_resp_bits_btb_mask                     (_frontend_io_cpu_resp_bits_btb_mask),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_bridx
-      (_frontend_io_cpu_resp_bits_btb_bridx),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_bridx),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_target
-      (_frontend_io_cpu_resp_bits_btb_target),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_target),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_entry
-      (_frontend_io_cpu_resp_bits_btb_entry),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_entry),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_bht_history
-      (_frontend_io_cpu_resp_bits_btb_bht_history),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_bht_history),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_btb_bht_value
-      (_frontend_io_cpu_resp_bits_btb_bht_value),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_resp_bits_pc                           (_frontend_io_cpu_resp_bits_pc),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_resp_bits_data                         (_frontend_io_cpu_resp_bits_data),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_resp_bits_mask                         (_frontend_io_cpu_resp_bits_mask),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_btb_bht_value),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_resp_bits_pc                           (_frontend_io_cpu_resp_bits_pc),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_resp_bits_data                         (_frontend_io_cpu_resp_bits_data),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_resp_bits_mask                         (_frontend_io_cpu_resp_bits_mask),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_xcpt_pf_inst
-      (_frontend_io_cpu_resp_bits_xcpt_pf_inst),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_xcpt_pf_inst),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_xcpt_gf_inst
-      (_frontend_io_cpu_resp_bits_xcpt_gf_inst),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_xcpt_gf_inst),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_resp_bits_xcpt_ae_inst
-      (_frontend_io_cpu_resp_bits_xcpt_ae_inst),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_resp_bits_replay                       (_frontend_io_cpu_resp_bits_replay),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_gpa_valid                              (_frontend_io_cpu_gpa_valid),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_gpa_bits                               (_frontend_io_cpu_gpa_bits),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_gpa_is_pte                             (_frontend_io_cpu_gpa_is_pte),	// src/main/scala/rocket/Frontend.scala:393:28
+      (_frontend_io_cpu_resp_bits_xcpt_ae_inst),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_resp_bits_replay                       (_frontend_io_cpu_resp_bits_replay),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_gpa_valid                              (_frontend_io_cpu_gpa_valid),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_gpa_bits                               (_frontend_io_cpu_gpa_bits),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_gpa_is_pte                             (_frontend_io_cpu_gpa_is_pte),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_btb_update_valid                       (_core_io_imem_btb_update_valid),
     .io_imem_btb_update_bits_prediction_cfiType
       (_core_io_imem_btb_update_bits_prediction_cfiType),
@@ -3401,9 +3401,9 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_imem_bht_update_bits_mispredict
       (_core_io_imem_bht_update_bits_mispredict),
     .io_imem_flush_icache                           (_core_io_imem_flush_icache),
-    .io_imem_npc                                    (_frontend_io_cpu_npc),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_perf_acquire                           (_frontend_io_cpu_perf_acquire),	// src/main/scala/rocket/Frontend.scala:393:28
-    .io_imem_perf_tlbMiss                           (_frontend_io_cpu_perf_tlbMiss),	// src/main/scala/rocket/Frontend.scala:393:28
+    .io_imem_npc                                    (_frontend_io_cpu_npc),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_perf_acquire                           (_frontend_io_cpu_perf_acquire),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
+    .io_imem_perf_tlbMiss                           (_frontend_io_cpu_perf_tlbMiss),	// src/main/scala/rocket/rocket_Frontend.scala:393:28
     .io_imem_progress                               (_core_io_imem_progress),
     .io_dmem_req_ready                              (_dcacheArb_io_requestor_1_req_ready),	// src/main/scala/rocket/HellaCache.scala:292:25
     .io_dmem_req_valid                              (_core_io_dmem_req_valid),
@@ -3618,8 +3618,8 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_ptw_pmp_7_cfg_r                             (_core_io_ptw_pmp_7_cfg_r),
     .io_ptw_pmp_7_addr                              (_core_io_ptw_pmp_7_addr),
     .io_ptw_pmp_7_mask                              (_core_io_ptw_pmp_7_mask),
-    .io_ptw_perf_pte_miss                           (_ptw_io_dpath_perf_pte_miss),	// src/main/scala/rocket/PTW.scala:822:19
-    .io_ptw_perf_pte_hit                            (_ptw_io_dpath_perf_pte_hit),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_ptw_perf_pte_miss                           (_ptw_io_dpath_perf_pte_miss),	// src/main/scala/rocket/rocket_PTW.scala:822:19
+    .io_ptw_perf_pte_hit                            (_ptw_io_dpath_perf_pte_hit),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_ptw_customCSRs_csrs_0_ren                   (_core_io_ptw_customCSRs_csrs_0_ren),
     .io_ptw_customCSRs_csrs_0_wen                   (_core_io_ptw_customCSRs_csrs_0_wen),
     .io_ptw_customCSRs_csrs_0_wdata
@@ -3638,46 +3638,46 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_ptw_customCSRs_csrs_3_wen                   (_core_io_ptw_customCSRs_csrs_3_wen),
     .io_ptw_customCSRs_csrs_3_wdata
       (_core_io_ptw_customCSRs_csrs_3_wdata),
-    .io_ptw_clock_enabled                           (_ptw_io_dpath_clock_enabled),	// src/main/scala/rocket/PTW.scala:822:19
+    .io_ptw_clock_enabled                           (_ptw_io_dpath_clock_enabled),	// src/main/scala/rocket/rocket_PTW.scala:822:19
     .io_fpu_hartid                                  (_core_io_fpu_hartid),
     .io_fpu_time                                    (_core_io_fpu_time),
     .io_fpu_inst                                    (_core_io_fpu_inst),
     .io_fpu_fromint_data                            (_core_io_fpu_fromint_data),
     .io_fpu_fcsr_rm                                 (_core_io_fpu_fcsr_rm),
-    .io_fpu_fcsr_flags_valid                        (_fpuOpt_io_fcsr_flags_valid),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_fcsr_flags_bits                         (_fpuOpt_io_fcsr_flags_bits),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_store_data                              (_fpuOpt_io_store_data),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_toint_data                              (_fpuOpt_io_toint_data),	// src/main/scala/tile/RocketTile.scala:289:62
+    .io_fpu_fcsr_flags_valid                        (_fpuOpt_io_fcsr_flags_valid),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_fcsr_flags_bits                         (_fpuOpt_io_fcsr_flags_bits),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_store_data                              (_fpuOpt_io_store_data),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_toint_data                              (_fpuOpt_io_toint_data),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
     .io_fpu_ll_resp_val                             (_core_io_fpu_ll_resp_val),
     .io_fpu_ll_resp_type                            (_core_io_fpu_ll_resp_type),
     .io_fpu_ll_resp_tag                             (_core_io_fpu_ll_resp_tag),
     .io_fpu_ll_resp_data                            (_core_io_fpu_ll_resp_data),
     .io_fpu_valid                                   (_core_io_fpu_valid),
-    .io_fpu_fcsr_rdy                                (_fpuOpt_io_fcsr_rdy),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_nack_mem                                (_fpuOpt_io_nack_mem),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_illegal_rm                              (_fpuOpt_io_illegal_rm),	// src/main/scala/tile/RocketTile.scala:289:62
+    .io_fpu_fcsr_rdy                                (_fpuOpt_io_fcsr_rdy),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_nack_mem                                (_fpuOpt_io_nack_mem),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_illegal_rm                              (_fpuOpt_io_illegal_rm),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
     .io_fpu_killx                                   (_core_io_fpu_killx),
     .io_fpu_killm                                   (_core_io_fpu_killm),
-    .io_fpu_dec_ldst                                (_fpuOpt_io_dec_ldst),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_wen                                 (_fpuOpt_io_dec_wen),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_ren1                                (_fpuOpt_io_dec_ren1),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_ren2                                (_fpuOpt_io_dec_ren2),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_ren3                                (_fpuOpt_io_dec_ren3),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_swap12                              (_fpuOpt_io_dec_swap12),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_swap23                              (_fpuOpt_io_dec_swap23),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_typeTagIn                           (_fpuOpt_io_dec_typeTagIn),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_typeTagOut                          (_fpuOpt_io_dec_typeTagOut),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_fromint                             (_fpuOpt_io_dec_fromint),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_toint                               (_fpuOpt_io_dec_toint),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_fastpipe                            (_fpuOpt_io_dec_fastpipe),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_fma                                 (_fpuOpt_io_dec_fma),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_div                                 (_fpuOpt_io_dec_div),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_sqrt                                (_fpuOpt_io_dec_sqrt),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_wflags                              (_fpuOpt_io_dec_wflags),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_dec_vec                                 (_fpuOpt_io_dec_vec),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_sboard_set                              (_fpuOpt_io_sboard_set),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_sboard_clr                              (_fpuOpt_io_sboard_clr),	// src/main/scala/tile/RocketTile.scala:289:62
-    .io_fpu_sboard_clra                             (_fpuOpt_io_sboard_clra),	// src/main/scala/tile/RocketTile.scala:289:62
+    .io_fpu_dec_ldst                                (_fpuOpt_io_dec_ldst),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_wen                                 (_fpuOpt_io_dec_wen),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_ren1                                (_fpuOpt_io_dec_ren1),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_ren2                                (_fpuOpt_io_dec_ren2),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_ren3                                (_fpuOpt_io_dec_ren3),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_swap12                              (_fpuOpt_io_dec_swap12),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_swap23                              (_fpuOpt_io_dec_swap23),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_typeTagIn                           (_fpuOpt_io_dec_typeTagIn),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_typeTagOut                          (_fpuOpt_io_dec_typeTagOut),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_fromint                             (_fpuOpt_io_dec_fromint),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_toint                               (_fpuOpt_io_dec_toint),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_fastpipe                            (_fpuOpt_io_dec_fastpipe),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_fma                                 (_fpuOpt_io_dec_fma),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_div                                 (_fpuOpt_io_dec_div),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_sqrt                                (_fpuOpt_io_dec_sqrt),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_wflags                              (_fpuOpt_io_dec_wflags),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_dec_vec                                 (_fpuOpt_io_dec_vec),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_sboard_set                              (_fpuOpt_io_sboard_set),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_sboard_clr                              (_fpuOpt_io_sboard_clr),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
+    .io_fpu_sboard_clra                             (_fpuOpt_io_sboard_clra),	// src/main/scala/tile/rocket_RocketTile.scala:289:62
     .io_fpu_keep_clock_enabled                      (_core_io_fpu_keep_clock_enabled),
     .io_trace_insns_0_valid                         (traceSourceNodeOut_insns_0_valid),
     .io_trace_insns_0_iaddr                         (traceSourceNodeOut_insns_0_iaddr),
@@ -3694,36 +3694,36 @@ module RocketTile(	// src/main/scala/tile/RocketTile.scala:166:7
     .io_bpwatch_0_action                            (bpwatchSourceNodeOut_0_action),
     .io_wfi                                         (_core_io_wfi)
   );
-  assign auto_buffer_out_a_valid = auto_buffer_out_a_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_opcode = auto_buffer_out_a_bits_opcode_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_param = auto_buffer_out_a_bits_param_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_size = auto_buffer_out_a_bits_size_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_source = auto_buffer_out_a_bits_source_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_address = auto_buffer_out_a_bits_address_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_mask = auto_buffer_out_a_bits_mask_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_a_bits_data = auto_buffer_out_a_bits_data_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_b_ready = auto_buffer_out_b_ready_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_valid = auto_buffer_out_c_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_opcode = auto_buffer_out_c_bits_opcode_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_param = auto_buffer_out_c_bits_param_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_size = auto_buffer_out_c_bits_size_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_source = auto_buffer_out_c_bits_source_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_address = auto_buffer_out_c_bits_address_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_c_bits_data = auto_buffer_out_c_bits_data_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_d_ready = auto_buffer_out_d_ready_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_e_valid = auto_buffer_out_e_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_buffer_out_e_bits_sink = auto_buffer_out_e_bits_sink_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_wfi_out_0 = auto_wfi_out_0_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_valid = auto_trace_source_out_insns_0_valid_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_iaddr = auto_trace_source_out_insns_0_iaddr_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_insn = auto_trace_source_out_insns_0_insn_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_priv = auto_trace_source_out_insns_0_priv_0;	// src/main/scala/tile/RocketTile.scala:166:7
+  assign auto_buffer_out_a_valid = auto_buffer_out_a_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_opcode = auto_buffer_out_a_bits_opcode_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_param = auto_buffer_out_a_bits_param_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_size = auto_buffer_out_a_bits_size_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_source = auto_buffer_out_a_bits_source_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_address = auto_buffer_out_a_bits_address_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_mask = auto_buffer_out_a_bits_mask_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_a_bits_data = auto_buffer_out_a_bits_data_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_b_ready = auto_buffer_out_b_ready_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_valid = auto_buffer_out_c_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_opcode = auto_buffer_out_c_bits_opcode_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_param = auto_buffer_out_c_bits_param_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_size = auto_buffer_out_c_bits_size_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_source = auto_buffer_out_c_bits_source_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_address = auto_buffer_out_c_bits_address_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_c_bits_data = auto_buffer_out_c_bits_data_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_d_ready = auto_buffer_out_d_ready_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_e_valid = auto_buffer_out_e_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_buffer_out_e_bits_sink = auto_buffer_out_e_bits_sink_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_wfi_out_0 = auto_wfi_out_0_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_valid = auto_trace_source_out_insns_0_valid_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_iaddr = auto_trace_source_out_insns_0_iaddr_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_insn = auto_trace_source_out_insns_0_insn_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_priv = auto_trace_source_out_insns_0_priv_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
   assign auto_trace_source_out_insns_0_exception =
-    auto_trace_source_out_insns_0_exception_0;	// src/main/scala/tile/RocketTile.scala:166:7
+    auto_trace_source_out_insns_0_exception_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
   assign auto_trace_source_out_insns_0_interrupt =
-    auto_trace_source_out_insns_0_interrupt_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_cause = auto_trace_source_out_insns_0_cause_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_insns_0_tval = auto_trace_source_out_insns_0_tval_0;	// src/main/scala/tile/RocketTile.scala:166:7
-  assign auto_trace_source_out_time = auto_trace_source_out_time_0;	// src/main/scala/tile/RocketTile.scala:166:7
+    auto_trace_source_out_insns_0_interrupt_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_cause = auto_trace_source_out_insns_0_cause_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_insns_0_tval = auto_trace_source_out_insns_0_tval_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
+  assign auto_trace_source_out_time = auto_trace_source_out_time_0;	// src/main/scala/tile/rocket_RocketTile.scala:166:7
 endmodule
 

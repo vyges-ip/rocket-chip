@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module Queue1_AXI4BundleARW_1(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
+module rocket_Queue1_AXI4BundleARW_1(	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   input         clock,	// src/main/scala/chisel3/util/Decoupled.scala:243:7
                 reset,	// src/main/scala/chisel3/util/Decoupled.scala:243:7
   output        io_enq_ready,	// src/main/scala/chisel3/util/Decoupled.scala:255:14

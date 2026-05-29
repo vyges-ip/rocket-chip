@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module IntSyncCrossingSource_n1x2(	// src/main/scala/interrupts/Crossing.scala:41:9
+module rocket_IntSyncCrossingSource_n1x2(	// src/main/scala/interrupts/Crossing.scala:41:9
   input  clock,	// src/main/scala/interrupts/Crossing.scala:41:9
          reset,	// src/main/scala/interrupts/Crossing.scala:41:9
          auto_in_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -93,7 +93,7 @@ module IntSyncCrossingSource_n1x2(	// src/main/scala/interrupts/Crossing.scala:4
          auto_out_sync_1	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
 );
 
-  wire [1:0] _reg_io_q;	// src/main/scala/util/AsyncResetReg.scala:86:21
+  wire [1:0] _reg_io_q;	// src/main/scala/util/rocket_AsyncResetReg.scala:86:21
   wire       auto_in_0_0 = auto_in_0;	// src/main/scala/interrupts/Crossing.scala:41:9
   wire       auto_in_1_0 = auto_in_1;	// src/main/scala/interrupts/Crossing.scala:41:9
   wire       nodeIn_0 = auto_in_0_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/interrupts/Crossing.scala:41:9
@@ -102,9 +102,9 @@ module IntSyncCrossingSource_n1x2(	// src/main/scala/interrupts/Crossing.scala:4
   wire       nodeOut_sync_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
   wire       auto_out_sync_0_0 = nodeOut_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:41:9
   wire       auto_out_sync_1_0 = nodeOut_sync_1;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:41:9
-  assign nodeOut_sync_0 = _reg_io_q[0];	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:45:50, src/main/scala/util/AsyncResetReg.scala:86:21
-  assign nodeOut_sync_1 = _reg_io_q[1];	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:45:50, src/main/scala/util/AsyncResetReg.scala:86:21
-  AsyncResetRegVec_w2_i0 reg_0 (	// src/main/scala/util/AsyncResetReg.scala:86:21
+  assign nodeOut_sync_0 = _reg_io_q[0];	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:45:50, src/main/scala/util/rocket_AsyncResetReg.scala:86:21
+  assign nodeOut_sync_1 = _reg_io_q[1];	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/interrupts/Crossing.scala:45:50, src/main/scala/util/rocket_AsyncResetReg.scala:86:21
+  rocket_AsyncResetRegVec_w2_i0 reg_0 (	// src/main/scala/util/rocket_AsyncResetReg.scala:86:21
     .clock (clock),
     .reset (reset),
     .io_d  ({nodeIn_1, nodeIn_0}),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/interrupts/Crossing.scala:45:36

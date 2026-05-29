@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
+module rocket_TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
   input         clock,	// src/main/scala/tilelink/Broadcast.scala:90:9
                 reset,	// src/main/scala/tilelink/Broadcast.scala:90:9
   output        auto_in_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -1125,7 +1125,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Broadcast.scala:90:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor_20 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_20 monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                                  (clock),
     .reset                                  (reset),
     .io_in_a_ready                          (nodeIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -1171,7 +1171,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
     .io_in_e_valid                          (nodeIn_e_valid),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_e_bits_sink                      (nodeIn_e_bits_sink)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  BroadcastFilter filter (	// src/main/scala/tilelink/Broadcast.scala:106:26
+  rocket_BroadcastFilter filter (	// src/main/scala/tilelink/Broadcast.scala:106:26
     .io_request_ready         (_filter_io_request_ready),
     .io_request_valid         (nodeIn_a_valid & a_first & trackerReady),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/tilelink/Broadcast.scala:248:58, :257:56, src/main/scala/tilelink/Edges.scala:231:25
     .io_request_bits_mshr
@@ -1205,7 +1205,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
     .io_release_bits_keepB    (_filter_io_release_bits_keepB_T),	// src/main/scala/tilelink/Broadcast.scala:184:27
     .io_release_bits_cacheOH  (whoC)	// src/main/scala/diplomacy/Parameters.scala:48:9
   );
-  TLBroadcastTracker TLBroadcastTracker (	// src/main/scala/tilelink/Broadcast.scala:114:15
+  rocket_TLBroadcastTracker rocket_TLBroadcastTracker (	// src/main/scala/tilelink/Broadcast.scala:114:15
     .clock                                   (clock),
     .reset                                   (reset),
     .io_in_a_first                           (a_first),	// src/main/scala/tilelink/Edges.scala:231:25
@@ -1266,7 +1266,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
     .io_cacheOH                              (_TLBroadcastTracker_io_cacheOH),
     .io_clearOH                              (c_trackerOH_0 & clearOH)	// src/main/scala/tilelink/Broadcast.scala:169:55, :177:24, :181:31
   );
-  TLBroadcastTracker_1 TLBroadcastTracker_1 (	// src/main/scala/tilelink/Broadcast.scala:114:15
+  rocket_TLBroadcastTracker_1 rocket_TLBroadcastTracker_1 (	// src/main/scala/tilelink/Broadcast.scala:114:15
     .clock                                   (clock),
     .reset                                   (reset),
     .io_in_a_first                           (a_first),	// src/main/scala/tilelink/Edges.scala:231:25
@@ -1328,7 +1328,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
     .io_cacheOH                              (_TLBroadcastTracker_1_io_cacheOH),
     .io_clearOH                              (c_trackerOH_1 & clearOH)	// src/main/scala/tilelink/Broadcast.scala:169:55, :177:24, :181:31
   );
-  TLBroadcastTracker_2 TLBroadcastTracker_2 (	// src/main/scala/tilelink/Broadcast.scala:114:15
+  rocket_TLBroadcastTracker_2 rocket_TLBroadcastTracker_2 (	// src/main/scala/tilelink/Broadcast.scala:114:15
     .clock                                   (clock),
     .reset                                   (reset),
     .io_in_a_first                           (a_first),	// src/main/scala/tilelink/Edges.scala:231:25
@@ -1390,7 +1390,7 @@ module TLBroadcast(	// src/main/scala/tilelink/Broadcast.scala:90:9
     .io_cacheOH                              (_TLBroadcastTracker_2_io_cacheOH),
     .io_clearOH                              (c_trackerOH_2 & clearOH)	// src/main/scala/tilelink/Broadcast.scala:169:55, :177:24, :181:31
   );
-  TLBroadcastTracker_3 TLBroadcastTracker_3 (	// src/main/scala/tilelink/Broadcast.scala:114:15
+  rocket_TLBroadcastTracker_3 rocket_TLBroadcastTracker_3 (	// src/main/scala/tilelink/Broadcast.scala:114:15
     .clock                                   (clock),
     .reset                                   (reset),
     .io_in_a_first                           (a_first),	// src/main/scala/tilelink/Edges.scala:231:25

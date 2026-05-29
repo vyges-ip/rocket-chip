@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module DebugCustomXbar();	// src/main/scala/devices/debug/Custom.scala:73:9
+module rocket_DebugCustomXbar();	// src/main/scala/devices/debug/Custom.scala:73:9
   wire auto_out_addr = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:158:25, src/main/scala/devices/debug/Custom.scala:73:9
   wire auto_out_ready = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:158:25, src/main/scala/devices/debug/Custom.scala:73:9
   wire auto_out_valid = 1'h0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:158:25, src/main/scala/devices/debug/Custom.scala:73:9

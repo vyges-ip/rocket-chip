@@ -14,11 +14,11 @@
   *
   */
 
-module ClockDivider2 (output reg clk_out, input clk_in);
+module rocket_ClockDivider2 (output reg clk_out, input clk_in);
 
    initial clk_out = 1'b0;
    always @(posedge clk_in) begin
       clk_out = ~clk_out; // Must use =, NOT <=
    end
 
-endmodule // ClockDivider2
+endmodule // rocket_ClockDivider2

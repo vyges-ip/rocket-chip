@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AsyncQueueSource_DebugInternalBundle(	// src/main/scala/util/AsyncQueue.scala:70:7
+module rocket_AsyncQueueSource_DebugInternalBundle(	// src/main/scala/util/AsyncQueue.scala:70:7
   input        clock,	// src/main/scala/util/AsyncQueue.scala:70:7
                reset,	// src/main/scala/util/AsyncQueue.scala:70:7
   output       io_enq_ready,	// src/main/scala/util/AsyncQueue.scala:73:14
@@ -191,31 +191,31 @@ module AsyncQueueSource_DebugInternalBundle(	// src/main/scala/util/AsyncQueue.s
       `FIRRTL_AFTER_INITIAL	// src/main/scala/util/AsyncQueue.scala:70:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  AsyncResetSynchronizerShiftReg_w1_d3_i0 ridx_ridx_gray (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0 ridx_ridx_gray (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (clock),
     .reset (reset),
     .io_d  (io_async_ridx_0),	// src/main/scala/util/AsyncQueue.scala:70:7
     .io_q  (ridx)
   );
-  AsyncValidSync source_valid_0 (	// src/main/scala/util/AsyncQueue.scala:102:32
+  rocket_AsyncValidSync source_valid_0 (	// src/main/scala/util/AsyncQueue.scala:102:32
     .io_in  (1'h1),	// src/main/scala/util/AsyncQueue.scala:70:7
     .io_out (_source_valid_0_io_out),
     .clock  (clock),
     .reset  (reset | ~io_async_safe_sink_reset_n_0)	// src/main/scala/util/AsyncQueue.scala:70:7, :107:{43,46}
   );
-  AsyncValidSync source_valid_1 (	// src/main/scala/util/AsyncQueue.scala:103:32
+  rocket_AsyncValidSync source_valid_1 (	// src/main/scala/util/AsyncQueue.scala:103:32
     .io_in  (_source_valid_0_io_out),	// src/main/scala/util/AsyncQueue.scala:102:32
     .io_out (io_async_safe_widx_valid_0),
     .clock  (clock),
     .reset  (reset | ~io_async_safe_sink_reset_n_0)	// src/main/scala/util/AsyncQueue.scala:70:7, :107:46, :108:43
   );
-  AsyncValidSync sink_extend (	// src/main/scala/util/AsyncQueue.scala:105:30
+  rocket_AsyncValidSync sink_extend (	// src/main/scala/util/AsyncQueue.scala:105:30
     .io_in  (io_async_safe_ridx_valid_0),	// src/main/scala/util/AsyncQueue.scala:70:7
     .io_out (_sink_extend_io_out),
     .clock  (clock),
     .reset  (reset | ~io_async_safe_sink_reset_n_0)	// src/main/scala/util/AsyncQueue.scala:70:7, :107:46, :109:43
   );
-  AsyncValidSync sink_valid (	// src/main/scala/util/AsyncQueue.scala:106:30
+  rocket_AsyncValidSync sink_valid (	// src/main/scala/util/AsyncQueue.scala:106:30
     .io_in  (_sink_extend_io_out),	// src/main/scala/util/AsyncQueue.scala:105:30
     .io_out (sink_ready),
     .clock  (clock),

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module OptimizationBarrier_UInt(	// src/main/scala/util/package.scala:268:30
+module rocket_OptimizationBarrier_UInt(	// src/main/scala/util/package.scala:268:30
   input  [2:0] io_x,	// src/main/scala/util/package.scala:269:18
   output [2:0] io_y	// src/main/scala/util/package.scala:269:18
 );

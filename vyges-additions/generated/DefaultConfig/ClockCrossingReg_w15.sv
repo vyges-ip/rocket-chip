@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module ClockCrossingReg_w15(	// src/main/scala/util/SynchronizerReg.scala:191:7
+module rocket_ClockCrossingReg_w15(	// src/main/scala/util/SynchronizerReg.scala:191:7
   input         clock,	// src/main/scala/util/SynchronizerReg.scala:191:7
   input  [14:0] io_d,	// src/main/scala/util/SynchronizerReg.scala:195:14
   output [14:0] io_q,	// src/main/scala/util/SynchronizerReg.scala:195:14

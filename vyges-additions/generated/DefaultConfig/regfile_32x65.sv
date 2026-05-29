@@ -85,7 +85,7 @@
 `endif // not def STOP_COND_
 
 // VCS coverage exclude_file
-module regfile_32x65(	// src/main/scala/tile/FPU.scala:819:20
+module rocket_regfile_32x65(	// src/main/scala/tile/rocket_FPU.scala:819:20
   input  [4:0]  R0_addr,
   input         R0_en,
                 R0_clk,
@@ -108,29 +108,29 @@ module regfile_32x65(	// src/main/scala/tile/FPU.scala:819:20
   input  [64:0] W1_data
 );
 
-  reg [64:0] Memory[0:31];	// src/main/scala/tile/FPU.scala:819:20
-  always @(posedge W0_clk) begin	// src/main/scala/tile/FPU.scala:819:20
-    if (W0_en & 1'h1)	// src/main/scala/tile/FPU.scala:819:20
-      Memory[W0_addr] <= W0_data;	// src/main/scala/tile/FPU.scala:819:20
-    if (W1_en & 1'h1)	// src/main/scala/tile/FPU.scala:819:20
-      Memory[W1_addr] <= W1_data;	// src/main/scala/tile/FPU.scala:819:20
+  reg [64:0] Memory[0:31];	// src/main/scala/tile/rocket_FPU.scala:819:20
+  always @(posedge W0_clk) begin	// src/main/scala/tile/rocket_FPU.scala:819:20
+    if (W0_en & 1'h1)	// src/main/scala/tile/rocket_FPU.scala:819:20
+      Memory[W0_addr] <= W0_data;	// src/main/scala/tile/rocket_FPU.scala:819:20
+    if (W1_en & 1'h1)	// src/main/scala/tile/rocket_FPU.scala:819:20
+      Memory[W1_addr] <= W1_data;	// src/main/scala/tile/rocket_FPU.scala:819:20
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/tile/FPU.scala:819:20
-    reg [95:0] _RANDOM_MEM;	// src/main/scala/tile/FPU.scala:819:20
-    initial begin	// src/main/scala/tile/FPU.scala:819:20
-      `INIT_RANDOM_PROLOG_	// src/main/scala/tile/FPU.scala:819:20
-      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/tile/FPU.scala:819:20
+  `ifdef ENABLE_INITIAL_MEM_	// src/main/scala/tile/rocket_FPU.scala:819:20
+    reg [95:0] _RANDOM_MEM;	// src/main/scala/tile/rocket_FPU.scala:819:20
+    initial begin	// src/main/scala/tile/rocket_FPU.scala:819:20
+      `INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_FPU.scala:819:20
+      `ifdef RANDOMIZE_MEM_INIT	// src/main/scala/tile/rocket_FPU.scala:819:20
         for (logic [5:0] i = 6'h0; i < 6'h20; i += 6'h1) begin
           for (logic [6:0] j = 7'h0; j < 7'h60; j += 7'h20) begin
-            _RANDOM_MEM[j +: 32] = `RANDOM;	// src/main/scala/tile/FPU.scala:819:20
-          end	// src/main/scala/tile/FPU.scala:819:20
-          Memory[i[4:0]] = _RANDOM_MEM[64:0];	// src/main/scala/tile/FPU.scala:819:20
-        end	// src/main/scala/tile/FPU.scala:819:20
+            _RANDOM_MEM[j +: 32] = `RANDOM;	// src/main/scala/tile/rocket_FPU.scala:819:20
+          end	// src/main/scala/tile/rocket_FPU.scala:819:20
+          Memory[i[4:0]] = _RANDOM_MEM[64:0];	// src/main/scala/tile/rocket_FPU.scala:819:20
+        end	// src/main/scala/tile/rocket_FPU.scala:819:20
       `endif // RANDOMIZE_MEM_INIT
     end // initial
   `endif // ENABLE_INITIAL_MEM_
-  assign R0_data = R0_en ? Memory[R0_addr] : 65'bx;	// src/main/scala/tile/FPU.scala:819:20
-  assign R1_data = R1_en ? Memory[R1_addr] : 65'bx;	// src/main/scala/tile/FPU.scala:819:20
-  assign R2_data = R2_en ? Memory[R2_addr] : 65'bx;	// src/main/scala/tile/FPU.scala:819:20
+  assign R0_data = R0_en ? Memory[R0_addr] : 65'bx;	// src/main/scala/tile/rocket_FPU.scala:819:20
+  assign R1_data = R1_en ? Memory[R1_addr] : 65'bx;	// src/main/scala/tile/rocket_FPU.scala:819:20
+  assign R2_data = R2_en ? Memory[R2_addr] : 65'bx;	// src/main/scala/tile/rocket_FPU.scala:819:20
 endmodule
 

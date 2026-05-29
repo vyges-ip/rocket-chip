@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLBroadcastTracker_2(	// src/main/scala/tilelink/Broadcast.scala:406:7
+module rocket_TLBroadcastTracker_2(	// src/main/scala/tilelink/Broadcast.scala:406:7
   input         clock,	// src/main/scala/tilelink/Broadcast.scala:406:7
                 reset,	// src/main/scala/tilelink/Broadcast.scala:406:7
                 io_in_a_first,	// src/main/scala/tilelink/Broadcast.scala:408:14
@@ -320,7 +320,7 @@ module TLBroadcastTracker_2(	// src/main/scala/tilelink/Broadcast.scala:406:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Broadcast.scala:406:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue8_TLBroadcastData o_data_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue8_TLBroadcastData o_data_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (i_data_ready),

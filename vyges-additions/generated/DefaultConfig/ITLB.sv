@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
+module rocket_ITLB(	// src/main/scala/rocket/TLB.scala:318:7
   input         clock,	// src/main/scala/rocket/TLB.scala:318:7
                 reset,	// src/main/scala/rocket/TLB.scala:318:7
                 io_req_valid,	// src/main/scala/rocket/TLB.scala:320:14
@@ -1305,15 +1305,15 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
   wire             newEntry_sr =
     io_ptw_resp_bits_pte_v_0
     & (io_ptw_resp_bits_pte_r_0 | io_ptw_resp_bits_pte_x_0 & ~io_ptw_resp_bits_pte_w_0)
-    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_r_0;	// src/main/scala/rocket/PTW.scala:141:{38,44,47}, :149:35, src/main/scala/rocket/TLB.scala:318:7, :449:24
+    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_r_0;	// src/main/scala/rocket/rocket_PTW.scala:141:{38,44,47}, :149:35, src/main/scala/rocket/TLB.scala:318:7, :449:24
   wire             newEntry_sw =
     io_ptw_resp_bits_pte_v_0
     & (io_ptw_resp_bits_pte_r_0 | io_ptw_resp_bits_pte_x_0 & ~io_ptw_resp_bits_pte_w_0)
-    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_w_0 & io_ptw_resp_bits_pte_d_0;	// src/main/scala/rocket/PTW.scala:141:{38,44,47}, :151:40, src/main/scala/rocket/TLB.scala:318:7, :449:24
+    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_w_0 & io_ptw_resp_bits_pte_d_0;	// src/main/scala/rocket/rocket_PTW.scala:141:{38,44,47}, :151:40, src/main/scala/rocket/TLB.scala:318:7, :449:24
   wire             newEntry_sx =
     io_ptw_resp_bits_pte_v_0
     & (io_ptw_resp_bits_pte_r_0 | io_ptw_resp_bits_pte_x_0 & ~io_ptw_resp_bits_pte_w_0)
-    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_x_0;	// src/main/scala/rocket/PTW.scala:141:{38,44,47}, :153:35, src/main/scala/rocket/TLB.scala:318:7, :449:24
+    & io_ptw_resp_bits_pte_a_0 & io_ptw_resp_bits_pte_x_0;	// src/main/scala/rocket/rocket_PTW.scala:141:{38,44,47}, :153:35, src/main/scala/rocket/TLB.scala:318:7, :449:24
   wire [1:0]       _GEN_11 = {newEntry_c, 1'h0};	// src/main/scala/rocket/Consts.scala:90:76, src/main/scala/rocket/TLB.scala:182:34, :217:24, :318:7, :320:14, :369:34, :376:48, :378:48, :403:78, :448:33, :449:24, :456:84, :570:33, :571:40, :572:43, :573:41, :575:37, :577:35, :721:36, :722:36
   wire [1:0]       special_entry_data_0_lo_lo_lo;	// src/main/scala/rocket/TLB.scala:217:24
   assign special_entry_data_0_lo_lo_lo = _GEN_11;	// src/main/scala/rocket/TLB.scala:217:24
@@ -4056,7 +4056,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
       `FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/TLB.scala:318:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  OptimizationBarrier_TLBEntryData mpu_ppn_barrier (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData mpu_ppn_barrier (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (special_entry_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56
     .io_x_u                    (special_entry_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56
     .io_x_g                    (special_entry_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56
@@ -4102,7 +4102,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (/* unused */),
     .io_y_c                    (/* unused */)
   );
-  PMPChecker_s2 pmp (	// src/main/scala/rocket/TLB.scala:416:19
+  rocket_PMPChecker_s2 pmp (	// src/main/scala/rocket/TLB.scala:416:19
     .io_prv         (mpu_priv[1:0]),	// src/main/scala/rocket/TLB.scala:415:27, :420:14
     .io_pmp_0_cfg_l (io_ptw_pmp_0_cfg_l_0),	// src/main/scala/rocket/TLB.scala:318:7
     .io_pmp_0_cfg_a (io_ptw_pmp_0_cfg_a_0),	// src/main/scala/rocket/TLB.scala:318:7
@@ -4165,7 +4165,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_w           (_pmp_io_w),
     .io_x           (_pmp_io_x)
   );
-  PMAChecker pma (	// src/main/scala/rocket/TLB.scala:422:19
+  rocket_PMAChecker pma (	// src/main/scala/rocket/TLB.scala:422:19
     .io_paddr          (mpu_physaddr),	// src/main/scala/rocket/TLB.scala:414:25
     .io_resp_cacheable (cacheable),
     .io_resp_r         (_pma_io_resp_r),
@@ -4180,7 +4180,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
   assign newEntry_pal = _pma_io_resp_al;	// src/main/scala/rocket/TLB.scala:422:19, :449:24
   assign newEntry_paa = _pma_io_resp_aa;	// src/main/scala/rocket/TLB.scala:422:19, :449:24
   assign newEntry_eff = _pma_io_resp_eff;	// src/main/scala/rocket/TLB.scala:422:19, :449:24
-  OptimizationBarrier_TLBEntryData entries_barrier (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_1[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_1[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_1[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4226,7 +4226,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_io_y_eff),
     .io_y_c                    (_entries_barrier_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_1 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_1 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_3[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_3[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_3[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4272,7 +4272,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_1_io_y_eff),
     .io_y_c                    (_entries_barrier_1_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_2 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_2 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_5[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_5[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_5[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4318,7 +4318,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_2_io_y_eff),
     .io_y_c                    (_entries_barrier_2_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_3 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_3 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_7[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_7[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_7[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4364,7 +4364,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_3_io_y_eff),
     .io_y_c                    (_entries_barrier_3_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_4 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_4 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_9[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_9[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_9[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4410,7 +4410,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_4_io_y_eff),
     .io_y_c                    (_entries_barrier_4_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_5 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_5 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_11[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_11[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_11[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4456,7 +4456,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_5_io_y_eff),
     .io_y_c                    (_entries_barrier_5_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_6 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_6 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_13[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_13[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_13[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4502,7 +4502,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_6_io_y_eff),
     .io_y_c                    (_entries_barrier_6_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_7 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_7 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (_entries_WIRE_15[41:22]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_u                    (_entries_WIRE_15[21]),	// src/main/scala/rocket/TLB.scala:170:77
     .io_x_g                    (_entries_WIRE_15[20]),	// src/main/scala/rocket/TLB.scala:170:77
@@ -4548,7 +4548,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_7_io_y_eff),
     .io_y_c                    (_entries_barrier_7_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_8 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_8 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (superpage_entries_0_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_u                    (superpage_entries_0_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_g                    (superpage_entries_0_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
@@ -4594,7 +4594,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_8_io_y_eff),
     .io_y_c                    (_entries_barrier_8_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_9 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_9 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (superpage_entries_1_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_u                    (superpage_entries_1_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_g                    (superpage_entries_1_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
@@ -4640,7 +4640,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_9_io_y_eff),
     .io_y_c                    (_entries_barrier_9_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_10 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_10 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (superpage_entries_2_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_u                    (superpage_entries_2_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_g                    (superpage_entries_2_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
@@ -4686,7 +4686,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_10_io_y_eff),
     .io_y_c                    (_entries_barrier_10_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_11 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_11 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (superpage_entries_3_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_u                    (superpage_entries_3_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
     .io_x_g                    (superpage_entries_3_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :341:30
@@ -4732,7 +4732,7 @@ module ITLB(	// src/main/scala/rocket/TLB.scala:318:7
     .io_y_eff                  (_entries_barrier_11_io_y_eff),
     .io_y_c                    (_entries_barrier_11_io_y_c)
   );
-  OptimizationBarrier_TLBEntryData entries_barrier_12 (	// src/main/scala/util/package.scala:268:25
+  rocket_OptimizationBarrier_TLBEntryData entries_barrier_12 (	// src/main/scala/util/package.scala:268:25
     .io_x_ppn                  (special_entry_data_0[41:22]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56
     .io_x_u                    (special_entry_data_0[21]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56
     .io_x_g                    (special_entry_data_0[20]),	// src/main/scala/rocket/TLB.scala:170:77, :346:56

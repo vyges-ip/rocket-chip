@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLAsyncCrossingSink_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossing.scala:59:9
+module rocket_TLAsyncCrossingSink_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossing.scala:59:9
   input         clock,	// src/main/scala/tilelink/AsyncCrossing.scala:59:9
                 reset,	// src/main/scala/tilelink/AsyncCrossing.scala:59:9
   input  [2:0]  auto_in_a_mem_0_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -288,7 +288,7 @@ module TLAsyncCrossingSink_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossin
   wire [31:0] auto_out_a_bits_data_0 = nodeOut_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:59:9
   wire        auto_out_a_bits_corrupt_0 = nodeOut_a_bits_corrupt;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:59:9
   wire        auto_out_d_ready_0 = nodeOut_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, src/main/scala/tilelink/AsyncCrossing.scala:59:9
-  AsyncQueueSink_TLBundleA_a9d32s1k1z2u nodeOut_a_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
+  rocket_AsyncQueueSink_TLBundleA_a9d32s1k1z2u nodeOut_a_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
     .clock                        (clock),
     .reset                        (reset),
     .io_deq_ready                 (nodeOut_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
@@ -311,7 +311,7 @@ module TLAsyncCrossingSink_a9d32s1k1z2u(	// src/main/scala/tilelink/AsyncCrossin
     .io_async_safe_source_reset_n (nodeIn_a_safe_source_reset_n),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_async_safe_sink_reset_n   (nodeIn_a_safe_sink_reset_n)
   );
-  AsyncQueueSource_TLBundleD_a9d32s1k1z2u nodeIn_d_source (	// src/main/scala/util/AsyncQueue.scala:220:24
+  rocket_AsyncQueueSource_TLBundleD_a9d32s1k1z2u nodeIn_d_source (	// src/main/scala/util/AsyncQueue.scala:220:24
     .clock                        (clock),
     .reset                        (reset),
     .io_enq_ready                 (nodeOut_d_ready),

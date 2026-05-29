@@ -13,7 +13,7 @@
   *
   */
 
-module ClockDivider3 (output reg clk_out, input clk_in);
+module rocket_ClockDivider3 (output reg clk_out, input clk_in);
 
    reg delay;
 
@@ -34,4 +34,4 @@ module ClockDivider3 (output reg clk_out, input clk_in);
       end
    end
 
-endmodule // ClockDivider3
+endmodule // rocket_ClockDivider3

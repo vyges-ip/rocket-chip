@@ -84,511 +84,511 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module HellaCacheArbiter(	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  input         clock,	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  output        io_requestor_0_req_ready,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_0_req_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [39:0] io_requestor_0_req_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_0_req_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s1_kill,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_s2_nack,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_nack_cause_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_uncached,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [31:0] io_requestor_0_s2_paddr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_resp_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [39:0] io_requestor_0_resp_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [6:0]  io_requestor_0_resp_bits_tag,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [4:0]  io_requestor_0_resp_bits_cmd,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_requestor_0_resp_bits_size,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_resp_bits_signed,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_requestor_0_resp_bits_dprv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_resp_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [63:0] io_requestor_0_resp_bits_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [7:0]  io_requestor_0_resp_bits_mask,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_resp_bits_replay,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_resp_bits_has_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [63:0] io_requestor_0_resp_bits_data_word_bypass,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_resp_bits_data_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_resp_bits_store_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_replay_next,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_ma_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_ma_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_pf_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_pf_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_ae_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_s2_xcpt_ae_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [39:0] io_requestor_0_s2_gpa,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_0_ordered,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_store_pending,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_acquire,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_release,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_grant,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_tlbMiss,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_blocked,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_0_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_req_ready,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_1_req_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [39:0] io_requestor_1_req_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [6:0]  io_requestor_1_req_bits_tag,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [4:0]  io_requestor_1_req_bits_cmd,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [1:0]  io_requestor_1_req_bits_size,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_1_req_bits_signed,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [1:0]  io_requestor_1_req_bits_dprv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_1_req_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_req_bits_no_resp,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s1_kill,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [63:0] io_requestor_1_s1_data_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_s2_nack,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_nack_cause_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_uncached,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [31:0] io_requestor_1_s2_paddr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_resp_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [39:0] io_requestor_1_resp_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [6:0]  io_requestor_1_resp_bits_tag,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [4:0]  io_requestor_1_resp_bits_cmd,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_requestor_1_resp_bits_size,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_resp_bits_signed,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_requestor_1_resp_bits_dprv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_resp_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [63:0] io_requestor_1_resp_bits_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [7:0]  io_requestor_1_resp_bits_mask,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_resp_bits_replay,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_resp_bits_has_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [63:0] io_requestor_1_resp_bits_data_word_bypass,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_resp_bits_data_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_resp_bits_store_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_replay_next,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_ma_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_ma_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_pf_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_pf_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_ae_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_s2_xcpt_ae_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [39:0] io_requestor_1_s2_gpa,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_requestor_1_ordered,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_store_pending,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_acquire,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_release,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_grant,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_tlbMiss,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_blocked,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_requestor_1_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_requestor_1_keep_clock_enabled,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_req_ready,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_mem_req_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [39:0] io_mem_req_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [6:0]  io_mem_req_bits_tag,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [4:0]  io_mem_req_bits_cmd,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_mem_req_bits_size,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_mem_req_bits_signed,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [1:0]  io_mem_req_bits_dprv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_mem_req_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_req_bits_phys,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_req_bits_no_resp,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s1_kill,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output [63:0] io_mem_s1_data_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_s2_nack,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_nack_cause_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_uncached,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [31:0] io_mem_s2_paddr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_resp_valid,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [39:0] io_mem_resp_bits_addr,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [6:0]  io_mem_resp_bits_tag,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [4:0]  io_mem_resp_bits_cmd,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [1:0]  io_mem_resp_bits_size,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_resp_bits_signed,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [1:0]  io_mem_resp_bits_dprv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_resp_bits_dv,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [63:0] io_mem_resp_bits_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [7:0]  io_mem_resp_bits_mask,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_resp_bits_replay,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_resp_bits_has_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [63:0] io_mem_resp_bits_data_word_bypass,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_resp_bits_data_raw,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_resp_bits_store_data,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_replay_next,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_ma_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_ma_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_pf_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_pf_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_ae_ld,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_s2_xcpt_ae_st,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input  [39:0] io_mem_s2_gpa,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  input         io_mem_ordered,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_store_pending,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_acquire,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_release,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_grant,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_tlbMiss,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_blocked,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-                io_mem_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
-  output        io_mem_keep_clock_enabled	// src/main/scala/rocket/HellaCacheArbiter.scala:12:14
+module rocket_HellaCacheArbiter(	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  input         clock,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  output        io_requestor_0_req_ready,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_0_req_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [39:0] io_requestor_0_req_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_0_req_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s1_kill,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_s2_nack,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_nack_cause_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_uncached,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [31:0] io_requestor_0_s2_paddr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_resp_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [39:0] io_requestor_0_resp_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [6:0]  io_requestor_0_resp_bits_tag,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [4:0]  io_requestor_0_resp_bits_cmd,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_requestor_0_resp_bits_size,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_resp_bits_signed,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_requestor_0_resp_bits_dprv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_resp_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [63:0] io_requestor_0_resp_bits_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [7:0]  io_requestor_0_resp_bits_mask,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_resp_bits_replay,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_resp_bits_has_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [63:0] io_requestor_0_resp_bits_data_word_bypass,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_resp_bits_data_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_resp_bits_store_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_replay_next,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_ma_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_ma_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_pf_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_pf_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_ae_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_s2_xcpt_ae_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [39:0] io_requestor_0_s2_gpa,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_0_ordered,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_store_pending,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_acquire,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_release,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_grant,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_tlbMiss,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_blocked,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_0_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_req_ready,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_1_req_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [39:0] io_requestor_1_req_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [6:0]  io_requestor_1_req_bits_tag,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [4:0]  io_requestor_1_req_bits_cmd,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [1:0]  io_requestor_1_req_bits_size,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_1_req_bits_signed,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [1:0]  io_requestor_1_req_bits_dprv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_1_req_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_req_bits_no_resp,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s1_kill,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [63:0] io_requestor_1_s1_data_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_s2_nack,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_nack_cause_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_uncached,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [31:0] io_requestor_1_s2_paddr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_resp_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [39:0] io_requestor_1_resp_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [6:0]  io_requestor_1_resp_bits_tag,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [4:0]  io_requestor_1_resp_bits_cmd,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_requestor_1_resp_bits_size,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_resp_bits_signed,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_requestor_1_resp_bits_dprv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_resp_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [63:0] io_requestor_1_resp_bits_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [7:0]  io_requestor_1_resp_bits_mask,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_resp_bits_replay,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_resp_bits_has_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [63:0] io_requestor_1_resp_bits_data_word_bypass,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_resp_bits_data_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_resp_bits_store_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_replay_next,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_ma_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_ma_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_pf_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_pf_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_ae_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_s2_xcpt_ae_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [39:0] io_requestor_1_s2_gpa,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_requestor_1_ordered,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_store_pending,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_acquire,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_release,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_grant,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_tlbMiss,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_blocked,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_requestor_1_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_requestor_1_keep_clock_enabled,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_req_ready,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_mem_req_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [39:0] io_mem_req_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [6:0]  io_mem_req_bits_tag,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [4:0]  io_mem_req_bits_cmd,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_mem_req_bits_size,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_mem_req_bits_signed,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [1:0]  io_mem_req_bits_dprv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_mem_req_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_req_bits_phys,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_req_bits_no_resp,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s1_kill,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output [63:0] io_mem_s1_data_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_s2_nack,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_nack_cause_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_uncached,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [31:0] io_mem_s2_paddr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_resp_valid,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [39:0] io_mem_resp_bits_addr,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [6:0]  io_mem_resp_bits_tag,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [4:0]  io_mem_resp_bits_cmd,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [1:0]  io_mem_resp_bits_size,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_resp_bits_signed,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [1:0]  io_mem_resp_bits_dprv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_resp_bits_dv,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [63:0] io_mem_resp_bits_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [7:0]  io_mem_resp_bits_mask,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_resp_bits_replay,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_resp_bits_has_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [63:0] io_mem_resp_bits_data_word_bypass,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_resp_bits_data_raw,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_resp_bits_store_data,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_replay_next,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_ma_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_ma_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_pf_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_pf_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_ae_ld,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_s2_xcpt_ae_st,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input  [39:0] io_mem_s2_gpa,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  input         io_mem_ordered,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_store_pending,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_acquire,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_release,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_grant,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_tlbMiss,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_blocked,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_canAcceptStoreThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_canAcceptStoreThenRMW,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_canAcceptLoadThenLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_storeBufferEmptyAfterLoad,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+                io_mem_perf_storeBufferEmptyAfterStore,	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
+  output        io_mem_keep_clock_enabled	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:12:14
 );
 
-  wire        io_requestor_0_req_valid_0 = io_requestor_0_req_valid;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_0_req_bits_addr_0 = io_requestor_0_req_bits_addr;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_dv_0 = io_requestor_0_req_bits_dv;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s1_kill_0 = io_requestor_0_s1_kill;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_valid_0 = io_requestor_1_req_valid;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_1_req_bits_addr_0 = io_requestor_1_req_bits_addr;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [6:0]  io_requestor_1_req_bits_tag_0 = io_requestor_1_req_bits_tag;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [4:0]  io_requestor_1_req_bits_cmd_0 = io_requestor_1_req_bits_cmd;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_1_req_bits_size_0 = io_requestor_1_req_bits_size;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_signed_0 = io_requestor_1_req_bits_signed;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_1_req_bits_dprv_0 = io_requestor_1_req_bits_dprv;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_dv_0 = io_requestor_1_req_bits_dv;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_no_resp_0 = io_requestor_1_req_bits_no_resp;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s1_kill_0 = io_requestor_1_s1_kill;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_1_s1_data_data_0 = io_requestor_1_s1_data_data;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_keep_clock_enabled_0 = io_requestor_1_keep_clock_enabled;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_req_ready_0 = io_mem_req_ready;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_nack_0 = io_mem_s2_nack;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_uncached_0 = io_mem_s2_uncached;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [31:0] io_mem_s2_paddr_0 = io_mem_s2_paddr;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_resp_valid_0 = io_mem_resp_valid;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_mem_resp_bits_addr_0 = io_mem_resp_bits_addr;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [6:0]  io_mem_resp_bits_tag_0 = io_mem_resp_bits_tag;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [4:0]  io_mem_resp_bits_cmd_0 = io_mem_resp_bits_cmd;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_mem_resp_bits_size_0 = io_mem_resp_bits_size;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_resp_bits_signed_0 = io_mem_resp_bits_signed;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_mem_resp_bits_dprv_0 = io_mem_resp_bits_dprv;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_resp_bits_dv_0 = io_mem_resp_bits_dv;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_mem_resp_bits_data_0 = io_mem_resp_bits_data;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [7:0]  io_mem_resp_bits_mask_0 = io_mem_resp_bits_mask;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_resp_bits_replay_0 = io_mem_resp_bits_replay;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_resp_bits_has_data_0 = io_mem_resp_bits_has_data;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_mem_resp_bits_data_word_bypass_0 = io_mem_resp_bits_data_word_bypass;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_mem_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_mem_resp_bits_store_data_0 = io_mem_resp_bits_store_data;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_replay_next_0 = io_mem_replay_next;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_mem_s2_gpa_0 = io_mem_s2_gpa;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_ordered_0 = io_mem_ordered;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_store_pending_0 = io_mem_store_pending;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_acquire_0 = io_mem_perf_acquire;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_release_0 = io_mem_perf_release;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_grant_0 = io_mem_perf_grant;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_tlbMiss_0 = io_mem_perf_tlbMiss;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_blocked_0 = io_mem_perf_blocked;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_canAcceptStoreThenLoad_0 = io_mem_perf_canAcceptStoreThenLoad;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_canAcceptStoreThenRMW_0 = io_mem_perf_canAcceptStoreThenRMW;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_perf_canAcceptLoadThenLoad_0 = io_mem_perf_canAcceptLoadThenLoad;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_valid_0 = io_requestor_0_req_valid;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_0_req_bits_addr_0 = io_requestor_0_req_bits_addr;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_dv_0 = io_requestor_0_req_bits_dv;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s1_kill_0 = io_requestor_0_s1_kill;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_valid_0 = io_requestor_1_req_valid;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_1_req_bits_addr_0 = io_requestor_1_req_bits_addr;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [6:0]  io_requestor_1_req_bits_tag_0 = io_requestor_1_req_bits_tag;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [4:0]  io_requestor_1_req_bits_cmd_0 = io_requestor_1_req_bits_cmd;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_1_req_bits_size_0 = io_requestor_1_req_bits_size;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_signed_0 = io_requestor_1_req_bits_signed;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_1_req_bits_dprv_0 = io_requestor_1_req_bits_dprv;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_dv_0 = io_requestor_1_req_bits_dv;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_no_resp_0 = io_requestor_1_req_bits_no_resp;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s1_kill_0 = io_requestor_1_s1_kill;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_1_s1_data_data_0 = io_requestor_1_s1_data_data;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_keep_clock_enabled_0 = io_requestor_1_keep_clock_enabled;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_req_ready_0 = io_mem_req_ready;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_nack_0 = io_mem_s2_nack;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_uncached_0 = io_mem_s2_uncached;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [31:0] io_mem_s2_paddr_0 = io_mem_s2_paddr;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_resp_valid_0 = io_mem_resp_valid;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_mem_resp_bits_addr_0 = io_mem_resp_bits_addr;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [6:0]  io_mem_resp_bits_tag_0 = io_mem_resp_bits_tag;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [4:0]  io_mem_resp_bits_cmd_0 = io_mem_resp_bits_cmd;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_mem_resp_bits_size_0 = io_mem_resp_bits_size;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_resp_bits_signed_0 = io_mem_resp_bits_signed;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_mem_resp_bits_dprv_0 = io_mem_resp_bits_dprv;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_resp_bits_dv_0 = io_mem_resp_bits_dv;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_mem_resp_bits_data_0 = io_mem_resp_bits_data;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [7:0]  io_mem_resp_bits_mask_0 = io_mem_resp_bits_mask;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_resp_bits_replay_0 = io_mem_resp_bits_replay;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_resp_bits_has_data_0 = io_mem_resp_bits_has_data;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_mem_resp_bits_data_word_bypass_0 = io_mem_resp_bits_data_word_bypass;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_mem_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_mem_resp_bits_store_data_0 = io_mem_resp_bits_store_data;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_replay_next_0 = io_mem_replay_next;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_mem_s2_gpa_0 = io_mem_s2_gpa;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_ordered_0 = io_mem_ordered;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_store_pending_0 = io_mem_store_pending;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_acquire_0 = io_mem_perf_acquire;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_release_0 = io_mem_perf_release;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_grant_0 = io_mem_perf_grant;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_tlbMiss_0 = io_mem_perf_tlbMiss;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_blocked_0 = io_mem_perf_blocked;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_canAcceptStoreThenLoad_0 = io_mem_perf_canAcceptStoreThenLoad;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_canAcceptStoreThenRMW_0 = io_mem_perf_canAcceptStoreThenRMW;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_perf_canAcceptLoadThenLoad_0 = io_mem_perf_canAcceptLoadThenLoad;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_mem_perf_storeBufferEmptyAfterLoad_0 =
-    io_mem_perf_storeBufferEmptyAfterLoad;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_storeBufferEmptyAfterLoad;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_mem_perf_storeBufferEmptyAfterStore_0 =
-    io_mem_perf_storeBufferEmptyAfterStore;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_phys = 1'h1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_clock_enabled = 1'h1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_clock_enabled = 1'h1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_clock_enabled = 1'h1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_signed = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_no_resp = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_kill = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_keep_clock_enabled = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_phys = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_kill = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_kill = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [7:0]  io_requestor_0_req_bits_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [7:0]  io_requestor_0_s1_data_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [7:0]  io_requestor_1_req_bits_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [7:0]  io_requestor_1_s1_data_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [7:0]  io_mem_req_bits_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [7:0]  io_mem_s1_data_mask = 8'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
-  wire [63:0] io_requestor_0_req_bits_data = 64'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
-  wire [63:0] io_requestor_0_s1_data_data = 64'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
-  wire [63:0] io_requestor_1_req_bits_data = 64'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
-  wire [63:0] io_mem_req_bits_data = 64'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
-  wire [1:0]  io_requestor_0_req_bits_dprv = 2'h1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14
-  wire [1:0]  io_requestor_0_req_bits_size = 2'h3;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14
-  wire [4:0]  io_requestor_0_req_bits_cmd = 5'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14
-  wire [6:0]  io_requestor_0_req_bits_tag = 7'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :34:29
-  wire        io_mem_req_bits_phys_0 = io_requestor_0_req_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_mem_keep_clock_enabled_0 = io_requestor_1_keep_clock_enabled_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_req_ready_0 = io_mem_req_ready_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_uncached_0 = io_mem_s2_uncached_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_uncached_0 = io_mem_s2_uncached_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [31:0] io_requestor_0_s2_paddr_0 = io_mem_s2_paddr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [31:0] io_requestor_1_s2_paddr_0 = io_mem_s2_paddr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_0_resp_bits_addr_0 = io_mem_resp_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_1_resp_bits_addr_0 = io_mem_resp_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [4:0]  io_requestor_0_resp_bits_cmd_0 = io_mem_resp_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [4:0]  io_requestor_1_resp_bits_cmd_0 = io_mem_resp_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_0_resp_bits_size_0 = io_mem_resp_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_1_resp_bits_size_0 = io_mem_resp_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_resp_bits_signed_0 = io_mem_resp_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_resp_bits_signed_0 = io_mem_resp_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_0_resp_bits_dprv_0 = io_mem_resp_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [1:0]  io_requestor_1_resp_bits_dprv_0 = io_mem_resp_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_resp_bits_dv_0 = io_mem_resp_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_resp_bits_dv_0 = io_mem_resp_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_0_resp_bits_data_0 = io_mem_resp_bits_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_1_resp_bits_data_0 = io_mem_resp_bits_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [7:0]  io_requestor_0_resp_bits_mask_0 = io_mem_resp_bits_mask_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [7:0]  io_requestor_1_resp_bits_mask_0 = io_mem_resp_bits_mask_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_resp_bits_replay_0 = io_mem_resp_bits_replay_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_resp_bits_replay_0 = io_mem_resp_bits_replay_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_resp_bits_has_data_0 = io_mem_resp_bits_has_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_resp_bits_has_data_0 = io_mem_resp_bits_has_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_storeBufferEmptyAfterStore;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_phys = 1'h1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_clock_enabled = 1'h1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_clock_enabled = 1'h1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_clock_enabled = 1'h1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_signed = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_no_resp = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_kill = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_keep_clock_enabled = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_phys = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_kill = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_req_bits_no_alloc = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_req_bits_no_xcpt = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_kill = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_gf_ld = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_xcpt_gf_st = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_s2_gpa_is_pte = 1'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [7:0]  io_requestor_0_req_bits_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [7:0]  io_requestor_0_s1_data_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [7:0]  io_requestor_1_req_bits_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [7:0]  io_requestor_1_s1_data_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [7:0]  io_mem_req_bits_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [7:0]  io_mem_s1_data_mask = 8'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :39:24, :50:26, :51:30
+  wire [63:0] io_requestor_0_req_bits_data = 64'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+  wire [63:0] io_requestor_0_s1_data_data = 64'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+  wire [63:0] io_requestor_1_req_bits_data = 64'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+  wire [63:0] io_mem_req_bits_data = 64'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+  wire [1:0]  io_requestor_0_req_bits_dprv = 2'h1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14
+  wire [1:0]  io_requestor_0_req_bits_size = 2'h3;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14
+  wire [4:0]  io_requestor_0_req_bits_cmd = 5'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14
+  wire [6:0]  io_requestor_0_req_bits_tag = 7'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :34:29
+  wire        io_mem_req_bits_phys_0 = io_requestor_0_req_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_mem_keep_clock_enabled_0 = io_requestor_1_keep_clock_enabled_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_req_ready_0 = io_mem_req_ready_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_nack_cause_raw_0 = io_mem_s2_nack_cause_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_uncached_0 = io_mem_s2_uncached_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_uncached_0 = io_mem_s2_uncached_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [31:0] io_requestor_0_s2_paddr_0 = io_mem_s2_paddr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [31:0] io_requestor_1_s2_paddr_0 = io_mem_s2_paddr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_0_resp_bits_addr_0 = io_mem_resp_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_1_resp_bits_addr_0 = io_mem_resp_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [4:0]  io_requestor_0_resp_bits_cmd_0 = io_mem_resp_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [4:0]  io_requestor_1_resp_bits_cmd_0 = io_mem_resp_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_0_resp_bits_size_0 = io_mem_resp_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_1_resp_bits_size_0 = io_mem_resp_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_resp_bits_signed_0 = io_mem_resp_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_resp_bits_signed_0 = io_mem_resp_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_0_resp_bits_dprv_0 = io_mem_resp_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [1:0]  io_requestor_1_resp_bits_dprv_0 = io_mem_resp_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_resp_bits_dv_0 = io_mem_resp_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_resp_bits_dv_0 = io_mem_resp_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_0_resp_bits_data_0 = io_mem_resp_bits_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_1_resp_bits_data_0 = io_mem_resp_bits_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [7:0]  io_requestor_0_resp_bits_mask_0 = io_mem_resp_bits_mask_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [7:0]  io_requestor_1_resp_bits_mask_0 = io_mem_resp_bits_mask_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_resp_bits_replay_0 = io_mem_resp_bits_replay_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_resp_bits_replay_0 = io_mem_resp_bits_replay_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_resp_bits_has_data_0 = io_mem_resp_bits_has_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_resp_bits_has_data_0 = io_mem_resp_bits_has_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire [63:0] io_requestor_0_resp_bits_data_word_bypass_0 =
-    io_mem_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire [63:0] io_requestor_1_resp_bits_data_word_bypass_0 =
-    io_mem_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_0_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_1_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_0_resp_bits_store_data_0 = io_mem_resp_bits_store_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [63:0] io_requestor_1_resp_bits_store_data_0 = io_mem_resp_bits_store_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_replay_next_0 = io_mem_replay_next_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_replay_next_0 = io_mem_replay_next_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_0_s2_gpa_0 = io_mem_s2_gpa_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire [39:0] io_requestor_1_s2_gpa_0 = io_mem_s2_gpa_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_ordered_0 = io_mem_ordered_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_ordered_0 = io_mem_ordered_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_store_pending_0 = io_mem_store_pending_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_store_pending_0 = io_mem_store_pending_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_perf_acquire_0 = io_mem_perf_acquire_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_perf_acquire_0 = io_mem_perf_acquire_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_perf_release_0 = io_mem_perf_release_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_perf_release_0 = io_mem_perf_release_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_perf_grant_0 = io_mem_perf_grant_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_perf_grant_0 = io_mem_perf_grant_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_perf_tlbMiss_0 = io_mem_perf_tlbMiss_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_perf_tlbMiss_0 = io_mem_perf_tlbMiss_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_0_perf_blocked_0 = io_mem_perf_blocked_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  wire        io_requestor_1_perf_blocked_0 = io_mem_perf_blocked_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_0_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_1_resp_bits_data_raw_0 = io_mem_resp_bits_data_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_0_resp_bits_store_data_0 = io_mem_resp_bits_store_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [63:0] io_requestor_1_resp_bits_store_data_0 = io_mem_resp_bits_store_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_replay_next_0 = io_mem_replay_next_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_replay_next_0 = io_mem_replay_next_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_ma_ld_0 = io_mem_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_ma_st_0 = io_mem_s2_xcpt_ma_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_pf_ld_0 = io_mem_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_pf_st_0 = io_mem_s2_xcpt_pf_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_ae_ld_0 = io_mem_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_s2_xcpt_ae_st_0 = io_mem_s2_xcpt_ae_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_0_s2_gpa_0 = io_mem_s2_gpa_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire [39:0] io_requestor_1_s2_gpa_0 = io_mem_s2_gpa_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_ordered_0 = io_mem_ordered_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_ordered_0 = io_mem_ordered_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_store_pending_0 = io_mem_store_pending_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_store_pending_0 = io_mem_store_pending_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_perf_acquire_0 = io_mem_perf_acquire_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_perf_acquire_0 = io_mem_perf_acquire_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_perf_release_0 = io_mem_perf_release_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_perf_release_0 = io_mem_perf_release_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_perf_grant_0 = io_mem_perf_grant_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_perf_grant_0 = io_mem_perf_grant_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_perf_tlbMiss_0 = io_mem_perf_tlbMiss_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_perf_tlbMiss_0 = io_mem_perf_tlbMiss_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_0_perf_blocked_0 = io_mem_perf_blocked_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  wire        io_requestor_1_perf_blocked_0 = io_mem_perf_blocked_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_0_perf_canAcceptStoreThenLoad_0 =
-    io_mem_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_1_perf_canAcceptStoreThenLoad_0 =
-    io_mem_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_0_perf_canAcceptStoreThenRMW_0 =
-    io_mem_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_1_perf_canAcceptStoreThenRMW_0 =
-    io_mem_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_0_perf_canAcceptLoadThenLoad_0 =
-    io_mem_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_1_perf_canAcceptLoadThenLoad_0 =
-    io_mem_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_0_perf_storeBufferEmptyAfterLoad_0 =
-    io_mem_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_1_perf_storeBufferEmptyAfterLoad_0 =
-    io_mem_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_0_perf_storeBufferEmptyAfterStore_0 =
-    io_mem_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_mem_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   wire        io_requestor_1_perf_storeBufferEmptyAfterStore_0 =
-    io_mem_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  reg         s1_id;	// src/main/scala/rocket/HellaCacheArbiter.scala:20:20
-  reg         s2_id;	// src/main/scala/rocket/HellaCacheArbiter.scala:21:24
+    io_mem_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  reg         s1_id;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:20:20
+  reg         s2_id;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:21:24
   wire        io_mem_req_valid_0 =
-    io_requestor_0_req_valid_0 | io_requestor_1_req_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :25:63
+    io_requestor_0_req_valid_0 | io_requestor_1_req_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :25:63
   wire        io_requestor_1_req_ready_0 =
-    io_requestor_0_req_ready_0 & ~io_requestor_0_req_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :28:{64,67}
+    io_requestor_0_req_ready_0 & ~io_requestor_0_req_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :28:{64,67}
   wire [39:0] io_mem_req_bits_addr_0 =
     io_requestor_0_req_valid_0
       ? io_requestor_0_req_bits_addr_0
-      : io_requestor_1_req_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :33:25, :50:26
+      : io_requestor_1_req_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :33:25, :50:26
   wire [4:0]  io_mem_req_bits_cmd_0 =
-    io_requestor_0_req_valid_0 ? 5'h0 : io_requestor_1_req_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+    io_requestor_0_req_valid_0 ? 5'h0 : io_requestor_1_req_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
   wire [1:0]  io_mem_req_bits_size_0 =
-    io_requestor_0_req_valid_0 ? 2'h3 : io_requestor_1_req_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+    io_requestor_0_req_valid_0 ? 2'h3 : io_requestor_1_req_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
   wire        io_mem_req_bits_signed_0 =
-    ~io_requestor_0_req_valid_0 & io_requestor_1_req_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :33:25, :50:26
+    ~io_requestor_0_req_valid_0 & io_requestor_1_req_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :33:25, :50:26
   wire [1:0]  io_mem_req_bits_dprv_0 =
-    io_requestor_0_req_valid_0 ? 2'h1 : io_requestor_1_req_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
+    io_requestor_0_req_valid_0 ? 2'h1 : io_requestor_1_req_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :33:25, :50:26
   wire        io_mem_req_bits_dv_0 =
     io_requestor_0_req_valid_0
       ? io_requestor_0_req_bits_dv_0
-      : io_requestor_1_req_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :33:25, :50:26
+      : io_requestor_1_req_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :33:25, :50:26
   wire        io_mem_req_bits_no_resp_0 =
-    ~io_requestor_0_req_valid_0 & io_requestor_1_req_bits_no_resp_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :33:25, :50:26
+    ~io_requestor_0_req_valid_0 & io_requestor_1_req_bits_no_resp_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :33:25, :50:26
   wire [6:0]  io_mem_req_bits_tag_0 =
-    io_requestor_0_req_valid_0 ? 7'h0 : {io_requestor_1_req_bits_tag_0[5:0], 1'h1};	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :34:29, :50:26
+    io_requestor_0_req_valid_0 ? 7'h0 : {io_requestor_1_req_bits_tag_0[5:0], 1'h1};	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :34:29, :50:26
   wire        io_mem_s1_kill_0 =
-    s1_id ? io_requestor_1_s1_kill_0 : io_requestor_0_s1_kill_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :20:20, :38:24, :51:30
-  wire [63:0] io_mem_s1_data_data_0 = s1_id ? io_requestor_1_s1_data_data_0 : 64'h0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :12:14, :20:20, :33:25, :39:24, :50:26, :51:30
-  wire        tag_hit_1 = io_mem_resp_bits_tag_0[0];	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :60:{41,57}
-  wire        tag_hit = ~tag_hit_1;	// src/main/scala/rocket/HellaCacheArbiter.scala:60:57
-  wire        io_requestor_0_resp_valid_0 = io_mem_resp_valid_0 & tag_hit;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :60:57, :61:39
-  wire        io_requestor_0_s2_nack_0 = io_mem_s2_nack_0 & ~s2_id;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :21:24, :52:21, :68:49
-  wire [6:0]  _GEN = {1'h0, io_mem_resp_bits_tag_0[6:1]};	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :74:{21,45}
-  wire [6:0]  io_requestor_0_resp_bits_tag_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_tag_0 = _GEN;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :74:21
-  wire [6:0]  io_requestor_1_resp_bits_tag_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_tag_0 = _GEN;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :74:21
-  wire        io_requestor_1_resp_valid_0 = io_mem_resp_valid_0 & tag_hit_1;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :60:57, :61:39
-  wire        io_requestor_1_s2_nack_0 = io_mem_s2_nack_0 & s2_id;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :21:24, :68:49
-  always @(posedge clock) begin	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-    s1_id <= ~io_requestor_0_req_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :20:20, :28:67, :34:35, :35:15, :50:26
-    s2_id <= s1_id;	// src/main/scala/rocket/HellaCacheArbiter.scala:20:20, :21:24
+    s1_id ? io_requestor_1_s1_kill_0 : io_requestor_0_s1_kill_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :20:20, :38:24, :51:30
+  wire [63:0] io_mem_s1_data_data_0 = s1_id ? io_requestor_1_s1_data_data_0 : 64'h0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :12:14, :20:20, :33:25, :39:24, :50:26, :51:30
+  wire        tag_hit_1 = io_mem_resp_bits_tag_0[0];	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :60:{41,57}
+  wire        tag_hit = ~tag_hit_1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:60:57
+  wire        io_requestor_0_resp_valid_0 = io_mem_resp_valid_0 & tag_hit;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :60:57, :61:39
+  wire        io_requestor_0_s2_nack_0 = io_mem_s2_nack_0 & ~s2_id;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :21:24, :52:21, :68:49
+  wire [6:0]  _GEN = {1'h0, io_mem_resp_bits_tag_0[6:1]};	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :74:{21,45}
+  wire [6:0]  io_requestor_0_resp_bits_tag_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_tag_0 = _GEN;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :74:21
+  wire [6:0]  io_requestor_1_resp_bits_tag_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_tag_0 = _GEN;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :74:21
+  wire        io_requestor_1_resp_valid_0 = io_mem_resp_valid_0 & tag_hit_1;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :60:57, :61:39
+  wire        io_requestor_1_s2_nack_0 = io_mem_s2_nack_0 & s2_id;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :21:24, :68:49
+  always @(posedge clock) begin	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+    s1_id <= ~io_requestor_0_req_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :20:20, :28:67, :34:35, :35:15, :50:26
+    s2_id <= s1_id;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:20:20, :21:24
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-        `INIT_RANDOM_PROLOG_	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    initial begin	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+      automatic logic [31:0] _RANDOM[0:0];	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-        s1_id = _RANDOM[/*Zero width*/ 1'b0][0];	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :20:20
-        s2_id = _RANDOM[/*Zero width*/ 1'b0][1];	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7, :20:20, :21:24
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+        _RANDOM[/*Zero width*/ 1'b0] = `RANDOM;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+        s1_id = _RANDOM[/*Zero width*/ 1'b0][0];	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :20:20
+        s2_id = _RANDOM[/*Zero width*/ 1'b0][1];	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7, :20:20, :21:24
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  assign io_requestor_0_req_ready = io_requestor_0_req_ready_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_nack = io_requestor_0_s2_nack_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_nack_cause_raw = io_requestor_0_s2_nack_cause_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_uncached = io_requestor_0_s2_uncached_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_paddr = io_requestor_0_s2_paddr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_valid = io_requestor_0_resp_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_addr = io_requestor_0_resp_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_tag = io_requestor_0_resp_bits_tag_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_cmd = io_requestor_0_resp_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_size = io_requestor_0_resp_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_signed = io_requestor_0_resp_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_dprv = io_requestor_0_resp_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_dv = io_requestor_0_resp_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_data = io_requestor_0_resp_bits_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_mask = io_requestor_0_resp_bits_mask_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_replay = io_requestor_0_resp_bits_replay_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_has_data = io_requestor_0_resp_bits_has_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_req_ready = io_requestor_0_req_ready_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_nack = io_requestor_0_s2_nack_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_nack_cause_raw = io_requestor_0_s2_nack_cause_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_uncached = io_requestor_0_s2_uncached_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_paddr = io_requestor_0_s2_paddr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_valid = io_requestor_0_resp_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_addr = io_requestor_0_resp_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_tag = io_requestor_0_resp_bits_tag_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_cmd = io_requestor_0_resp_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_size = io_requestor_0_resp_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_signed = io_requestor_0_resp_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_dprv = io_requestor_0_resp_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_dv = io_requestor_0_resp_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_data = io_requestor_0_resp_bits_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_mask = io_requestor_0_resp_bits_mask_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_replay = io_requestor_0_resp_bits_replay_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_has_data = io_requestor_0_resp_bits_has_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_resp_bits_data_word_bypass =
-    io_requestor_0_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_data_raw = io_requestor_0_resp_bits_data_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_resp_bits_store_data = io_requestor_0_resp_bits_store_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_replay_next = io_requestor_0_replay_next_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_ma_ld = io_requestor_0_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_ma_st = io_requestor_0_s2_xcpt_ma_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_pf_ld = io_requestor_0_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_pf_st = io_requestor_0_s2_xcpt_pf_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_ae_ld = io_requestor_0_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_xcpt_ae_st = io_requestor_0_s2_xcpt_ae_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_s2_gpa = io_requestor_0_s2_gpa_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_ordered = io_requestor_0_ordered_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_store_pending = io_requestor_0_store_pending_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_perf_acquire = io_requestor_0_perf_acquire_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_perf_release = io_requestor_0_perf_release_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_perf_grant = io_requestor_0_perf_grant_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_perf_tlbMiss = io_requestor_0_perf_tlbMiss_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_0_perf_blocked = io_requestor_0_perf_blocked_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_data_raw = io_requestor_0_resp_bits_data_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_resp_bits_store_data = io_requestor_0_resp_bits_store_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_replay_next = io_requestor_0_replay_next_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_ma_ld = io_requestor_0_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_ma_st = io_requestor_0_s2_xcpt_ma_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_pf_ld = io_requestor_0_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_pf_st = io_requestor_0_s2_xcpt_pf_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_ae_ld = io_requestor_0_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_xcpt_ae_st = io_requestor_0_s2_xcpt_ae_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_s2_gpa = io_requestor_0_s2_gpa_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_ordered = io_requestor_0_ordered_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_store_pending = io_requestor_0_store_pending_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_perf_acquire = io_requestor_0_perf_acquire_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_perf_release = io_requestor_0_perf_release_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_perf_grant = io_requestor_0_perf_grant_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_perf_tlbMiss = io_requestor_0_perf_tlbMiss_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_0_perf_blocked = io_requestor_0_perf_blocked_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_perf_canAcceptStoreThenLoad =
-    io_requestor_0_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_perf_canAcceptStoreThenRMW =
-    io_requestor_0_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_perf_canAcceptLoadThenLoad =
-    io_requestor_0_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_perf_storeBufferEmptyAfterLoad =
-    io_requestor_0_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_0_perf_storeBufferEmptyAfterStore =
-    io_requestor_0_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_req_ready = io_requestor_1_req_ready_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_nack = io_requestor_1_s2_nack_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_nack_cause_raw = io_requestor_1_s2_nack_cause_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_uncached = io_requestor_1_s2_uncached_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_paddr = io_requestor_1_s2_paddr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_valid = io_requestor_1_resp_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_addr = io_requestor_1_resp_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_tag = io_requestor_1_resp_bits_tag_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_cmd = io_requestor_1_resp_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_size = io_requestor_1_resp_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_signed = io_requestor_1_resp_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_dprv = io_requestor_1_resp_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_dv = io_requestor_1_resp_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_data = io_requestor_1_resp_bits_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_mask = io_requestor_1_resp_bits_mask_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_replay = io_requestor_1_resp_bits_replay_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_has_data = io_requestor_1_resp_bits_has_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_0_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_req_ready = io_requestor_1_req_ready_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_nack = io_requestor_1_s2_nack_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_nack_cause_raw = io_requestor_1_s2_nack_cause_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_uncached = io_requestor_1_s2_uncached_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_paddr = io_requestor_1_s2_paddr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_valid = io_requestor_1_resp_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_addr = io_requestor_1_resp_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_tag = io_requestor_1_resp_bits_tag_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_cmd = io_requestor_1_resp_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_size = io_requestor_1_resp_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_signed = io_requestor_1_resp_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_dprv = io_requestor_1_resp_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_dv = io_requestor_1_resp_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_data = io_requestor_1_resp_bits_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_mask = io_requestor_1_resp_bits_mask_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_replay = io_requestor_1_resp_bits_replay_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_has_data = io_requestor_1_resp_bits_has_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_resp_bits_data_word_bypass =
-    io_requestor_1_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_data_raw = io_requestor_1_resp_bits_data_raw_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_resp_bits_store_data = io_requestor_1_resp_bits_store_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_replay_next = io_requestor_1_replay_next_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_ma_ld = io_requestor_1_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_ma_st = io_requestor_1_s2_xcpt_ma_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_pf_ld = io_requestor_1_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_pf_st = io_requestor_1_s2_xcpt_pf_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_ae_ld = io_requestor_1_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_xcpt_ae_st = io_requestor_1_s2_xcpt_ae_st_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_s2_gpa = io_requestor_1_s2_gpa_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_ordered = io_requestor_1_ordered_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_store_pending = io_requestor_1_store_pending_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_perf_acquire = io_requestor_1_perf_acquire_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_perf_release = io_requestor_1_perf_release_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_perf_grant = io_requestor_1_perf_grant_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_perf_tlbMiss = io_requestor_1_perf_tlbMiss_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_requestor_1_perf_blocked = io_requestor_1_perf_blocked_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_resp_bits_data_word_bypass_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_data_raw = io_requestor_1_resp_bits_data_raw_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_resp_bits_store_data = io_requestor_1_resp_bits_store_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_replay_next = io_requestor_1_replay_next_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_ma_ld = io_requestor_1_s2_xcpt_ma_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_ma_st = io_requestor_1_s2_xcpt_ma_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_pf_ld = io_requestor_1_s2_xcpt_pf_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_pf_st = io_requestor_1_s2_xcpt_pf_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_ae_ld = io_requestor_1_s2_xcpt_ae_ld_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_xcpt_ae_st = io_requestor_1_s2_xcpt_ae_st_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_s2_gpa = io_requestor_1_s2_gpa_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_ordered = io_requestor_1_ordered_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_store_pending = io_requestor_1_store_pending_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_perf_acquire = io_requestor_1_perf_acquire_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_perf_release = io_requestor_1_perf_release_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_perf_grant = io_requestor_1_perf_grant_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_perf_tlbMiss = io_requestor_1_perf_tlbMiss_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_requestor_1_perf_blocked = io_requestor_1_perf_blocked_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_perf_canAcceptStoreThenLoad =
-    io_requestor_1_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_perf_canAcceptStoreThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_perf_canAcceptStoreThenRMW =
-    io_requestor_1_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_perf_canAcceptStoreThenRMW_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_perf_canAcceptLoadThenLoad =
-    io_requestor_1_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_perf_canAcceptLoadThenLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_perf_storeBufferEmptyAfterLoad =
-    io_requestor_1_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_perf_storeBufferEmptyAfterLoad_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
   assign io_requestor_1_perf_storeBufferEmptyAfterStore =
-    io_requestor_1_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_valid = io_mem_req_valid_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_addr = io_mem_req_bits_addr_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_tag = io_mem_req_bits_tag_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_cmd = io_mem_req_bits_cmd_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_size = io_mem_req_bits_size_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_signed = io_mem_req_bits_signed_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_dprv = io_mem_req_bits_dprv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_dv = io_mem_req_bits_dv_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_phys = io_mem_req_bits_phys_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_req_bits_no_resp = io_mem_req_bits_no_resp_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_s1_kill = io_mem_s1_kill_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_s1_data_data = io_mem_s1_data_data_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
-  assign io_mem_keep_clock_enabled = io_mem_keep_clock_enabled_0;	// src/main/scala/rocket/HellaCacheArbiter.scala:10:7
+    io_requestor_1_perf_storeBufferEmptyAfterStore_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_valid = io_mem_req_valid_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_addr = io_mem_req_bits_addr_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_tag = io_mem_req_bits_tag_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_cmd = io_mem_req_bits_cmd_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_size = io_mem_req_bits_size_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_signed = io_mem_req_bits_signed_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_dprv = io_mem_req_bits_dprv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_dv = io_mem_req_bits_dv_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_phys = io_mem_req_bits_phys_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_req_bits_no_resp = io_mem_req_bits_no_resp_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_s1_kill = io_mem_s1_kill_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_s1_data_data = io_mem_s1_data_data_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
+  assign io_mem_keep_clock_enabled = io_mem_keep_clock_enabled_0;	// src/main/scala/rocket/rocket_HellaCacheArbiter.scala:10:7
 endmodule
 

@@ -84,42 +84,42 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module RoundAnyRawFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  input         io_invalidExc,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-                io_infiniteExc,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-                io_in_isNaN,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-                io_in_isInf,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-                io_in_isZero,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-                io_in_sign,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  input  [9:0]  io_in_sExp,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  input  [26:0] io_in_sig,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  input         io_detectTininess,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  output [32:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
-  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:57:16
+module rocket_RoundAnyRawFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  input         io_invalidExc,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+                io_infiniteExc,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+                io_in_isNaN,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+                io_in_isInf,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+                io_in_isZero,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+                io_in_sign,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  input  [9:0]  io_in_sExp,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  input  [26:0] io_in_sig,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  input  [2:0]  io_roundingMode,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  input         io_detectTininess,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  output [32:0] io_out,	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
+  output [4:0]  io_exceptionFlags	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:57:16
 );
 
-  wire        io_invalidExc_0 = io_invalidExc;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_infiniteExc_0 = io_infiniteExc;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_in_isNaN_0 = io_in_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_in_isInf_0 = io_in_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_in_isZero_0 = io_in_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_in_sign_0 = io_in_sign;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire [9:0]  io_in_sExp_0 = io_in_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire [26:0] io_in_sig_0 = io_in_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire        io_detectTininess_0 = io_detectTininess;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  wire [26:0] adjustedSig = io_in_sig_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :113:22
-  wire        roundingMode_near_even = io_roundingMode_0 == 3'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :89:53, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:62:24
-  wire        roundingMode_minMag = io_roundingMode_0 == 3'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :90:53
-  wire        roundingMode_min = io_roundingMode_0 == 3'h2;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :91:53
-  wire        roundingMode_max = io_roundingMode_0 == 3'h3;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :92:53, :195:50
-  wire        roundingMode_near_maxMag = io_roundingMode_0 == 3'h4;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :93:53
-  wire        roundingMode_odd = io_roundingMode_0 == 3'h6;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :94:53
+  wire        io_invalidExc_0 = io_invalidExc;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_infiniteExc_0 = io_infiniteExc;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_in_isNaN_0 = io_in_isNaN;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_in_isInf_0 = io_in_isInf;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_in_isZero_0 = io_in_isZero;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_in_sign_0 = io_in_sign;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire [9:0]  io_in_sExp_0 = io_in_sExp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire [26:0] io_in_sig_0 = io_in_sig;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire        io_detectTininess_0 = io_detectTininess;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  wire [26:0] adjustedSig = io_in_sig_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :113:22
+  wire        roundingMode_near_even = io_roundingMode_0 == 3'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :89:53, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:62:24
+  wire        roundingMode_minMag = io_roundingMode_0 == 3'h1;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :90:53
+  wire        roundingMode_min = io_roundingMode_0 == 3'h2;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :91:53
+  wire        roundingMode_max = io_roundingMode_0 == 3'h3;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :92:53, :195:50
+  wire        roundingMode_near_maxMag = io_roundingMode_0 == 3'h4;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :93:53
+  wire        roundingMode_odd = io_roundingMode_0 == 3'h6;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :94:53
   wire        roundMagUp =
-    roundingMode_min & io_in_sign_0 | roundingMode_max & ~io_in_sign_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :91:53, :92:53, :97:{27,42,63,66}
-  wire        doShiftSigDown1 = adjustedSig[26];	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:113:22, :119:57
-  wire [8:0]  _roundMask_T_1 = ~(io_in_sExp_0[8:0]);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :155:37, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:52:21
+    roundingMode_min & io_in_sign_0 | roundingMode_max & ~io_in_sign_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :91:53, :92:53, :97:{27,42,63,66}
+  wire        doShiftSigDown1 = adjustedSig[26];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:113:22, :119:57
+  wire [8:0]  _roundMask_T_1 = ~(io_in_sExp_0[8:0]);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :155:37, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:52:21
   wire        roundMask_msb = _roundMask_T_1[8];	// dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:52:21, :58:25
   wire [7:0]  roundMask_lsbs = _roundMask_T_1[7:0];	// dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:52:21, :59:26
   wire        roundMask_msb_1 = roundMask_lsbs[7];	// dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:58:25, :59:26
@@ -160,16 +160,16 @@ module RoundAnyRawFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/
               roundMask_msb_3
                 ? {roundMask_shift_1[0], roundMask_shift_1[1], roundMask_shift_1[2]}
                 : 3'h0})
-      : 25'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:219:64, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:58:25, :62:24, :67:24, :68:58, :73:{17,21,32}, :76:56, :77:20, :78:22
+      : 25'h0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:219:64, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:58:25, :62:24, :67:24, :68:58, :73:{17,21,32}, :76:56, :77:20, :78:22
   wire [26:0] roundMask =
-    {_roundMask_T_73[24:1], _roundMask_T_73[0] | doShiftSigDown1, 2'h3};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:119:57, :158:{23,42}, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:62:24
-  wire [26:0] shiftedRoundMask = {1'h0, roundMask[26:1]};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:158:42, :161:53, :219:64
-  wire [26:0] roundPosMask = ~shiftedRoundMask & roundMask;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:158:42, :161:53, :162:{28,46}
-  wire        roundPosBit = |(adjustedSig & roundPosMask);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:113:22, :162:46, :163:{40,56}
-  wire        anyRoundExtra = |(adjustedSig & shiftedRoundMask);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:113:22, :161:53, :164:{42,62}
-  wire        anyRound = roundPosBit | anyRoundExtra;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:163:56, :164:62, :165:36
-  wire        _overflow_roundMagUp_T = roundingMode_near_even | roundingMode_near_maxMag;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:89:53, :93:53, :168:38
-  wire        roundIncr = _overflow_roundMagUp_T & roundPosBit | roundMagUp & anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:97:42, :163:56, :165:36, :168:{38,67}, :169:31, :170:29
+    {_roundMask_T_73[24:1], _roundMask_T_73[0] | doShiftSigDown1, 2'h3};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:119:57, :158:{23,42}, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:62:24
+  wire [26:0] shiftedRoundMask = {1'h0, roundMask[26:1]};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:158:42, :161:53, :219:64
+  wire [26:0] roundPosMask = ~shiftedRoundMask & roundMask;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:158:42, :161:53, :162:{28,46}
+  wire        roundPosBit = |(adjustedSig & roundPosMask);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:113:22, :162:46, :163:{40,56}
+  wire        anyRoundExtra = |(adjustedSig & shiftedRoundMask);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:113:22, :161:53, :164:{42,62}
+  wire        anyRound = roundPosBit | anyRoundExtra;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:163:56, :164:62, :165:36
+  wire        _overflow_roundMagUp_T = roundingMode_near_even | roundingMode_near_maxMag;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:89:53, :93:53, :168:38
+  wire        roundIncr = _overflow_roundMagUp_T & roundPosBit | roundMagUp & anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:97:42, :163:56, :165:36, :168:{38,67}, :169:31, :170:29
   wire [25:0] roundedSig =
     roundIncr
       ? {1'h0, adjustedSig[26:2] | roundMask[26:2]} + 26'h1
@@ -177,52 +177,52 @@ module RoundAnyRawFNToRecFN(	// dependencies/hardfloat/hardfloat/src/main/scala/
               ? roundMask[26:1]
               : 26'h0)
       : {1'h0, adjustedSig[26:2] & ~(roundMask[26:2])}
-        | (roundingMode_odd & anyRound ? roundPosMask[26:1] : 26'h0);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:89:53, :94:53, :113:22, :158:42, :162:46, :163:56, :164:62, :165:36, :169:31, :172:16, :173:{32,49,57}, :174:{21,25,64}, :175:30, :176:35, :179:{30,32,43,47}, :180:{24,42,67}, :219:64
-  wire [10:0] sRoundedExp = {io_in_sExp_0[9], io_in_sExp_0} + {9'h0, roundedSig[25:24]};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :172:16, :184:{40,54}, :252:18
-  wire [8:0]  common_expOut = sRoundedExp[8:0];	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:121:31, :184:40, :186:37
-  wire [22:0] common_fractOut = doShiftSigDown1 ? roundedSig[23:1] : roundedSig[22:0];	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:119:57, :122:31, :172:16, :188:16, :189:27, :190:27
-  wire        common_overflow = $signed(sRoundedExp[10:7]) > 4'sh2;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:123:37, :184:40, :195:{30,50}
-  wire        common_totalUnderflow = $signed(sRoundedExp) < 11'sh6B;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:124:37, :184:40, :199:31
+        | (roundingMode_odd & anyRound ? roundPosMask[26:1] : 26'h0);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:89:53, :94:53, :113:22, :158:42, :162:46, :163:56, :164:62, :165:36, :169:31, :172:16, :173:{32,49,57}, :174:{21,25,64}, :175:30, :176:35, :179:{30,32,43,47}, :180:{24,42,67}, :219:64
+  wire [10:0] sRoundedExp = {io_in_sExp_0[9], io_in_sExp_0} + {9'h0, roundedSig[25:24]};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :172:16, :184:{40,54}, :252:18
+  wire [8:0]  common_expOut = sRoundedExp[8:0];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:121:31, :184:40, :186:37
+  wire [22:0] common_fractOut = doShiftSigDown1 ? roundedSig[23:1] : roundedSig[22:0];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:119:57, :122:31, :172:16, :188:16, :189:27, :190:27
+  wire        common_overflow = $signed(sRoundedExp[10:7]) > 4'sh2;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:123:37, :184:40, :195:{30,50}
+  wire        common_totalUnderflow = $signed(sRoundedExp) < 11'sh6B;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:124:37, :184:40, :199:31
   wire        unboundedRange_roundPosBit =
-    doShiftSigDown1 ? adjustedSig[2] : adjustedSig[1];	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:113:22, :119:57, :202:{16,45,61}
+    doShiftSigDown1 ? adjustedSig[2] : adjustedSig[1];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:113:22, :119:57, :202:{16,45,61}
   wire        unboundedRange_anyRound =
-    doShiftSigDown1 & adjustedSig[2] | (|(adjustedSig[1:0]));	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:113:22, :119:57, :202:45, :204:{30,49,63,70}
+    doShiftSigDown1 & adjustedSig[2] | (|(adjustedSig[1:0]));	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:113:22, :119:57, :202:45, :204:{30,49,63,70}
   wire        unboundedRange_roundIncr =
     _overflow_roundMagUp_T & unboundedRange_roundPosBit | roundMagUp
-    & unboundedRange_anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:97:42, :168:38, :202:16, :204:49, :206:67, :207:46, :208:29
-  wire        roundCarry = doShiftSigDown1 ? roundedSig[25] : roundedSig[24];	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:119:57, :172:16, :210:16, :211:27, :212:27
+    & unboundedRange_anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:97:42, :168:38, :202:16, :204:49, :206:67, :207:46, :208:29
+  wire        roundCarry = doShiftSigDown1 ? roundedSig[25] : roundedSig[24];	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:119:57, :172:16, :210:16, :211:27, :212:27
   wire        common_underflow =
     common_totalUnderflow | anyRound & io_in_sExp_0[9:8] != 2'h1
     & (doShiftSigDown1 ? roundMask[3] : roundMask[2])
     & ~(io_detectTininess_0 & ~(doShiftSigDown1 ? roundMask[4] : roundMask[3])
-        & roundCarry & roundPosBit & unboundedRange_roundIncr);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :119:57, :124:37, :125:37, :158:42, :163:56, :165:36, :207:46, :210:16, :216:40, :219:{49,64}, :220:{30,57,71,76}, :221:27, :222:{34,39}, :223:49, :226:60, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:77:20
-  wire        common_inexact = common_totalUnderflow | anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:124:37, :126:37, :165:36, :229:49
-  wire        isNaNOut = io_invalidExc_0 | io_in_isNaN_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :234:34
-  wire        notNaN_isSpecialInfOut = io_infiniteExc_0 | io_in_isInf_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :235:49
-  wire        commonCase = ~isNaNOut & ~notNaN_isSpecialInfOut & ~io_in_isZero_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :234:34, :235:49, :236:{22,36,61,64}
-  wire        overflow = commonCase & common_overflow;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:123:37, :236:61, :237:32
-  wire        underflow = commonCase & common_underflow;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:125:37, :236:61, :238:32
-  wire        inexact = overflow | commonCase & common_inexact;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:126:37, :236:61, :237:32, :239:{28,43}
-  wire        overflow_roundMagUp = _overflow_roundMagUp_T | roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:97:42, :168:38, :242:60
+        & roundCarry & roundPosBit & unboundedRange_roundIncr);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :119:57, :124:37, :125:37, :158:42, :163:56, :165:36, :207:46, :210:16, :216:40, :219:{49,64}, :220:{30,57,71,76}, :221:27, :222:{34,39}, :223:49, :226:60, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:77:20
+  wire        common_inexact = common_totalUnderflow | anyRound;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:124:37, :126:37, :165:36, :229:49
+  wire        isNaNOut = io_invalidExc_0 | io_in_isNaN_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :234:34
+  wire        notNaN_isSpecialInfOut = io_infiniteExc_0 | io_in_isInf_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :235:49
+  wire        commonCase = ~isNaNOut & ~notNaN_isSpecialInfOut & ~io_in_isZero_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :234:34, :235:49, :236:{22,36,61,64}
+  wire        overflow = commonCase & common_overflow;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:123:37, :236:61, :237:32
+  wire        underflow = commonCase & common_underflow;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:125:37, :236:61, :238:32
+  wire        inexact = overflow | commonCase & common_inexact;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:126:37, :236:61, :237:32, :239:{28,43}
+  wire        overflow_roundMagUp = _overflow_roundMagUp_T | roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:97:42, :168:38, :242:60
   wire        pegMinNonzeroMagOut =
-    commonCase & common_totalUnderflow & (roundMagUp | roundingMode_odd);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:94:53, :97:42, :124:37, :236:61, :244:{45,60}
-  wire        pegMaxFiniteMagOut = overflow & ~overflow_roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:237:32, :242:60, :245:{39,42}
-  wire        notNaN_isInfOut = notNaN_isSpecialInfOut | overflow & overflow_roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:235:49, :237:32, :242:60, :247:{32,45}
-  wire        signOut = ~isNaNOut & io_in_sign_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :234:34, :249:22
+    commonCase & common_totalUnderflow & (roundMagUp | roundingMode_odd);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:94:53, :97:42, :124:37, :236:61, :244:{45,60}
+  wire        pegMaxFiniteMagOut = overflow & ~overflow_roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:237:32, :242:60, :245:{39,42}
+  wire        notNaN_isInfOut = notNaN_isSpecialInfOut | overflow & overflow_roundMagUp;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:235:49, :237:32, :242:60, :247:{32,45}
+  wire        signOut = ~isNaNOut & io_in_sign_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :234:34, :249:22
   wire [8:0]  expOut =
     common_expOut & ~(io_in_isZero_0 | common_totalUnderflow ? 9'h1C0 : 9'h0)
     & ~(pegMinNonzeroMagOut ? 9'h194 : 9'h0) & {1'h1, ~pegMaxFiniteMagOut, 7'h7F}
     & {2'h3, ~notNaN_isInfOut, 6'h3F} | (pegMinNonzeroMagOut ? 9'h6B : 9'h0)
     | (pegMaxFiniteMagOut ? 9'h17F : 9'h0) | (notNaN_isInfOut ? 9'h180 : 9'h0)
-    | (isNaNOut ? 9'h1C0 : 9'h0);	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :121:31, :124:37, :158:42, :173:49, :234:34, :244:45, :245:39, :247:32, :252:{14,18,32}, :256:{14,18}, :257:19, :260:{14,18}, :263:17, :264:{14,18}, :268:16, :272:16, :276:{16,73}, :277:16
+    | (isNaNOut ? 9'h1C0 : 9'h0);	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :121:31, :124:37, :158:42, :173:49, :234:34, :244:45, :245:39, :247:32, :252:{14,18,32}, :256:{14,18}, :257:19, :260:{14,18}, :263:17, :264:{14,18}, :268:16, :272:16, :276:{16,73}, :277:16
   wire [22:0] fractOut =
     (isNaNOut | io_in_isZero_0 | common_totalUnderflow
        ? {isNaNOut, 22'h0}
-       : common_fractOut) | {23{pegMaxFiniteMagOut}};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :122:31, :124:37, :234:34, :245:39, :279:{12,38}, :280:16, :282:11, :283:13, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:73:21
-  wire [32:0] io_out_0 = {signOut, expOut, fractOut};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :249:22, :276:73, :282:11, :285:33
+       : common_fractOut) | {23{pegMaxFiniteMagOut}};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :122:31, :124:37, :234:34, :245:39, :279:{12,38}, :280:16, :282:11, :283:13, dependencies/hardfloat/hardfloat/src/main/scala/primitives.scala:73:21
+  wire [32:0] io_out_0 = {signOut, expOut, fractOut};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :249:22, :276:73, :282:11, :285:33
   wire [4:0]  io_exceptionFlags_0 =
-    {io_invalidExc_0, io_infiniteExc_0, overflow, underflow, inexact};	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5, :237:32, :238:32, :239:28, :287:66
-  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
-  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/RoundAnyRawFNToRecFN.scala:48:5
+    {io_invalidExc_0, io_infiniteExc_0, overflow, underflow, inexact};	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5, :237:32, :238:32, :239:28, :287:66
+  assign io_out = io_out_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
+  assign io_exceptionFlags = io_exceptionFlags_0;	// dependencies/hardfloat/hardfloat/src/main/scala/rocket_RoundAnyRawFNToRecFN.scala:48:5
 endmodule
 

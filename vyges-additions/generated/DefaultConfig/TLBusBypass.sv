@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLBusBypass(	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
+module rocket_TLBusBypass(	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
   input         clock,	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
                 reset,	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
                 auto_node_out_out_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -268,7 +268,7 @@ module TLBusBypass(	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
   assign nodeOutOut_a_bits_address = nodeOutIn_a_bits_address;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOutOut_a_bits_data = nodeOutIn_a_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
   assign nodeOutOut_d_ready = nodeOutIn_d_ready;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  TLBusBypassBar bar (	// src/main/scala/devices/tilelink/BusBypass.scala:20:33
+  rocket_TLBusBypassBar bar (	// src/main/scala/devices/tilelink/BusBypass.scala:20:33
     .clock                     (clock),
     .reset                     (reset),
     .auto_in_a_ready           (nodeInOut_a_ready),
@@ -315,7 +315,7 @@ module TLBusBypass(	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
     .auto_out_0_d_bits_corrupt (_error_auto_in_d_bits_corrupt),	// src/main/scala/devices/tilelink/BusBypass.scala:30:40
     .io_bypass                 (io_bypass_0)	// src/main/scala/devices/tilelink/BusBypass.scala:44:9
   );
-  TLError_1 error (	// src/main/scala/devices/tilelink/BusBypass.scala:30:40
+  rocket_TLError_1 error (	// src/main/scala/devices/tilelink/BusBypass.scala:30:40
     .clock                  (clock),
     .reset                  (reset),
     .auto_in_a_ready        (_error_auto_in_a_ready),

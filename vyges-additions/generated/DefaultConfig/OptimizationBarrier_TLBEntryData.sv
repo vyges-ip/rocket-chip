@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module OptimizationBarrier_TLBEntryData(	// src/main/scala/util/package.scala:268:30
+module rocket_OptimizationBarrier_TLBEntryData(	// src/main/scala/util/package.scala:268:30
   input  [19:0] io_x_ppn,	// src/main/scala/util/package.scala:269:18
   input         io_x_u,	// src/main/scala/util/package.scala:269:18
                 io_x_g,	// src/main/scala/util/package.scala:269:18

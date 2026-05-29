@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLDebugModuleInnerAsync(	// src/main/scala/devices/debug/Debug.scala:1870:9
+module rocket_TLDebugModuleInnerAsync(	// src/main/scala/devices/debug/Debug.scala:1870:9
   input  [2:0]  auto_dmiXing_in_a_mem_0_opcode,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [8:0]  auto_dmiXing_in_a_mem_0_address,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
   input  [31:0] auto_dmiXing_in_a_mem_0_data,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -271,7 +271,7 @@ module TLDebugModuleInnerAsync(	// src/main/scala/devices/debug/Debug.scala:1870
   wire        childClock = io_debug_clock_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31, src/main/scala/devices/debug/Debug.scala:1870:9
   wire        childReset = io_debug_reset_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31, src/main/scala/devices/debug/Debug.scala:1870:9
   wire        dmactive_synced;	// src/main/scala/util/ShiftReg.scala:48:24
-  TLDebugModuleInner dmInner (	// src/main/scala/devices/debug/Debug.scala:1856:27
+  rocket_TLDebugModuleInner dmInner (	// src/main/scala/devices/debug/Debug.scala:1856:27
     .clock                          (io_debug_clock_0),	// src/main/scala/devices/debug/Debug.scala:1870:9
     .reset                          (io_debug_reset_0),	// src/main/scala/devices/debug/Debug.scala:1870:9
     .auto_tl_in_a_ready             (auto_dmInner_tl_in_a_ready_0),
@@ -326,7 +326,7 @@ module TLDebugModuleInnerAsync(	// src/main/scala/devices/debug/Debug.scala:1870
     .io_tl_clock                    (io_tl_clock_0),	// src/main/scala/devices/debug/Debug.scala:1870:9
     .io_tl_reset                    (io_tl_reset_0)	// src/main/scala/devices/debug/Debug.scala:1870:9
   );
-  TLAsyncCrossingSink_a9d32s1k1z2u dmiXing (	// src/main/scala/devices/debug/Debug.scala:1857:27
+  rocket_TLAsyncCrossingSink_a9d32s1k1z2u dmiXing (	// src/main/scala/devices/debug/Debug.scala:1857:27
     .clock                         (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                         (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_mem_0_opcode        (auto_dmiXing_in_a_mem_0_opcode_0),	// src/main/scala/devices/debug/Debug.scala:1870:9
@@ -365,13 +365,13 @@ module TLDebugModuleInnerAsync(	// src/main/scala/devices/debug/Debug.scala:1870
     .auto_out_d_bits_source        (_dmInner_auto_dmi_in_d_bits_source),	// src/main/scala/devices/debug/Debug.scala:1856:27
     .auto_out_d_bits_data          (_dmInner_auto_dmi_in_d_bits_data)	// src/main/scala/devices/debug/Debug.scala:1856:27
   );
-  AsyncResetSynchronizerShiftReg_w1_d3_i0 dmactive_synced_dmactive_synced_dmactiveSync (	// src/main/scala/util/ShiftReg.scala:45:23
+  rocket_AsyncResetSynchronizerShiftReg_w1_d3_i0 dmactive_synced_dmactive_synced_dmactiveSync (	// src/main/scala/util/ShiftReg.scala:45:23
     .clock (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .io_d  (io_dmactive_0),	// src/main/scala/devices/debug/Debug.scala:1870:9
     .io_q  (dmactive_synced)
   );
-  AsyncQueueSink_DebugInternalBundle dmactive_synced_dmInner_io_innerCtrl_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
+  rocket_AsyncQueueSink_DebugInternalBundle dmactive_synced_dmInner_io_innerCtrl_sink (	// src/main/scala/util/AsyncQueue.scala:211:22
     .clock                        (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                        (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .io_deq_valid

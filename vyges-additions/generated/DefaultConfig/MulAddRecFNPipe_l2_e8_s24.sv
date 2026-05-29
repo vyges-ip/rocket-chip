@@ -84,65 +84,65 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
-  input         clock,	// src/main/scala/tile/FPU.scala:633:7
-                reset,	// src/main/scala/tile/FPU.scala:633:7
-                io_validin,	// src/main/scala/tile/FPU.scala:638:16
-  input  [1:0]  io_op,	// src/main/scala/tile/FPU.scala:638:16
-  input  [32:0] io_a,	// src/main/scala/tile/FPU.scala:638:16
-                io_b,	// src/main/scala/tile/FPU.scala:638:16
-                io_c,	// src/main/scala/tile/FPU.scala:638:16
-  input  [2:0]  io_roundingMode,	// src/main/scala/tile/FPU.scala:638:16
-  output [32:0] io_out,	// src/main/scala/tile/FPU.scala:638:16
-  output [4:0]  io_exceptionFlags,	// src/main/scala/tile/FPU.scala:638:16
-  output        io_validout	// src/main/scala/tile/FPU.scala:638:16
+module rocket_MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/rocket_FPU.scala:633:7
+  input         clock,	// src/main/scala/tile/rocket_FPU.scala:633:7
+                reset,	// src/main/scala/tile/rocket_FPU.scala:633:7
+                io_validin,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  input  [1:0]  io_op,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  input  [32:0] io_a,	// src/main/scala/tile/rocket_FPU.scala:638:16
+                io_b,	// src/main/scala/tile/rocket_FPU.scala:638:16
+                io_c,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  input  [2:0]  io_roundingMode,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  output [32:0] io_out,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  output [4:0]  io_exceptionFlags,	// src/main/scala/tile/rocket_FPU.scala:638:16
+  output        io_validout	// src/main/scala/tile/rocket_FPU.scala:638:16
 );
 
-  wire [4:0]  io_exceptionFlags_0;	// src/main/scala/tile/FPU.scala:633:7
-  wire [32:0] io_out_0;	// src/main/scala/tile/FPU.scala:633:7
-  wire        _mulAddRecFNToRaw_postMul_io_invalidExc;	// src/main/scala/tile/FPU.scala:655:42
-  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isNaN;	// src/main/scala/tile/FPU.scala:655:42
-  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isInf;	// src/main/scala/tile/FPU.scala:655:42
-  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isZero;	// src/main/scala/tile/FPU.scala:655:42
-  wire        _mulAddRecFNToRaw_postMul_io_rawOut_sign;	// src/main/scala/tile/FPU.scala:655:42
-  wire [9:0]  _mulAddRecFNToRaw_postMul_io_rawOut_sExp;	// src/main/scala/tile/FPU.scala:655:42
-  wire [26:0] _mulAddRecFNToRaw_postMul_io_rawOut_sig;	// src/main/scala/tile/FPU.scala:655:42
-  wire [23:0] _mulAddRecFNToRaw_preMul_io_mulAddA;	// src/main/scala/tile/FPU.scala:654:41
-  wire [23:0] _mulAddRecFNToRaw_preMul_io_mulAddB;	// src/main/scala/tile/FPU.scala:654:41
-  wire [47:0] _mulAddRecFNToRaw_preMul_io_mulAddC;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isSigNaNAny;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNAOrB;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfA;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroA;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfB;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroB;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_signProd;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNC;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfC;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroC;	// src/main/scala/tile/FPU.scala:654:41
-  wire [9:0]  _mulAddRecFNToRaw_preMul_io_toPostMul_sExpSum;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_doSubMags;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_CIsDominant;	// src/main/scala/tile/FPU.scala:654:41
-  wire [4:0]  _mulAddRecFNToRaw_preMul_io_toPostMul_CDom_CAlignDist;	// src/main/scala/tile/FPU.scala:654:41
-  wire [25:0] _mulAddRecFNToRaw_preMul_io_toPostMul_highAlignedSigC;	// src/main/scala/tile/FPU.scala:654:41
-  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_bit0AlignedSigC;	// src/main/scala/tile/FPU.scala:654:41
-  wire        io_validin_0 = io_validin;	// src/main/scala/tile/FPU.scala:633:7
-  wire [1:0]  io_op_0 = io_op;	// src/main/scala/tile/FPU.scala:633:7
-  wire [32:0] io_a_0 = io_a;	// src/main/scala/tile/FPU.scala:633:7
-  wire [32:0] io_b_0 = io_b;	// src/main/scala/tile/FPU.scala:633:7
-  wire [32:0] io_c_0 = io_c;	// src/main/scala/tile/FPU.scala:633:7
-  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// src/main/scala/tile/FPU.scala:633:7
+  wire [4:0]  io_exceptionFlags_0;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [32:0] io_out_0;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire        _mulAddRecFNToRaw_postMul_io_invalidExc;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isNaN;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isInf;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire        _mulAddRecFNToRaw_postMul_io_rawOut_isZero;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire        _mulAddRecFNToRaw_postMul_io_rawOut_sign;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire [9:0]  _mulAddRecFNToRaw_postMul_io_rawOut_sExp;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire [26:0] _mulAddRecFNToRaw_postMul_io_rawOut_sig;	// src/main/scala/tile/rocket_FPU.scala:655:42
+  wire [23:0] _mulAddRecFNToRaw_preMul_io_mulAddA;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire [23:0] _mulAddRecFNToRaw_preMul_io_mulAddB;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire [47:0] _mulAddRecFNToRaw_preMul_io_mulAddC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isSigNaNAny;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNAOrB;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfA;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroA;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfB;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroB;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_signProd;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire [9:0]  _mulAddRecFNToRaw_preMul_io_toPostMul_sExpSum;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_doSubMags;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_CIsDominant;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire [4:0]  _mulAddRecFNToRaw_preMul_io_toPostMul_CDom_CAlignDist;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire [25:0] _mulAddRecFNToRaw_preMul_io_toPostMul_highAlignedSigC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        _mulAddRecFNToRaw_preMul_io_toPostMul_bit0AlignedSigC;	// src/main/scala/tile/rocket_FPU.scala:654:41
+  wire        io_validin_0 = io_validin;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [1:0]  io_op_0 = io_op;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [32:0] io_a_0 = io_a;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [32:0] io_b_0 = io_b;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [32:0] io_c_0 = io_c;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  wire [2:0]  io_roundingMode_0 = io_roundingMode;	// src/main/scala/tile/rocket_FPU.scala:633:7
   wire        valid_stage0_pipe_out_bits = 1'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
   wire        io_validout_pipe_out_bits = 1'h0;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
-  wire        io_detectTininess = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:633:7, :669:37
-  wire        detectTininess_stage0 = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:633:7, :669:37
-  wire        detectTininess_stage0_pipe_out_bits = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:633:7, :669:37
+  wire        io_detectTininess = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:633:7, :669:37
+  wire        detectTininess_stage0 = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:633:7, :669:37
+  wire        detectTininess_stage0_pipe_out_bits = 1'h1;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:633:7, :669:37
   wire        io_validout_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21
   wire [48:0] mulAddResult =
     {1'h0,
      {24'h0, _mulAddRecFNToRaw_preMul_io_mulAddA}
        * {24'h0, _mulAddRecFNToRaw_preMul_io_mulAddB}}
-    + {1'h0, _mulAddRecFNToRaw_preMul_io_mulAddC};	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:654:41, :663:45, :664:50
+    + {1'h0, _mulAddRecFNToRaw_preMul_io_mulAddC};	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:654:41, :663:45, :664:50
   wire        valid_stage0_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21
   wire [2:0]  roundingMode_stage0_pipe_out_bits;	// src/main/scala/chisel3/util/Valid.scala:135:21
   reg         mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
@@ -212,12 +212,12 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
   wire        roundingMode_stage0_pipe_out_valid = roundingMode_stage0_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
   reg  [2:0]  roundingMode_stage0_pipe_b;	// src/main/scala/chisel3/util/Valid.scala:142:26
   assign roundingMode_stage0_pipe_out_bits = roundingMode_stage0_pipe_b;	// src/main/scala/chisel3/util/Valid.scala:135:21, :142:26
-  wire [2:0]  roundingMode_stage0 = roundingMode_stage0_pipe_out_bits;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:668:35
+  wire [2:0]  roundingMode_stage0 = roundingMode_stage0_pipe_out_bits;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:668:35
   reg         detectTininess_stage0_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
   wire        detectTininess_stage0_pipe_out_valid = detectTininess_stage0_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
   reg         valid_stage0_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
   assign valid_stage0_pipe_out_valid = valid_stage0_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
-  wire        valid_stage0 = valid_stage0_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:667:28
+  wire        valid_stage0 = valid_stage0_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:667:28
   reg         roundRawFNToRecFN_io_invalidExc_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
   wire        roundRawFNToRecFN_io_invalidExc_pipe_out_valid =
     roundRawFNToRecFN_io_invalidExc_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
@@ -258,9 +258,9 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
     roundRawFNToRecFN_io_detectTininess_pipe_b;	// src/main/scala/chisel3/util/Valid.scala:135:21, :142:26
   reg         io_validout_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:141:24
   assign io_validout_pipe_out_valid = io_validout_pipe_v;	// src/main/scala/chisel3/util/Valid.scala:135:21, :141:24
-  wire        io_validout_0 = io_validout_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/FPU.scala:633:7
-  always @(posedge clock) begin	// src/main/scala/tile/FPU.scala:633:7
-    if (reset) begin	// src/main/scala/tile/FPU.scala:633:7
+  wire        io_validout_0 = io_validout_pipe_out_valid;	// src/main/scala/chisel3/util/Valid.scala:135:21, src/main/scala/tile/rocket_FPU.scala:633:7
+  always @(posedge clock) begin	// src/main/scala/tile/rocket_FPU.scala:633:7
+    if (reset) begin	// src/main/scala/tile/rocket_FPU.scala:633:7
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
       mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
       mulAddRecFNToRaw_postMul_io_roundingMode_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
@@ -273,135 +273,135 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
       roundRawFNToRecFN_io_detectTininess_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
       io_validout_pipe_v <= 1'h0;	// src/main/scala/chisel3/util/Valid.scala:141:24
     end
-    else begin	// src/main/scala/tile/FPU.scala:633:7
-      mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      mulAddRecFNToRaw_postMul_io_roundingMode_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      roundingMode_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      detectTininess_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      valid_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-      roundRawFNToRecFN_io_invalidExc_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:667:28
-      roundRawFNToRecFN_io_in_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:667:28
-      roundRawFNToRecFN_io_roundingMode_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:667:28
-      roundRawFNToRecFN_io_detectTininess_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:667:28
-      io_validout_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:667:28
+    else begin	// src/main/scala/tile/rocket_FPU.scala:633:7
+      mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      mulAddRecFNToRaw_postMul_io_roundingMode_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      roundingMode_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      detectTininess_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      valid_stage0_pipe_v <= io_validin_0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+      roundRawFNToRecFN_io_invalidExc_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:667:28
+      roundRawFNToRecFN_io_in_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:667:28
+      roundRawFNToRecFN_io_roundingMode_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:667:28
+      roundRawFNToRecFN_io_detectTininess_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:667:28
+      io_validout_pipe_v <= valid_stage0;	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:667:28
     end
-    if (io_validin_0) begin	// src/main/scala/tile/FPU.scala:633:7
+    if (io_validin_0) begin	// src/main/scala/tile/rocket_FPU.scala:633:7
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isSigNaNAny <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isSigNaNAny;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isSigNaNAny;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNAOrB <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNAOrB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNAOrB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfA <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfA;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfA;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroA <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroA;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroA;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfB <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroB <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroB;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_signProd <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_signProd;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_signProd;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNC <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isNaNC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfC <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isInfC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroC <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_isZeroC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_sExpSum <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_sExpSum;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_sExpSum;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_doSubMags <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_doSubMags;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_doSubMags;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_CIsDominant <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_CIsDominant;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_CIsDominant;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_CDom_CAlignDist <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_CDom_CAlignDist;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_CDom_CAlignDist;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_highAlignedSigC <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_highAlignedSigC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
+        _mulAddRecFNToRaw_preMul_io_toPostMul_highAlignedSigC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
       mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_bit0AlignedSigC <=
-        _mulAddRecFNToRaw_preMul_io_toPostMul_bit0AlignedSigC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:654:41
-      mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_b <= mulAddResult;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:664:50
-      mulAddRecFNToRaw_postMul_io_roundingMode_pipe_b <= io_roundingMode_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-      roundingMode_stage0_pipe_b <= io_roundingMode_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
+        _mulAddRecFNToRaw_preMul_io_toPostMul_bit0AlignedSigC;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:654:41
+      mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_b <= mulAddResult;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:664:50
+      mulAddRecFNToRaw_postMul_io_roundingMode_pipe_b <= io_roundingMode_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+      roundingMode_stage0_pipe_b <= io_roundingMode_0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
     end
-    if (valid_stage0) begin	// src/main/scala/tile/FPU.scala:667:28
-      roundRawFNToRecFN_io_invalidExc_pipe_b <= _mulAddRecFNToRaw_postMul_io_invalidExc;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_isNaN <= _mulAddRecFNToRaw_postMul_io_rawOut_isNaN;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_isInf <= _mulAddRecFNToRaw_postMul_io_rawOut_isInf;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_isZero <= _mulAddRecFNToRaw_postMul_io_rawOut_isZero;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_sign <= _mulAddRecFNToRaw_postMul_io_rawOut_sign;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_sExp <= _mulAddRecFNToRaw_postMul_io_rawOut_sExp;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_in_pipe_b_sig <= _mulAddRecFNToRaw_postMul_io_rawOut_sig;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:655:42
-      roundRawFNToRecFN_io_roundingMode_pipe_b <= roundingMode_stage0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:668:35
+    if (valid_stage0) begin	// src/main/scala/tile/rocket_FPU.scala:667:28
+      roundRawFNToRecFN_io_invalidExc_pipe_b <= _mulAddRecFNToRaw_postMul_io_invalidExc;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_isNaN <= _mulAddRecFNToRaw_postMul_io_rawOut_isNaN;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_isInf <= _mulAddRecFNToRaw_postMul_io_rawOut_isInf;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_isZero <= _mulAddRecFNToRaw_postMul_io_rawOut_isZero;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_sign <= _mulAddRecFNToRaw_postMul_io_rawOut_sign;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_sExp <= _mulAddRecFNToRaw_postMul_io_rawOut_sExp;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_in_pipe_b_sig <= _mulAddRecFNToRaw_postMul_io_rawOut_sig;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:655:42
+      roundRawFNToRecFN_io_roundingMode_pipe_b <= roundingMode_stage0;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:668:35
     end
     roundRawFNToRecFN_io_detectTininess_pipe_b <=
-      valid_stage0 | roundRawFNToRecFN_io_detectTininess_pipe_b;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:667:28
+      valid_stage0 | roundRawFNToRecFN_io_detectTininess_pipe_b;	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:667:28
   end // always @(posedge)
-  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/FPU.scala:633:7
-    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/FPU.scala:633:7
-      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/FPU.scala:633:7
+  `ifdef ENABLE_INITIAL_REG_	// src/main/scala/tile/rocket_FPU.scala:633:7
+    `ifdef FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_FPU.scala:633:7
+      `FIRRTL_BEFORE_INITIAL	// src/main/scala/tile/rocket_FPU.scala:633:7
     `endif // FIRRTL_BEFORE_INITIAL
-    initial begin	// src/main/scala/tile/FPU.scala:633:7
-      automatic logic [31:0] _RANDOM[0:5];	// src/main/scala/tile/FPU.scala:633:7
-      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/FPU.scala:633:7
-        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/FPU.scala:633:7
+    initial begin	// src/main/scala/tile/rocket_FPU.scala:633:7
+      automatic logic [31:0] _RANDOM[0:5];	// src/main/scala/tile/rocket_FPU.scala:633:7
+      `ifdef INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_FPU.scala:633:7
+        `INIT_RANDOM_PROLOG_	// src/main/scala/tile/rocket_FPU.scala:633:7
       `endif // INIT_RANDOM_PROLOG_
-      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/FPU.scala:633:7
+      `ifdef RANDOMIZE_REG_INIT	// src/main/scala/tile/rocket_FPU.scala:633:7
         for (logic [2:0] i = 3'h0; i < 3'h6; i += 3'h1) begin
-          _RANDOM[i] = `RANDOM;	// src/main/scala/tile/FPU.scala:633:7
-        end	// src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v = _RANDOM[3'h0][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isSigNaNAny = _RANDOM[3'h0][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNAOrB = _RANDOM[3'h0][2];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfA = _RANDOM[3'h0][3];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroA = _RANDOM[3'h0][4];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfB = _RANDOM[3'h0][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroB = _RANDOM[3'h0][6];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_signProd = _RANDOM[3'h0][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNC = _RANDOM[3'h0][8];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfC = _RANDOM[3'h0][9];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroC = _RANDOM[3'h0][10];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_sExpSum = _RANDOM[3'h0][20:11];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_doSubMags = _RANDOM[3'h0][21];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_CIsDominant = _RANDOM[3'h0][22];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
+          _RANDOM[i] = `RANDOM;	// src/main/scala/tile/rocket_FPU.scala:633:7
+        end	// src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_v = _RANDOM[3'h0][0];	// src/main/scala/chisel3/util/Valid.scala:141:24, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isSigNaNAny = _RANDOM[3'h0][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNAOrB = _RANDOM[3'h0][2];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfA = _RANDOM[3'h0][3];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroA = _RANDOM[3'h0][4];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfB = _RANDOM[3'h0][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroB = _RANDOM[3'h0][6];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_signProd = _RANDOM[3'h0][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isNaNC = _RANDOM[3'h0][8];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isInfC = _RANDOM[3'h0][9];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_isZeroC = _RANDOM[3'h0][10];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_sExpSum = _RANDOM[3'h0][20:11];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_doSubMags = _RANDOM[3'h0][21];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_CIsDominant = _RANDOM[3'h0][22];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
         mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_CDom_CAlignDist =
-          _RANDOM[3'h0][27:23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
+          _RANDOM[3'h0][27:23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
         mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_highAlignedSigC =
-          {_RANDOM[3'h0][31:28], _RANDOM[3'h1][21:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_bit0AlignedSigC = _RANDOM[3'h1][22];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_v = _RANDOM[3'h1][23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
+          {_RANDOM[3'h0][31:28], _RANDOM[3'h1][21:0]};	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_b_bit0AlignedSigC = _RANDOM[3'h1][22];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_v = _RANDOM[3'h1][23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
         mulAddRecFNToRaw_postMul_io_mulAddResult_pipe_b =
-          {_RANDOM[3'h1][31:24], _RANDOM[3'h2], _RANDOM[3'h3][8:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_roundingMode_pipe_v = _RANDOM[3'h3][9];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        mulAddRecFNToRaw_postMul_io_roundingMode_pipe_b = _RANDOM[3'h3][12:10];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundingMode_stage0_pipe_v = _RANDOM[3'h3][13];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundingMode_stage0_pipe_b = _RANDOM[3'h3][16:14];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        detectTininess_stage0_pipe_v = _RANDOM[3'h3][17];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        valid_stage0_pipe_v = _RANDOM[3'h3][19];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_invalidExc_pipe_v = _RANDOM[3'h3][21];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_invalidExc_pipe_b = _RANDOM[3'h3][22];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_v = _RANDOM[3'h3][23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_isNaN = _RANDOM[3'h3][24];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_isInf = _RANDOM[3'h3][25];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_isZero = _RANDOM[3'h3][26];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_sign = _RANDOM[3'h3][27];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_sExp = {_RANDOM[3'h3][31:28], _RANDOM[3'h4][5:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_in_pipe_b_sig = {_RANDOM[3'h4][31:6], _RANDOM[3'h5][0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_roundingMode_pipe_v = _RANDOM[3'h5][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_roundingMode_pipe_b = _RANDOM[3'h5][4:2];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_detectTininess_pipe_v = _RANDOM[3'h5][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
-        roundRawFNToRecFN_io_detectTininess_pipe_b = _RANDOM[3'h5][6];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/FPU.scala:633:7
-        io_validout_pipe_v = _RANDOM[3'h5][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/FPU.scala:633:7
+          {_RANDOM[3'h1][31:24], _RANDOM[3'h2], _RANDOM[3'h3][8:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_roundingMode_pipe_v = _RANDOM[3'h3][9];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        mulAddRecFNToRaw_postMul_io_roundingMode_pipe_b = _RANDOM[3'h3][12:10];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundingMode_stage0_pipe_v = _RANDOM[3'h3][13];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundingMode_stage0_pipe_b = _RANDOM[3'h3][16:14];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        detectTininess_stage0_pipe_v = _RANDOM[3'h3][17];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        valid_stage0_pipe_v = _RANDOM[3'h3][19];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_invalidExc_pipe_v = _RANDOM[3'h3][21];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_invalidExc_pipe_b = _RANDOM[3'h3][22];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_v = _RANDOM[3'h3][23];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_isNaN = _RANDOM[3'h3][24];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_isInf = _RANDOM[3'h3][25];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_isZero = _RANDOM[3'h3][26];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_sign = _RANDOM[3'h3][27];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_sExp = {_RANDOM[3'h3][31:28], _RANDOM[3'h4][5:0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_in_pipe_b_sig = {_RANDOM[3'h4][31:6], _RANDOM[3'h5][0]};	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_roundingMode_pipe_v = _RANDOM[3'h5][1];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_roundingMode_pipe_b = _RANDOM[3'h5][4:2];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_detectTininess_pipe_v = _RANDOM[3'h5][5];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        roundRawFNToRecFN_io_detectTininess_pipe_b = _RANDOM[3'h5][6];	// src/main/scala/chisel3/util/Valid.scala:142:26, src/main/scala/tile/rocket_FPU.scala:633:7
+        io_validout_pipe_v = _RANDOM[3'h5][7];	// src/main/scala/chisel3/util/Valid.scala:141:24, :142:26, src/main/scala/tile/rocket_FPU.scala:633:7
       `endif // RANDOMIZE_REG_INIT
     end // initial
-    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/FPU.scala:633:7
-      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/FPU.scala:633:7
+    `ifdef FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_FPU.scala:633:7
+      `FIRRTL_AFTER_INITIAL	// src/main/scala/tile/rocket_FPU.scala:633:7
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  MulAddRecFNToRaw_preMul mulAddRecFNToRaw_preMul (	// src/main/scala/tile/FPU.scala:654:41
-    .io_op                        (io_op_0),	// src/main/scala/tile/FPU.scala:633:7
-    .io_a                         (io_a_0),	// src/main/scala/tile/FPU.scala:633:7
-    .io_b                         (io_b_0),	// src/main/scala/tile/FPU.scala:633:7
-    .io_c                         (io_c_0),	// src/main/scala/tile/FPU.scala:633:7
+  rocket_MulAddRecFNToRaw_preMul mulAddRecFNToRaw_preMul (	// src/main/scala/tile/rocket_FPU.scala:654:41
+    .io_op                        (io_op_0),	// src/main/scala/tile/rocket_FPU.scala:633:7
+    .io_a                         (io_a_0),	// src/main/scala/tile/rocket_FPU.scala:633:7
+    .io_b                         (io_b_0),	// src/main/scala/tile/rocket_FPU.scala:633:7
+    .io_c                         (io_c_0),	// src/main/scala/tile/rocket_FPU.scala:633:7
     .io_mulAddA                   (_mulAddRecFNToRaw_preMul_io_mulAddA),
     .io_mulAddB                   (_mulAddRecFNToRaw_preMul_io_mulAddB),
     .io_mulAddC                   (_mulAddRecFNToRaw_preMul_io_mulAddC),
@@ -422,7 +422,7 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
     .io_toPostMul_highAlignedSigC (_mulAddRecFNToRaw_preMul_io_toPostMul_highAlignedSigC),
     .io_toPostMul_bit0AlignedSigC (_mulAddRecFNToRaw_preMul_io_toPostMul_bit0AlignedSigC)
   );
-  MulAddRecFNToRaw_postMul mulAddRecFNToRaw_postMul (	// src/main/scala/tile/FPU.scala:655:42
+  rocket_MulAddRecFNToRaw_postMul mulAddRecFNToRaw_postMul (	// src/main/scala/tile/rocket_FPU.scala:655:42
     .io_fromPreMul_isSigNaNAny
       (mulAddRecFNToRaw_postMul_io_fromPreMul_pipe_out_bits_isSigNaNAny),	// src/main/scala/chisel3/util/Valid.scala:135:21
     .io_fromPreMul_isNaNAOrB
@@ -467,7 +467,7 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
     .io_rawOut_sExp                (_mulAddRecFNToRaw_postMul_io_rawOut_sExp),
     .io_rawOut_sig                 (_mulAddRecFNToRaw_postMul_io_rawOut_sig)
   );
-  RoundRawFNToRecFN roundRawFNToRecFN (	// src/main/scala/tile/FPU.scala:682:35
+  rocket_RoundRawFNToRecFN roundRawFNToRecFN (	// src/main/scala/tile/rocket_FPU.scala:682:35
     .io_invalidExc     (roundRawFNToRecFN_io_invalidExc_pipe_out_bits),	// src/main/scala/chisel3/util/Valid.scala:135:21
     .io_infiniteExc    (1'h0),	// src/main/scala/chisel3/util/Valid.scala:141:24
     .io_in_isNaN       (roundRawFNToRecFN_io_in_pipe_out_bits_isNaN),	// src/main/scala/chisel3/util/Valid.scala:135:21
@@ -481,8 +481,8 @@ module MulAddRecFNPipe_l2_e8_s24(	// src/main/scala/tile/FPU.scala:633:7
     .io_out            (io_out_0),
     .io_exceptionFlags (io_exceptionFlags_0)
   );
-  assign io_out = io_out_0;	// src/main/scala/tile/FPU.scala:633:7
-  assign io_exceptionFlags = io_exceptionFlags_0;	// src/main/scala/tile/FPU.scala:633:7
-  assign io_validout = io_validout_0;	// src/main/scala/tile/FPU.scala:633:7
+  assign io_out = io_out_0;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  assign io_exceptionFlags = io_exceptionFlags_0;	// src/main/scala/tile/rocket_FPU.scala:633:7
+  assign io_validout = io_validout_0;	// src/main/scala/tile/rocket_FPU.scala:633:7
 endmodule
 

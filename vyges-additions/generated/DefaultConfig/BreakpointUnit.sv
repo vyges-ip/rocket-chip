@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module BreakpointUnit(	// src/main/scala/rocket/Breakpoint.scala:79:7
+module rocket_BreakpointUnit(	// src/main/scala/rocket/Breakpoint.scala:79:7
   input         io_status_debug,	// src/main/scala/rocket/Breakpoint.scala:80:14
                 io_status_cease,	// src/main/scala/rocket/Breakpoint.scala:80:14
                 io_status_wfi,	// src/main/scala/rocket/Breakpoint.scala:80:14

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TLXbar_sbus_i2_o3_a32d64s5k2z4c(	// src/main/scala/tilelink/Xbar.scala:74:9
+module rocket_TLXbar_sbus_i2_o3_a32d64s5k2z4c(	// src/main/scala/tilelink/Xbar.scala:74:9
   input         clock,	// src/main/scala/tilelink/Xbar.scala:74:9
                 reset,	// src/main/scala/tilelink/Xbar.scala:74:9
   output        auto_anon_in_1_a_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -2036,7 +2036,7 @@ module TLXbar_sbus_i2_o3_a32d64s5k2z4c(	// src/main/scala/tilelink/Xbar.scala:74
       `FIRRTL_AFTER_INITIAL	// src/main/scala/tilelink/Xbar.scala:74:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  TLMonitor monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor monitor (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                                  (clock),
     .reset                                  (reset),
     .io_in_a_ready                          (anonIn_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
@@ -2067,7 +2067,7 @@ module TLXbar_sbus_i2_o3_a32d64s5k2z4c(	// src/main/scala/tilelink/Xbar.scala:74
     .io_in_d_bits_data                      (anonIn_d_bits_data),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
     .io_in_d_bits_corrupt                   (anonIn_d_bits_corrupt)	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17
   );
-  TLMonitor_1 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
+  rocket_TLMonitor_1 monitor_1 (	// src/main/scala/tilelink/Nodes.scala:27:25
     .clock                (clock),
     .reset                (reset),
     .io_in_a_ready        (anonIn_1_a_ready),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17

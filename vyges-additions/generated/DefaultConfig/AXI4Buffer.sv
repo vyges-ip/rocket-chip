@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
+module rocket_AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
   input         clock,	// src/main/scala/amba/axi4/Buffer.scala:37:9
                 reset,	// src/main/scala/amba/axi4/Buffer.scala:37:9
   output        auto_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -380,7 +380,7 @@ module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
   assign nodeIn_r_bits_data = nodeIn_r_irr_bits_data;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/chisel3/util/Decoupled.scala:401:19
   assign nodeIn_r_bits_resp = nodeIn_r_irr_bits_resp;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/chisel3/util/Decoupled.scala:401:19
   assign nodeIn_r_bits_last = nodeIn_r_irr_bits_last;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:552:17, src/main/scala/chisel3/util/Decoupled.scala:401:19
-  Queue2_AXI4BundleAW nodeOut_aw_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_AXI4BundleAW nodeOut_aw_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (nodeIn_aw_ready),
@@ -406,7 +406,7 @@ module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
     .io_deq_bits_prot  (nodeOut_aw_irr_bits_prot),
     .io_deq_bits_qos   (nodeOut_aw_irr_bits_qos)
   );
-  Queue2_AXI4BundleW nodeOut_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_AXI4BundleW nodeOut_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (nodeIn_w_ready),
@@ -420,7 +420,7 @@ module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
     .io_deq_bits_strb (nodeOut_w_irr_bits_strb),
     .io_deq_bits_last (nodeOut_w_irr_bits_last)
   );
-  Queue2_AXI4BundleB nodeIn_b_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_AXI4BundleB nodeIn_b_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (nodeOut_b_ready),
@@ -432,7 +432,7 @@ module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
     .io_deq_bits_id   (nodeIn_b_irr_bits_id),
     .io_deq_bits_resp (nodeIn_b_irr_bits_resp)
   );
-  Queue2_AXI4BundleAW nodeOut_ar_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_AXI4BundleAW nodeOut_ar_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock             (clock),
     .reset             (reset),
     .io_enq_ready      (nodeIn_ar_ready),
@@ -458,7 +458,7 @@ module AXI4Buffer(	// src/main/scala/amba/axi4/Buffer.scala:37:9
     .io_deq_bits_prot  (nodeOut_ar_irr_bits_prot),
     .io_deq_bits_qos   (nodeOut_ar_irr_bits_qos)
   );
-  Queue2_AXI4BundleR nodeIn_r_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue2_AXI4BundleR nodeIn_r_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (nodeOut_r_ready),

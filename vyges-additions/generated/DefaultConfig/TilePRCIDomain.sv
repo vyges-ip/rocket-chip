@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module TilePRCIDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
+module rocket_TilePRCIDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   output        auto_intsink_out_2_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_intsink_out_1_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
                 auto_intsink_out_0_0,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -508,7 +508,7 @@ module TilePRCIDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        element_reset_domain_auto_rockettile_int_local_in_1_1;	// src/main/scala/prci/ClockDomain.scala:14:9
   wire        element_reset_domain_auto_rockettile_int_local_in_0_0;	// src/main/scala/prci/ClockDomain.scala:14:9
   assign intOutClockXingOut_5_sync_0 = intOutClockXingIn_5_sync_0;	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17, :552:17
-  RocketTile element_reset_domain_rockettile (	// src/main/scala/subsystem/HasTiles.scala:164:59
+  rocket_RocketTile element_reset_domain_rockettile (	// src/main/scala/subsystem/HasTiles.scala:164:59
     .clock                                   (element_reset_domain_childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                                   (element_reset_domain_childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_buffer_out_a_ready
@@ -624,7 +624,7 @@ module TilePRCIDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_hartid_in
       (element_reset_domain_auto_rockettile_hartid_in)	// src/main/scala/prci/ClockDomain.scala:14:9
   );
-  TLBuffer_a32d64s2k2z4c_1 buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
+  rocket_TLBuffer_a32d64s2k2z4c_1 buffer (	// src/main/scala/tilelink/Buffer.scala:75:28
     .clock                   (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset                   (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_a_ready         (element_reset_domain_auto_rockettile_buffer_out_a_ready),
@@ -733,50 +733,50 @@ module TilePRCIDomain(	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_e_valid        (tlMasterClockXingIn_e_valid),
     .auto_out_e_bits_sink    (tlMasterClockXingIn_e_bits_sink)
   );
-  IntSyncAsyncCrossingSink_n1x1 intsink (	// src/main/scala/interrupts/Crossing.scala:86:29
+  rocket_IntSyncAsyncCrossingSink_n1x1 intsink (	// src/main/scala/interrupts/Crossing.scala:86:29
     .clock          (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .auto_in_sync_0 (auto_intsink_in_sync_0_0),	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_0     (element_reset_domain_auto_rockettile_int_local_in_0_0)
   );
-  IntSyncSyncCrossingSink_n1x2 intsink_1 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x2 intsink_1 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intInClockXingOut_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_in_sync_1 (intInClockXingOut_sync_1),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (element_reset_domain_auto_rockettile_int_local_in_1_0),
     .auto_out_1     (element_reset_domain_auto_rockettile_int_local_in_1_1)
   );
-  IntSyncSyncCrossingSink_n1x1 intsink_2 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x1 intsink_2 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intInClockXingOut_1_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (element_reset_domain_auto_rockettile_int_local_in_2_0)
   );
-  IntSyncSyncCrossingSink_n1x1 intsink_3 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x1 intsink_3 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intInClockXingOut_2_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (element_reset_domain_auto_rockettile_int_local_in_3_0)
   );
-  IntSyncSyncCrossingSink_n1x1 intsink_4 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x1 intsink_4 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intOutClockXingOut_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (auto_intsink_out_0_0_0)
   );
-  IntSyncCrossingSource_n1x1 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1 intsource (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (1'h0),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:158:25
     .auto_out_sync_0 (intOutClockXingIn_1_sync_0)
   );
-  IntSyncSyncCrossingSink_n1x1 intsink_5 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x1 intsink_5 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intOutClockXingOut_2_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (auto_intsink_out_1_0_0)
   );
-  IntSyncCrossingSource_n1x1 intsource_1 (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1 intsource_1 (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (element_reset_domain_auto_rockettile_wfi_out_0),	// src/main/scala/prci/ClockDomain.scala:14:9
     .auto_out_sync_0 (intOutClockXingIn_3_sync_0)
   );
-  IntSyncSyncCrossingSink_n1x1 intsink_6 (	// src/main/scala/interrupts/Crossing.scala:109:29
+  rocket_IntSyncSyncCrossingSink_n1x1 intsink_6 (	// src/main/scala/interrupts/Crossing.scala:109:29
     .auto_in_sync_0 (intOutClockXingOut_4_sync_0),	// dependencies/diplomacy/diplomacy/src/diplomacy/nodes/MixedNode.scala:543:17
     .auto_out_0     (auto_intsink_out_2_0_0)
   );
-  IntSyncCrossingSource_n1x1 intsource_2 (	// src/main/scala/interrupts/Crossing.scala:29:31
+  rocket_IntSyncCrossingSource_n1x1 intsource_2 (	// src/main/scala/interrupts/Crossing.scala:29:31
     .clock           (childClock),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:153:31
     .reset           (childReset),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:156:31
     .auto_in_0       (1'h0),	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:158:25

@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module BundleBridgeNexus_UInt1_1(	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9
+module rocket_BundleBridgeNexus_UInt1_1(	// dependencies/diplomacy/diplomacy/src/diplomacy/bundlebridge/BundleBridgeNexus.scala:21:9
   output auto_out	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
 );
 

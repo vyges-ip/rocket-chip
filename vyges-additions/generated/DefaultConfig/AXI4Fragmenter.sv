@@ -84,7 +84,7 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module AXI4Fragmenter(	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
+module rocket_AXI4Fragmenter(	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
   input         clock,	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
                 reset,	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
   output        auto_in_aw_ready,	// dependencies/diplomacy/diplomacy/src/diplomacy/lazymodule/LazyModuleImp.scala:107:25
@@ -668,7 +668,7 @@ module AXI4Fragmenter(	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
       `FIRRTL_AFTER_INITIAL	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
     `endif // FIRRTL_AFTER_INITIAL
   `endif // ENABLE_INITIAL_REG_
-  Queue1_AXI4BundleAR deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleAR deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock                     (clock),
     .reset                     (reset),
     .io_enq_ready              (nodeIn_ar_ready),
@@ -696,7 +696,7 @@ module AXI4Fragmenter(	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
     .io_deq_bits_qos           (irr_bits_qos),
     .io_deq_bits_echo_extra_id (irr_bits_echo_extra_id)
   );
-  Queue1_AXI4BundleAR deq_q_1 (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleAR deq_q_1 (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock                     (clock),
     .reset                     (reset),
     .io_enq_ready              (nodeIn_aw_ready),
@@ -724,7 +724,7 @@ module AXI4Fragmenter(	// src/main/scala/amba/axi4/Fragmenter.scala:37:9
     .io_deq_bits_qos           (irr_1_bits_qos),
     .io_deq_bits_echo_extra_id (irr_1_bits_echo_extra_id)
   );
-  Queue1_AXI4BundleW in_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
+  rocket_Queue1_AXI4BundleW in_w_deq_q (	// src/main/scala/chisel3/util/Decoupled.scala:362:21
     .clock            (clock),
     .reset            (reset),
     .io_enq_ready     (nodeIn_w_ready),

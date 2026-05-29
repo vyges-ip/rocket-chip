@@ -1,6 +1,6 @@
 /* verilator lint_off UNOPTFLAT */
 
-module EICG_wrapper(
+module rocket_EICG_wrapper(
   output out,
   input en,
   input test_en,

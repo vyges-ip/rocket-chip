@@ -84,78 +84,78 @@
   `endif // STOP_COND
 `endif // not def STOP_COND_
 
-module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
-  input         clock,	// src/main/scala/rocket/DCache.scala:47:7
-                io_req_valid,	// src/main/scala/rocket/DCache.scala:48:14
-  input  [11:0] io_req_bits_addr,	// src/main/scala/rocket/DCache.scala:48:14
-  input         io_req_bits_write,	// src/main/scala/rocket/DCache.scala:48:14
-  input  [63:0] io_req_bits_wdata,	// src/main/scala/rocket/DCache.scala:48:14
-  input         io_req_bits_wordMask,	// src/main/scala/rocket/DCache.scala:48:14
-  input  [7:0]  io_req_bits_eccMask,	// src/main/scala/rocket/DCache.scala:48:14
-  input  [3:0]  io_req_bits_way_en,	// src/main/scala/rocket/DCache.scala:48:14
-  output [63:0] io_resp_0,	// src/main/scala/rocket/DCache.scala:48:14
-                io_resp_1,	// src/main/scala/rocket/DCache.scala:48:14
-                io_resp_2,	// src/main/scala/rocket/DCache.scala:48:14
-                io_resp_3	// src/main/scala/rocket/DCache.scala:48:14
+module rocket_DCacheDataArray(	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  input         clock,	// src/main/scala/rocket/rocket_DCache.scala:47:7
+                io_req_valid,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input  [11:0] io_req_bits_addr,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input         io_req_bits_write,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input  [63:0] io_req_bits_wdata,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input         io_req_bits_wordMask,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input  [7:0]  io_req_bits_eccMask,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  input  [3:0]  io_req_bits_way_en,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+  output [63:0] io_resp_0,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+                io_resp_1,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+                io_resp_2,	// src/main/scala/rocket/rocket_DCache.scala:48:14
+                io_resp_3	// src/main/scala/rocket/rocket_DCache.scala:48:14
 );
 
-  wire         rockettile_dcache_data_arrays_0_rdata_data_en;	// src/main/scala/rocket/DCache.scala:75:39
-  wire         rockettile_dcache_data_arrays_0_rdata_MPORT_en;	// src/main/scala/rocket/DCache.scala:70:17
+  wire         rockettile_dcache_data_arrays_0_rdata_data_en;	// src/main/scala/rocket/rocket_DCache.scala:75:39
+  wire         rockettile_dcache_data_arrays_0_rdata_MPORT_en;	// src/main/scala/rocket/rocket_DCache.scala:70:17
   wire [255:0] _rockettile_dcache_data_arrays_0_ext_RW0_rdata;	// src/main/scala/util/DescribedSRAM.scala:17:26
-  wire         io_req_valid_0 = io_req_valid;	// src/main/scala/rocket/DCache.scala:47:7
-  wire [11:0]  io_req_bits_addr_0 = io_req_bits_addr;	// src/main/scala/rocket/DCache.scala:47:7
-  wire         io_req_bits_write_0 = io_req_bits_write;	// src/main/scala/rocket/DCache.scala:47:7
-  wire [63:0]  io_req_bits_wdata_0 = io_req_bits_wdata;	// src/main/scala/rocket/DCache.scala:47:7
-  wire         io_req_bits_wordMask_0 = io_req_bits_wordMask;	// src/main/scala/rocket/DCache.scala:47:7
-  wire [7:0]   io_req_bits_eccMask_0 = io_req_bits_eccMask;	// src/main/scala/rocket/DCache.scala:47:7
-  wire [3:0]   io_req_bits_way_en_0 = io_req_bits_way_en;	// src/main/scala/rocket/DCache.scala:47:7
-  wire         rdata_valid = io_req_valid_0;	// src/main/scala/rocket/DCache.scala:47:7, :69:30
-  wire [63:0]  wWords_0 = io_req_bits_wdata_0;	// src/main/scala/rocket/DCache.scala:47:7, src/main/scala/util/package.scala:212:50
+  wire         io_req_valid_0 = io_req_valid;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire [11:0]  io_req_bits_addr_0 = io_req_bits_addr;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire         io_req_bits_write_0 = io_req_bits_write;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire [63:0]  io_req_bits_wdata_0 = io_req_bits_wdata;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire         io_req_bits_wordMask_0 = io_req_bits_wordMask;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire [7:0]   io_req_bits_eccMask_0 = io_req_bits_eccMask;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire [3:0]   io_req_bits_way_en_0 = io_req_bits_way_en;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  wire         rdata_valid = io_req_valid_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7, :69:30
+  wire [63:0]  wWords_0 = io_req_bits_wdata_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7, src/main/scala/util/package.scala:212:50
   wire [63:0]  rdata_0_0;	// src/main/scala/util/package.scala:46:27
   wire [63:0]  rdata_0_1;	// src/main/scala/util/package.scala:46:27
   wire [63:0]  rdata_0_2;	// src/main/scala/util/package.scala:46:27
   wire [63:0]  rdata_0_3;	// src/main/scala/util/package.scala:46:27
-  wire         eccMask_0 = io_req_bits_eccMask_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_1 = io_req_bits_eccMask_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_2 = io_req_bits_eccMask_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_3 = io_req_bits_eccMask_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_4 = io_req_bits_eccMask_0[4];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_5 = io_req_bits_eccMask_0[5];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_6 = io_req_bits_eccMask_0[6];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         eccMask_7 = io_req_bits_eccMask_0[7];	// src/main/scala/rocket/DCache.scala:47:7, :54:82
-  wire         wMask_0 = eccMask_0 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_1 = eccMask_1 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_2 = eccMask_2 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_3 = eccMask_3 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_4 = eccMask_4 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_5 = eccMask_5 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_6 = eccMask_6 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_7 = eccMask_7 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_8 = eccMask_0 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_9 = eccMask_1 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_10 = eccMask_2 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_11 = eccMask_3 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_12 = eccMask_4 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_13 = eccMask_5 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_14 = eccMask_6 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_15 = eccMask_7 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_16 = eccMask_0 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_17 = eccMask_1 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_18 = eccMask_2 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_19 = eccMask_3 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_20 = eccMask_4 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_21 = eccMask_5 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_22 = eccMask_6 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_23 = eccMask_7 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_24 = eccMask_0 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_25 = eccMask_1 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_26 = eccMask_2 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_27 = eccMask_3 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_28 = eccMask_4 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_29 = eccMask_5 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_30 = eccMask_6 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire         wMask_31 = eccMask_7 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/DCache.scala:47:7, :54:82, :55:{87,108}
-  wire [8:0]   addr = io_req_bits_addr_0[11:3];	// src/main/scala/rocket/DCache.scala:47:7, :57:31
+  wire         eccMask_0 = io_req_bits_eccMask_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_1 = io_req_bits_eccMask_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_2 = io_req_bits_eccMask_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_3 = io_req_bits_eccMask_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_4 = io_req_bits_eccMask_0[4];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_5 = io_req_bits_eccMask_0[5];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_6 = io_req_bits_eccMask_0[6];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         eccMask_7 = io_req_bits_eccMask_0[7];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82
+  wire         wMask_0 = eccMask_0 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_1 = eccMask_1 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_2 = eccMask_2 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_3 = eccMask_3 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_4 = eccMask_4 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_5 = eccMask_5 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_6 = eccMask_6 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_7 = eccMask_7 & io_req_bits_way_en_0[0];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_8 = eccMask_0 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_9 = eccMask_1 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_10 = eccMask_2 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_11 = eccMask_3 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_12 = eccMask_4 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_13 = eccMask_5 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_14 = eccMask_6 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_15 = eccMask_7 & io_req_bits_way_en_0[1];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_16 = eccMask_0 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_17 = eccMask_1 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_18 = eccMask_2 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_19 = eccMask_3 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_20 = eccMask_4 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_21 = eccMask_5 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_22 = eccMask_6 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_23 = eccMask_7 & io_req_bits_way_en_0[2];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_24 = eccMask_0 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_25 = eccMask_1 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_26 = eccMask_2 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_27 = eccMask_3 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_28 = eccMask_4 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_29 = eccMask_5 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_30 = eccMask_6 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire         wMask_31 = eccMask_7 & io_req_bits_way_en_0[3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :54:82, :55:{87,108}
+  wire [8:0]   addr = io_req_bits_addr_0[11:3];	// src/main/scala/rocket/rocket_DCache.scala:47:7, :57:31
   wire [7:0]   rdata_wData_0;	// src/main/scala/util/package.scala:212:50
   wire [7:0]   rdata_wData_1;	// src/main/scala/util/package.scala:212:50
   wire [7:0]   rdata_wData_2;	// src/main/scala/util/package.scala:212:50
@@ -165,7 +165,7 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   wire [7:0]   rdata_wData_6;	// src/main/scala/util/package.scala:212:50
   wire [7:0]   rdata_wData_7;	// src/main/scala/util/package.scala:212:50
   assign rockettile_dcache_data_arrays_0_rdata_MPORT_en =
-    rdata_valid & io_req_bits_write_0;	// src/main/scala/rocket/DCache.scala:47:7, :69:30, :70:17
+    rdata_valid & io_req_bits_write_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7, :69:30, :70:17
   assign rdata_wData_0 = wWords_0[7:0];	// src/main/scala/util/package.scala:212:50
   assign rdata_wData_1 = wWords_0[15:8];	// src/main/scala/util/package.scala:212:50
   assign rdata_wData_2 = wWords_0[23:16];	// src/main/scala/util/package.scala:212:50
@@ -175,7 +175,7 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   assign rdata_wData_6 = wWords_0[55:48];	// src/main/scala/util/package.scala:212:50
   assign rdata_wData_7 = wWords_0[63:56];	// src/main/scala/util/package.scala:212:50
   assign rockettile_dcache_data_arrays_0_rdata_data_en =
-    rdata_valid & ~io_req_bits_write_0;	// src/main/scala/rocket/DCache.scala:47:7, :69:30, :75:{39,42}
+    rdata_valid & ~io_req_bits_write_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7, :69:30, :75:{39,42}
   wire [15:0]  rdata_lo_lo = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[15:0];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_hi = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[31:16];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_lo = {rdata_lo_hi, rdata_lo_lo};	// src/main/scala/util/package.scala:46:27
@@ -183,7 +183,7 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   wire [15:0]  rdata_hi_hi = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[63:48];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_hi = {rdata_hi_hi, rdata_hi_lo};	// src/main/scala/util/package.scala:46:27
   assign rdata_0_0 = {rdata_hi, rdata_lo};	// src/main/scala/util/package.scala:46:27
-  wire [63:0]  io_resp_0_0 = rdata_0_0;	// src/main/scala/rocket/DCache.scala:47:7, src/main/scala/util/package.scala:46:27
+  wire [63:0]  io_resp_0_0 = rdata_0_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_lo_1 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[79:64];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_hi_1 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[95:80];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_lo_1 = {rdata_lo_hi_1, rdata_lo_lo_1};	// src/main/scala/util/package.scala:46:27
@@ -191,7 +191,7 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   wire [15:0]  rdata_hi_hi_1 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[127:112];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_hi_1 = {rdata_hi_hi_1, rdata_hi_lo_1};	// src/main/scala/util/package.scala:46:27
   assign rdata_0_1 = {rdata_hi_1, rdata_lo_1};	// src/main/scala/util/package.scala:46:27
-  wire [63:0]  io_resp_1_0 = rdata_0_1;	// src/main/scala/rocket/DCache.scala:47:7, src/main/scala/util/package.scala:46:27
+  wire [63:0]  io_resp_1_0 = rdata_0_1;	// src/main/scala/rocket/rocket_DCache.scala:47:7, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_lo_2 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[143:128];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_hi_2 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[159:144];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_lo_2 = {rdata_lo_hi_2, rdata_lo_lo_2};	// src/main/scala/util/package.scala:46:27
@@ -199,7 +199,7 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   wire [15:0]  rdata_hi_hi_2 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[191:176];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_hi_2 = {rdata_hi_hi_2, rdata_hi_lo_2};	// src/main/scala/util/package.scala:46:27
   assign rdata_0_2 = {rdata_hi_2, rdata_lo_2};	// src/main/scala/util/package.scala:46:27
-  wire [63:0]  io_resp_2_0 = rdata_0_2;	// src/main/scala/rocket/DCache.scala:47:7, src/main/scala/util/package.scala:46:27
+  wire [63:0]  io_resp_2_0 = rdata_0_2;	// src/main/scala/rocket/rocket_DCache.scala:47:7, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_lo_3 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[207:192];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [15:0]  rdata_lo_hi_3 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[223:208];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_lo_3 = {rdata_lo_hi_3, rdata_lo_lo_3};	// src/main/scala/util/package.scala:46:27
@@ -207,14 +207,14 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
   wire [15:0]  rdata_hi_hi_3 = _rockettile_dcache_data_arrays_0_ext_RW0_rdata[255:240];	// src/main/scala/util/DescribedSRAM.scala:17:26, src/main/scala/util/package.scala:46:27
   wire [31:0]  rdata_hi_3 = {rdata_hi_hi_3, rdata_hi_lo_3};	// src/main/scala/util/package.scala:46:27
   assign rdata_0_3 = {rdata_hi_3, rdata_lo_3};	// src/main/scala/util/package.scala:46:27
-  wire [63:0]  io_resp_3_0 = rdata_0_3;	// src/main/scala/rocket/DCache.scala:47:7, src/main/scala/util/package.scala:46:27
-  rockettile_dcache_data_arrays_0_512x256 rockettile_dcache_data_arrays_0_ext (	// src/main/scala/util/DescribedSRAM.scala:17:26
-    .RW0_addr  (addr),	// src/main/scala/rocket/DCache.scala:57:31
+  wire [63:0]  io_resp_3_0 = rdata_0_3;	// src/main/scala/rocket/rocket_DCache.scala:47:7, src/main/scala/util/package.scala:46:27
+  rocket_rockettile_dcache_data_arrays_0_512x256 rockettile_dcache_data_arrays_0_ext (	// src/main/scala/util/DescribedSRAM.scala:17:26
+    .RW0_addr  (addr),	// src/main/scala/rocket/rocket_DCache.scala:57:31
     .RW0_en
       (rockettile_dcache_data_arrays_0_rdata_data_en
-       | rockettile_dcache_data_arrays_0_rdata_MPORT_en),	// src/main/scala/rocket/DCache.scala:70:17, :75:39, src/main/scala/util/DescribedSRAM.scala:17:26
+       | rockettile_dcache_data_arrays_0_rdata_MPORT_en),	// src/main/scala/rocket/rocket_DCache.scala:70:17, :75:39, src/main/scala/util/DescribedSRAM.scala:17:26
     .RW0_clk   (clock),
-    .RW0_wmode (io_req_bits_write_0),	// src/main/scala/rocket/DCache.scala:47:7
+    .RW0_wmode (io_req_bits_write_0),	// src/main/scala/rocket/rocket_DCache.scala:47:7
     .RW0_wdata
       ({rdata_wData_7,
         rdata_wData_6,
@@ -281,11 +281,11 @@ module DCacheDataArray(	// src/main/scala/rocket/DCache.scala:47:7
         wMask_3,
         wMask_2,
         wMask_1,
-        wMask_0})	// src/main/scala/rocket/DCache.scala:55:87, src/main/scala/util/DescribedSRAM.scala:17:26
+        wMask_0})	// src/main/scala/rocket/rocket_DCache.scala:55:87, src/main/scala/util/DescribedSRAM.scala:17:26
   );
-  assign io_resp_0 = io_resp_0_0;	// src/main/scala/rocket/DCache.scala:47:7
-  assign io_resp_1 = io_resp_1_0;	// src/main/scala/rocket/DCache.scala:47:7
-  assign io_resp_2 = io_resp_2_0;	// src/main/scala/rocket/DCache.scala:47:7
-  assign io_resp_3 = io_resp_3_0;	// src/main/scala/rocket/DCache.scala:47:7
+  assign io_resp_0 = io_resp_0_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  assign io_resp_1 = io_resp_1_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  assign io_resp_2 = io_resp_2_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7
+  assign io_resp_3 = io_resp_3_0;	// src/main/scala/rocket/rocket_DCache.scala:47:7
 endmodule
 
