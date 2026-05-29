@@ -25,11 +25,17 @@ builds via Mill, elaborates, runs firtool --split-verilog).
 
 ## Clock & reset — READ before writing any host wrapper
 
-ExampleRocketSystem has **no bare `clock`/`reset` top port** — do not go looking for them.
+ExampleRocketSystem has **no single bare `clock`/`reset` top port**. The clock
+group is exposed as **six members** (one per on-chip clock domain — sbus, mbus,
+pbus, fbus, cbus, etc.):
 
-- **Clock:** enters via `io_aggregator_5_clock` (drives the clock-group aggregator → every internal childClock).
-- **Reset:** carried through the clock-group diplomacy (synchronized per clock domain), **not** a top-level reset input. `debug_ndreset` is an *output* (the debug module ndmreset request), not a reset in.
+- `io_aggregator_0_clock` .. `io_aggregator_5_clock`
+- `io_aggregator_0_reset` .. `io_aggregator_5_reset`  — **active-high**
 
-A host wrapper must drive `io_aggregator_5_clock` from its clock and supply reset via the
-clock-group mechanism (confirm the exact childReset/aggregator reset input from the
-elaborated netlist when wiring).
+plus debug pairs `debug_clock`/`debug_reset` and `debug_clockeddmi_dmiClock`/`dmiReset`.
+`debug_ndreset` is an *output* (the debug-module ndmreset request), not a reset in.
+
+**Single-clock FPGA wiring:** drive all six `io_aggregator_N_clock` (+ debug clocks)
+from the system clock, and all six `io_aggregator_N_reset` (+ debug resets) from the
+active-high system reset. Tie debug DMI (`*_req_valid`, `*_resp_ready`, `*_req_bits_*`),
+`debug_dmactiveAck`, and `resetctrl_hartIsInReset_0` inactive when no debug module is used.
