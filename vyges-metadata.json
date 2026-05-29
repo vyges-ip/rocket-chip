@@ -14,7 +14,7 @@
     "digital"
   ],
   "created": "2026-04-01T06:13:59Z",
-  "updated": "2026-04-01T06:13:59Z",
+  "updated": "2026-05-29T05:47:54Z",
   "source": {
     "type": "git",
     "url": "https://github.com/chipsalliance/rocket-chip",
@@ -34,36 +34,52 @@
   ],
   "interfaces": [
     {
-      "type": "bus",
-      "direction": "master",
-      "protocol": "TileLink",
-      "port": "tl_master",
-      "width": 64,
-      "description": "TileLink master interface for memory and peripheral communication."
-    },
-    {
-      "type": "bus",
-      "direction": "slave",
-      "protocol": "TileLink",
-      "port": "tl_slave",
-      "width": 64,
-      "description": "TileLink slave interface for memory and peripheral communication."
-    },
-    {
       "type": "clock",
       "direction": "input",
-      "protocol": "Clock",
+      "protocol": "generic",
       "port": "clock",
       "width": 1,
-      "description": "System clock input."
+      "description": "System clock (driven by board/PS PLL)."
     },
     {
       "type": "reset",
       "direction": "input",
-      "protocol": "Reset",
+      "protocol": "active-high",
       "port": "reset",
       "width": 1,
-      "description": "System reset input."
+      "description": "Synchronous reset, active-high (ExampleRocketSystem convention)."
+    },
+    {
+      "type": "bus",
+      "direction": "master",
+      "protocol": "AXI4",
+      "port": "mem_axi4",
+      "width": 64,
+      "description": "Main-memory AXI4 master (idBits=4, base 0x80000000) to external DRAM."
+    },
+    {
+      "type": "bus",
+      "direction": "master",
+      "protocol": "AXI4",
+      "port": "mmio_axi4",
+      "width": 64,
+      "description": "MMIO AXI4 master (base 0x60000000) to the peripheral fabric."
+    },
+    {
+      "type": "bus",
+      "direction": "slave",
+      "protocol": "AXI4",
+      "port": "l2_frontend_bus_axi4",
+      "width": 64,
+      "description": "Slave AXI4 port for external DMA into the cache hierarchy."
+    },
+    {
+      "type": "interrupt",
+      "direction": "input",
+      "protocol": "level-sensitive",
+      "port": "interrupts",
+      "width": 2,
+      "description": "External interrupt inputs (WithNExtTopInterrupts(2)) into the on-chip PLIC."
     }
   ],
   "parameters": [
