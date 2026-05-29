@@ -92,3 +92,15 @@ VOUT="$OUT_DIR/verilog"; mkdir -p "$VOUT"
 
 say "DONE"
 echo "Verilog set: $VOUT ($(ls "$VOUT"/*.sv 2>/dev/null | wc -l | tr -d ' ') .sv files); file list: $VOUT/filelist.f"
+
+# Copy the synthesizable Verilog blackboxes (vsrc) the elaborated design
+# instantiates but firtool does NOT emit — they are hand-written upstream
+# resources, not Chisel-generated: plusarg_reader (a +plusargs reader; under
+# SYNTHESIS returns its DEFAULT), clock-gating / async-reset cells, clock
+# dividers. SIM-only blackboxes (SimJTAG/SimDTM/TestDriver/emulator/
+# RoccBlackBox/TraceSinkMonitor/debug_rob) are intentionally NOT copied.
+# Without these the downstream SoC build fails Verilator/sv2v with MODMISSING.
+VSRC_SRC="src/main/resources/vsrc"
+for bb in plusarg_reader EICG_wrapper AsyncResetReg ClockDivider2 ClockDivider3; do
+  [ -f "$VSRC_SRC/$bb.v" ] && cp "$VSRC_SRC/$bb.v" "$VOUT/$bb.v" && echo "  + vsrc blackbox $bb.v"
+done
