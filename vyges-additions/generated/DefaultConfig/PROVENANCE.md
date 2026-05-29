@@ -22,3 +22,14 @@ External buses (see vyges-metadata.json interfaces):
 
 Regenerate: `tools/elaborate_verilog.sh` (clones rocket-chip with submodules,
 builds via Mill, elaborates, runs firtool --split-verilog).
+
+## Clock & reset — READ before writing any host wrapper
+
+ExampleRocketSystem has **no bare `clock`/`reset` top port** — do not go looking for them.
+
+- **Clock:** enters via `io_aggregator_5_clock` (drives the clock-group aggregator → every internal childClock).
+- **Reset:** carried through the clock-group diplomacy (synchronized per clock domain), **not** a top-level reset input. `debug_ndreset` is an *output* (the debug module ndmreset request), not a reset in.
+
+A host wrapper must drive `io_aggregator_5_clock` from its clock and supply reset via the
+clock-group mechanism (confirm the exact childReset/aggregator reset input from the
+elaborated netlist when wiring).
